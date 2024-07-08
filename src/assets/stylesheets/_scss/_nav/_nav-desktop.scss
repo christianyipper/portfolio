@@ -1,0 +1,32 @@
+nav {
+    @include flex-wrap( wrap, row, space-between, center );
+    width: 100%;
+
+    .nav-left {
+
+        .nav-logo-wrap {
+
+            .nav-logo {
+                background-color: red;
+            }
+        }
+    }
+    .nav-mid {
+
+        .nav-heading-wrap {
+
+            .nav-heading {
+                font-weight: 800;
+            }
+        }
+    }
+    .nav-right {
+        
+        .nav-icon-wrap {
+
+            .nav-icon {
+                background-color: red;
+            }
+        }
+    }
+}
