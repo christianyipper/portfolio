@@ -9,9 +9,9 @@ import HomePage from './HomePage';
 import AboutPage from './about/AboutPage';
 import ProjectsPage from './projects/ProjectsPage';
 import { useEffect } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <HomePage />,
