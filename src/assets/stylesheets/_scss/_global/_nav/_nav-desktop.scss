@@ -1,11 +1,11 @@
 nav {
-    @include flex-wrap( nowrap, row, center, center );
+    @include flex-wrap( nowrap, row, end, center );
     @extend %desktop-scaffold;
     flex: 0 1 auto;
     position: fixed;
     top: 0;
     height: 64px;
-    background-color: green;
+    // background-color: green;
         
     .nav-left {
         position: absolute;
@@ -22,6 +22,7 @@ nav {
         @include flex-wrap( wrap, row, start, center );
         gap: 20px;
         position: absolute;
+        margin-right: 198px;
 
         .nav-heading {
             padding: 10px 26px;
@@ -56,13 +57,39 @@ nav {
         .nav-icon-wrap {
             @include flex-wrap( nowrap, row, end, center );
             position: relative;
-            gap: 20px;
+            gap: 10px;
+            padding: 0 5px;
 
             .nav-icon {
                 @include flex-wrap( nowrap, row, center, center );
                 width: 44px;
                 height: 44px;
-                background-color: rgba(255, 0, 0, 0.454)
+                z-index: 2;
+
+                & > svg {
+                    fill: white;
+                }
+            }
+            .nav-icon:hover > svg {
+                animation: svgRotate 1s ease-in-out forwards alternate infinite;
+            }
+            .nav-email:hover ~ .nav-icon-bg {
+                width: 44px;
+                transform: translateX( - calc(88px + 30px));
+                background-color: $primary;
+            }
+            .nav-linkedin:hover ~ .nav-icon-bg {
+                width: 44px;
+                transform: translateX( - calc(44px + 20px));
+                background-color: $primary;
+            }
+            .nav-github {
+                margin-right: 10px;
+            }
+            .nav-github:hover ~ .nav-icon-bg {
+                width: 44px;
+                transform: translateX( -10px );
+                background-color: $primary;
             }
             .nav-icon-bg {
                 @extend %nav-bg;
@@ -92,5 +119,13 @@ nav {
     }
     0% {
         transform: scaleX(1);
+    }
+}
+@keyframes svgRotate {
+    50% {
+        transform: rotateZ(-20deg);
+    }
+    to {
+        transform: rotateZ(20deg);
     }
 }

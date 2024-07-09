@@ -138,13 +138,12 @@ nav {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   flex: 0 1 auto;
   position: fixed;
   top: 0;
   height: 64px;
-  background-color: green;
 }
 nav .nav-left {
   position: absolute;
@@ -161,6 +160,7 @@ nav .nav-mid {
   align-items: center;
   gap: 20px;
   position: absolute;
+  margin-right: 198px;
 }
 nav .nav-mid .nav-heading {
   padding: 10px 26px;
@@ -199,7 +199,8 @@ nav .nav-right .nav-icon-wrap {
   justify-content: end;
   align-items: center;
   position: relative;
-  gap: 20px;
+  gap: 10px;
+  padding: 0 5px;
 }
 nav .nav-right .nav-icon-wrap .nav-icon {
   display: flex;
@@ -209,7 +210,31 @@ nav .nav-right .nav-icon-wrap .nav-icon {
   align-items: center;
   width: 44px;
   height: 44px;
-  background-color: rgba(255, 0, 0, 0.454);
+  z-index: 2;
+}
+nav .nav-right .nav-icon-wrap .nav-icon > svg {
+  fill: white;
+}
+nav .nav-right .nav-icon-wrap .nav-icon:hover > svg {
+  animation: svgRotate 1s ease-in-out forwards alternate infinite;
+}
+nav .nav-right .nav-icon-wrap .nav-email:hover ~ .nav-icon-bg {
+  width: 44px;
+  transform: translateX(-118px);
+  background-color: #ff7862;
+}
+nav .nav-right .nav-icon-wrap .nav-linkedin:hover ~ .nav-icon-bg {
+  width: 44px;
+  transform: translateX(-64px);
+  background-color: #ff7862;
+}
+nav .nav-right .nav-icon-wrap .nav-github {
+  margin-right: 10px;
+}
+nav .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg {
+  width: 44px;
+  transform: translateX(-10px);
+  background-color: #ff7862;
 }
 nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {
   position: absolute;
@@ -232,5 +257,13 @@ nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {
   }
   0% {
     transform: scaleX(1);
+  }
+}
+@keyframes svgRotate {
+  50% {
+    transform: rotateZ(-20deg);
+  }
+  to {
+    transform: rotateZ(20deg);
   }
 }/*# sourceMappingURL=style.css.map */
