@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './assets/stylesheets/style.css';
 
+import Cursor from './Cursor';
 import Nav from './Nav';
 import Footer from './Footer';
 import HomePage from './HomePage';
 import AboutPage from './about/AboutPage';
 import ProjectsPage from './projects/ProjectsPage';
-
+import { useEffect } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -28,8 +29,11 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <Nav />
-        <RouterProvider router={router} />
-        <Footer />
+        <div id="main">
+            <Nav />
+            <RouterProvider router={router} />
+            <Footer />
+            <Cursor />
+        </div>
     </React.StrictMode>
 );

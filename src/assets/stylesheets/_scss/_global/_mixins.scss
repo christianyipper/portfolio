@@ -5,7 +5,7 @@
 }
 @mixin flex( $grow, $shrink, $basis ) {
     display: flex;
-    flex: $grow, $shrink, $basis;
+    flex: $grow $shrink $basis;
 }
 @mixin flex-wrap( $wrap, $direction, $posX, $posY ) {
     display: flex;

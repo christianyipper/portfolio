@@ -1,7 +1,15 @@
-h1, h2, h3, h4, button {
+h3, h2, h1 {
   font-family: "Rubik";
-  transition: 0.2s ease-in-out;
   color: white;
+  transition: 0.2s ease-in-out;
+}
+
+button, a, p, li {
+  font-family: "Inter";
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+  transition: 0.2s ease-in-out;
 }
 
 h1 {
@@ -16,39 +24,29 @@ h3 {
   font-size: 32px;
 }
 
-p, a, li {
-  font-family: "Inter";
-  font-size: 16px;
-  line-height: 24px;
+p, li {
+  font-size: 18px;
+}
+
+a {
+  font-size: 18px;
   text-decoration: none;
-  transition: 0.2s ease-in-out;
-  color: white;
-}
-
-a:hover {
-  color: #fe7200;
-}
-
-strong {
-  font-family: "f1-bold";
 }
 
 button {
   padding: 8px 24px;
-  font-size: 16px;
   border-radius: 4px;
   pointer-events: auto;
   cursor: pointer;
   color: black;
   background-color: white;
   border: solid 3px white;
-  transition: 0.2s ease-in-out;
 }
 
 button:hover {
   color: white;
-  background-color: #fe7200;
-  border: solid 3px #fe7200;
+  background-color: #ff7862;
+  border: solid 3px #ff7862;
 }
 
 .btn-outline {
@@ -57,20 +55,182 @@ button:hover {
   border: solid 3px white;
 }
 
+body {
+  position: relative;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #060e1a;
+}
+
+* {
+  cursor: none;
+}
+
+.cursor {
+  width: 18px;
+  height: 26px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+.cursor .cursor-fill {
+  fill: white;
+  scale: 4.4;
+  transform: translate(-18px, -15.5px);
+}
+.cursor .cursor-dot {
+  fill: #ff7862;
+  scale: 4.4;
+  transform: translate(-18px, -15.5px);
+  transition: 2s ease-in-out;
+  animation: dotPulse 1s ease-in-out alternate infinite;
+}
+
+.doc-click {
+  animation: docClick 0.2s ease-in-out forwards;
+}
+
+@keyframes docClick {
+  0% {
+    scale: 4.4;
+  }
+  50% {
+    scale: 3.6;
+  }
+  100% {
+    scale: 4.4;
+  }
+}
+@keyframes dotPulse {
+  0% {
+    fill-opacity: 1;
+  }
+  100% {
+    fill-opacity: 0;
+  }
+}
+#main {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.test {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+main, nav {
+  width: 100%;
+  max-width: 1160px;
+  padding: 0 20px;
+}
+
 nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 100%;
+  flex: 0 1 auto;
+  position: fixed;
+  top: 0;
+  height: 64px;
+  background-color: green;
+}
+nav .nav-left {
+  position: absolute;
+  left: 20px;
 }
 nav .nav-left .nav-logo-wrap .nav-logo {
   background-color: red;
 }
-nav .nav-mid .nav-heading-wrap .nav-heading {
+nav .nav-mid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+}
+nav .nav-mid .nav-heading {
+  padding: 10px 26px;
   font-weight: 800;
 }
+nav .nav-mid .nav-heading:hover {
+  animation: hoverSquish 0.4s 0.05s ease-in-out;
+}
+nav .nav-mid .nav-home:hover ~ .nav-heading-bg {
+  width: 104.14px;
+  background-color: #ff7862;
+}
+nav .nav-mid .nav-about:hover ~ .nav-heading-bg {
+  width: 107.15px;
+  transform: translateX(124.14px);
+  background-color: #ff7862;
+}
+nav .nav-mid .nav-projects:hover ~ .nav-heading-bg {
+  width: 126.04px;
+  transform: translateX(251.29px);
+  background-color: #ff7862;
+}
+nav .nav-right {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: end;
+  align-items: end;
+  position: absolute;
+  right: 20px;
+}
+nav .nav-right .nav-icon-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+}
 nav .nav-right .nav-icon-wrap .nav-icon {
-  background-color: red;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 0, 0, 0.454);
+}
+nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {
+  position: absolute;
+  background-color: rgba(6, 14, 26, 0.25);
+  box-sizing: border-box;
+  border: solid 2px rgb(255, 255, 255);
+  border-radius: 100px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.2s ease-in-out;
+}
+
+@keyframes hoverSquish {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.8);
+  }
+  0% {
+    transform: scaleX(1);
+  }
 }/*# sourceMappingURL=style.css.map */
