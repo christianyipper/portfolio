@@ -64,7 +64,7 @@ body {
 }
 
 * {
-  cursor: none;
+  cursor: none !important;
 }
 
 .cursor {
@@ -120,6 +120,7 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
+  padding-top: 64px;
 }
 
 .test {
@@ -132,6 +133,17 @@ main, nav {
   width: 100%;
   max-width: 1160px;
   padding: 0 20px;
+}
+
+.r-dot, .p-dot, .r-outline, .p-outline, .y-outline {
+  fill: none;
+  stroke: white;
+  stroke-miterlimit: 10;
+  stroke-width: 1.25px;
+}
+
+.r-fill, .p-fill, .y-fill {
+  fill: white;
 }
 
 nav {
@@ -148,9 +160,18 @@ nav {
 nav .nav-left {
   position: absolute;
   left: 20px;
+  width: 47px;
+}
+nav .nav-left .nav-logo-wrap {
+  width: 47px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 nav .nav-left .nav-logo-wrap .nav-logo {
-  background-color: red;
+  background-color: transparent;
 }
 nav .nav-mid {
   display: flex;
@@ -160,7 +181,7 @@ nav .nav-mid {
   align-items: center;
   gap: 20px;
   position: absolute;
-  margin-right: 198px;
+  margin-right: 210px;
 }
 nav .nav-mid .nav-heading {
   padding: 10px 26px;
@@ -200,7 +221,7 @@ nav .nav-right .nav-icon-wrap {
   align-items: center;
   position: relative;
   gap: 10px;
-  padding: 0 5px;
+  padding: 0 8px;
 }
 nav .nav-right .nav-icon-wrap .nav-icon {
   display: flex;
@@ -216,24 +237,24 @@ nav .nav-right .nav-icon-wrap .nav-icon > svg {
   fill: white;
 }
 nav .nav-right .nav-icon-wrap .nav-icon:hover > svg {
-  animation: svgRotate 1s ease-in-out forwards alternate infinite;
+  animation: svgRotate 0.6s ease-in-out forwards alternate infinite;
 }
 nav .nav-right .nav-icon-wrap .nav-email:hover ~ .nav-icon-bg {
   width: 44px;
-  transform: translateX(-118px);
+  transform: translateX(-124px);
   background-color: #ff7862;
 }
 nav .nav-right .nav-icon-wrap .nav-linkedin:hover ~ .nav-icon-bg {
   width: 44px;
-  transform: translateX(-64px);
+  transform: translateX(-70px);
   background-color: #ff7862;
 }
 nav .nav-right .nav-icon-wrap .nav-github {
-  margin-right: 10px;
+  margin-right: 16px;
 }
 nav .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg {
   width: 44px;
-  transform: translateX(-10px);
+  transform: translateX(-16px);
   background-color: #ff7862;
 }
 nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {

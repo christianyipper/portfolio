@@ -1,0 +1,59 @@
+.r-dot, .p-dot, .r-outline, .p-outline, .y-outline {
+    fill: none;
+    stroke: white;
+    stroke-miterlimit: 10;
+    stroke-width: 1.25px;
+}
+
+.r-fill, .p-fill, .y-fill {
+    fill: white;
+}
+
+@keyframes logo-y-hover {
+    0% {
+        scale: 1;
+    }
+    20% {
+        scale: 1.07;
+    }
+    40% {
+        scale: 1;
+    }
+    100% {
+        scale: 1;
+    }
+}
+@keyframes logo-p-hover {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    10% {
+        transform: translate(0px, 0px);
+    }
+    30% {
+        transform: translate(2px, 2px);
+    }
+    50% {
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes logo-r-hover {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(0px, 0px);
+    }
+    40% {
+        transform: translate(2px, 2px);
+    }
+    60% {
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}

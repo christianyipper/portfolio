@@ -7,7 +7,7 @@ body {
 }
 
 * {
-    cursor: none;
+    cursor: none !important;
 }
 .cursor {
     width: 18px;
@@ -31,7 +31,6 @@ body {
         animation: dotPulse 1s ease-in-out alternate infinite;
     }
 }
-
 .doc-click {
     animation: docClick .2s ease-in-out forwards;
 }
@@ -59,7 +58,9 @@ body {
     @include flex-wrap( nowrap, column, start, center );
     position: relative;
     width: 100%;
+    padding-top: 64px;
 }
+
 
 .test {
     width: 20px;

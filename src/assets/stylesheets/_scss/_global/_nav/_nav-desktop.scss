@@ -10,11 +10,16 @@ nav {
     .nav-left {
         position: absolute;
         left: 20px;
+        width: 47px;
 
         .nav-logo-wrap {
+            width: 47px;
+        @include flex-wrap( nowrap, row, center, center );
 
             .nav-logo {
-                background-color: red;
+                &:hover {
+                    background-color: transparent;
+                }
             }
         }
     }
@@ -22,14 +27,15 @@ nav {
         @include flex-wrap( wrap, row, start, center );
         gap: 20px;
         position: absolute;
-        margin-right: 198px;
+        margin-right: 210px;
 
         .nav-heading {
             padding: 10px 26px;
             font-weight: 800;
-        }
-        .nav-heading:hover {
-            animation: hoverSquish .4s .05s ease-in-out;
+
+            &:hover {
+                animation: hoverSquish .4s .05s ease-in-out;
+            }
         }
         .nav-home:hover ~ .nav-heading-bg {
             width: 104.14px;
@@ -58,7 +64,7 @@ nav {
             @include flex-wrap( nowrap, row, end, center );
             position: relative;
             gap: 10px;
-            padding: 0 5px;
+            padding: 0 8px;
 
             .nav-icon {
                 @include flex-wrap( nowrap, row, center, center );
@@ -66,30 +72,31 @@ nav {
                 height: 44px;
                 z-index: 2;
 
+                &:hover > svg {
+                    animation: svgRotate 0.6s ease-in-out forwards alternate infinite;
+                }
                 & > svg {
                     fill: white;
                 }
             }
-            .nav-icon:hover > svg {
-                animation: svgRotate 1s ease-in-out forwards alternate infinite;
-            }
             .nav-email:hover ~ .nav-icon-bg {
                 width: 44px;
-                transform: translateX( - calc(88px + 30px));
+                transform: translateX( - calc(88px + 36px));
                 background-color: $primary;
             }
             .nav-linkedin:hover ~ .nav-icon-bg {
                 width: 44px;
-                transform: translateX( - calc(44px + 20px));
+                transform: translateX( - calc(44px + 26px));
                 background-color: $primary;
             }
             .nav-github {
-                margin-right: 10px;
-            }
-            .nav-github:hover ~ .nav-icon-bg {
-                width: 44px;
-                transform: translateX( -10px );
-                background-color: $primary;
+                margin-right: 16px;
+
+                &:hover ~ .nav-icon-bg {
+                    width: 44px;
+                    transform: translateX( -16px );
+                    background-color: $primary;
+                }
             }
             .nav-icon-bg {
                 @extend %nav-bg;
