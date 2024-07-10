@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+
+const hideCursor = function() {
+    document.body.style.cursor = 'none';
+}();
 const Cursor = () => {
     const [animate, setAnimate] = useState(false);
     const [ mousePosition, setMousePosition ] = useState({
         x: 0,
         y: 0
     });
+    const [ cursorVariant, setCursorVariant ] = useState("default");
 
     useEffect(() => {
         const mouseMove = (e) => {
@@ -41,12 +46,16 @@ const Cursor = () => {
                 type: "smooth",
                 duration: 0,
             }
+        },
+        text: {
+            x: mousePosition.x,
+            y: mousePosition.y,
+            fill: "black",
         }
     }
 
-    function clickEffect(e) {
-
-    }
+    const textEnter = () => setCursorVariant("text");
+    const textLeave = () => setCursorVariant("default");
 
     return(
         <div>

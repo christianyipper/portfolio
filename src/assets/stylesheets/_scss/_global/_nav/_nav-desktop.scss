@@ -56,6 +56,18 @@ nav {
             animation: navLoad .5s ease-in-out;
         }
     }
+    .nav-home:hover ~ .nav-about,
+    .nav-home:hover ~ .nav-projects {
+        color: $accent;
+    }
+    .nav-mid:has(.nav-about:hover) .nav-home,
+    .nav-about:hover ~ .nav-projects {
+        color: $accent;
+    }
+    .nav-mid:has(.nav-projects:hover) .nav-home,
+    .nav-mid:has(.nav-projects:hover) .nav-about {
+        color: $accent;
+    }
     .nav-right {
         @include flex-wrap( wrap, row, end, end );
         position: absolute;
@@ -78,6 +90,7 @@ nav {
                 }
                 & > svg {
                     fill: white;
+                    transition: .2s ease-in-out;
                 }
             }
             .nav-email:hover ~ .nav-icon-bg {
@@ -103,6 +116,18 @@ nav {
                 @extend %nav-bg;
             }
         }
+    }
+    .nav-email:hover ~ .nav-linkedin > svg,
+    .nav-email:hover ~ .nav-github > svg {
+        fill: $accent;
+    }
+    .nav-right:has(.nav-linkedin:hover) .nav-email > svg,
+    .nav-linkedin:hover ~ .nav-github > svg {
+        fill: $accent;
+    }
+    .nav-right:has(.nav-github:hover) .nav-linkedin > svg,
+    .nav-right:has(.nav-github:hover) .nav-email > svg {
+        fill: $accent;
     }
 }
 

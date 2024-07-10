@@ -63,55 +63,6 @@ body {
   background-color: #060e1a;
 }
 
-* {
-  cursor: none !important;
-}
-
-.cursor {
-  width: 18px;
-  height: 26px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 999;
-}
-.cursor .cursor-fill {
-  fill: white;
-  scale: 4.4;
-  transform: translate(-18px, -15.5px);
-}
-.cursor .cursor-dot {
-  fill: #ff7862;
-  scale: 4.4;
-  transform: translate(-18px, -15.5px);
-  transition: 2s ease-in-out;
-  animation: dotPulse 1s ease-in-out alternate infinite;
-}
-
-.doc-click {
-  animation: docClick 0.2s ease-in-out forwards;
-}
-
-@keyframes docClick {
-  0% {
-    scale: 4.4;
-  }
-  50% {
-    scale: 3.6;
-  }
-  100% {
-    scale: 4.4;
-  }
-}
-@keyframes dotPulse {
-  0% {
-    fill-opacity: 1;
-  }
-  100% {
-    fill-opacity: 0;
-  }
-}
 #main {
   display: flex;
   flex-wrap: nowrap;
@@ -534,6 +485,59 @@ body {
             mask-position: 0 100%;
   }
 }
+* {
+  cursor: none !important;
+}
+
+a:hover ~ .cursor {
+  scale: 2;
+}
+
+.cursor {
+  width: 18px;
+  height: 26px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+.cursor .cursor-fill {
+  fill: white;
+  scale: 4.4;
+  transform: translate(-18px, -15.5px);
+}
+.cursor .cursor-dot {
+  fill: #ff7862;
+  scale: 4.4;
+  transform: translate(-18px, -15.5px);
+  transition: 2s ease-in-out;
+  animation: dotPulse 1s ease-in-out alternate infinite;
+}
+
+.doc-click {
+  animation: docClick 0.2s ease-in-out forwards;
+}
+
+@keyframes docClick {
+  0% {
+    scale: 4.4;
+  }
+  50% {
+    scale: 3.6;
+  }
+  100% {
+    scale: 4.4;
+  }
+}
+@keyframes dotPulse {
+  0% {
+    fill-opacity: 1;
+  }
+  100% {
+    fill-opacity: 0;
+  }
+}
 nav {
   display: flex;
   flex-wrap: nowrap;
@@ -596,6 +600,18 @@ nav .nav-mid .nav-projects:hover ~ .nav-heading-bg {
 nav .nav-mid .nav-heading-bg {
   animation: navLoad 0.5s ease-in-out;
 }
+nav .nav-home:hover ~ .nav-about,
+nav .nav-home:hover ~ .nav-projects {
+  color: #476085;
+}
+nav .nav-mid:has(.nav-about:hover) .nav-home,
+nav .nav-about:hover ~ .nav-projects {
+  color: #476085;
+}
+nav .nav-mid:has(.nav-projects:hover) .nav-home,
+nav .nav-mid:has(.nav-projects:hover) .nav-about {
+  color: #476085;
+}
 nav .nav-right {
   display: flex;
   flex-wrap: wrap;
@@ -630,6 +646,7 @@ nav .nav-right .nav-icon-wrap .nav-icon:hover > svg {
 }
 nav .nav-right .nav-icon-wrap .nav-icon > svg {
   fill: white;
+  transition: 0.2s ease-in-out;
 }
 nav .nav-right .nav-icon-wrap .nav-email:hover ~ .nav-icon-bg {
   width: 44px;
@@ -649,6 +666,19 @@ nav .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg {
   transform: translateX(-16px);
   background-color: #ff7862;
 }
+nav .nav-email:hover ~ .nav-linkedin > svg,
+nav .nav-email:hover ~ .nav-github > svg {
+  fill: #476085;
+}
+nav .nav-right:has(.nav-linkedin:hover) .nav-email > svg,
+nav .nav-linkedin:hover ~ .nav-github > svg {
+  fill: #476085;
+}
+nav .nav-right:has(.nav-github:hover) .nav-linkedin > svg,
+nav .nav-right:has(.nav-github:hover) .nav-email > svg {
+  fill: #476085;
+}
+
 nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {
   position: absolute;
   background-color: rgba(6, 14, 26, 0.25);

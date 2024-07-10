@@ -6,54 +6,6 @@ body {
     background-color: $secondary;
 }
 
-* {
-    cursor: none !important;
-}
-.cursor {
-    width: 18px;
-    height: 26px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 999;
-
-    .cursor-fill {
-        fill: white;
-        scale: 4.4;
-        transform: translate(-18px, -15.5px);
-    }
-    .cursor-dot {
-        fill: $primary;
-        scale: 4.4;
-        transform: translate(-18px, -15.5px);
-        transition: 2s ease-in-out;
-        animation: dotPulse 1s ease-in-out alternate infinite;
-    }
-}
-.doc-click {
-    animation: docClick .2s ease-in-out forwards;
-}
-@keyframes docClick {
-    0% {
-        scale: 4.4;
-    }
-    50% {
-        scale: 3.6;
-    }
-    100% {
-        scale: 4.4;
-    }
-}
-@keyframes dotPulse {
-    0% {
-        fill-opacity: 1;
-    }
-    100% {
-        fill-opacity: 0;
-    }
-}
-
 #main {
     @include flex-wrap( nowrap, column, start, center );
     position: relative;
