@@ -5,7 +5,7 @@ nav {
     position: fixed;
     top: 0;
     height: 64px;
-    // background-color: green;
+    z-index: 900;
         
     .nav-left {
         position: absolute;
@@ -53,6 +53,7 @@ nav {
         }
         .nav-heading-bg {
             @extend %nav-bg;
+            animation: navLoad .5s ease-in-out;
         }
     }
     .nav-right {
@@ -136,4 +137,4 @@ nav {
     to {
         transform: rotateZ(20deg);
     }
-}
+} 
