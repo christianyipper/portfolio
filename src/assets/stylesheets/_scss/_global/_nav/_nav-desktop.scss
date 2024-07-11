@@ -1,54 +1,68 @@
 nav {
     @include flex-wrap( nowrap, row, end, center );
-    @extend %desktop-scaffold;
+    @extend %desktop-margin;
     flex: 0 1 auto;
     position: fixed;
     top: 0;
-    height: 64px;
+    height: $xxxl;
     z-index: 900;
         
     .nav-left {
         position: absolute;
-        left: 20px;
-        width: 47px;
+        left: 0;
+        width: $xxl;
+        overflow: hidden;
 
         .nav-logo-wrap {
-            width: 47px;
-        @include flex-wrap( nowrap, row, center, center );
+            @include flex-wrap( nowrap, row, center, center );
+            width: $xxl;
+            height: $xxl;
 
-            .nav-logo {
-                &:hover {
-                    background-color: transparent;
+            > svg {
+                margin-top: - $xxs;
+                margin-right: 1px;
+                scale: 4.9;
+
+                .line-nav, .accent-nav {
+                    stroke-width: $xxs;
+                }
+                .base-nav {
+                    transition: .2s ease-in-out;
                 }
             }
+        }
+        .nav-logo-wrap:hover .base-nav {
+            fill: $primary;
         }
     }
     .nav-mid {
         @include flex-wrap( wrap, row, start, center );
-        gap: 20px;
+        gap: $sm;
         position: absolute;
-        margin-right: 210px;
+        margin-right: calc( 192px + $md );
 
         .nav-heading {
-            padding: 10px 26px;
+            padding: $xs $lg;
             font-weight: 800;
+            font-size: $md;
+            line-height: $md;
 
             &:hover {
                 animation: hoverSquish .4s .05s ease-in-out;
             }
         }
         .nav-home:hover ~ .nav-heading-bg {
-            width: 104.14px;
+            width: 133.52px;
             background-color: $primary;
         }
         .nav-about:hover ~ .nav-heading-bg {
-            width: 107.15px;
-            transform: translateX(calc(104.14px + 20px));
+            width: 137.52px;
+            transform: translateX( calc( 133.52px + $sm ) );
             background-color: $primary;
         }
         .nav-projects:hover ~ .nav-heading-bg {
-            width: 126.04px;
-            transform: translateX(calc(104.14px + 107.15px + 40px));
+            width: 162.07px;
+            transform: translateX( calc( 133.52px + 137.52px + ( $sm * 2 ) ) );
             background-color: $primary;
         }
         .nav-heading-bg {
@@ -59,30 +73,33 @@ nav {
     .nav-home:hover ~ .nav-about,
     .nav-home:hover ~ .nav-projects {
         color: $accent;
+        opacity: 75%;
     }
-    .nav-mid:has(.nav-about:hover) .nav-home,
+    .nav-mid:has( .nav-about:hover ) .nav-home,
     .nav-about:hover ~ .nav-projects {
         color: $accent;
+        opacity: 75%;
     }
-    .nav-mid:has(.nav-projects:hover) .nav-home,
-    .nav-mid:has(.nav-projects:hover) .nav-about {
+    .nav-mid:has( .nav-projects:hover ) .nav-home,
+    .nav-mid:has( .nav-projects:hover ) .nav-about {
         color: $accent;
+        opacity: 75%;
     }
     .nav-right {
         @include flex-wrap( wrap, row, end, end );
         position: absolute;
-        right: 20px;
+        right: - calc( $xs / 2 );
         
         .nav-icon-wrap {
             @include flex-wrap( nowrap, row, end, center );
             position: relative;
-            gap: 10px;
-            padding: 0 8px;
+            gap: $xs;
+            padding: 0 calc( $xs / 2 );
 
             .nav-icon {
                 @include flex-wrap( nowrap, row, center, center );
-                width: 44px;
-                height: 44px;
+                width: $xl;
+                height: $xl;
                 z-index: 2;
 
                 &:hover > svg {
@@ -94,21 +111,21 @@ nav {
                 }
             }
             .nav-email:hover ~ .nav-icon-bg {
-                width: 44px;
-                transform: translateX( - calc(88px + 36px));
+                width: $xl;
+                transform: translateX( - calc( ( $xl * 2 ) + ( $xs * 3 ) ) );
                 background-color: $primary;
             }
             .nav-linkedin:hover ~ .nav-icon-bg {
-                width: 44px;
-                transform: translateX( - calc(44px + 26px));
+                width: $xl;
+                transform: translateX( - calc( $xl + ( $xs * 2 ) ) );
                 background-color: $primary;
             }
             .nav-github {
-                margin-right: 16px;
+                margin-right: $xs;
 
                 &:hover ~ .nav-icon-bg {
-                    width: 44px;
-                    transform: translateX( -16px );
+                    width: $xl;
+                    transform: translateX( - $xs );
                     background-color: $primary;
                 }
             }
@@ -120,21 +137,24 @@ nav {
     .nav-email:hover ~ .nav-linkedin > svg,
     .nav-email:hover ~ .nav-github > svg {
         fill: $accent;
+        opacity: 75%;
     }
-    .nav-right:has(.nav-linkedin:hover) .nav-email > svg,
+    .nav-right:has( .nav-linkedin:hover ) .nav-email > svg,
     .nav-linkedin:hover ~ .nav-github > svg {
         fill: $accent;
+        opacity: 75%;
     }
-    .nav-right:has(.nav-github:hover) .nav-linkedin > svg,
-    .nav-right:has(.nav-github:hover) .nav-email > svg {
+    .nav-right:has( .nav-github:hover ) .nav-linkedin > svg,
+    .nav-right:has( .nav-github:hover ) .nav-email > svg {
         fill: $accent;
+        opacity: 75%;
     }
 }
 
 %nav-bg {
     position: absolute;
     background-color: rgba(6, 14, 26, 0.25);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     box-sizing: border-box;
     border: solid 2px rgba(255, 255, 255, 1);
     border-radius: 100px;

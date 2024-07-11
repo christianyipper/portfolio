@@ -1,3 +1,36 @@
 main {
-    @extend %desktop-scaffold;
+    @extend %desktop-margin;
+    @extend %page-template;
+}
+
+.about {
+    // background-color: rgb( 0, 66, 128 );
+
+    section {
+        @include flex-wrap( wrap, row, space-between, center );
+        width: 100%;
+        position: relative;
+        // background-color: rgba(255, 255, 255, 0.5);
+
+        > article {
+            width: 50%;
+
+            h1, h2 {
+                font-size: $xxl;
+            }
+            p {
+                margin-top: 0;
+            }
+            span {
+                margin-left: $mx;
+            }
+            strong {
+                color: $primary;
+            }
+        }
+        > div {
+            width: 50%;
+            height: 100%;
+        }
+    }
 }

@@ -5,41 +5,44 @@
 }
 %text-style {
     font-family: 'Inter';
-    font-size: 18px;
-    line-height: 24px;
+    font-size: $pg;
+    line-height: 1.5;
     color: white;
     transition: .2s ease-in-out;
 }
 
 h1 {
     @extend %heading-style;
-    font-size: 64px;
+    font-size: $xxl;
+    // margin-bottom: $lg;
 }
 h2 {
     @extend %heading-style;
-    font-size: 44px;
+    font-size: $xl;
+    // margin-bottom: $md;
 }
 h3 {
     @extend %heading-style;
-    font-size: 32px;
+    font-size: $lg;
+    margin-bottom: $xs;
 }
 
-p, li {
+p {
     @extend %text-style;
-    font-size: 18px;
+    // margin-bottom: $sm;
+}
+li {
+    @extend %text-style;
 }
 a {
     @extend %text-style;
-    font-size: 18px;
     text-decoration: none;
 }
-// a:hover {
-//     color: $primary;
-// }
 
 button {
     @extend %text-style;
-    padding: 8px 24px;
+    padding: $xs $lg;
+    line-height: $md;
     border-radius: 4px;
     pointer-events: auto;
     cursor: pointer;

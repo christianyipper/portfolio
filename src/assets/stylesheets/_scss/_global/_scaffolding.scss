@@ -3,25 +3,22 @@ body {
     top: 0;
     margin: 0;
     width: 100%;
-    background-color: $secondary;
 }
 
 #main {
     @include flex-wrap( nowrap, column, start, center );
     position: relative;
-    width: 100%;
-    padding-top: 64px;
+    width: calc( 100% - ( $lg * 2 ) );
+    padding: 64px $lg 0 $lg;
+    background-color: $secondary;
 }
 
-
-.test {
-    width: 20px;
-    height: 20px;
-    background-color: red;
+%desktop-margin {
+    width: 100%;
+    max-width: 1280px;
 }
 
-%desktop-scaffold {
-    width: 100%;
-    max-width: 1160px;
-    padding: 0 20px;
+%page-template {
+    @include flex-wrap( wrap, column, start, center );
+    position: relative;
 }
