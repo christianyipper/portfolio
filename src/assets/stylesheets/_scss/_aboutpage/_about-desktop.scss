@@ -7,13 +7,15 @@ main {
     // background-color: rgb( 0, 66, 128 );
 
     section {
-        @include flex-wrap( wrap, row, space-between, center );
+        // @include flex-wrap( wrap, row, center, start );
+        display: grid;
+        grid-template-columns: 50% 50%;
         width: 100%;
         position: relative;
         // background-color: rgba(255, 255, 255, 0.5);
-
         > article {
-            width: 50%;
+            width: 100%;
+            height: fit-content;
 
             h1, h2 {
                 font-size: $xxl;
@@ -24,13 +26,63 @@ main {
             span {
                 margin-left: $mx;
             }
-            strong {
-                color: $primary;
-            }
         }
         > div {
-            width: 50%;
+            @include flex-wrap( wrap, column, start, center );
+            width: 100%;
+            position: relative;
             height: 100%;
+
+            > img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+            }
+            .career {
+                position: absolute;
+                width: 100%;
+                height: fit-content;
+                bottom: 0;
+
+                .career-stats {
+                    @include flex-wrap( wrap, row, start, start );
+                    position: relative;
+                    width: 100%;
+                    height: fit-content;
+
+                    .league-wrap {
+                        @include flex-wrap( wrap, column, start, start );
+                        position: relative;
+
+                        .league-card {
+                            @include flex-wrap( wrap, row, start, center );
+                            width: 100%;
+                            height: fit-content;
+                            border-radius: $xxs;
+
+                            img {
+                                width: $xxl;
+                                margin-left: $xxs;
+                            }
+
+                            article {
+                                margin-right: $xxs;
+
+                                span {
+                                    line-height: 1.5;
+                                }
+                                p {
+                                    margin-left: $xs;
+                                    font-size: 14px;
+                                    line-height: 14px;
+                                }
+                            }
+                        }
+                        .featured-card {
+                            background-color: rgba( $accent, 0.33 );
+                        }
+                    }
+                }
+            }
         }
     }
 }

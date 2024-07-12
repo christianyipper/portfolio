@@ -1,10 +1,10 @@
-h3, h2, h1 {
+button, h3, h2, h1 {
   font-family: "Rubik";
   color: white;
   transition: 0.2s ease-in-out;
 }
 
-button, a, li, p {
+a, li, p {
   font-family: "Inter";
   font-size: 18px;
   line-height: 1.5;
@@ -31,27 +31,49 @@ a {
 
 button {
   padding: 12px 32px;
-  line-height: 24px;
-  border-radius: 4px;
+  border-radius: 12px;
   pointer-events: auto;
   cursor: pointer;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: transparent;
   border: solid 3px white;
+}
+button p {
+  margin: 0;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 600;
 }
 
 button:hover {
   color: white;
   background-color: #ff7862;
-  border: solid 3px #ff7862;
+  border-radius: 32px;
 }
 
-.btn-outline {
-  color: white;
-  background-color: transparent;
-  border: solid 3px white;
+button:hover > p {
+  animation: hoverSquishBtn 0.4s ease-in-out;
 }
 
+strong {
+  color: #ff7862;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+@keyframes hoverSquishBtn {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.9);
+  }
+  0% {
+    transform: scaleX(1);
+  }
+}
 body {
   position: relative;
   top: 0;
@@ -67,11 +89,31 @@ body {
   align-items: center;
   position: relative;
   width: calc(100% - 64px);
+  min-height: calc(100vh - 64px);
   padding: 64px 32px 0 32px;
   background-color: #060e1a;
 }
 
-main, nav {
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #060e1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #060e1a, #6987b5);
+  border-radius: 0 0 32px 32px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to bottom, #060e1a, #ff7862);
+}
+
+main, footer .footer-wrap, nav {
   width: 100%;
   max-width: 1280px;
 }
@@ -376,19 +418,12 @@ nav .nav-mid .nav-heading-bg {
   animation: navLoad 0.5s ease-in-out;
 }
 nav .nav-home:hover ~ .nav-about,
-nav .nav-home:hover ~ .nav-projects {
-  color: #8fb6ef;
-  opacity: 75%;
-}
+nav .nav-home:hover ~ .nav-projects,
 nav .nav-mid:has(.nav-about:hover) .nav-home,
-nav .nav-about:hover ~ .nav-projects {
-  color: #8fb6ef;
-  opacity: 75%;
-}
+nav .nav-about:hover ~ .nav-projects,
 nav .nav-mid:has(.nav-projects:hover) .nav-home,
 nav .nav-mid:has(.nav-projects:hover) .nav-about {
-  color: #8fb6ef;
-  opacity: 75%;
+  color: #6987b5;
 }
 nav .nav-right {
   display: flex;
@@ -445,19 +480,12 @@ nav .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg {
   background-color: #ff7862;
 }
 nav .nav-email:hover ~ .nav-linkedin > svg,
-nav .nav-email:hover ~ .nav-github > svg {
-  fill: #8fb6ef;
-  opacity: 75%;
-}
+nav .nav-email:hover ~ .nav-github > svg,
 nav .nav-right:has(.nav-linkedin:hover) .nav-email > svg,
-nav .nav-linkedin:hover ~ .nav-github > svg {
-  fill: #8fb6ef;
-  opacity: 75%;
-}
+nav .nav-linkedin:hover ~ .nav-github > svg,
 nav .nav-right:has(.nav-github:hover) .nav-linkedin > svg,
 nav .nav-right:has(.nav-github:hover) .nav-email > svg {
-  fill: #8fb6ef;
-  opacity: 75%;
+  fill: #6987b5;
 }
 
 nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {
@@ -493,17 +521,63 @@ nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {
     transform: rotateZ(20deg);
   }
 }
-.about section {
+footer {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+footer .footer-wrap {
+  display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
+  width: 100%;
+}
+footer .footer-wrap .footer-left {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+footer .footer-wrap .footer-right {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  text-align: end;
+}
+footer .footer-wrap img {
+  width: 33.3333333333%;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  left: 32px;
+  color: #6987b5;
+}
+
+footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
+  width: 33.3333333333%;
+  margin-top: 16px;
+}
+
+.about section {
+  display: grid;
+  grid-template-columns: 50% 50%;
   width: 100%;
   position: relative;
 }
 .about section > article {
-  width: 50%;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .about section > article h1, .about section > article h2 {
   font-size: 64px;
@@ -514,10 +588,72 @@ nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {
 .about section > article span {
   margin-left: 96px;
 }
-.about section > article strong {
-  color: #ff7862;
-}
 .about section > div {
-  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  position: relative;
   height: 100%;
+}
+.about section > div > img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.about section > div .career {
+  position: absolute;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  bottom: 0;
+}
+.about section > div .career .career-stats {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.about section > div .career .career-stats .league-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+}
+.about section > div .career .career-stats .league-wrap .league-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 8px;
+}
+.about section > div .career .career-stats .league-wrap .league-card img {
+  width: 64px;
+  margin-left: 8px;
+}
+.about section > div .career .career-stats .league-wrap .league-card article {
+  margin-right: 8px;
+}
+.about section > div .career .career-stats .league-wrap .league-card article span {
+  line-height: 1.5;
+}
+.about section > div .career .career-stats .league-wrap .league-card article p {
+  margin-left: 12px;
+  font-size: 14px;
+  line-height: 14px;
+}
+.about section > div .career .career-stats .league-wrap .featured-card {
+  background-color: rgba(105, 135, 181, 0.33);
 }/*# sourceMappingURL=style.css.map */

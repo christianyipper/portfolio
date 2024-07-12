@@ -1,0 +1,33 @@
+footer {
+    @include flex-wrap( nowrap, column, center, center );
+    width: 100%;
+
+    .footer-wrap {
+        @include flex-wrap( nowrap, row, space-between, start );
+        @extend %desktop-margin;
+        width: 100%;
+    
+        .footer-left {
+            @include flex-wrap( nowrap, column, start, start );
+            @extend %footer-block;
+        }
+        .footer-right {
+            @include flex-wrap( nowrap, column, end, end );
+            @extend %footer-block;
+            text-align: end;
+        }
+        img {
+            width: calc(100% / 3);
+        }
+    }
+}
+.copyright {
+    position: absolute;
+    bottom: 0;
+    left: $lg;
+    color: $accent;
+}
+%footer-block {
+    width: calc(100% / 3);
+    margin-top: $sm;
+}

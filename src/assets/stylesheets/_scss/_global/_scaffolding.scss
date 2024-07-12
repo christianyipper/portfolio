@@ -9,15 +9,29 @@ body {
     @include flex-wrap( nowrap, column, start, center );
     position: relative;
     width: calc( 100% - ( $lg * 2 ) );
-    padding: 64px $lg 0 $lg;
+    min-height: calc( 100vh - $xxl );
+    padding: $xxl $lg 0 $lg;
     background-color: $secondary;
+}
+::-webkit-scrollbar {
+    width: $xs;
+}
+::-webkit-scrollbar-track {
+    background-color: $secondary;
+}
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient( to bottom, $secondary, $accent );
+    border-radius: 0 0 $lg $lg;
+    transition: 0.2s ease-in-out;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient( to bottom, $secondary, $primary);
 }
 
 %desktop-margin {
     width: 100%;
     max-width: 1280px;
 }
-
 %page-template {
     @include flex-wrap( wrap, column, start, center );
     position: relative;

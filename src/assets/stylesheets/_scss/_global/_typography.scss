@@ -40,23 +40,48 @@ a {
 }
 
 button {
-    @extend %text-style;
+    @extend %heading-style;
     padding: $xs $lg;
-    line-height: $md;
-    border-radius: 4px;
+    border-radius: $xs;
     pointer-events: auto;
     cursor: pointer;
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: transparent;
     border: solid 3px white;
+
+    p {
+        margin: 0;
+        font-size: $md;
+        line-height: $md;
+        font-weight: 600;
+    }
 }
 button:hover {
     color: white;
     background-color: $primary;
-    border: solid 3px $primary;
+    border-radius: $lg;
+    // border: solid 3px $primary;
 }
-.btn-outline {
-    color: white;
-    background-color: transparent;
-    border: solid 3px white;
+button:hover > p {
+    animation: hoverSquishBtn .4s ease-in-out;
+}
+
+
+strong {
+    color: $primary;
+}
+.bold {
+    font-weight: 800;
+}
+
+@keyframes hoverSquishBtn {
+    0% {
+        transform: scaleX( 1 );
+    }
+    50% {
+        transform: scaleX( 0.9 );
+    }
+    0% {
+        transform: scaleX( 1 );
+    }
 }

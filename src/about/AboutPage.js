@@ -1,3 +1,9 @@
+import bchl from '../assets/images/icons/bchl-logo.png';
+import bcehl from '../assets/images/icons/bcehl-logo.png';
+import bcHockey from '../assets/images/icons/bc-hockey-logo.png';
+import csshl from '../assets/images/icons/csshl-logo.png';
+import jphl from '../assets/images/icons/jphl-logo.png';
+
 const About = () => {
     return (
         <main className="about">
@@ -9,7 +15,7 @@ const About = () => {
                     <p>I strive to deliver a unique and engaging user experience for any business. To accomplish this, I’ll implement current trends and intuitive design to craft unique experiences. In turn, this will emphasis a business’ personality and set their website apart from the competition. I’ll also focus on innovating new web design strategies to improve interactivity and visual appeal.</p>
                 </article>
                 <div>
-                    <img href="" alt=""></img>
+                    <img src="https://drive.google.com/thumbnail?id=1PXQMemcZIvk0YuNHTqOaSMXA4RPdXmu9&sz=w1000" alt=""></img>
                 </div>
             </section>
             <section>
@@ -23,7 +29,44 @@ const About = () => {
                     <p>Diffusing tense situations has become a frequent task in my officiating career. Managing stress and emotions is difficult and I often use various approaches that best resolve conflict. Through these experiences, staying calm and being a great listener has helped strengthen my interpersonal skillset.</p>
                 </article>
                 <div>
-                    <img href="" alt=""></img>
+                    <img src="https://drive.google.com/thumbnail?id=1o10Cvh-bKIotrP0za_sK0Ugi9edfXVz8&sz=w1000" alt=""></img>
+                    <div className="career">
+                        <h3>Officiating <strong>Career</strong></h3>
+                        <div className="career-stats">
+                            <div className="league-wrap">
+                                <div className="league-card featured-card">
+                                    <img src={ bchl } alt="" />
+                                    <article className="league-info">
+                                        <p><span className="bold">2023 - Present</span><br/>British Columbia Hockey League</p>
+                                    </article>
+                                </div>
+                                <div className="league-card">
+                                    <img src={ jphl } alt="" />
+                                    <article className="league-info">
+                                        <p><span className="bold">2023 - Present</span><br/>Junior Prospects Hockey League</p>
+                                    </article>
+                                </div>
+                                <div className="league-card">
+                                    <img src={ bcehl } alt="" />
+                                    <article className="league-info">
+                                        <p><span className="bold">2019 - 2023</span><br/>BC Elite<br/>Hockey League</p>
+                                    </article>
+                                </div>
+                                <div className="league-card">
+                                    <img src={ csshl } alt="" />
+                                    <article className="league-info">
+                                        <p><span className="bold">2019 - 2023</span><br/>Canadian Sports Schools<br/>Hockey League</p>
+                                    </article>
+                                </div>
+                                <div className="league-card">
+                                    <img src={ bcHockey } alt="" />
+                                    <article className="league-info">
+                                        <p><span className="bold">2012 - 2023</span><br/>BC Hockey</p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section>
@@ -37,7 +80,7 @@ const About = () => {
                     <p></p>
                 </article>
                 <div>
-                    <img href="" alt=""></img>
+                    <img src="https://drive.google.com/thumbnail?id=1JWLEJna0gDyWjM3SxVkRmyZda8e10Cgn&sz=w1000" alt=""></img>
                 </div>
             </section>
             <section>
@@ -51,7 +94,7 @@ const About = () => {
                     <p></p>
                 </article>
                 <div>
-                    <img href="" alt=""></img>
+                    <img src="https://drive.google.com/thumbnail?id=19uDnQmdSy2nrZv6K6-r3M5KEFQC_W3pa&sz=w1000" alt=""></img>
                 </div>
             </section>
         </main>

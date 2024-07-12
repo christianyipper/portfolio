@@ -71,19 +71,12 @@ nav {
         }
     }
     .nav-home:hover ~ .nav-about,
-    .nav-home:hover ~ .nav-projects {
-        color: $accent;
-        opacity: 75%;
-    }
+    .nav-home:hover ~ .nav-projects,
     .nav-mid:has( .nav-about:hover ) .nav-home,
-    .nav-about:hover ~ .nav-projects {
-        color: $accent;
-        opacity: 75%;
-    }
+    .nav-about:hover ~ .nav-projects,
     .nav-mid:has( .nav-projects:hover ) .nav-home,
     .nav-mid:has( .nav-projects:hover ) .nav-about {
         color: $accent;
-        opacity: 75%;
     }
     .nav-right {
         @include flex-wrap( wrap, row, end, end );
@@ -135,28 +128,21 @@ nav {
         }
     }
     .nav-email:hover ~ .nav-linkedin > svg,
-    .nav-email:hover ~ .nav-github > svg {
-        fill: $accent;
-        opacity: 75%;
-    }
+    .nav-email:hover ~ .nav-github > svg,
     .nav-right:has( .nav-linkedin:hover ) .nav-email > svg,
-    .nav-linkedin:hover ~ .nav-github > svg {
-        fill: $accent;
-        opacity: 75%;
-    }
+    .nav-linkedin:hover ~ .nav-github > svg,
     .nav-right:has( .nav-github:hover ) .nav-linkedin > svg,
     .nav-right:has( .nav-github:hover ) .nav-email > svg {
         fill: $accent;
-        opacity: 75%;
     }
 }
 
 %nav-bg {
     position: absolute;
-    background-color: rgba(6, 14, 26, 0.25);
+    background-color: rgba( 6, 14, 26, 0.25 );
     backdrop-filter: blur(5px);
     box-sizing: border-box;
-    border: solid 2px rgba(255, 255, 255, 1);
+    border: solid 2px rgba( 255, 255, 255, 1 );
     border-radius: 100px;
     width: 100%;
     height: 100%;
@@ -166,20 +152,20 @@ nav {
 
 @keyframes hoverSquish {
     0% {
-        transform: scaleX(1);
+        transform: scaleX( 1 );
     }
     50% {
-        transform: scaleX(0.8);
+        transform: scaleX( 0.8 );
     }
     0% {
-        transform: scaleX(1);
+        transform: scaleX( 1 );
     }
 }
 @keyframes svgRotate {
     50% {
-        transform: rotateZ(-20deg);
+        transform: rotateZ( -20deg );
     }
     to {
-        transform: rotateZ(20deg);
+        transform: rotateZ( 20deg );
     }
 } 
