@@ -1,6 +1,9 @@
 footer {
     @include flex-wrap( nowrap, column, center, center );
     width: 100%;
+    // background: linear-gradient(to bottom, transparent, $secondary);
+    background-color: $secondary;
+    z-index: 900;
 
     .footer-wrap {
         @include flex-wrap( nowrap, row, space-between, start );

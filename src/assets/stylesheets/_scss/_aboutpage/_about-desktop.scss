@@ -1,17 +1,14 @@
-main {
+.about {
     @extend %desktop-margin;
     @extend %page-template;
-}
-
-.about {
+    position: relative;
     // background-color: rgb( 0, 66, 128 );
 
     section {
-        // @include flex-wrap( wrap, row, center, start );
         display: grid;
         grid-template-columns: 50% 50%;
         width: 100%;
-        position: relative;
+        // position: relative;
         // background-color: rgba(255, 255, 255, 0.5);
         > article {
             width: 100%;
@@ -27,62 +24,123 @@ main {
                 margin-left: $mx;
             }
         }
+    }
+}
+.about-img-section {
+    @extend %desktop-margin;
+    display: grid;
+    padding-top: $xxl;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    
+    .about-img-wrap {
+        @include flex-wrap( wrap, column, start, center );
+        position: relative;
+        width: 100%;
+        height: 100%;
+
         > div {
             @include flex-wrap( wrap, column, start, center );
+            position: absolute;
             width: 100%;
-            position: relative;
-            height: 100%;
+            height: 100%;  
 
-            > img {
+            img {
                 width: 100%;
                 aspect-ratio: 1 / 1;
             }
-            .career {
-                position: absolute;
+        }
+        .about-img-1 {
+            z-index: 4;
+        }
+        .about-img-2 {
+            z-index: 3;
+        }
+        .about-img-3 {
+            z-index: 2;
+        }
+        .about-img-4 {
+            z-index: 1;
+        }
+        .career {
+            position: absolute;
+            width: 100%;
+            height: fit-content;
+            bottom: 0;
+            visibility: hidden;
+
+            .career-stats {
+                @include flex-wrap( wrap, row, start, start );
+                position: relative;
                 width: 100%;
                 height: fit-content;
-                bottom: 0;
 
-                .career-stats {
-                    @include flex-wrap( wrap, row, start, start );
+                .league-wrap {
+                    @include flex-wrap( wrap, column, start, start );
                     position: relative;
-                    width: 100%;
-                    height: fit-content;
 
-                    .league-wrap {
-                        @include flex-wrap( wrap, column, start, start );
-                        position: relative;
+                    .league-card {
+                        @include flex-wrap( wrap, row, start, center );
+                        width: 100%;
+                        height: fit-content;
+                        border-radius: $xxs;
 
-                        .league-card {
-                            @include flex-wrap( wrap, row, start, center );
-                            width: 100%;
-                            height: fit-content;
-                            border-radius: $xxs;
+                        img {
+                            width: $xxl;
+                            margin-left: $xxs;
+                        }
 
-                            img {
-                                width: $xxl;
-                                margin-left: $xxs;
+                        article {
+                            margin-right: $xxs;
+
+                            span {
+                                line-height: 1.5;
                             }
-
-                            article {
-                                margin-right: $xxs;
-
-                                span {
-                                    line-height: 1.5;
-                                }
-                                p {
-                                    margin-left: $xs;
-                                    font-size: 14px;
-                                    line-height: 14px;
-                                }
+                            p {
+                                margin-left: $xs;
+                                font-size: 14px;
+                                line-height: 14px;
                             }
                         }
-                        .featured-card {
-                            background-color: rgba( $accent, 0.33 );
-                        }
+                    }
+                    .featured-card {
+                        background-color: rgba( $accent, 0.33 );
                     }
                 }
             }
         }
+    }
+}
+
+.blur-in {
+    animation: blurIn 1s ease-in-out forwards;
+}
+.blur-out {
+    animation: blurOut 1s ease-in-out forwards;
+}
+@keyframes blurIn {
+    0% {
+        filter: blur(10px);
+        opacity: 0%;
+    }
+    50% {
+        opacity: 100%;
+    }
+    100% {
+        filter: blur(0px);
+    }
+}
+@keyframes blurOut {
+    0% {
+        filter: blur(0px);
+        opacity: 100%;
+    }
+    50% {
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 0%;
     }
 }

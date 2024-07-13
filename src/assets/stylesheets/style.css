@@ -12,6 +12,13 @@ a, li, p {
   transition: 0.2s ease-in-out;
 }
 
+strong {
+  background: linear-gradient(to right, #6274ff, #ff7862, #6274ff, #ff7862);
+  background-size: 500% 100%;
+  color: transparent;
+  animation: gradient 6s linear infinite;
+}
+
 h1 {
   font-size: 64px;
 }
@@ -30,6 +37,12 @@ a {
 }
 
 button {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   padding: 12px 32px;
   border-radius: 12px;
   pointer-events: auto;
@@ -37,26 +50,27 @@ button {
   color: white;
   background-color: transparent;
   border: solid 3px white;
+  overflow: hidden;
 }
 button p {
   margin: 0;
   font-size: 24px;
   line-height: 24px;
   font-weight: 600;
+  z-index: 1;
 }
-
 button:hover {
-  color: white;
   background-color: #ff7862;
   border-radius: 32px;
 }
-
 button:hover > p {
   animation: hoverSquishBtn 0.4s ease-in-out;
 }
 
 strong {
-  color: #ff7862;
+  -webkit-background-clip: text;
+          background-clip: text;
+  animation: gradient 8s linear infinite;
 }
 
 .bold {
@@ -72,6 +86,14 @@ strong {
   }
   0% {
     transform: scaleX(1);
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 14% 100%;
   }
 }
 body {
@@ -103,22 +125,24 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(to bottom, #060e1a, #6987b5);
+  background: linear-gradient(to bottom, #060e1a, #6274ff);
+  background-size: 100% 100%;
+  background-position: 100% 100%;
   border-radius: 0 0 32px 32px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-image: linear-gradient(to bottom, #060e1a, #ff7862);
+  background: linear-gradient(to bottom, #060e1a, #ff7862);
 }
 
-main, footer .footer-wrap, nav {
+.about-img-section, .about, footer .footer-wrap, nav {
   width: 100%;
   max-width: 1280px;
 }
 
-main {
+.about {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -423,7 +447,7 @@ nav .nav-mid:has(.nav-about:hover) .nav-home,
 nav .nav-about:hover ~ .nav-projects,
 nav .nav-mid:has(.nav-projects:hover) .nav-home,
 nav .nav-mid:has(.nav-projects:hover) .nav-about {
-  color: #6987b5;
+  color: #6274ff;
 }
 nav .nav-right {
   display: flex;
@@ -485,7 +509,7 @@ nav .nav-right:has(.nav-linkedin:hover) .nav-email > svg,
 nav .nav-linkedin:hover ~ .nav-github > svg,
 nav .nav-right:has(.nav-github:hover) .nav-linkedin > svg,
 nav .nav-right:has(.nav-github:hover) .nav-email > svg {
-  fill: #6987b5;
+  fill: #6274ff;
 }
 
 nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {
@@ -528,6 +552,8 @@ footer {
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-color: #060e1a;
+  z-index: 900;
 }
 footer .footer-wrap {
   display: flex;
@@ -560,7 +586,7 @@ footer .footer-wrap img {
   position: absolute;
   bottom: 0;
   left: 32px;
-  color: #6987b5;
+  color: #6274ff;
 }
 
 footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
@@ -568,11 +594,13 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   margin-top: 16px;
 }
 
+.about {
+  position: relative;
+}
 .about section {
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
-  position: relative;
 }
 .about section > article {
   width: 100%;
@@ -588,28 +616,60 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 .about section > article span {
   margin-left: 96px;
 }
-.about section > div {
+
+.about-img-section {
+  display: grid;
+  padding-top: 64px;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.about-img-section .about-img-wrap {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  width: 100%;
   position: relative;
+  width: 100%;
   height: 100%;
 }
-.about section > div > img {
+.about-img-section .about-img-wrap > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.about-img-section .about-img-wrap > div img {
   width: 100%;
   aspect-ratio: 1/1;
 }
-.about section > div .career {
+.about-img-section .about-img-wrap .about-img-1 {
+  z-index: 4;
+}
+.about-img-section .about-img-wrap .about-img-2 {
+  z-index: 3;
+}
+.about-img-section .about-img-wrap .about-img-3 {
+  z-index: 2;
+}
+.about-img-section .about-img-wrap .about-img-4 {
+  z-index: 1;
+}
+.about-img-section .about-img-wrap .career {
   position: absolute;
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
   bottom: 0;
+  visibility: hidden;
 }
-.about section > div .career .career-stats {
+.about-img-section .about-img-wrap .career .career-stats {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -620,7 +680,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: -moz-fit-content;
   height: fit-content;
 }
-.about section > div .career .career-stats .league-wrap {
+.about-img-section .about-img-wrap .career .career-stats .league-wrap {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -628,7 +688,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   align-items: start;
   position: relative;
 }
-.about section > div .career .career-stats .league-wrap .league-card {
+.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -639,21 +699,54 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: fit-content;
   border-radius: 8px;
 }
-.about section > div .career .career-stats .league-wrap .league-card img {
+.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card img {
   width: 64px;
   margin-left: 8px;
 }
-.about section > div .career .career-stats .league-wrap .league-card article {
+.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card article {
   margin-right: 8px;
 }
-.about section > div .career .career-stats .league-wrap .league-card article span {
+.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card article span {
   line-height: 1.5;
 }
-.about section > div .career .career-stats .league-wrap .league-card article p {
+.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card article p {
   margin-left: 12px;
   font-size: 14px;
   line-height: 14px;
 }
-.about section > div .career .career-stats .league-wrap .featured-card {
-  background-color: rgba(105, 135, 181, 0.33);
+.about-img-section .about-img-wrap .career .career-stats .league-wrap .featured-card {
+  background-color: rgba(98, 116, 255, 0.33);
+}
+
+.blur-in {
+  animation: blurIn 1s ease-in-out forwards;
+}
+
+.blur-out {
+  animation: blurOut 1s ease-in-out forwards;
+}
+
+@keyframes blurIn {
+  0% {
+    filter: blur(10px);
+    opacity: 0%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+@keyframes blurOut {
+  0% {
+    filter: blur(0px);
+    opacity: 100%;
+  }
+  50% {
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 0%;
+  }
 }/*# sourceMappingURL=style.css.map */
