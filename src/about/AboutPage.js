@@ -1,4 +1,5 @@
 import { useInView } from 'react-intersection-observer';
+import { useTypewriter } from 'react-simple-typewriter';
 
 import bchl from '../assets/images/icons/bchl-logo.png';
 import bcehl from '../assets/images/icons/bcehl-logo.png';
@@ -12,16 +13,39 @@ const About = () => {
     const { ref: aboutSection3, inView: aboutImg3 } = useInView( { threshold: 0.5 } );
     const { ref: aboutSection4, inView: aboutImg4 } = useInView( { threshold: 0.5 } );
 
+    const [ aboutH1 ] = useTypewriter({
+        words: [ 'Christian', 'Yipper' ],
+        loop: 0,
+        delaySpeed: 5000
+    });
+    const [ aboutH2 ] = useTypewriter({
+        words: [ 'Skillset', 'Experiences' ],
+        loop: 0,
+        delaySpeed: 5000
+    });
+    const [ aboutH3 ] = useTypewriter({
+        words: [ 'Values', 'Morales' ],
+        loop: 0,
+        delaySpeed: 5000
+    });
+    const [ aboutH4 ] = useTypewriter({
+        words: [ 'Downtime', 'Brakes' ],
+        loop: 0,
+        delaySpeed: 5000
+    });
+
     return (
         <main className="about">
             <section className="about-img-section">
                 <article/>
                 <div className="about-img-wrap">
                     <div className={ `about-img-1 ${ aboutImg1 ? `blur-in` : `blur-out` }` }>
-                        <img src="https://drive.google.com/thumbnail?id=1Fh06VqDN96euVHd_IQaI4kNYFLe0Bz0L&sz=w1000" alt='Christian Yip "Yipper" thinking profile photo'></img>
+                        <img className="gif-overlay" src="https://drive.google.com/thumbnail?id=13GYzqZbshgEzo6oeuFILzmHR3CvnSsSD&sz=w1000" alt='Christian Yip "Yipper" thinking profile shirt gif'/>
+                        <img src="https://drive.google.com/thumbnail?id=1QQErqfjmKLpZhlLCck1WpEjaLLsXcZ3X&sz=w1000" alt='Christian Yip "Yipper" thinking profile photo head shot' />
                     </div>
                     <div className={ `about-img-2 ${ aboutImg2 ? `blur-in` : `blur-out` }` }>
-                        <img src="https://drive.google.com/thumbnail?id=1OU51PeDE44achR4_zem2Y0KF35isxbC9&sz=w1000" alt='Christian Yip "Yipper" referee officiating profile photo'></img>
+                        <img className="gif-overlay" src="https://drive.google.com/thumbnail?id=1ZtYTm3pgzeB32Tgk8PlVdg59_vqVqtQR&sz=w1000" alt='Christian Yip "Yipper" referee officiating profile jersey gif'/>
+                        <img src="https://drive.google.com/thumbnail?id=1IEkhy1QkJog0bLQdrT0weGqzGSEf3ipJ&sz=w1000" alt='Christian Yip "Yipper" referee officiating profile photo head shot'/>
                         <div className="career">
                             <h3>Officiating <strong>Career</strong></h3>
                             <div className="career-stats">
@@ -61,17 +85,20 @@ const About = () => {
                         </div>
                     </div>
                     <div className={ `about-img-3 ${ aboutImg3 ? `blur-in` : `blur-out` }` }>
-                        <img className="about-img-3" src="https://drive.google.com/thumbnail?id=1an2AB7I7NbMzXRwZl03x-qW6Q1A_YbkJ&sz=w1000" alt='Christian Yip "Yipper" profile photo'></img>
+                        <img className="gif-overlay" src="https://drive.google.com/thumbnail?id=1u2HiD6DpaGqdN84oDprXNcDBKEiO68M7&sz=w1000" alt='Christian Yip "Yipper" profile shirt gif'/>
+                        <img src="https://drive.google.com/thumbnail?id=1DFjw656aktqcm3CijGacJePxAFCiOfQE&sz=w1000" alt='Christian Yip "Yipper" profile photo head shot'/>
                     </div>
                     <div className={ `about-img-4 ${ aboutImg4 ? `blur-in` : `blur-out` }` }>
-                        <img src="https://drive.google.com/thumbnail?id=19uDnQmdSy2nrZv6K6-r3M5KEFQC_W3pa&sz=w1000" alt='Christian Yip "Yipper" skiing photo'></img>
+                        <img src="https://drive.google.com/thumbnail?id=19uDnQmdSy2nrZv6K6-r3M5KEFQC_W3pa&sz=w1000" alt='Christian Yip "Yipper" skiing photo'/>
                     </div>
                 </div>
             </section>
             <section ref={ aboutSection1 }>
                 <article>
-                    <h1>Hey There!<br/><span/>I'm <strong>Christian.</strong></h1>
-                    <p>My name’s Christian Yip, but you can call me Yipper! I’m a passionate front-end developer and designer, driven to explore creative ideas.</p>
+                    <h1>Hey There!<br/><span className="indent"/>I'm <strong>{ aboutH1 }</strong><span className="text-cursor">.</span></h1>
+                    <div className="quote-wrap">
+                        <p className="quote-text">Empowering users by creating intuitive,<br/>engaging, and innovative experiences.</p>
+                    </div>
                     <h3>My Goals</h3>
                     <p>I strive to deliver a unique and engaging user experience for any business. To accomplish this, I’ll implement current trends and intuitive design to craft unique experiences. In turn, this will emphasis a business’ personality and set their website apart from the competition. I’ll also focus on innovating new web design strategies to improve interactivity and visual appeal.</p>
                 </article>
@@ -79,7 +106,7 @@ const About = () => {
             </section>
             <section ref={ aboutSection2 }>
                 <article>
-                    <h2>My Soft<br/><span/><strong>Skillset.</strong></h2>
+                    <h2>My Social<br/><span className="indent"/><strong>{ aboutH2 }</strong><span className="text-cursor">.</span></h2>
                     <h3>Communication</h3>
                     <p>As a hockey referee, communication with coaches, players, and fellow officials is vital to keep the game running smoothly. Whether I’m coaching players on the faceoff or diffusing an emotional situation, I continue to improve my ability to effectively communicate with others.</p>
                     <h3>Teamwork</h3>
@@ -91,7 +118,7 @@ const About = () => {
             </section>
             <section ref={ aboutSection3 }>
                 <article>
-                    <h2>Some of My<br/><span/><strong>Core Values.</strong></h2>
+                    <h2>My Core<br/><span className="indent"/><strong>{ aboutH3 }</strong><span className="text-cursor">.</span></h2>
                     <h3>Collaboration</h3>
                     <p>I believe the best innovations starts with collaborative ideas. The most successful teams I’ve been involved in support each other, balancing individual weaknesses with each other’s strengths. I cherish and value the connections I make with others as we pioneer the future.</p>
                     <h3>Leadership</h3>
@@ -103,7 +130,7 @@ const About = () => {
             </section>
             <section ref={ aboutSection4 }>
                 <article>
-                    <h2>During My<br/><span/><strong>Downtime.</strong></h2>
+                    <h2>During My<br/><span className="indent"/><strong>{ aboutH4 }</strong><span className="text-cursor">.</span></h2>
                     <h3>Backcountry Skiing</h3>
                     <p>I love navigating through intricate slopes and dense forests of the backcountry. I’m always seeking to conquer new challenges that push my skiing ability to the limits. The thrill of cliff drops and uncharted terrain makes our local mountains an irresistible playground!</p>
                     <h3>Action Photography</h3>

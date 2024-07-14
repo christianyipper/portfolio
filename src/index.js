@@ -8,6 +8,7 @@ import Footer from './Footer';
 import HomePage from './HomePage';
 import AboutPage from './about/AboutPage';
 import ProjectsPage from './projects/ProjectsPage';
+import BannerPage from './banner/BannerPage';
 import { useEffect } from 'react';
 import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom';
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: '/projects',
         element: <ProjectsPage />,
+    },
+    {
+        path: '/banner',
+        element: <BannerPage />,
     },
 ]);
 

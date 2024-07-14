@@ -13,8 +13,9 @@
 %gradient {
     background: linear-gradient(to right, $accent, $primary, $accent, $primary);
     background-size: 500% 100%;
+    background-clip: text;
+    animation: gradient 8s linear infinite;
     color: transparent;
-    animation: gradient 6s linear infinite;
 }
 
 h1 {
@@ -85,15 +86,28 @@ button {
     // }
 }
 
+.indent {
+    margin-left: $mx;
+}
+.indent2 {
+    margin-left: calc( $mx + $mx );
+}
 strong {
     @extend %gradient;
-    background-clip: text;
-    animation: gradient 8s linear infinite;
 }
 .bold {
     font-weight: 800;
 }
-
+.text-cursor {
+    @extend %gradient;
+    animation-name: gradient, blinking;
+    animation-duration: 8s, 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+// <Cursor cursorStyle='.' cursorColor='#6274ff'/>
 @keyframes hoverSquishBtn {
     0% {
         transform: scaleX( 1 );
@@ -111,5 +125,16 @@ strong {
     }
     100% {
         background-position: 14% 100%;
+    }
+}
+@keyframes blinking {
+    0% {
+        opacity: 100%;
+    }
+    75% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
     }
 }

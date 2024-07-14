@@ -1,6 +1,7 @@
 footer {
     @include flex-wrap( nowrap, column, center, center );
     width: 100%;
+    height: 400px;
     // background: linear-gradient(to bottom, transparent, $secondary);
     background-color: $secondary;
     z-index: 900;
@@ -14,13 +15,17 @@ footer {
             @include flex-wrap( nowrap, column, start, start );
             @extend %footer-block;
         }
+        .footer-mid {
+            @include flex-wrap( nowrap, row, center, start );
+            position: relative;
+        }
         .footer-right {
             @include flex-wrap( nowrap, column, end, end );
             @extend %footer-block;
             text-align: end;
         }
         img {
-            width: calc(100% / 3);
+            width: calc(100% / 2);
         }
     }
 }
