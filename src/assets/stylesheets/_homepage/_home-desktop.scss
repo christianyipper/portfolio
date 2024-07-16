@@ -49,25 +49,33 @@
 
 .home {
 
-    > section {
+    > .home-section {
         display: grid;
         grid-template-columns: 50% 50%;
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
         top: 0;
         position: relative;
 
         .banner-img-wrap {
             @include flex-wrap( nowrap, row, start, center );
             position: relative;
-            width: 100%;
+            width: fit-content;
             height: 100vh;
             top: - $xxl;
             z-index: 2;
+            mask: url('../masks/inkmask-inv.png');
+            mask-size: 3300% 100%;
+            animation: maskUp 1s steps(32) forwards;
         
             > img {
                 height: 100%;
                 aspect-ratio: 1 / 1;
+            }
+            .hat-overlay {
+                position: absolute;
+                z-index: 4;
+                animation: hatGlow 1s linear infinite alternate;
             }
             .gif-overlay {
                 z-index: 3;
@@ -87,7 +95,7 @@
 
                     .glasses {
                         fill: transparent;
-                        stroke: #88c9ff;
+                        stroke: #b2e4ff;
                         stroke-linecap: round;
                         stroke-linejoin: round;
                         stroke-width: 4px;
@@ -127,6 +135,44 @@
             height: fit-content;
             z-index: 10;
             // overflow: hidden;
+
+            h1 {
+                mask: url('../masks/inkmask-left.png');
+                mask-size: 100% 3300%;
+                animation: maskLeft 1s steps(32) forwards;
+            }
+        }
+        .window-wrap {
+            @include flex-wrap( nowrap, row, start, start );
+            height: 100%;
+            padding-top: $xxl;
+
+            .window, .window-bar, .window-bg, .bgbg {
+                position: absolute;
+                margin-left: - $lg;
+                // width: 960px;
+                width: 70%;
+            }
+            .window, .window-bar {
+                animation: hatGlow 1s linear infinite alternate;
+            }
+            .window {
+                z-index: 3;
+            }
+            .window-bar {
+                z-index: 2;
+            }
+            .window-bg {
+                z-index: 1;
+            }
+            .bgbg {
+                background-color: green;
+                aspect-ratio: 16 / 9;
+                max-width: 65%;
+                margin-top: $lg;
+                margin-left: 0;
+                // z-index: 90;
+            }
         }
     }
     .logo-wrap {
@@ -150,8 +196,8 @@
         width: 100%;
         height: 100vh;
         z-index: 1;
+        filter: blur( 10px );
         margin-left: -35vw;
-        // opacity: 50%;
 
         .bg-front {
             animation: bgGrow 12s linear infinite;
@@ -333,52 +379,100 @@
         }
     }
 }
-
-@keyframes bgGrow {
+@keyframes maskUp {
     0% {
-        transform: scale( 0.05 );
-        filter: blur( 2px );
-        opacity: 0%;
+        mask-position: 0 0;
     }
-    25% {
-        filter: blur( 6px );
-        opacity: 75%;
+    100% {
+        mask-position: 100% 0;
+    }
+}
+@keyframes maskLeft {
+    0% {
+        mask-position: 0 100%;
+    }
+    100% {
+        mask-position: 0 0;
+    }
+}
+@keyframes hatGlow {
+    0% {
+        opacity: 100%;
+    }
+    10% {
+        opacity: 80%;
+    }
+    20% {
+        opacity: 100%;
+    }
+    30% {
+        opacity: 90%;
+    }
+    40% {
+        opacity: 100%;
     }
     50% {
-        transform: scale( 1.5 );
+        opacity: 70%;
     }
-    100% {
-        filter: blur( 12px );
-        transform: scale( 3 );
-    }
-}
-@keyframes bgRotateRight {
-    0% {
-        transform: rotateZ(0deg)
-    }
-    100% {
-        transform: rotateZ(25deg)
-    }
-}
-@keyframes bgRotateLeft {
-    0% {
-        transform: rotateZ(0deg)
-    }
-    100% {
-        transform: rotateZ(-25deg)
-    }
-}
-@keyframes bgColor {
-    0% {
-        background-color: $secondary;
-    }
-    45% {
-        background-color: $accent;
+    60% {
+        opacity: 80%;
     }
     70% {
-        background-color: $primary;
+        opacity: 100%;
+    }
+    80% {
+        opacity: 90%;
+    }
+    90% {
+        opacity: 70%;
     }
     100% {
-        background-color: $primary;
+        opacity: 100%;
     }
 }
+// @keyframes bgGrow {
+//     0% {
+//         transform: scale( 0.05 );
+//         opacity: 0%;
+//     }
+//     25% {
+//         opacity: 75%;
+//     }
+//     50% {
+//         transform: scale( 1.5 );
+//     }
+//     100% {
+//         transform: scale( 3 );
+//     }
+// }
+// @keyframes bgRotateRight {
+//     0% {
+//         transform: rotateZ(0deg)
+//     }
+//     100% {
+//         transform: rotateZ(25deg)
+//     }
+// }
+// @keyframes bgRotateLeft {
+//     0% {
+//         transform: rotateZ(0deg)
+//     }
+//     100% {
+//         transform: rotateZ(-25deg)
+//     }
+// }
+// @keyframes bgColor {
+//     0% {
+//         transform: rotateZ(360deg);
+//         background-color: $secondary;
+//     }
+//     45% {
+//         background-color: $accent;
+//     }
+//     70% {
+//         background-color: $primary;
+//     }
+//     100% {
+//         background-color: $primary;
+//     }
+// }
