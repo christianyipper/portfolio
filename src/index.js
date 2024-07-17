@@ -12,7 +12,7 @@ import BannerPage from './banner/BannerPage';
 import { useEffect } from 'react';
 import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <HomePage />,

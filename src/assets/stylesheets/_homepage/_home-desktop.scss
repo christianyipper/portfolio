@@ -136,10 +136,15 @@
             z-index: 10;
             // overflow: hidden;
 
+            // h1 {
+            //     // mask: url('../masks/inkmask-left.png');
+            //     // mask-size: 100% 3300%;
+            //     // animation: maskLeft 1s steps(32) forwards;
+            // }
             h1 {
-                mask: url('../masks/inkmask-left.png');
-                mask-size: 100% 3300%;
-                animation: maskLeft 1s steps(32) forwards;
+                font-size: $xxxl;
+                top: 20px;
+                @extend %floating;                
             }
         }
         .window-wrap {
@@ -428,6 +433,12 @@
     }
     100% {
         opacity: 100%;
+    }
+}
+@keyframes lines {
+    0% {
+        background-position: 0 0;
+        background-position: 100% 100%;
     }
 }
 // @keyframes bgGrow {

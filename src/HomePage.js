@@ -1,6 +1,5 @@
 import HomeBg from './HomeBg';
 
-
 const HomePage = () => {
     return (
         <main className="home">
@@ -23,10 +22,40 @@ const HomePage = () => {
                     </div>
                 </div>
                 <article>
-                    <h1>Creative<br/>
-                        <span className="indent"><strong>Front-End</strong></span><br/>
-                        <span className="indent2"><strong>Developer</strong></span>
-                    </h1>
+                    <h1 className="home-heading">
+                        <span text-inner="C">C</span>
+                        <span text-inner="r">r</span>
+                        <span text-inner="e">e</span>
+                        <span text-inner="a">a</span>
+                        <span text-inner="t">t</span>
+                        <span text-inner="i">i</span>
+                        <span text-inner="v">v</span>
+                        <span text-inner="e">e</span>
+                        <br/>
+                        <span className="indent" text-inner="F">F</span>
+                        <span text-inner="r">r</span>
+                        <span text-inner="o">o</span>
+                        <span text-inner="n">n</span>
+                        <span text-inner="t">t</span>
+                        <span text-inner="-">-</span>
+                        <span text-inner="E">E</span>
+                        <span text-inner="n">n</span>
+                        <span text-inner="d">d</span>
+                        <br/>
+                        <span className="indent2" text-inner="D">D</span>
+                        <span text-inner="e">e</span>
+                        <span text-inner="v">v</span>
+                        <span text-inner="e">e</span>
+                        <span text-inner="l">l</span>
+                        <span text-inner="o">o</span>
+                        <span text-inner="p">p</span>
+                        <span text-inner="e">e</span>
+                        <span text-inner="r">r</span>
+                        
+
+                    </h1>    
+                    {/* <h1 className="home-heading" data-shadow="Front-End">Front-End</h1>
+                    <h1 className="home-heading" data-shadow="Front-End"><strong>Developer</strong></h1> */}
                 </article>
             </section>
             <section className="home-section">
@@ -37,7 +66,7 @@ const HomePage = () => {
                     <div className="bgbg"></div>
                 </div>
             </section>
-            {/* <HomeBg /> */}
+            <HomeBg />
         </main>
     )
 }
