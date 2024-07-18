@@ -1,8 +1,20 @@
 import HomeBg from './HomeBg';
+import { useInView } from 'react-intersection-observer';
+
 
 const HomePage = () => {
+    const { ref: snap1, inView: inView1 } = useInView({threshold: 0.5});
+    const { ref: snap2, inView: inView2 } = useInView({threshold: 0.5});
+    const { ref: snap3, inView: inView3 } = useInView({threshold: 0.5});
+    const { ref: snap4, inView: inView4 } = useInView({threshold: 0.5});
     return (
         <main className="home">
+            <section className='scroll-container'>
+                {/* <div className='scroll-section' ref={ snap1 }></div>
+                <div className='scroll-section' ref={ snap2 }></div>
+                <div className='scroll-section' ref={ snap3 }></div>
+                <div className='scroll-section' ref={ snap4 }></div> */}
+            </section>
             <section className="home-section">
                 <div className="home-left">
                     <div className="banner-img-wrap">
@@ -23,39 +35,27 @@ const HomePage = () => {
                 </div>
                 <article>
                     <h1 className="home-heading">
-                        <span text-inner="C">C</span>
-                        <span text-inner="r">r</span>
-                        <span text-inner="e">e</span>
-                        <span text-inner="a">a</span>
-                        <span text-inner="t">t</span>
-                        <span text-inner="i">i</span>
-                        <span text-inner="v">v</span>
-                        <span text-inner="e">e</span>
+                        <span text-glow="C">C</span>
+                        <span text-glow="h">h</span>
+                        <span text-glow="r">r</span>
+                        <span text-glow="i">i</span>
+                        <span text-glow="s">s</span>
+                        <span text-glow="t">t</span>
+                        <span text-glow="i">i</span>
+                        <span text-glow="a">a</span>
+                        <span text-glow="n">n</span>
                         <br/>
-                        <span className="indent" text-inner="F">F</span>
-                        <span text-inner="r">r</span>
-                        <span text-inner="o">o</span>
-                        <span text-inner="n">n</span>
-                        <span text-inner="t">t</span>
-                        <span text-inner="-">-</span>
-                        <span text-inner="E">E</span>
-                        <span text-inner="n">n</span>
-                        <span text-inner="d">d</span>
-                        <br/>
-                        <span className="indent2" text-inner="D">D</span>
-                        <span text-inner="e">e</span>
-                        <span text-inner="v">v</span>
-                        <span text-inner="e">e</span>
-                        <span text-inner="l">l</span>
-                        <span text-inner="o">o</span>
-                        <span text-inner="p">p</span>
-                        <span text-inner="e">e</span>
-                        <span text-inner="r">r</span>
-                        
-
-                    </h1>    
-                    {/* <h1 className="home-heading" data-shadow="Front-End">Front-End</h1>
-                    <h1 className="home-heading" data-shadow="Front-End"><strong>Developer</strong></h1> */}
+                        <span className="indent" text-glow="Y">Y</span>
+                        <span text-glow="i">i</span>
+                        <span text-glow="p">p</span>
+                        <span text-glow="p">p</span>
+                        <span text-glow="e">e</span>
+                        <span text-glow="r">r</span>
+                    </h1> 
+                    <div className="home-text-wrap">
+                        <h2 text-shimmer="Front-End Developer">Front-End Developer</h2>
+                        {/* <h2 text-shimmer="Developer">Developer</h2> */}
+                    </div>
                 </article>
             </section>
             <section className="home-section">
@@ -63,7 +63,7 @@ const HomePage = () => {
                     <img className="window" src="https://drive.google.com/thumbnail?id=1-sfapRmWf0WAtDT7HuCJ7ck7ny7bhyLB&sz=w1000" alt='Glowing neon window border'/>
                     <img className="window-bar" src="https://drive.google.com/thumbnail?id=1Nba2j4QNbJRQ3N12CIh2mIBaHldhFBRM&sz=w1000" alt='Glowing neon window search bar'/>
                     <img className="window-bg" src="https://drive.google.com/thumbnail?id=1oygEPyxWN9CKRrCDAapVhuhZgU-qTseM&sz=w1000" alt='Neon window background'/>
-                    <div className="bgbg"></div>
+                    <div className='bgbg'></div>
                 </div>
             </section>
             <HomeBg />

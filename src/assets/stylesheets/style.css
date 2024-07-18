@@ -21,6 +21,53 @@ a, li, p {
   color: transparent;
 }
 
+.about section > article .about-heading-shimmer, .home > .home-section article h2, footer .footer-wrap .footer-shimmer {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-right: 6px;
+  color: white;
+  letter-spacing: 0.25rem;
+  text-shadow: 2px 2px 4px #060e1a;
+}
+.about section > article .about-heading-shimmer:before, .home > .home-section article h2:before, footer .footer-wrap .footer-shimmer:before {
+  content: attr(text-shimmer);
+  position: absolute;
+  -webkit-text-stroke: 2px white;
+  top: -2px;
+  left: -2px;
+  z-index: 5;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px #6274ff;
+  opacity: 25%;
+}
+.about section > article .about-heading-shimmer:after, .home > .home-section article h2:after, footer .footer-wrap .footer-shimmer:after {
+  content: attr(text-shimmer);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: -1;
+  text-shadow: none;
+  background-image: linear-gradient(45deg, transparent 45%, #6274ff 45%, #ff7862 85%, transparent 0);
+  background-size: 5px 5px;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  filter: blur(2px);
+  animation: lines 16s linear infinite;
+}
+@keyframes lines {
+  0% {
+    background-position: 0 0;
+    background-position: 100% 100%;
+  }
+}
+
 .home > .home-section article h1 span {
   display: inline-block;
   color: transparent;
@@ -34,7 +81,7 @@ a, li, p {
   color: transparent;
   text-shadow: none;
   -webkit-text-stroke: 3px white;
-  content: attr(text-inner);
+  content: attr(text-glow);
   top: 0;
   left: 0;
   z-index: 2;
@@ -44,7 +91,7 @@ a, li, p {
   position: absolute;
   text-shadow: none;
   -webkit-text-stroke: 3px white;
-  content: attr(text-inner);
+  content: attr(text-glow);
   top: 0;
   left: 0px;
   z-index: 2;
@@ -139,6 +186,123 @@ a, li, p {
   }
 }
 
+.about section > article .about-heading-float span, footer .footer-wrap .footer-float span {
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+.about section > article .about-heading-float span:before, footer .footer-wrap .footer-float span:before {
+  position: absolute;
+  color: transparent;
+  text-shadow: none;
+  -webkit-text-stroke: 2px white;
+  content: attr(text-glow);
+  top: 0;
+  left: 0;
+  z-index: 2;
+  text-shadow: 0.05vw 0vw 0.2vw #aca9ff, 0.1vw 0vw 0.2vw #d9d8ff, 0.2vw 0vw 0.2vw #d9d8ff, 0.1vw 0vw 0.3vw #6274ff, 0.2vw 0vw 0.3vw #6274ff, 0.4vw 0vw 0.3vw #6274ff, 0.1vw 0vw 0.5vw #6274ff, 0.2vw 0vw 0.5vw #6274ff, 0.4vw 0vw 0.5vw #6274ff, 0.1vw 0vw 1vw #450be5, 0.2vw 0vw 1vw #450be5, 0.4vw 0vw 3vw #450be5, 0.1vw 0vw 2vw #3a0be5, 0.2vw 0vw 2vw #3a0be5, 0.4vw 0vw 5vw #3a0be5;
+}
+.about section > article .about-heading-float span:after, footer .footer-wrap .footer-float span:after {
+  position: absolute;
+  text-shadow: none;
+  -webkit-text-stroke: 2px white;
+  content: attr(text-glow);
+  top: 0;
+  left: 0px;
+  z-index: 2;
+  text-shadow: 2px 0vw 0.2vw #ffd1c9, 4px 0vw 0.2vw #ffded8, 5px 0vw 0.2vw #ffded8, 0.1vw 0vw 0.3vw #f26e57, 0.2vw 0vw 0.3vw #f26e57, 0.4vw 0vw 0.3vw #f26e57, 0.1vw 0vw 0.5vw #f26e57, 0.2vw 0vw 0.5vw #f26e57, 0.4vw 0vw 0.5vw #f26e57, 0.1vw 0vw 1vw #ff7862, 0.2vw 0vw 1vw #ff7862, 0.4vw 0vw 3vw #ff7862, 0.1vw 0vw 2vw #ff7862, 0.2vw 0vw 2vw #ff7862, 0.4vw 0vw 5vw #ff7862;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 1), footer .footer-wrap .footer-float span:nth-of-type(8n + 1) {
+  animation: floatLeft 2s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 1):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):before {
+  animation: neonFade 2s ease-in-out infinite alternate-reverse;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 1):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):after {
+  animation: neonFade 2s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 2), footer .footer-wrap .footer-float span:nth-of-type(8n + 2) {
+  animation: floatLeft 2s 0.5s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 2):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):before {
+  animation: neonFade 2s 0.5s ease-in-out infinite alternate-reverse;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 2):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):after {
+  animation: neonFade 2s 0.5s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 3), footer .footer-wrap .footer-float span:nth-of-type(8n + 3) {
+  animation: floatLeft 2s 1s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 3):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):before {
+  animation: neonFade 2s 1s ease-in-out infinite alternate-reverse;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 3):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):after {
+  animation: neonFade 2s 1s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 4), footer .footer-wrap .footer-float span:nth-of-type(8n + 4) {
+  animation: floatLeft 2s 1.5s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 4):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):before {
+  animation: neonFade 2s 1.5s ease-in-out infinite alternate-reverse;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 4):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):after {
+  animation: neonFade 2s 1.5s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 5), footer .footer-wrap .footer-float span:nth-of-type(8n + 5) {
+  animation: floatLeft 2s 2s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 5):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):before {
+  animation: neonFade 2s 2s ease-in-out infinite alternate-reverse;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 5):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):after {
+  animation: neonFade 2s 2s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 6), footer .footer-wrap .footer-float span:nth-of-type(8n + 6) {
+  animation: floatLeft 2s 2.5s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 6):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):before {
+  animation: neonFade 2s 2.5s ease-in-out infinite alternate-reverse;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 6):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):after {
+  animation: neonFade 2s 2.5s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 7), footer .footer-wrap .footer-float span:nth-of-type(8n + 7) {
+  animation: floatLeft 2s 3s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 7):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):before {
+  animation: neonFade 2s 3s ease-in-out infinite alternate-reverse;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 7):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):after {
+  animation: neonFade 2s 3s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 8), footer .footer-wrap .footer-float span:nth-of-type(8n + 8) {
+  animation: floatLeft 2s 3.5s ease-in-out infinite alternate;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 8):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):before {
+  animation: neonFade 2s 3.5s ease-in-out infinite alternate-reverse;
+}
+.about section > article .about-heading-float span:nth-of-type(8n + 8):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):after {
+  animation: neonFade 2s 3.5s ease-in-out infinite alternate;
+}
+@keyframes floatLeft {
+  0% {
+    transform: rotate(4deg) skew(-4deg) translateY(-5px);
+  }
+  100% {
+    transform: rotate(-2deg) skew(6deg) translateY(5px);
+  }
+}
+@keyframes neonFade {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
 h1 {
   font-size: 64px;
 }
@@ -162,6 +326,7 @@ button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  display: inline-block;
   position: relative;
   padding: 12px 32px;
   border-radius: 12px;
@@ -171,6 +336,16 @@ button {
   background-color: transparent;
   border: solid 3px white;
   overflow: hidden;
+}
+button:after {
+  position: absolute;
+  text-shadow: none;
+  -webkit-text-stroke: 3px white;
+  background-color: red;
+  content: attr(button-glow);
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 button p {
   margin: 0;
@@ -193,6 +368,10 @@ button:hover > p {
 
 .indent2 {
   margin-left: 192px;
+}
+
+.space {
+  margin-left: 24px;
 }
 
 .bold {
@@ -760,12 +939,22 @@ footer .footer-wrap {
   height: 400px;
   position: relative;
 }
+footer .footer-wrap h2 {
+  margin: 0;
+}
+footer .footer-wrap .h2-right {
+  right: -6px;
+}
+footer .footer-wrap button {
+  margin-top: 32px;
+}
 footer .footer-wrap .footer-left {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  position: relative;
 }
 footer .footer-wrap .footer-mid {
   display: flex;
@@ -781,6 +970,7 @@ footer .footer-wrap .footer-right {
   flex-direction: column;
   justify-content: end;
   align-items: end;
+  position: relative;
   text-align: end;
 }
 footer .footer-wrap img {
@@ -800,54 +990,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   margin-top: 16px;
 }
 
-@keyframes glassesFrame {
-  from {
-    stroke-dashoffset: 1500;
-  }
-  to {
-    stroke-dashoffset: -1400;
-  }
-}
-@keyframes glassesLeft {
-  from {
-    stroke-dashoffset: -500;
-  }
-  to {
-    stroke-dashoffset: 1400;
-  }
-}
-@keyframes glassesRight {
-  from {
-    stroke-dashoffset: 1100;
-  }
-  to {
-    stroke-dashoffset: -1000;
-  }
-}
-@keyframes glassesAccent1 {
-  from {
-    stroke-dashoffset: 1000;
-  }
-  to {
-    stroke-dashoffset: -1000;
-  }
-}
-@keyframes glassesAccent2 {
-  from {
-    stroke-dashoffset: -100;
-  }
-  to {
-    stroke-dashoffset: 1900;
-  }
-}
-@keyframes glassesAccent3 {
-  from {
-    stroke-dashoffset: -200;
-  }
-  to {
-    stroke-dashoffset: 1800;
-  }
-}
 .home > .home-section {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -943,8 +1085,22 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   z-index: 10;
 }
 .home > .home-section article h1 {
-  font-size: 80px;
-  top: 20px;
+  font-size: 100px;
+  top: 32px;
+}
+.home > .home-section article .home-text-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  width: 100%;
+  margin-top: -48px;
+}
+.home > .home-section article h2 {
+  width: 100%;
+  margin: 0;
 }
 .home > .home-section .window-wrap {
   display: flex;
@@ -973,11 +1129,16 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   z-index: 1;
 }
 .home > .home-section .window-wrap .bgbg {
-  background-color: green;
   aspect-ratio: 16/9;
   max-width: 65%;
   margin-top: 32px;
   margin-left: 0;
+}
+.home > .home-section .window-wrap .bgbg video {
+  background-color: rgba(255, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
 }
 .home .logo-wrap {
   position: absolute;
@@ -1240,11 +1401,56 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     opacity: 100%;
   }
 }
-@keyframes lines {
-  0% {
-    background-position: 0 0;
-    background-position: 100% 100%;
+@keyframes glassesFrame {
+  from {
+    stroke-dashoffset: 1500;
   }
+  to {
+    stroke-dashoffset: -1400;
+  }
+}
+@keyframes glassesLeft {
+  from {
+    stroke-dashoffset: -500;
+  }
+  to {
+    stroke-dashoffset: 1400;
+  }
+}
+@keyframes glassesRight {
+  from {
+    stroke-dashoffset: 1100;
+  }
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+@keyframes glassesAccent1 {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+@keyframes glassesAccent2 {
+  from {
+    stroke-dashoffset: -100;
+  }
+  to {
+    stroke-dashoffset: 1900;
+  }
+}
+@keyframes glassesAccent3 {
+  from {
+    stroke-dashoffset: -200;
+  }
+  to {
+    stroke-dashoffset: 1800;
+  }
+}
+.about section {
+  z-index: 5;
 }
 .about section > article {
   width: 100%;
@@ -1253,9 +1459,16 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 }
 .about section > article h1, .about section > article h2 {
   font-size: 64px;
+  margin: 0;
 }
 .about section > article p {
   margin-top: 0;
+}
+.about section > article .about-heading-shimmer {
+  width: 100%;
+}
+.about section > article .about-heading-float {
+  margin-bottom: 64px;
 }
 .about section > article .quote-wrap {
   position: relative;
