@@ -17,12 +17,22 @@
             }
             .about-heading-shimmer {
                 @extend %shimmer;
+                margin-top: $xl;
                 width: 100%;
                 // background-color: red;
             }
             .about-heading-float {
-                @extend %float-small;
-                margin-bottom: $xxl;
+                @extend %float-heading;
+                margin-bottom: $xl;
+            }
+            .about-heading-wrap {
+                @include flex-wrap( nowrap, row, start, start );
+                gap: $sm;
+
+                h1 {
+                    width: fit-content;
+                    margin-top: 0;
+                }
             }
             .quote-wrap {
                 position: relative;

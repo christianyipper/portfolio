@@ -1,0 +1,386 @@
+%gradient {
+    background: linear-gradient(to right, $accent, $primary, $accent, $primary);
+    background-size: 500% 100%;
+    background-clip: text;
+    animation: gradient 8s linear infinite;
+    color: transparent;
+
+    @keyframes gradient {
+        0% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 14% 100%;
+        }
+    }
+}
+
+%shimmer {
+    position: relative;
+    @include flex-wrap( nowrap, column, start, start );
+    width: fit-content;
+    padding-right: 6px;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px $secondary;
+
+    &:before {
+        content: attr(text-shimmer);
+        position: absolute;
+        -webkit-text-stroke: 2px white;
+        top: -2px;
+        left: -2px;
+        z-index: 5;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 4px $accent;
+        opacity: 25%;
+    }
+    &:after {
+        content: attr(text-shimmer);
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        z-index: -1;
+        text-shadow: none;
+        background-image: linear-gradient(45deg, transparent 45%, $accent 45%, $primary 85%, transparent 0);
+        background-size: 8px 8px;
+        background-clip: text;
+        color: transparent;
+        filter: blur(4px);
+        animation: lines 16s linear infinite;
+    }
+    @keyframes lines {
+        0% {
+            background-position: 0 0;
+            background-position: 100% 100%;
+        }
+    }
+}
+
+%float-title {
+    .floating-text {
+        display: inline-block;
+        color: transparent;
+        -webkit-text-stroke: 3px white;
+        display: inline-block;
+        transform: rotate(6deg) skew(-6deg) translateY(-10px);
+        transition: transform .3s ease-in-out;
+
+        &:before {
+            position: absolute;
+            color: transparent;
+            text-shadow: none;
+            -webkit-text-stroke: 3px white;
+            content: attr(text-glow);
+            top: 0;
+            left: 0;
+            z-index: 2;
+            text-shadow: 
+            .1vw 0vw .25vw #aca9ff, .2vw 0vw .25vw #d9d8ff, .4vw 0vw .25vw #d9d8ff,
+            .1vw 0vw 0.3vw #6274ff, .2vw 0vw 0.3vw #6274ff, .4vw 0vw 0.3vw #6274ff,
+            .1vw 0vw 0.5vw #6274ff, .2vw 0vw 0.5vw #6274ff, .4vw 0vw 0.5vw #6274ff,
+            .1vw 0vw 1vw #450be5, .2vw 0vw 1vw #450be5, .4vw 0vw 3vw #450be5,
+            .1vw 0vw 2vw #3a0be5, .2vw 0vw 2vw #3a0be5, .4vw 0vw 5vw #3a0be5;
+        }
+        &:after {
+            position: absolute;
+            text-shadow: none;
+            -webkit-text-stroke: 3px white;
+            content: attr(text-glow);
+            top: 0;
+            left: 0;
+            opacity: 0%;
+            z-index: 2;
+            text-shadow: 
+            2px 0vw .25vw #ffd1c9, 4px 0vw .25vw #ffded8, 8px 0vw .25vw #ffded8,
+            .1vw 0vw 0.3vw #f26e57, .2vw 0vw 0.3vw #f26e57, .4vw 0vw 0.3vw #f26e57,
+            .1vw 0vw 0.5vw #f26e57, .2vw 0vw 0.5vw #f26e57, .4vw 0vw 0.5vw #f26e57,
+            .1vw 0vw 1vw #ff7862, .2vw 0vw 1vw #ff7862, .4vw 0vw 3vw #ff7862,
+            .1vw 0vw 2vw #ff7862, .2vw 0vw 2vw #ff7862, .4vw 0vw 5vw #ff7862;
+            // 2px 0vw .25vw #ffded8, 4px 0vw .25vw #ffded8, 8px 0vw .25vw #ffded8,
+            // .1vw 0vw 0.3vw #f26e57, .2vw 0vw 0.3vw #f26e57, .4vw 0vw 0.3vw #f26e57,
+            // .1vw 0vw 0.5vw #f26e57, .2vw 0vw 0.5vw #f26e57, .4vw 0vw 0.5vw #f26e57,
+            // .1vw 0vw 1vw #ff7862, .2vw 0vw 1vw #ff7862, .4vw 0vw 3vw #ff7862,
+            // .1vw 0vw 2vw #ff7862, .2vw 0vw 2vw #ff7862, .4vw 0vw 5vw #ff7862;
+        }
+        // &:after {
+        //     position: absolute;
+        //     color: $secondary;
+        //     text-shadow: none;
+        //     -webkit-text-stroke: 2px transparent;
+        //     content: attr(text-glow);
+        //     top: 0;
+        //     left: 0px;
+        //     filter: blur(5px);
+        //     overflow: hidden;
+        //     opacity: 25%;
+        //     z-index: 2;
+        //     transform: scale(0.8);
+        // }
+        
+    }
+    .float-1 {
+        animation: floatBig 2s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s ease-in-out infinite alternate;
+        }
+    }
+    .float-2 {
+        animation: floatBig 2s .5s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s .5s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s .5s ease-in-out infinite alternate;
+        }
+    }
+    .float-3 {
+        animation: floatBig 2s 1s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 1s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 1s ease-in-out infinite alternate;
+        }
+    }
+    .float-4 {
+        animation: floatBig 2s 1.5s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 1.5s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 1.5s ease-in-out infinite alternate;
+        }
+    }
+    .float-5 {
+        animation: floatBig 2s 2s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 2s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 2s ease-in-out infinite alternate;
+        }
+    }
+    .float-6 {
+        animation: floatBig 2s 2.5s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 2.5s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 2.5s ease-in-out infinite alternate;
+        }
+    }
+    .float-7 {
+        animation: floatBig 2s 3s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 3s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 3s ease-in-out infinite alternate;
+        }
+    }
+    .float-8 {
+        animation: floatBig 2s 3.5s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 3.5s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 3.5s ease-in-out infinite alternate;
+        }
+    }
+    .float-9 {
+        animation: floatBig 2s 4s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 4s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 4s ease-in-out infinite alternate;
+        }
+    }
+    @keyframes floatBig {
+        0% {
+            transform: rotate(6deg) skew(-6deg) translateY(-10px);
+        }
+        100% {
+            transform: rotate(-2deg) skew(6deg) translateY(10px);
+        }
+    }
+    @keyframes neonFade {
+        0% {
+            opacity: 0%;
+        }
+        100% {
+            opacity: 100%;
+        }
+    }
+}
+%float-heading {
+    span {
+        display: inline-block;
+        color: transparent;
+        -webkit-text-stroke: 2px white;
+        transform: rotate(4deg) skew(-4deg) translateY(-5px);
+        display: inline-block;
+        transition: transform .3s ease-in-out;
+
+        &:before {
+            position: absolute;
+            color: transparent;
+            text-shadow: none;
+            -webkit-text-stroke: 2px white;
+            content: attr(text-glow);
+            top: 0;
+            left: 0;
+            z-index: 2;
+            text-shadow: 
+            .05vw 0vw .2vw #aca9ff, .1vw 0vw .2vw #d9d8ff, .2vw 0vw .2vw #d9d8ff,
+            .1vw 0vw 0.3vw #6274ff, .2vw 0vw 0.3vw #6274ff, .4vw 0vw 0.3vw #6274ff,
+            .1vw 0vw 0.5vw #6274ff, .2vw 0vw 0.5vw #6274ff, .4vw 0vw 0.5vw #6274ff,
+            .1vw 0vw 1vw #450be5, .2vw 0vw 1vw #450be5, .4vw 0vw 3vw #450be5,
+            .1vw 0vw 2vw #3a0be5, .2vw 0vw 2vw #3a0be5, .4vw 0vw 5vw #3a0be5;
+        }
+        &:after {
+            position: absolute;
+            text-shadow: none;
+            -webkit-text-stroke: 2px white;
+            content: attr(text-glow);
+            top: 0;
+            left: 0;
+            opacity: 0%;
+            z-index: 2;
+            text-shadow: 
+            2px 0vw .2vw #ffd1c9, 4px 0vw .2vw #ffded8, 5px 0vw .2vw #ffded8,
+            .1vw 0vw 0.3vw #f26e57, .2vw 0vw 0.3vw #f26e57, .4vw 0vw 0.3vw #f26e57,
+            .1vw 0vw 0.5vw #f26e57, .2vw 0vw 0.5vw #f26e57, .4vw 0vw 0.5vw #f26e57,
+            .1vw 0vw 1vw #ff7862, .2vw 0vw 1vw #ff7862, .4vw 0vw 3vw #ff7862,
+            .1vw 0vw 2vw #ff7862, .2vw 0vw 2vw #ff7862, .4vw 0vw 5vw #ff7862;
+        }
+    }
+    span:nth-of-type(8n + 1) {
+        animation: float 2s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s ease-in-out infinite alternate;
+        }
+    }
+    span:nth-of-type(8n + 2) {
+        animation: float 2s .5s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s .5s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s .5s ease-in-out infinite alternate;
+        }
+    }
+    span:nth-of-type(8n + 3) {
+        animation: float 2s 1s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 1s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 1s ease-in-out infinite alternate;
+        }
+    }
+    span:nth-of-type(8n + 4) {
+        animation: float 2s 1.5s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 1.5s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 1.5s ease-in-out infinite alternate;
+        }
+    }
+    span:nth-of-type(8n + 5) {
+        animation: float 2s 2s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 2s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 2s ease-in-out infinite alternate;
+        }
+    }
+    span:nth-of-type(8n + 6) {
+        animation: float 2s 2.5s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 2.5s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 2.5s ease-in-out infinite alternate;
+        }
+    }
+    span:nth-of-type(8n + 7) {
+        animation: float 2s 3s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 3s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 3s ease-in-out infinite alternate;
+        }
+    }
+    span:nth-of-type(8n + 8) {
+        animation: float 2s 3.5s ease-in-out infinite alternate;
+
+        &:before {
+            animation: neonFade 2s 3.5s ease-in-out infinite alternate-reverse;
+        }
+        &:after {
+            animation: neonFade 2s 3.5s ease-in-out infinite alternate;
+        }
+    }
+    @keyframes float {
+        0% {
+            transform: rotate(4deg) skew(-4deg) translateY(-5px);
+        }
+        100% {
+            transform: rotate(-2deg) skew(4deg) translateY(5px);
+        }
+    }
+    @keyframes neonFade {
+        0% {
+            opacity: 0%;
+        }
+        100% {
+            opacity: 100%;
+        }
+    }
+}
+%float-img {
+    animation: imgFloat 3s ease-in-out forwards alternate infinite;
+
+    @keyframes imgFloat {
+        0% {
+            transform: rotate(1deg) translateY(-5px);
+        }
+        100% {
+            transform: rotate(0deg) translateY(5px);
+        }
+    }
+}
+
+.play-state {
+    animation-play-state: paused;
+}
+.pause-state {
+    animation-play-state: paused;
+}

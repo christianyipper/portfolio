@@ -43,26 +43,26 @@ nav {
 
         .nav-heading {
             padding: $xs $lg;
-            font-weight: 800;
+            font-weight: 900;
             font-size: $md;
             line-height: $md;
 
             &:hover {
-                animation: hoverSquish .4s .05s ease-in-out;
+            animation: hoverSquish .4s .05s ease-in-out;
             }
         }
         .nav-home:hover ~ .nav-heading-bg {
-            width: 133.52px;
+            width: 132.29px;
             background-color: $primary;
         }
         .nav-about:hover ~ .nav-heading-bg {
-            width: 137.52px;
-            transform: translateX( calc( 133.52px + $sm ) );
+            width: 136.30px;
+            transform: translateX( calc( 132.29px + $sm ) );
             background-color: $primary;
         }
         .nav-projects:hover ~ .nav-heading-bg {
-            width: 162.07px;
-            transform: translateX( calc( 133.52px + 137.52px + ( $sm * 2 ) ) );
+            width: 158.68px;
+            transform: translateX( calc( 132.29px + 136.30px + ( $sm * 2 ) ) );
             background-color: $primary;
         }
         .nav-heading-bg {

@@ -40,8 +40,8 @@ const About = () => {
                 <article/>
                 <div className="about-img-wrap">
                     <div className={ `about-img-1 ${ aboutImg1 ? `blur-in` : `blur-out` }` }>
-                        <img className="gif-overlay" src="https://drive.google.com/thumbnail?id=13GYzqZbshgEzo6oeuFILzmHR3CvnSsSD&sz=w1000" alt='Christian Yip "Yipper" thinking profile shirt gif'/>
-                        <img src="https://drive.google.com/thumbnail?id=1QQErqfjmKLpZhlLCck1WpEjaLLsXcZ3X&sz=w1000" alt='Christian Yip "Yipper" thinking profile photo head shot' />
+                        <img className="gif-overlay" src="https://www.dropbox.com/scl/fi/tuma334n7ykchht48f8wk/yipper-profile-1080p.gif?rlkey=qf19hunzy4s8i6xvj4h94ld2z&st=65tpimb9&raw=1" alt='Christian Yip "Yipper" profile shirt gif'/>
+                        <img src="https://www.dropbox.com/scl/fi/fxnbup25t7v4w29yl1b03/yipper-profile-head.png?rlkey=s97ut47pl2z28g05v3e2yuy83&st=v1i14km6&raw=1" alt='Christian Yip "Yipper" profile photo head shot'/>
                     </div>
                     <div className={ `about-img-2 ${ aboutImg2 ? `blur-in` : `blur-out` }` }>
                         <img className="gif-overlay" src="https://drive.google.com/thumbnail?id=1ZtYTm3pgzeB32Tgk8PlVdg59_vqVqtQR&sz=w1000" alt='Christian Yip "Yipper" referee officiating profile jersey gif'/>
@@ -97,18 +97,22 @@ const About = () => {
                 <article>
                     {/* <h1>Hey There!<br/><span className="indent"/>I'm <strong>{ aboutH1 }</strong><span className="text-cursor">.</span></h1> */}
                     <h1 className="about-heading-shimmer" text-shimmer="Hey There!">Hey There!</h1>
-                    <h1 className="about-heading-float">
-                        <span text-glow="C">C</span>
-                        <span text-glow="h">h</span>
-                        <span text-glow="r">r</span>
-                        <span text-glow="i">i</span>
-                        <span text-glow="s">s</span>
-                        <span text-glow="t">t</span>
-                        <span text-glow="i">i</span>
-                        <span text-glow="a">a</span>
-                        <span text-glow="n">n</span>
-                        <span text-glow=".">.</span>
-                    </h1>
+                    <div className="about-heading-wrap">
+                        <span className="indent"/>
+                        <h1 className="about-heading-shimmer" text-shimmer="I'm">I'm</h1>
+                        <h1 className="about-heading-float">
+                            <span text-glow="C">C</span>
+                            <span text-glow="h">h</span>
+                            <span text-glow="r">r</span>
+                            <span text-glow="i">i</span>
+                            <span text-glow="s">s</span>
+                            <span text-glow="t">t</span>
+                            <span text-glow="i">i</span>
+                            <span text-glow="a">a</span>
+                            <span text-glow="n">n</span>
+                            <span text-glow=".">.</span>
+                        </h1>
+                    </div>
                     <div className="quote-wrap">
                         <p className="quote-text">Empowering users by creating intuitive,<br/>engaging, and innovative experiences.</p>
                     </div>
@@ -120,17 +124,20 @@ const About = () => {
             <section ref={ aboutSection2 }>
                 <article>
                     <h2 className="about-heading-shimmer" text-shimmer="My Social">My Social</h2>
-                    <h2 className="about-heading-float">
-                        <span text-glow="S">S</span>
-                        <span text-glow="k">k</span>
-                        <span text-glow="i">i</span>
-                        <span text-glow="l">l</span>
-                        <span text-glow="l">l</span>
-                        <span text-glow="s">s</span>
-                        <span text-glow="e">e</span>
-                        <span text-glow="t">t</span>
-                        <span text-glow=".">.</span>
-                    </h2>
+                    <div className="about-heading-wrap">
+                        <span className="indent"/>
+                        <h2 className="about-heading-float">
+                            <span text-glow="S">S</span>
+                            <span text-glow="k">k</span>
+                            <span text-glow="i">i</span>
+                            <span text-glow="l">l</span>
+                            <span text-glow="l">l</span>
+                            <span text-glow="s">s</span>
+                            <span text-glow="e">e</span>
+                            <span text-glow="t">t</span>
+                            <span text-glow=".">.</span>
+                        </h2>
+                    </div>
                     {/* <h2>My Social<br/><span className="indent"/><strong>{ aboutH2 }</strong><span className="text-cursor">.</span></h2> */}
                     <h3>Communication</h3>
                     <p>As a hockey referee, communication with coaches, players, and fellow officials is vital to keep the game running smoothly. Whether I’m coaching players on the faceoff or diffusing an emotional situation, I continue to improve my ability to effectively communicate with others.</p>
@@ -144,15 +151,18 @@ const About = () => {
             <section ref={ aboutSection3 }>
                 <article>
                     <h2 className="about-heading-shimmer" text-shimmer="My Core">My Core</h2>
-                    <h2 className="about-heading-float">
-                        <span text-glow="V">V</span>
-                        <span text-glow="a">a</span>
-                        <span text-glow="l">l</span>
-                        <span text-glow="u">u</span>
-                        <span text-glow="e">e</span>
-                        <span text-glow="s">s</span>
-                        <span text-glow=".">.</span>
-                    </h2>
+                    <div className="about-heading-wrap">
+                        <span className="indent"/>
+                        <h2 className="about-heading-float">
+                            <span text-glow="V">V</span>
+                            <span text-glow="a">a</span>
+                            <span text-glow="l">l</span>
+                            <span text-glow="u">u</span>
+                            <span text-glow="e">e</span>
+                            <span text-glow="s">s</span>
+                            <span text-glow=".">.</span>
+                        </h2>
+                    </div>
                     {/* <h2>My Core<br/><span className="indent"/><strong>{ aboutH3 }</strong><span className="text-cursor">.</span></h2> */}
                     <h3>Collaboration</h3>
                     <p>I believe the best innovations starts with collaborative ideas. The most successful teams I’ve been involved in support each other, balancing individual weaknesses with each other’s strengths. I cherish and value the connections I make with others as we pioneer the future.</p>
@@ -166,17 +176,20 @@ const About = () => {
             <section ref={ aboutSection4 }>
                 <article>
                     <h2 className="about-heading-shimmer" text-shimmer="During My">During My</h2>
-                    <h2 className="about-heading-float">
-                        <span text-glow="D">D</span>
-                        <span text-glow="o">o</span>
-                        <span text-glow="w">w</span>
-                        <span text-glow="n">n</span>
-                        <span text-glow="t">t</span>
-                        <span text-glow="i">i</span>
-                        <span text-glow="m">m</span>
-                        <span text-glow="e">e</span>
-                        <span text-glow=".">.</span>
-                    </h2>
+                    <div className="about-heading-wrap">
+                        <span className="indent"/>
+                        <h2 className="about-heading-float">
+                            <span text-glow="D">D</span>
+                            <span text-glow="o">o</span>
+                            <span text-glow="w">w</span>
+                            <span text-glow="n">n</span>
+                            <span text-glow="t">t</span>
+                            <span text-glow="i">i</span>
+                            <span text-glow="m">m</span>
+                            <span text-glow="e">e</span>
+                            <span text-glow=".">.</span>
+                        </h2>
+                    </div>
                     {/* <h2>During My<br/><span className="indent"/><strong>{ aboutH4 }</strong><span className="text-cursor">.</span></h2> */}
                     <h3>Backcountry Skiing</h3>
                     <p>I love navigating through intricate slopes and dense forests of the backcountry. I’m always seeking to conquer new challenges that push my skiing ability to the limits. The thrill of cliff drops and uncharted terrain makes our local mountains an irresistible playground!</p>
