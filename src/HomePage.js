@@ -1,6 +1,6 @@
 import HomeBg from './HomeBg';
 import { useInView } from 'react-intersection-observer';
-
+import ReactPlayer from 'react-player';
 
 const HomePage = () => {
     const { ref: snap1, inView: inView1 } = useInView({threshold: 0.5});
@@ -85,6 +85,14 @@ const HomePage = () => {
                     <div className="home-text-wrap">
                         <h2 text-shimmer="Front-End Developer">Front-End Developer</h2>
                         {/* <h2 text-shimmer="Developer">Developer</h2> */}
+                        <div className="home-buttons-wrap">
+                            <button>
+                                <p>About Me</p>
+                            </button>
+                            <button>
+                                <p>My Works</p>
+                            </button>
+                        </div>
                     </div>
                 </article>
             </section>
@@ -93,8 +101,37 @@ const HomePage = () => {
                     <img className="window" src="https://drive.google.com/thumbnail?id=1-sfapRmWf0WAtDT7HuCJ7ck7ny7bhyLB&sz=w1000" alt='Glowing neon window border'/>
                     <img className="window-bar" src="https://drive.google.com/thumbnail?id=1Nba2j4QNbJRQ3N12CIh2mIBaHldhFBRM&sz=w1000" alt='Glowing neon window search bar'/>
                     <img className="window-bg" src="https://drive.google.com/thumbnail?id=1oygEPyxWN9CKRrCDAapVhuhZgU-qTseM&sz=w1000" alt='Neon window background'/>
-                    <div className='bgbg'></div>
+                    <img className="bgbg" src="https://www.dropbox.com/scl/fi/vilvc058wjbgiq3811i68/ItsYipper-Preiew.gif?rlkey=c6fccjwuka23drz48npbon838&st=n6iod8sn&raw=1" alt='ItsYipper project trailer'/>
+                    {/* <img className="bgbg" src="https://www.dropbox.com/scl/fi/5tjoug25347zbx33c1gp1/ItsYipper-bg.png?rlkey=7tmksjq8erab912mgikjzeepv&st=fx0sek8s&raw=1" alt=""/> */}
+                    {/* <ReactPlayer className="bgbg" url="https://www.dropbox.com/scl/fi/quh7i2khpazk0t94upupe/StripesNationPreview.mp4?rlkey=ovqkq2qs2ucq1wxbpivgcqw4b&st=yjyhoyz2&raw=1"/> */}
+
                 </div>
+                <article className="article-wrap">
+                    <div className="article-content">
+                        <div className="featured-heading-wrap">
+                            <h2 className="featured-heading-shimmer" text-shimmer="Featured">Featured</h2>
+                            <h2 className="featured-heading-float">
+                                <span text-glow="P">P</span>
+                                <span text-glow="r">r</span>
+                                <span text-glow="o">o</span>
+                                <span text-glow="j">j</span>
+                                <span text-glow="e">e</span>
+                                <span text-glow="c">c</span>
+                                <span text-glow="t">t</span>
+                                <span text-glow=".">.</span>
+                            </h2>
+                        </div>
+                        <p>Its Yipper is a gaming news outlet where we review new games and talk about trending topics in the gaming community. In addition to our blog, we post weekly video content across YouTube, Instagram, and TikTok.</p>
+                    </div>
+                    <div className="article-footer">
+                        <div className="article-icons"></div>
+                        <div className="article-button">
+                            <button>
+                                <p>Preview</p>
+                            </button>
+                        </div>
+                    </div>
+                </article>
             </section>
             <HomeBg />
         </main>

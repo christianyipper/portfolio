@@ -42,32 +42,94 @@ nav {
         margin-right: calc( 192px + $md );
 
         .nav-heading {
+            @include flex-wrap( wrap, row, start, center );
+            position: relative;
             padding: $xs $lg;
-            font-weight: 900;
+            font-weight: 200;
             font-size: $md;
             line-height: $md;
+            font-weight: 200;
+            letter-spacing: 1px;
+            z-index: 2;
+
+            &:after {
+                position: absolute;
+                width: 100%;
+                -webkit-text-stroke: 2px white;
+                content: attr(text-glow);
+                opacity: 100%;
+                z-index: 1;
+                // left: 0;
+                text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff,
+            }
 
             &:hover {
             animation: hoverSquish .4s .05s ease-in-out;
             }
         }
         .nav-home:hover ~ .nav-heading-bg {
-            width: 132.29px;
+            width: 131.6px;
             background-color: $primary;
+
+            &:before {
+                opacity: 0%;
+            }
+            &:after {
+                opacity: 100%;
+            }
         }
         .nav-about:hover ~ .nav-heading-bg {
-            width: 136.30px;
-            transform: translateX( calc( 132.29px + $sm ) );
+            width: 133.49px;
+            transform: translateX( calc( 131.6px + $sm ) );
             background-color: $primary;
+
+            &:before {
+                opacity: 0%;
+            }
+            &:after {
+                opacity: 100%;
+            }
         }
         .nav-projects:hover ~ .nav-heading-bg {
-            width: 158.68px;
-            transform: translateX( calc( 132.29px + 136.30px + ( $sm * 2 ) ) );
+            width: 154.88px;
+            transform: translateX( calc( 131.6px + 133.49px + ( $sm * 2 ) ) );
             background-color: $primary;
+
+            &:before {
+                opacity: 0%;
+            }
+            &:after {
+                opacity: 100%;
+            }
         }
         .nav-heading-bg {
             @extend %nav-bg;
             animation: navLoad .5s ease-in-out;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: $lg;
+                opacity: 100%;
+                z-index: -2;
+                box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
+                transition: 0.2s ease-in-out;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: $lg;
+                opacity: 0%;
+                border: 2px solid white;
+                z-index: -2;
+                box-shadow: 0 0 5px $primary, 0 0 20px $primary, 0 0 50px $primary,
+                0 0 100px $primary;
+                transition: 0.2s ease-in-out;
+            }
         }
     }
     .nav-home:hover ~ .nav-about,
@@ -94,7 +156,17 @@ nav {
                 width: $xl;
                 height: $xl;
                 z-index: 2;
-
+                
+                // &:after {
+                //     position: absolute;
+                //     width: 100%;
+                //     -webkit-text-stroke: 2px white;
+                //     content: attr(text-glow);
+                //     opacity: 100%;
+                //     z-index: -1;
+                //     left: 0;
+                //     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff,
+                // }
                 &:hover > svg {
                     animation: svgRotate 0.6s ease-in-out forwards alternate infinite;
                 }
@@ -107,11 +179,25 @@ nav {
                 width: $xl;
                 transform: translateX( - calc( ( $xl * 2 ) + ( $xs * 3 ) ) );
                 background-color: $primary;
+
+                &:before {
+                    opacity: 0%;
+                }
+                &:after {
+                    opacity: 100%;
+                }
             }
             .nav-linkedin:hover ~ .nav-icon-bg {
                 width: $xl;
                 transform: translateX( - calc( $xl + ( $xs * 2 ) ) );
                 background-color: $primary;
+
+                &:before {
+                    opacity: 0%;
+                }
+                &:after {
+                    opacity: 100%;
+                }
             }
             .nav-github {
                 margin-right: $xs;
@@ -120,10 +206,42 @@ nav {
                     width: $xl;
                     transform: translateX( - $xs );
                     background-color: $primary;
+
+                    &:before {
+                        opacity: 0%;
+                    }
+                    &:after {
+                        opacity: 100%;
+                    }
                 }
             }
             .nav-icon-bg {
                 @extend %nav-bg;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: $lg;
+                    opacity: 100%;
+                    z-index: -2;
+                    box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
+                    transition: 0.2s ease-in-out;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: $lg;
+                    opacity: 0%;
+                    border: 2px solid white;
+                    z-index: -2;
+                    box-shadow: 0 0 5px $primary, 0 0 20px $primary, 0 0 50px $primary,
+                    0 0 100px $primary;
+                    transition: 0.2s ease-in-out;
+                }
             }
         }
     }
@@ -138,6 +256,7 @@ nav {
 }
 
 %nav-bg {
+    @include flex-wrap( nowrap, row, center, center );
     position: absolute;
     background-color: rgba( 6, 14, 26, 0.25 );
     backdrop-filter: blur(5px);
@@ -146,7 +265,7 @@ nav {
     border-radius: 100px;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
     transition: .2s ease-in-out;
 }
 

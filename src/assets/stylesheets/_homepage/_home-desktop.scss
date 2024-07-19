@@ -1,5 +1,3 @@
-
-
 .home {
 
     .home-section {
@@ -101,16 +99,46 @@
                 @extend %float-title;                
             }
             .home-text-wrap {
-                @include flex-wrap( nowrap, row, start, start );
+                @include flex-wrap( nowrap, column, start, start );
                 position: relative;
                 width: 100%;
                 margin-top: - $xl;
+
+                .home-buttons-wrap {
+                    @include flex-wrap( wrap, row, start, center );
+                    width: 100%;
+                    gap: 20px;
+                    margin-top: $md;
+                    margin-left: $xxl;
+                }
             }
             h2 {
                 @extend %shimmer;   
-                width: 100%;
+                // width: 100%;
                 margin: 0;
                 // left: 20%;           
+            }
+        }
+        .article-wrap {
+            border-radius: $sm;
+            background-color: rgba($accent, 0.2);
+            backdrop-filter: blur(10px);
+            padding: $md;
+            bottom: 0;
+
+            .article-content {
+                width: 100%;
+
+                .featured-heading-wrap {
+                    width: 100%;
+                    @include flex-wrap( wrap, row, start, center );
+                    gap: $sm;
+
+                    .featured-heading-float {
+                        @include flex-wrap( wrap, row, start, center );
+                        @extend %float-heading;
+                    }
+                }
             }
         }
         .window-wrap {
@@ -139,16 +167,14 @@
             .bgbg {
                 aspect-ratio: 16 / 9;
                 max-width: 65%;
-                margin-top: $lg;
+                margin-top: $lg + 25px;
                 margin-left: 0;
 
                 video {
                     background-color: rgba(255, 0, 0, 0.5);
                     width: 100%;
                     height: 100%;
-                    z-index: 999;
                 }
-                // z-index: 90;
             }
         }
     }

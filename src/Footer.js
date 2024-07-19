@@ -21,7 +21,7 @@ const Footer = () => {
                     </h2>
                     {/* <h2>Connect On<br/><strong>LinkedIn.</strong></h2> */}
                     <button>
-                        <p>linkedin.com</p>
+                        <p text-glow="linkedin.com">linkedin.com</p>
                     </button>
                 </div>
                 <div className="footer-mid">
@@ -42,7 +42,7 @@ const Footer = () => {
                     <h2 className="footer-shimmer h2-right" text-shimmer="By Email.">By Email.</h2>
                     {/* <h2><strong>Reach Out</strong><br/>By Email.</h2> */}
                     <button>
-                        <p>christian@yipper.ca</p>
+                        <p text-glow="christian@yipper.ca">christian@yipper.ca</p>
                     </button>
                 </div>
             </div>

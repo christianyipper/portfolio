@@ -9,7 +9,6 @@
             height: fit-content;
 
             h1, h2 {
-                font-size: $xxl;
                 margin: 0;
             }
             p {
@@ -17,13 +16,12 @@
             }
             .about-heading-shimmer {
                 @extend %shimmer;
-                margin-top: $xl;
+                margin-top: $lg;
                 width: 100%;
-                // background-color: red;
             }
             .about-heading-float {
                 @extend %float-heading;
-                margin-bottom: $xl;
+                margin-bottom: $lg;
             }
             .about-heading-wrap {
                 @include flex-wrap( nowrap, row, start, start );

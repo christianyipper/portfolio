@@ -32,9 +32,9 @@ const Nav = () => {
                 </a>
             </section>
             <section className="nav-mid">
-                <a className="nav-heading nav-home" href="/">Home</a>
-                <a className="nav-heading nav-about" href="/about">About</a>
-                <a className="nav-heading nav-projects" href="/projects">Projects</a>
+                <a className="nav-heading nav-home" href="/" text-glow="Home">Home</a>
+                <a className="nav-heading nav-about" href="/about" text-glow="About">About</a>
+                <a className="nav-heading nav-projects" href="/projects" text-glow="Projects">Projects</a>
                 <div className="nav-heading-bg"></div>
             </section>
             <section className="nav-right">

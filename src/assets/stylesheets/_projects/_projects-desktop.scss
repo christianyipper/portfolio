@@ -1,0 +1,164 @@
+.projects {
+    height: 100vh;
+
+    .project-heading-wrap {
+        @include flex-wrap( nowrap, row, center, start );
+        gap: $sm;
+        width: 100%;
+    }
+    .project-heading-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: $md $md 0 $md;
+        background: linear-gradient(to bottom, $secondary, transparent, transparent);
+        opacity: 50%;
+        z-index: 1;
+    }
+    .project-heading-shimmer {
+        @extend %shimmer;
+        width: fit-content;
+        margin-top: $sm;
+        margin-bottom: $sm;
+        left: $sm;
+        text-align: center;
+        position: absolute;
+        width: fit-content;
+        top: 0;
+        z-index: 3;
+
+        &:hover ~ .project-text {
+            opacity: 100%;
+        }
+    }
+    .project-heading-float {
+        @extend %float-heading;
+        margin-bottom: $lg;
+    }
+
+    .project-wrap {
+        @include flex-wrap( nowrap, column, end, end );
+        position: relative;
+        width: 100vh;
+        border-radius: $md $md 0 $md;
+        border: 2px solid white;
+
+        .project-img {
+            width: 100%;
+            border-radius: $md;
+            background-color: black;
+        }
+        .project-text {
+            @include flex-wrap( wrap, column, start, start );
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: $md;
+            background-color: rgba($secondary, 0.8);
+            backdrop-filter: blur($sm);
+            z-index: 2;
+            opacity: 0;
+            transition: 0.2s ease-in-out;
+
+            .project-heading-shimmer {
+                position: relative;
+                visibility: hidden;
+            }
+            &:hover {
+                opacity: 100%;
+            }
+            p {
+                margin: 0 $sm;
+            }
+        }
+        .project-btn-wrap {
+            @include flex-wrap( nowrap, column, end, end );
+            position: absolute;
+            width: 100%;
+            height: fit-content;
+            pointer-events: none;
+            right: -2px;
+            bottom: -2px;
+            z-index: 3;
+
+            .project-top-corner {
+                @extend %project-border;
+                z-index: 4;
+                width: $lg;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: -2px;
+                    border-right: 2px solid white;
+                    border-bottom: 2px solid white;
+                    border-radius: 0 0 $md 0;
+                    z-index: 5;
+                }
+            }
+            .project-btn-bot {
+                @include flex-wrap( nowrap, row, end, end );
+                position: relative;
+                width: 100%;
+                z-index: 3;
+
+                .project-bot-corner {
+                    @extend %project-border;
+                    @include flex-wrap( nowrap, row, end, end );
+                    position: relative;
+                    z-index: 4;
+                    width: 100%;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        border-right: 2px solid white;
+                        border-bottom: 2px solid white;
+                        border-radius: 0 0 $md 0;
+                        z-index: 5;
+                    }
+                }
+                .project-btn-bg {
+                    position: relative;
+                    background-color: $secondary;
+                    width: fit-content;
+                    padding: 20px 0 0 20px;
+                    border-radius: $md 0 0 0;
+                    pointer-events: all;
+                    border-top: 2px solid white;
+                    border-left: 2px solid white;
+                    z-index: 3;
+
+                    button {
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+}
+.project-btn {
+    position: absolute;
+    width: fit-content;
+    padding: 20px 0 0 20px;
+    border-radius: $md 0 0 0;
+    pointer-events: all;
+    z-index: 5;
+}
+%project-border {
+    position: relative;
+    height: $md;
+    border-radius: 0 0 $xl 0;
+    border-bottom: 20px solid $secondary;
+    border-right: 20px solid $secondary;
+    right: -20px;
+    bottom: -20px;
+}
+.project-wrap:has( .project-btn:hover ) .project-text {
+    opacity: 100%;
+}
