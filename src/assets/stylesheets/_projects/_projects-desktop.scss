@@ -1,5 +1,35 @@
 .projects {
+    @include flex-wrap( nowrap, column, start, center );
+    gap: $xxxl;
+    width: 100%;
     height: 100vh;
+    top: -$xxl;
+    padding-top: $xxl;
+    overflow-x: hidden;
+
+    .scroll-wrap {
+        @include flex-wrap( nowrap, column, start, center );
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        overflow-x: hidden;
+        padding-left: $md;
+        padding-right: $md;
+        box-sizing: content-box;
+
+        .scroll-section {
+            @include flex-wrap( wrap, column, start, center );
+            @extend %desktop-margin;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+            scroll-snap-align: start;
+        }
+    }
 
     .project-heading-wrap {
         @include flex-wrap( nowrap, row, center, start );
@@ -11,16 +41,16 @@
         width: 100%;
         height: 100%;
         border-radius: $md $md 0 $md;
-        background: linear-gradient(to bottom, $secondary, transparent, transparent);
+        background: ease-in-out-gradient(to bottom, $secondary, transparent, transparent);
         opacity: 50%;
         z-index: 1;
     }
     .project-heading-shimmer {
         @extend %shimmer;
         width: fit-content;
-        margin-top: $sm;
-        margin-bottom: $sm;
-        left: $sm;
+        margin-top: $md;
+        margin-bottom: $md;
+        left: $md;
         text-align: center;
         position: absolute;
         width: fit-content;
@@ -33,20 +63,56 @@
     }
     .project-heading-float {
         @extend %float-heading;
-        margin-bottom: $lg;
+        margin-bottom: - $lg;
+        animation: projectsLoad 2s ease-in-out forwards;
     }
 
     .project-wrap {
         @include flex-wrap( nowrap, column, end, end );
         position: relative;
+        top: 236px;
         width: 100vh;
-        border-radius: $md $md 0 $md;
+        border-radius: $md;
         border: 2px solid white;
+        z-index: 100;
+        // opacity: 0%;
 
-        .project-img {
+        .project-sub {
+            @extend %text-glow;
+            position: absolute;
+            font-size: $pg;
+            left: 0;
+            top: - $lg;
+            font-weight: 800;
+            color: $primary;
+            z-index: -1;
+
+            &:before {
+                text-shadow: 0 0 5px $primary, 0 0 10px $primary;
+            }
+            &:after {
+                transform: scaleX(1.03) scaleY(1.6);
+                background-image: linear-gradient(45deg, transparent 45%, $accent 45%, $primary 85%, transparent 0);
+            }
+        }
+        video {
+            position: relative;
             width: 100%;
+            height: 100%;
+            aspect-ratio: 16 / 9;
             border-radius: $md;
-            background-color: black;
+        }
+        .project-corner-wrap {
+            width: $md;
+            height: $md;
+            position: absolute;
+            // background-color: red;
+            border-right: 12px solid $secondary;
+            border-bottom: 12px solid $secondary;
+            border-radius: 0 0 52px 0;
+            right: -14px;
+            bottom: -14px;
+            z-index: 4;
         }
         .project-text {
             @include flex-wrap( wrap, column, start, start );
@@ -68,7 +134,27 @@
                 opacity: 100%;
             }
             p {
-                margin: 0 $sm;
+                margin: 0 $md;
+            }
+        }
+        .app-icons-wrap {
+            @include flex-wrap( nowrap, row, start, end );
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            left: $md;
+            bottom: $md;
+            gap: $sm;
+            pointer-events: none;
+            z-index: 5;
+
+            svg {
+                width: $md;
+                height: $md;
+
+                path {
+                    fill: white;
+                }
             }
         }
         .project-btn-wrap {
@@ -77,25 +163,31 @@
             width: 100%;
             height: fit-content;
             pointer-events: none;
+            overflow: hidden;
             right: -2px;
             bottom: -2px;
             z-index: 3;
 
             .project-top-corner {
+                @include flex-wrap( nowrap, row, end, end );
                 @extend %project-border;
                 z-index: 4;
                 width: $lg;
+                transform: translate(0, 72px);
+                animation: btnTop 0.475s 1s ease-in-out forwards reverse;
 
                 &:after {
                     content: "";
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    left: -2px;
+                    bottom: -2px;
+                    right: 0;
                     border-right: 2px solid white;
                     border-bottom: 2px solid white;
                     border-radius: 0 0 $md 0;
                     z-index: 5;
+                    animation: btnTopBr 0.5s 1s ease-in-out forwards reverse;
                 }
             }
             .project-btn-bot {
@@ -110,6 +202,9 @@
                     position: relative;
                     z-index: 4;
                     width: 100%;
+                    transform: translate(179.24px, 0);
+                    animation: btnBot 0.48s 1s ease-in-out forwards reverse;
+
 
                     &:after {
                         content: "";
@@ -121,6 +216,7 @@
                         border-bottom: 2px solid white;
                         border-radius: 0 0 $md 0;
                         z-index: 5;
+                        animation: btnBotBr 0.5s 1s ease-in-out forwards reverse;
                     }
                 }
                 .project-btn-bg {
@@ -133,6 +229,8 @@
                     border-top: 2px solid white;
                     border-left: 2px solid white;
                     z-index: 3;
+                    transform: translate(177.24px, 72px);
+                    animation: btnMain 0.5s 1s ease-in-out forwards reverse;
 
                     button {
                         visibility: hidden;
@@ -148,7 +246,9 @@
     padding: 20px 0 0 20px;
     border-radius: $md 0 0 0;
     pointer-events: all;
+    opacity: 0;
     z-index: 5;
+    animation: btnShow 0.2s 1.3s ease-in-out forwards;
 }
 %project-border {
     position: relative;
@@ -162,3 +262,82 @@
 .project-wrap:has( .project-btn:hover ) .project-text {
     opacity: 100%;
 }
+
+@keyframes btnShow {
+    0% {
+        opacity: 0;
+        transform: scale( 0.75 );
+    }
+    100% {
+        opacity: 100%;
+        transform: scale( 1 );
+    }
+}
+@keyframes btnMain {
+    0% {
+        transform: translate( 0, 0 );
+    }
+    100% {
+        transform: translate( 177.24px, 72px );
+    }
+}
+@keyframes btnTop {
+    0% {
+        transform: translate( 0, 0 );
+    }
+    100% {
+        width: 2px;
+        transform: translate( 0, 72px );
+    }
+}
+@keyframes btnTopBr {
+    0% {
+        border-radius: 0 0 $md 0;
+    }
+    60% {
+        width: 100%;
+    }
+    100% {
+        width: 2px;
+        height: 36px;
+        border-radius: 0 0 0 0;
+    }
+}
+@keyframes btnBot {
+    0% {
+        transform: translate( 0, 0 );
+    }
+    100% {
+        height: 2px;
+        transform: translate( 179.24px, 0 );
+    }
+}
+@keyframes btnBotBr {
+    0% {
+        border-radius: 0 0 $md 0;
+    }
+    50% {
+        height: 100%;
+    }
+    100% {
+        height: 2px;
+        border-radius: 0 0 0 0;
+    }
+}
+
+.disable {
+    animation-play-state: paused !important;
+}
+
+.enable {
+    animation-play-state: running !important;
+}
+
+// @keyframes projectsLoad {
+//     0% {
+//         margin-bottom: 80vh;
+//     }
+//     100% {
+//         margin-bottom: - $lg;
+//     }
+// }

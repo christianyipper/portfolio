@@ -69,6 +69,10 @@ const Cursor = () => {
                 <path className={ `cursor-fill ${ animate ? "doc-click" : "" }` } d="m25.7 18.26-6.01-4.44a.806.806 0 0 0-1.28.65l.06 7.47c.02 3.24 3.26 5.67 6.27 4.49.16-.06.32-.13.47-.2s.3-.16.44-.26c2.73-1.75 2.66-5.79.05-7.72Zm-1.23 6.52c-1.48.75-3.28.17-4.03-1.31s-.17-3.28 1.31-4.03 3.28-.17 4.03 1.31.17 3.28-1.31 4.03Z"/>
                 <circle className={ `cursor-dot ${ animate ? "doc-click" : "" }` } cx="23.11" cy="22.11" r="1.5"/>
             </motion.svg>
+            {/* <motion.div className="cursor"
+                variants={ variants }
+                animate="default"><p className="cursor-p" text-glow="✧">✧</p>
+            </motion.div> */}
         </div>
     )
 }

@@ -1,5 +1,5 @@
 .about {
-    // background-color: rgb( 0, 66, 128 );
+    @extend %desktop-margin;
 
     section {
         z-index: 5;
@@ -34,6 +34,8 @@
             }
             .quote-wrap {
                 position: relative;
+                padding: $md 0;
+
                 .quote-text {
                     @extend %heading-style;
                     @extend %gradient;
@@ -135,34 +137,4 @@
 
 .gif-overlay {
     position: absolute;
-}
-.blur-in {
-    animation: blurIn 2s ease-in-out forwards;
-}
-.blur-out {
-    animation: blurOut 2s ease-in-out forwards;
-}
-@keyframes blurIn {
-    0% {
-        filter: blur(10px);
-        opacity: 0%;
-    }
-    50% {
-        opacity: 100%;
-    }
-    100% {
-        filter: blur(0px);
-    }
-}
-@keyframes blurOut {
-    0% {
-        filter: blur(0px);
-        opacity: 100%;
-    }
-    50% {
-        filter: blur(10px);
-    }
-    100% {
-        opacity: 0%;
-    }
 }

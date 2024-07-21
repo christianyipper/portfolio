@@ -1,4 +1,21 @@
 .home {
+    @extend %desktop-margin;
+
+    .loading-screen {
+        @include flex-wrap( nowrap, row, center, center );
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background-color: $secondary;
+        z-index: 901;
+        visibility: hidden;
+        animation: loadScreen 3s ease-in;
+
+        svg {
+            animation: loadLogo 3s ease-in;
+        }
+    }
 
     .home-section {
         display: grid;
@@ -9,7 +26,8 @@
         position: relative;
 
         .home-left-1 {
-            animation: homeIn 3s ease-in-out forwards alternate;
+            transform: scale(2) translate(-30vw, 20vw);
+            animation: homeIn 3s 1.5s ease-in-out forwards alternate;
             
             .banner-img-wrap {
             @include flex-wrap( nowrap, row, start, center );
@@ -193,194 +211,6 @@
             scale: 2.5;
         }
     }
-    // .home-bg {
-    //     @include flex-wrap( nowrap, row, center, center );
-    //     position: fixed;
-    //     width: 100%;
-    //     height: 100vh;
-    //     z-index: 1;
-    //     filter: blur( 10px );
-    //     margin-left: -35vw;
-
-    //     .bg-front {
-    //         animation: bgGrow 12s linear infinite;
-
-    //         > div {
-    //             animation: bgColor 12s linear infinite;
-    //         }
-    //     }
-    //     .bg-mid1 {
-    //         animation: bgGrow 12s 2s linear infinite;
-            
-    //         > div {
-    //             animation: bgColor 12s 2s linear infinite;
-    //         }
-    //     }
-    //     .bg-mid2 {
-    //         animation: bgGrow 12s 4s linear infinite;
-
-    //         > div {
-    //             animation: bgColor 12s 4s linear infinite;
-    //         }
-    //     }
-    //     .bg-mid3 {
-    //         animation: bgGrow 12s 6s linear infinite;
-
-    //         > div {
-    //             animation: bgColor 12s 6s linear infinite;
-    //         }
-    //     }
-    //     .bg-mid4 {
-    //         animation: bgGrow 12s 8s linear infinite;
-
-    //         > div {
-    //             animation: bgColor 12s 8s linear infinite;
-    //         }
-    //     }
-    //     .bg-back {
-    //         animation: bgGrow 12s 10s linear infinite;
-
-    //         > div {
-    //             animation: bgColor 12s 10s linear infinite;
-    //         }
-    //     }
-    //     .bg-rotate-right, .bg-rotate-left {
-    //         @include flex-wrap( nowrap, row, center, center );
-    //         position: absolute;
-    //         width: 100%;
-    //         height: 100vh;
-    //     }
-    //     .rotate-front {
-    //         animation: bgRotateRight 12s linear infinite;
-    //     }
-    //     .rotate-mid1 {
-    //         animation: bgRotateLeft 12s 2s linear infinite;
-    //     }
-    //     .rotate-mid2 {
-    //         animation: bgRotateRight 12s 4s linear infinite;
-    //     }
-    //     .rotate-mid3  {
-    //         animation: bgRotateLeft 12s 6s linear infinite;
-    //     }
-    //     .rotate-mid4  {
-    //         animation: bgRotateRight 12s 8s linear infinite;
-    //     }
-    //     .rotate-back  {
-    //         animation: bgRotateLeft 12s 10s linear infinite;
-    //     }
-    //     .star-wrap {
-    //         @include flex-wrap( nowrap, row, center, center );
-    //         position: absolute;
-    //         width: 100%;
-    //         height: 100%;
-
-    //         > div {
-    //             border-radius: 100px;
-    //             position: absolute;
-    //         }
-
-    //         & :nth-child( 1 ) {
-    //             width: $md;
-    //             height: $md;
-    //             transform: translate( 45vh, 45vh );
-    //         }
-    //         & :nth-child( 2 ) {
-    //             width: $md;
-    //             height: $md;
-    //             transform: translate( -20vh, -30vh );
-    //         }
-    //         & :nth-child( 3 ) {
-    //             width: $lg;
-    //             height: $lg;
-    //             transform: translate( 60vh, 40vh );
-    //         }
-    //         & :nth-child( 4 ) {
-    //             width: $lg;
-    //             height: $lg;
-    //             transform: translate( -60vh, -40vh );
-    //         }
-    //         & :nth-child( 5 ) {
-    //             width: $xl;
-    //             height: $xl;
-    //             transform: translate( 90vh, 25vh );
-    //         }
-    //         & :nth-child( 6 ) {
-    //             width: $xl;
-    //             height: $xl;
-    //             transform: translate( -90vh, -25vh );
-    //         }
-    //         & :nth-child( 7 ) {
-    //             width: $xl;
-    //             height: $xl;
-    //             transform: translate( 60vh, 5vh );
-    //         }
-    //         & :nth-child( 8 ) {
-    //             width: $xl;
-    //             height: $xl;
-    //             transform: translate( -60vh, -5vh );
-    //         }
-    //         & :nth-child( 9 ) {
-    //             width: $md;
-    //             height: $md;
-    //             transform: translate( 85vh, -5vh );
-    //         }
-    //         & :nth-child( 10 ) {
-    //             width: $md;
-    //             height: $md;
-    //             transform: translate( -85vh, 5vh );
-    //         }
-    //         & :nth-child( 11 ) {
-    //             width: $lg;
-    //             height: $lg;
-    //             transform: translate( 70vh, -25vh );
-    //         }
-    //         & :nth-child( 12 ) {
-    //             width: $lg;
-    //             height: $lg;
-    //             transform: translate( -70vh, 25vh );
-    //         }
-    //         & :nth-child( 13 ) {
-    //             width: $xxl;
-    //             height: $xxl;
-    //             transform: translate( 95vh, -40vh );
-    //         }
-    //         & :nth-child( 14 ) {
-    //             width: $xxl;
-    //             height: $xxl;
-    //             transform: translate( -95vh, 40vh );
-    //         }
-    //         & :nth-child( 15 ) {
-    //             width: $md;
-    //             height: $md;
-    //             transform: translate( 45vh, -45vh );
-    //         }
-    //         & :nth-child( 16 ) {
-    //             width: $md;
-    //             height: $md;
-    //             transform: translate( -45vh, 45vh );
-    //         }
-    //         & :nth-child( 17 ) {
-    //             width: $xl;
-    //             height: $xl;
-    //             transform: translate( 25vh, -35vh );
-    //         }
-    //         & :nth-child( 18 ) {
-    //             width: $xl;
-    //             height: $xl;
-    //             transform: translate( -35vh, 0vh );
-    //         }
-    //         & :nth-child( 19 ) {
-    //             width: $xl;
-    //             height: $xl;
-    //             transform: translate( -5vh, -40vh );
-    //         }
-    //         & :nth-child( 20 ) {
-    //             width: $lg;
-    //             height: $lg;
-    //             transform: translate( 45vh, 25vh );
-    //         }
-    //     }
-    // }
 }
 @keyframes maskUp {
     0% {
@@ -483,65 +313,45 @@
         stroke-dashoffset: 1800;
     }
 }
-// @keyframes bgGrow {
-//     0% {
-//         transform: scale( 0.05 );
-//         opacity: 0%;
-//     }
-//     25% {
-//         opacity: 75%;
-//     }
-//     50% {
-//         transform: scale( 1.5 );
-//     }
-//     100% {
-//         transform: scale( 3 );
-//     }
-// }
-// @keyframes bgRotateRight {
-//     0% {
-//         transform: rotateZ(0deg)
-//     }
-//     100% {
-//         transform: rotateZ(25deg)
-//     }
-// }
-// @keyframes bgRotateLeft {
-//     0% {
-//         transform: rotateZ(0deg)
-//     }
-//     100% {
-//         transform: rotateZ(-25deg)
-//     }
-// }
-// @keyframes bgColor {
-//     0% {
-//         transform: rotateZ(360deg);
-//         background-color: $secondary;
-//     }
-//     45% {
-//         background-color: $accent;
-//     }
-//     70% {
-//         background-color: $primary;
-//     }
-//     100% {
-//         background-color: $primary;
-//     }
-// }
+
+@keyframes loadScreen {
+    0% {
+        opacity: 100%;
+        visibility: visible;
+    }
+    80% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+@keyframes loadLogo {
+    0% {
+        transform: scale( 1.2 );
+    }
+    80% {
+        transform: scale( 1.2 );
+        filter: blur( 0 );
+    }
+    100% {
+        transform: scale( 0.5 );
+        filter: blur( 10px );
+    }
+}
 
 .homeInPage1 {
-    animation: homeIn 3s ease-in-out forwards alternate;
+    animation: homeIn 6s ease-in-out forwards alternate;
 
     @keyframes homeIn {
         0% {
-            transform: scale(2) translate(-30vw, 20vw);
-            filter: blur(10px);
+            transform: scale( 2 ) translate( -30vw, 20vw );
+            filter: blur( 10px );
             opacity: 0%;
         }
         100% {
-            transform: scale(1) translate(0, 0);
-            filter: blur(0px);
+            transform: scale( 1 ) translate( 0, 0 );
+            filter: blur( 0px );
             opacity: 100%;
         }
     }

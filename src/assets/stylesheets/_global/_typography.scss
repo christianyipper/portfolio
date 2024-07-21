@@ -53,6 +53,7 @@ button {
     box-sizing: border-box;
     background-color: transparent;
     border: solid 2px white;
+    z-index: 1;
 
     &:before {
         content: "";
@@ -60,9 +61,6 @@ button {
         width: 100%;
         height: 100%;
         border-radius: $xs;
-        -webkit-text-stroke: 2px white;
-        top: 0;
-        left: 0;
         opacity: 100%;
         z-index: -1;
         box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
@@ -73,37 +71,18 @@ button {
         position: absolute;
         width: 100%;
         height: 100%;
+        border: solid 2px white;
         border-radius: $lg;
-        -webkit-text-stroke: 2px white;
-        top: 0;
-        left: 0;
         opacity: 0%;
-        z-index: -1;
-        box-shadow: 0 0 5px $primary, 0 0 20px $primary, 0 0 50px $primary,
-        0 0 100px $primary;
+        z-index: -2;
+        box-shadow: 0 0 5px $primary, 0 0 20px $primary, 0 0 50px $primary, 0 0 100px $primary;
         transition: 0.2s ease-in-out;
     }
 
     p {
-        margin: 0;
-        font-size: $md;
-        line-height: $md;
-        font-weight: 200;
-        letter-spacing: 1px;
-        width: 100%;
-        z-index: 1;
-
-        &:after {
-            position: absolute;
-            width: 100%;
-            -webkit-text-stroke: 2px white;
-            content: attr(text-glow);
-            opacity: 100%;
-            z-index: -1;
-            left: 0;
-            text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff,
-        }
+        @extend %text-glow;
     }
+    
     &:hover {
     background-color: $primary;
     border-radius: $lg;
@@ -119,16 +98,11 @@ button {
             animation: hoverSquishBtn .4s ease-in-out;
 
             &:after {
-            // animation: hoverSquishBtn .4s ease-in-out;
-            opacity: 100%;
+                z-index: -2;
+                opacity: 100%;
             }
         }
     }
-    // &:hover > p {
-    // }
-    // &:hover > .btn-bg {
-    //     opacity: 100%;
-    // }
 }
 
 .indent {

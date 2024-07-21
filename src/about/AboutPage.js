@@ -13,6 +13,20 @@ const About = () => {
     const { ref: aboutSection3, inView: aboutImg3 } = useInView( { threshold: 0.5 } );
     const { ref: aboutSection4, inView: aboutImg4 } = useInView( { threshold: 0.5 } );
 
+    const { ref: titleSection, inView: title } = useInView( { threshold: 1 } );
+    const { ref: headingSection1, inView: heading1 } = useInView( { threshold: 1 } );
+    const { ref: headingSection2, inView: heading2 } = useInView( { threshold: 1 } );
+    const { ref: headingSection3, inView: heading3 } = useInView( { threshold: 1 } );
+    const { ref: headingSection4, inView: heading4 } = useInView( { threshold: 1 } );
+    
+    const { ref: textSection1, inView: text1 } = useInView( { threshold: 1 } );
+    const { ref: textSection2, inView: text2 } = useInView( { threshold: 1 } );
+    const { ref: textSection3, inView: text3 } = useInView( { threshold: 1 } );
+    const { ref: textSection4, inView: text4 } = useInView( { threshold: 1 } );
+    const { ref: textSection5, inView: text5 } = useInView( { threshold: 1 } );
+    const { ref: textSection6, inView: text6 } = useInView( { threshold: 1 } );
+
+
     // const [ aboutH1 ] = useTypewriter({
     //     words: [ 'Christian', 'Yipper' ],
     //     loop: 0,
@@ -44,8 +58,8 @@ const About = () => {
                         <img src="https://www.dropbox.com/scl/fi/fxnbup25t7v4w29yl1b03/yipper-profile-head.png?rlkey=s97ut47pl2z28g05v3e2yuy83&st=v1i14km6&raw=1" alt='Christian Yip "Yipper" profile photo head shot'/>
                     </div>
                     <div className={ `about-img-2 ${ aboutImg2 ? `blur-in` : `blur-out` }` }>
-                        <img className="gif-overlay" src="https://drive.google.com/thumbnail?id=1ZtYTm3pgzeB32Tgk8PlVdg59_vqVqtQR&sz=w1000" alt='Christian Yip "Yipper" referee officiating profile jersey gif'/>
-                        <img src="https://drive.google.com/thumbnail?id=1IEkhy1QkJog0bLQdrT0weGqzGSEf3ipJ&sz=w1000" alt='Christian Yip "Yipper" referee officiating profile photo head shot'/>
+                        <img className="gif-overlay" src="https://www.dropbox.com/scl/fi/5qcl87r260xwzm6jve2r2/yipper-referee-overlay-1080p.gif?rlkey=itty9nn6yvzetibuq77t0vvbr&st=wo46xsic&raw=1" alt='Christian Yip "Yipper" referee officiating profile jersey gif'/>
+                        <img src="https://www.dropbox.com/scl/fi/j2dqknhqsvmhhej5rx1lk/yipper-referee-gif-head.png?rlkey=laq8lppw6kg0k8ncq4cvb9599&st=24g52v3t&raw=1" alt='Christian Yip "Yipper" referee officiating profile photo head shot'/>
                         <div className="career">
                             <h3>Officiating <strong>Career</strong></h3>
                             <div className="career-stats">
@@ -96,11 +110,11 @@ const About = () => {
             <section ref={ aboutSection1 }>
                 <article>
                     {/* <h1>Hey There!<br/><span className="indent"/>I'm <strong>{ aboutH1 }</strong><span className="text-cursor">.</span></h1> */}
-                    <h1 className="about-heading-shimmer" text-shimmer="Hey There!">Hey There!</h1>
+                    <h1 ref={ titleSection } className={ `about-heading-shimmer ${ title ? `blur-in` : `blur-out` }` } text-shimmer="Hey There!">Hey There!</h1>
                     <div className="about-heading-wrap">
                         <span className="indent"/>
-                        <h1 className="about-heading-shimmer" text-shimmer="I'm">I'm</h1>
-                        <h1 className="about-heading-float">
+                        <h1 className={ `about-heading-shimmer ${ title ? `blur-in` : `blur-out` }` } text-shimmer="I'm">I'm</h1>
+                        <h1 className={ `about-heading-float ${ title ? `blur-in` : `blur-out` }` }>
                             <span text-glow="C">C</span>
                             <span text-glow="h">h</span>
                             <span text-glow="r">r</span>
@@ -117,16 +131,15 @@ const About = () => {
                         <p className="quote-text">Empowering users by creating intuitive,<br/>engaging, and innovative experiences.</p>
                     </div>
                     <h3>My Goals</h3>
-                    <p>I strive to deliver a unique and engaging user experience for any business. To accomplish this, I’ll implement current trends and intuitive design to craft unique experiences. In turn, this will emphasis a business’ personality and set their website apart from the competition. I’ll also focus on innovating new web design strategies to improve interactivity and visual appeal.</p>
+                    <p>I strive to deliver a unique and engaging user experience for any business. I look to implement current trends and intuitive design to craft unique experiences. I hope to emphasis any business’ personality and set their website apart from the competition.</p>
                 </article>
-                <div/>
             </section>
             <section ref={ aboutSection2 }>
                 <article>
-                    <h2 className="about-heading-shimmer" text-shimmer="My Social">My Social</h2>
-                    <div className="about-heading-wrap">
+                    <h2 className={ `about-heading-shimmer ${ heading1 ? `scale-in` : `scale-out` }` } text-shimmer="My Social">My Social</h2>
+                    <div ref={ headingSection1 } className="about-heading-wrap">
                         <span className="indent"/>
-                        <h2 className="about-heading-float">
+                        <h2 className={ `about-heading-float ${ heading1 ? `scale-in` : `scale-out` }` }>
                             <span text-glow="S">S</span>
                             <span text-glow="k">k</span>
                             <span text-glow="i">i</span>
@@ -150,10 +163,10 @@ const About = () => {
             </section>
             <section ref={ aboutSection3 }>
                 <article>
-                    <h2 className="about-heading-shimmer" text-shimmer="My Core">My Core</h2>
-                    <div className="about-heading-wrap">
+                    <h2 className={ `about-heading-shimmer ${ heading3 ? `scale-in` : `scale-out` }` } text-shimmer="My Core">My Core</h2>
+                    <div ref={ headingSection3 } className="about-heading-wrap">
                         <span className="indent"/>
-                        <h2 className="about-heading-float">
+                        <h2 className={ `about-heading-float ${ heading3 ? `scale-in` : `scale-out` }` }>
                             <span text-glow="V">V</span>
                             <span text-glow="a">a</span>
                             <span text-glow="l">l</span>
@@ -175,10 +188,10 @@ const About = () => {
             </section>
             <section ref={ aboutSection4 }>
                 <article>
-                    <h2 className="about-heading-shimmer" text-shimmer="During My">During My</h2>
-                    <div className="about-heading-wrap">
+                    <h2 className={ `about-heading-shimmer ${ heading4 ? `scale-in` : `scale-out` }` } text-shimmer="During My">During My</h2>
+                    <div ref={ headingSection4 } className="about-heading-wrap">
                         <span className="indent"/>
-                        <h2 className="about-heading-float">
+                        <h2 className={ `about-heading-float ${ heading4 ? `scale-in` : `scale-out` }` }>
                             <span text-glow="D">D</span>
                             <span text-glow="o">o</span>
                             <span text-glow="w">w</span>
