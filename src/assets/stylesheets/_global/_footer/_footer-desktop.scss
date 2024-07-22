@@ -30,9 +30,14 @@ footer {
             margin-top: $lg;
             animation-duration: 2s;
 
-            p {
+            .text-linkedin {
                 &:after {
-                    animation-duration: 16s;
+                    animation-duration: 12s;
+                }
+            }
+            .text-email {
+                &:after {
+                    animation-duration: 20s;
                 }
             }
         }

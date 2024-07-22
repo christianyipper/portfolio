@@ -51,11 +51,16 @@ nav {
             &:after {
                 top: auto;
                 left: auto;
-                transform: scaleX(1.05) scaleY(2);
-                animation-duration: 6s;
+                transform: scaleX( 1.05 ) scaleY (1.75 );
+                animation-duration: 5s;
             }
             &:hover {
                 animation: hoverSquish .4s .05s ease-in-out;
+            }
+        }
+        .nav-projects {
+            &:after {
+                animation-duration: 7s;
             }
         }
         .nav-home:hover {

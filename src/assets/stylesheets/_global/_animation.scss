@@ -383,7 +383,7 @@
         background-clip: text;
         color: transparent;
         filter: blur( 4px );
-        transform: scaleX( 1.03 ) scaleY( 2 );
+        transform: scaleX( 1.03 ) scaleY( 1.75 );
         animation: lines 8s linear infinite alternate;
     }
     @keyframes lines {
@@ -399,6 +399,12 @@
 }
 .blur-out {
     animation: blurOut 2s ease-in-out forwards;
+}
+.blur-in-fast {
+    animation: blurIn 1s ease-in-out forwards;
+}
+.blur-out-fast {
+    animation: blurOut 1s ease-in-out forwards;
 }
 @keyframes blurIn {
     0% {

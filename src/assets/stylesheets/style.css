@@ -568,7 +568,7 @@ main section {
           background-clip: text;
   color: transparent;
   filter: blur(4px);
-  transform: scaleX(1.03) scaleY(2);
+  transform: scaleX(1.03) scaleY(1.75);
   animation: lines 8s linear infinite alternate;
 }
 @keyframes lines {
@@ -584,6 +584,14 @@ main section {
 
 .blur-out {
   animation: blurOut 2s ease-in-out forwards;
+}
+
+.blur-in-fast {
+  animation: blurIn 1s ease-in-out forwards;
+}
+
+.blur-out-fast {
+  animation: blurOut 1s ease-in-out forwards;
 }
 
 @keyframes blurIn {
@@ -1017,11 +1025,14 @@ nav .nav-mid .nav-heading {
 nav .nav-mid .nav-heading:after {
   top: auto;
   left: auto;
-  transform: scaleX(1.05) scaleY(2);
-  animation-duration: 6s;
+  transform: scaleX(1.05) scaleY 1.75;
+  animation-duration: 5s;
 }
 nav .nav-mid .nav-heading:hover {
   animation: hoverSquish 0.4s 0.05s ease-in-out;
+}
+nav .nav-mid .nav-projects:after {
+  animation-duration: 7s;
 }
 nav .nav-mid .nav-home:hover ~ .nav-heading-bg {
   width: 129.65px;
@@ -1277,8 +1288,11 @@ footer .footer-wrap button {
   margin-top: 32px;
   animation-duration: 2s;
 }
-footer .footer-wrap button p:after {
-  animation-duration: 16s;
+footer .footer-wrap button .text-linkedin:after {
+  animation-duration: 12s;
+}
+footer .footer-wrap button .text-email:after {
+  animation-duration: 20s;
 }
 footer .footer-wrap .footer-left {
   display: flex;

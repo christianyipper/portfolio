@@ -20,7 +20,7 @@ const Footer = () => {
                         <span text-glow=".">.</span>
                     </h2>
                     <button className={ `${ footerView ? `scale-in` : `scale-out` }` } type="button">
-                        <p text-glow="linkedin.com">linkedin.com</p>
+                        <p className="text-linkedin" text-glow="linkedin.com">linkedin.com</p>
                     </button>
                 </div>
                 <div className="footer-mid">
@@ -40,7 +40,7 @@ const Footer = () => {
                     </h2>
                     <h2 className={ `footer-shimmer h2-right ${ footerView ? `scale-in` : `scale-out` }` } text-shimmer="By Email.">By Email.</h2>
                     <button className={ `${ footerView ? `scale-in` : `scale-out` }` } type="button">
-                        <p text-glow="christian@yipper.ca">christian@yipper.ca</p>
+                        <p className="text-email" text-glow="christian@yipper.ca">christian@yipper.ca</p>
                     </button>
                 </div>
             </div>
