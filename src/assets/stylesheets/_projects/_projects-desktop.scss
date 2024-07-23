@@ -152,8 +152,11 @@
                 width: $md;
                 height: $md;
 
-                path {
+                .fill-1 {
                     fill: white;
+                }
+                .fill-2 {
+                    fill: #e6e6e6;
                 }
             }
         }

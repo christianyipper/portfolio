@@ -56,12 +56,10 @@ const About = () => {
                 <article/>
                 <div className="about-img-wrap">
                     <div className={ `about-img-1 ${ aboutImg1 ? `blur-in` : `blur-out` }` }>
-                        <img className="gif-overlay" src="https://www.dropbox.com/scl/fi/tuma334n7ykchht48f8wk/yipper-profile-1080p.gif?rlkey=qf19hunzy4s8i6xvj4h94ld2z&st=65tpimb9&raw=1" alt='Christian Yip "Yipper" profile shirt gif'/>
-                        <img src="https://www.dropbox.com/scl/fi/fxnbup25t7v4w29yl1b03/yipper-profile-head.png?rlkey=s97ut47pl2z28g05v3e2yuy83&st=v1i14km6&raw=1" alt='Christian Yip "Yipper" profile photo head shot'/>
+                        <img src="https://www.dropbox.com/scl/fi/jakfcghe5pc3xotzq9nay/yipper-profile.png?rlkey=n6adv16tacga0b5dmnylymtko&st=mzxqu7ld&raw=1" alt='Christian Yip "Yipper" profile photo'/>
                     </div>
                     <div className={ `about-img-2 ${ aboutImg2 ? `blur-in` : `blur-out` }` }>
-                        <img className="gif-overlay" src="https://www.dropbox.com/scl/fi/5qcl87r260xwzm6jve2r2/yipper-referee-overlay-1080p.gif?rlkey=itty9nn6yvzetibuq77t0vvbr&st=wo46xsic&raw=1" alt='Christian Yip "Yipper" referee officiating profile jersey gif'/>
-                        <img src="https://www.dropbox.com/scl/fi/j2dqknhqsvmhhej5rx1lk/yipper-referee-gif-head.png?rlkey=laq8lppw6kg0k8ncq4cvb9599&st=24g52v3t&raw=1" alt='Christian Yip "Yipper" referee officiating profile photo head shot'/>
+                        <img src="https://www.dropbox.com/scl/fi/4mhvzdbo4w2dvfrx6t515/yipper-referee-profile.png?rlkey=914rtv7x98e8yzpcf5jv0ppmk&st=smd6lsrg&raw=1" alt='Christian Yip "Yipper" referee officiating profile photo head shot'/>
                         <div className="career">
                             <h3>Officiating <strong>Career</strong></h3>
                             <div className="career-stats">
@@ -101,11 +99,10 @@ const About = () => {
                         </div>
                     </div>
                     <div className={ `about-img-3 ${ aboutImg3 ? `blur-in` : `blur-out` }` }>
-                        <img className="gif-overlay" src="https://www.dropbox.com/scl/fi/gf4pecgo0mh9jteafqsdc/yipper-thinking-1080p.gif?rlkey=7lsnfl8d54lv04h3jd6t5ahgg&st=ybnzs5dz&raw=1" alt='Christian Yip "Yipper" thinking profile shirt gif'/>
-                        <img src="https://www.dropbox.com/scl/fi/4ms6td6kyky52h14omqux/yipper-thinking-head.png?rlkey=6kvmzjfk87q1t13x9fsha9tqq&st=89bl88pc&raw=1" alt='Christian Yip "Yipper" thinking profile photo head shot'/>
+                        <img src="https://www.dropbox.com/scl/fi/6ds2czndjac1k9j6mh0s9/yipper-thinking-profile.png?rlkey=b85kfvaidishq61960ngc6ocb&st=th9ryrot&raw=1" alt='Christian Yip "Yipper" thinking profile photo head shot'/>
                     </div>
                     <div className={ `about-img-4 ${ aboutImg4 ? `blur-in` : `blur-out` }` }>
-                        <img src="https://www.dropbox.com/scl/fi/vaczabdgl24pk87mgtj0u/yipper-skiing-profile.png?rlkey=4wpm5n4rxwmxac7vp7jp06vba&st=xwn1wuw9&raw=1" alt='Christian Yip "Yipper" skiing photo'/>
+                        <img src="https://www.dropbox.com/scl/fi/h4ak9cve43cjrttubj4dp/yipper-skiing-profile.png?rlkey=twugd8wsmlerp45yorj744gy5&st=ib7lpdvd&raw=1" alt='Christian Yip "Yipper" skiing photo'/>
                     </div>
                 </div>
             </section>

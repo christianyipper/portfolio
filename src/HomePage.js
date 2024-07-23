@@ -46,9 +46,9 @@ const HomePage = () => {
             <section className="home-section">
                 <div className="home-left-1">
                     <div className="banner-img-wrap">
-                        <img className="hat-overlay" src="https://www.dropbox.com/scl/fi/42b9ctd7rgdwcrkiscdpm/yipper-thinking-hat-outline-alt.png?rlkey=ri6f7vun4afnr860x4zfyfckv&st=6marzq65&raw=1" alt='Christian Yip "Yipper" thinking profile hat outline'/>
-                        <img className="gif-overlay" src="https://www.dropbox.com/scl/fi/gf4pecgo0mh9jteafqsdc/yipper-thinking-1080p.gif?rlkey=7lsnfl8d54lv04h3jd6t5ahgg&st=ybnzs5dz&raw=1" alt='Christian Yip "Yipper" thinking profile shirt gif'/>
-                        <img className="gif-bg" src="https://www.dropbox.com/scl/fi/4ms6td6kyky52h14omqux/yipper-thinking-head.png?rlkey=6kvmzjfk87q1t13x9fsha9tqq&st=89bl88pc&raw=1" alt='Christian Yip "Yipper" thinking profile photo head shot'/>
+                        <img className="hat-overlay" src="https://www.dropbox.com/scl/fi/2d08w01fbhz7lp8efr8fl/yipper-thinking-hat-outline.png?rlkey=upknggjhf9za1hnqf6lna6u62&st=4v4szizk&raw=1" alt='Christian Yip "Yipper" thinking profile hat outline'/>
+                        <img className="gif-overlay" src="https://www.dropbox.com/scl/fi/iw67v4lx2qo6t2rng26yy/yipper-thinking-720p-34fps-comp.gif?rlkey=4dadc7ljlt0bueyg5hhpwy06o&st=o2qjtvdk&raw=1" alt='Christian Yip "Yipper" thinking profile shirt gif'/>
+                        <img className="gif-bg" src="https://www.dropbox.com/scl/fi/fxrjiw69x684upbcabxbb/yipper-thinking-gif-head.png?rlkey=s9mls63qz2rsx4ox1bgh3vgow&st=m1vb3kxp&raw=1" alt='Christian Yip "Yipper" thinking profile photo head shot'/>
                         <div className="banner-svg">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1440">
                                 <path className="glasses glasses-frame" d="M505.66,480.98l98.37-57.27s7.82-5.06,15.25-1.93,39.69,43.54,52.07,49.32,24.39,11.23,55.27-7.6,30.34-38.55,30.34-48.3c0-38.42-4.72-63.42-13.9-74.04-3.52-4.07,17.94-15.74,22.13-17.61,0,0,36.66,83.89,83.89,71.45s48.42-45.23,49.54-50.09c2.83-12.25-2.31-58.46-2.31-58.46,0,0-1.68-6.26,3.83-10.78.74-11.64-4.87-13.71-4.87-13.71,0,0-11.76-3.86-24.28-2.6-19.71,1.98-38.04,5.26-58.39,15.77s-33.8,23.45-45.98,38.61c-17.61,6.06-32.04,18.83-32.04,18.83,0,0-6.12-1.06-21.34-.81s-36,7.27-56.81,22.13-35.67,31.54-44.26,40.62-14.2,14.86-14.2,14.86l-97.35,57.54"/>

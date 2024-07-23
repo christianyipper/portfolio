@@ -2024,8 +2024,11 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: 24px;
   height: 24px;
 }
-.projects .project-wrap .app-icons-wrap svg path {
+.projects .project-wrap .app-icons-wrap svg .fill-1 {
   fill: white;
+}
+.projects .project-wrap .app-icons-wrap svg .fill-2 {
+  fill: #e6e6e6;
 }
 .projects .project-wrap .project-btn-wrap {
   display: flex;

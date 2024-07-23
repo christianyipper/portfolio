@@ -24,8 +24,8 @@ const Footer = () => {
                     </button>
                 </div>
                 <div className="footer-mid">
-                    <img className={ `gif-overlay ${ footerView ? `blur-in` : `blur-out` }` } src="https://www.dropbox.com/scl/fi/tuma334n7ykchht48f8wk/yipper-profile-1080p.gif?rlkey=qf19hunzy4s8i6xvj4h94ld2z&st=65tpimb9&raw=1" alt='Christian Yip "Yipper" profile shirt gif'/>
-                    <img className={ `${ footerView ? `blur-in` : `blur-out` }` } src="https://www.dropbox.com/scl/fi/fxnbup25t7v4w29yl1b03/yipper-profile-head.png?rlkey=s97ut47pl2z28g05v3e2yuy83&st=v1i14km6&raw=1" alt='Christian Yip "Yipper" profile photo head shot'/>
+                    <img className={ `gif-overlay ${ footerView ? `blur-in` : `blur-out` }` } src="https://www.dropbox.com/scl/fi/rf1u88wl47o3ni7vo7ltn/yipper-profile-overlay-400p-27fps-comp.gif?rlkey=bdevz0gcrtbgz4ygq8y1hrtne&st=r9liec8y&raw=1" alt='Christian Yip "Yipper" profile shirt gif'/>
+                    <img className={ `${ footerView ? `blur-in` : `blur-out` }` } src="https://www.dropbox.com/scl/fi/wrixsoyia5q9jsfa6qrll/yipper-profile-gif-head.png?rlkey=qiqbj024tymoh12989wp7mxde&st=p84n445d&raw=1" alt='Christian Yip "Yipper" profile photo head shot'/>
                 </div>
                 <div className="footer-right">
                     <h2 className={ `footer-float ${ footerView ? `scale-in` : `scale-out` }` }>
