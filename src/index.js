@@ -8,11 +8,14 @@ import Footer from './Footer';
 import HomePage from './HomePage';
 import AboutPage from './about/AboutPage';
 import ProjectsPage from './projects/ProjectsPage';
-import BannerPage from './banner/BannerPage';
+import ItsYipper from './itsyipper/ItsYipper';
+import StripesNation from './stripes-nation/StripesNation';
+import SonicAnimation from './sonic-animation/SonicAnimation';
+import EdgeBoards from './edge-boards/EdgeBoards';
 // import { useEffect } from 'react';
 import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom';
 
-const router = createBrowserRouter([
+const router = createHashRouter( [
     {
         path: '/',
         element: <HomePage />,
@@ -25,11 +28,24 @@ const router = createBrowserRouter([
         path: '/projects',
         element: <ProjectsPage />,
     },
+
     {
-        path: '/banner',
-        element: <BannerPage />,
+        path: '/itsyipper',
+        element: <ItsYipper />,
     },
-]);
+    {
+        path: '/stripes-nation',
+        element: <StripesNation />,
+    },
+    {
+        path: '/sonic-animation',
+        element: <SonicAnimation />,
+    },
+    {
+        path: '/edge-boards',
+        element: <EdgeBoards />,
+    },
+] );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

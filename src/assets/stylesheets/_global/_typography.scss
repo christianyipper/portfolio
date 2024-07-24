@@ -39,7 +39,7 @@ a {
     text-decoration: none;
 }
 
-button {
+.btn {
     @extend %heading-style;
     @include flex-wrap( nowrap, row, center, center );
     position: relative;

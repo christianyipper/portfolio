@@ -19,9 +19,9 @@ const Footer = () => {
                         <span text-glow="n">n</span>
                         <span text-glow=".">.</span>
                     </h2>
-                    <button className={ `${ footerView ? `scale-in` : `scale-out` }` } type="button">
+                    <a className={ `btn ${ footerView ? `scale-in` : `scale-out` }` }>
                         <p className="text-linkedin" text-glow="linkedin.com">linkedin.com</p>
-                    </button>
+                    </a>
                 </div>
                 <div className="footer-mid">
                     <img className={ `gif-overlay ${ footerView ? `blur-in` : `blur-out` }` } src="https://www.dropbox.com/scl/fi/rf1u88wl47o3ni7vo7ltn/yipper-profile-overlay-400p-27fps-comp.gif?rlkey=bdevz0gcrtbgz4ygq8y1hrtne&st=r9liec8y&raw=1" alt='Christian Yip "Yipper" profile shirt gif'/>
@@ -39,9 +39,9 @@ const Footer = () => {
                         <span text-glow="t">t</span>
                     </h2>
                     <h2 className={ `footer-shimmer h2-right ${ footerView ? `scale-in` : `scale-out` }` } text-shimmer="By Email.">By Email.</h2>
-                    <button className={ `${ footerView ? `scale-in` : `scale-out` }` } type="button">
+                    <a className={ `btn ${ footerView ? `scale-in` : `scale-out` }` }>
                         <p className="text-email" text-glow="christian@yipper.ca">christian@yipper.ca</p>
-                    </button>
+                    </a>
                 </div>
             </div>
             <p className="copyright">© Yipper 2024</p>

@@ -13,20 +13,20 @@ const About = () => {
     const { ref: aboutSection3, inView: aboutImg3 } = useInView( { threshold: 0.5 } );
     const { ref: aboutSection4, inView: aboutImg4 } = useInView( { threshold: 0.5 } );
 
-    const { ref: headingSection1, inView: heading1 } = useInView( { threshold: 1 } );
-    const { ref: headingSection2, inView: heading2 } = useInView( { threshold: 1 } );
-    const { ref: headingSection3, inView: heading3 } = useInView( { threshold: 1 } );
-    const { ref: headingSection4, inView: heading4 } = useInView( { threshold: 1 } );
+    const { ref: headingSection1, inView: heading1 } = useInView( { threshold: 1, rootMargin: '-10% 0%' } );
+    const { ref: headingSection2, inView: heading2 } = useInView( { threshold: 1, rootMargin: '-10% 0%' } );
+    const { ref: headingSection3, inView: heading3 } = useInView( { threshold: 1, rootMargin: '-10% 0%' } );
+    const { ref: headingSection4, inView: heading4 } = useInView( { threshold: 1, rootMargin: '-10% 0%' } );
     
-    const { ref: textSection1, inView: text1 } = useInView( { threshold: 1 } );
-    const { ref: textSection2, inView: text2 } = useInView( { threshold: 1 } );
-    const { ref: textSection3, inView: text3 } = useInView( { threshold: 1 } );
-    const { ref: textSection4, inView: text4 } = useInView( { threshold: 1 } );
-    const { ref: textSection5, inView: text5 } = useInView( { threshold: 1 } );
-    const { ref: textSection6, inView: text6 } = useInView( { threshold: 1 } );
-    const { ref: textSection7, inView: text7 } = useInView( { threshold: 1 } );
-    const { ref: textSection8, inView: text8 } = useInView( { threshold: 1 } );
-    const { ref: textSection9, inView: text9 } = useInView( { threshold: 1 } );
+    const { ref: textSection1, inView: text1 } = useInView( { threshold: 1, rootMargin: '-10% 10%' } );
+    const { ref: textSection2, inView: text2 } = useInView( { threshold: 1, rootMargin: '-10% 10%' } );
+    const { ref: textSection3, inView: text3 } = useInView( { threshold: 1, rootMargin: '-10% 10%' } );
+    const { ref: textSection4, inView: text4 } = useInView( { threshold: 1, rootMargin: '-10% 10%' } );
+    const { ref: textSection5, inView: text5 } = useInView( { threshold: 1, rootMargin: '-10% 10%' } );
+    const { ref: textSection6, inView: text6 } = useInView( { threshold: 1, rootMargin: '-10% 10%' } );
+    const { ref: textSection7, inView: text7 } = useInView( { threshold: 1, rootMargin: '-10% 10%' } );
+    const { ref: textSection8, inView: text8 } = useInView( { threshold: 1, rootMargin: '-10% 10%' } );
+    const { ref: textSection9, inView: text9 } = useInView( { threshold: 1, rootMargin: '-10% 10%' } );
 
 
     // const [ aboutH1 ] = useTypewriter({

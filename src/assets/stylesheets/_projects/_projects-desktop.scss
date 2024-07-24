@@ -1,33 +1,17 @@
 .projects {
-    @include flex-wrap( nowrap, column, start, center );
+    @extend %scroll-page-template;
     gap: $xxxl;
-    width: 100%;
-    height: 100vh;
-    top: -$xxl;
     padding-top: $xxl;
-    overflow-x: hidden;
+
+    ::-webkit-scrollbar {
+        width: $xs;
+    }
 
     .scroll-wrap {
-        @include flex-wrap( nowrap, column, start, center );
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        overflow-y: scroll;
-        scroll-snap-type: y mandatory;
-        overflow-x: hidden;
-        padding-left: $md;
-        padding-right: $md;
-        box-sizing: content-box;
 
         .scroll-section {
             @include flex-wrap( wrap, column, start, center );
             @extend %desktop-margin;
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            min-height: 100vh;
-            scroll-snap-align: start;
         }
     }
 
@@ -124,7 +108,7 @@
             backdrop-filter: blur($sm);
             z-index: 2;
             opacity: 0;
-            transition: 0.2s ease-in-out;
+            transition: 0.5s ease-in-out;
 
             .project-heading-shimmer {
                 position: relative;
@@ -132,6 +116,88 @@
             }
             &:hover {
                 opacity: 100%;
+
+                ~.app-icons-wrap {
+                    opacity: 100%;
+
+                    svg {
+                        transform: scale(1);
+                        animation: iconFade 0.5s ease-in-out forwards alternate;
+
+                        .icon-grey {
+                            fill: $icon-grey;
+                        }
+                        .icon-white {
+                            fill: $icon-white;
+                        }
+                        .ae-light {
+                            fill: $ae-light;
+                        }
+                        .ae-dark {
+                            fill: $ae-dark;
+                        }
+                        .css-light {
+                            fill: $css-light;
+                        }
+                        .css-dark {
+                            fill: $css-dark;
+                        }
+                        .figma-purple {
+                            fill: $figma-purple;
+                        }
+                        .figma-blue {
+                            fill: $figma-blue;
+                        }
+                        .figma-green {
+                            fill: $figma-green;
+                        }
+                        .figma-orange {
+                            fill: $figma-orange;
+                        }
+                        .figma-peach {
+                            fill: $figma-peach;
+                        }
+                        .figma-bg {
+                            fill: $figma-bg;
+                        }
+                        .html-light {
+                            fill: $html-light;
+                        }
+                        .html-dark {
+                            fill: $html-dark;
+                        }
+                        .ai-light {
+                            fill: $ai-light;
+                        }
+                        .ai-dark {
+                            fill: $ai-dark;
+                        }
+                        .js-light {
+                            fill: $js-light;
+                        }
+                        .js-dark {
+                            fill: $js-dark;
+                        }
+                        .ps-light {
+                            fill: $ps-light;
+                        }
+                        .ps-dark {
+                            fill: $ps-dark;
+                        }
+                        .react-light {
+                            fill: $react-light;
+                        }
+                        .react-dark {
+                            fill: $react-dark;
+                        }
+                        .sass-dark {
+                            fill: $sass-dark;
+                        }
+                        .webflow-dark {
+                            fill: $webflow-dark;
+                        }
+                    }
+                }
             }
             p {
                 margin: 0 $md;
@@ -142,21 +208,28 @@
             position: absolute;
             width: fit-content;
             height: fit-content;
-            left: $md;
-            bottom: $md;
+            left: $lg;
+            bottom: 28px;
             gap: $sm;
+            opacity: 25%;
             pointer-events: none;
             z-index: 5;
+            transition: 0.2s ease-in-out;
 
             svg {
-                width: $md;
-                height: $md;
-
-                .fill-1 {
-                    fill: white;
+                height: $lg;
+                width: fit-content;
+                transform: scale(0.8);
+                filter: blur(0px);
+                transition: 0.5s ease-in-out;
+                
+                .icon-grey, .icon-white, .ae-light, .css-light, .figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach, .ai-light, .js-dark, .ps-light, .react-light {
+                transition: 0.5s ease-in-out;
+                fill: transparent;
                 }
-                .fill-2 {
-                    fill: #e6e6e6;
+                .ae-dark, .css-dark, .figma-bg, .html-light, .html-dark, .ai-dark, .js-light, .ps-dark, .react-dark, .sass-dark, .webflow-dark {
+                transition: 0.5s ease-in-out;
+                fill: $accent;
                 }
             }
         }
@@ -235,7 +308,7 @@
                     transform: translate(177.24px, 72px);
                     animation: btnMain 0.5s 1s ease-in-out forwards reverse;
 
-                    button {
+                    .btn {
                         visibility: hidden;
                     }
                 }
@@ -264,6 +337,87 @@
 }
 .project-wrap:has( .project-btn:hover ) .project-text {
     opacity: 100%;
+}
+.project-wrap:has( .project-btn:hover ) .app-icons-wrap {
+    opacity: 100%;
+
+    svg {
+        transform: scale(1);
+        animation: iconFade 0.5s ease-in-out forwards alternate;
+
+        .icon-grey {
+            fill: $icon-grey;
+        }
+        .icon-white {
+            fill: $icon-white;
+        }
+        .ae-light {
+            fill: $ae-light;
+        }
+        .ae-dark {
+            fill: $ae-dark;
+        }
+        .css-light {
+            fill: $css-light;
+        }
+        .css-dark {
+            fill: $css-dark;
+        }
+        .figma-purple {
+            fill: $figma-purple;
+        }
+        .figma-blue {
+            fill: $figma-blue;
+        }
+        .figma-green {
+            fill: $figma-green;
+        }
+        .figma-orange {
+            fill: $figma-orange;
+        }
+        .figma-peach {
+            fill: $figma-peach;
+        }
+        .figma-bg {
+            fill: $figma-bg;
+        }
+        .html-light {
+            fill: $html-light;
+        }
+        .html-dark {
+            fill: $html-dark;
+        }
+        .ai-light {
+            fill: $ai-light;
+        }
+        .ai-dark {
+            fill: $ai-dark;
+        }
+        .js-light {
+            fill: $js-light;
+        }
+        .js-dark {
+            fill: $js-dark;
+        }
+        .ps-light {
+            fill: $ps-light;
+        }
+        .ps-dark {
+            fill: $ps-dark;
+        }
+        .react-light {
+            fill: $react-light;
+        }
+        .react-dark {
+            fill: $react-dark;
+        }
+        .sass-dark {
+            fill: $sass-dark;
+        }
+        .webflow-dark {
+            fill: $webflow-dark;
+        }
+    }
 }
 
 @keyframes btnShow {
@@ -325,6 +479,18 @@
     100% {
         height: 2px;
         border-radius: 0 0 0 0;
+    }
+}
+
+@keyframes iconFade {
+    0% {
+        filter: blur(0px);
+    }
+    50% {
+        filter: blur(5px);
+    }
+    100% {
+        filter: blur(0px);
     }
 }
 

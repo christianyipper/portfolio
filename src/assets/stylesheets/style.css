@@ -1,4 +1,104 @@
-.about section > article .quote-wrap .quote-text, button, h3, h2, h1 {
+.icon-grey {
+  fill: #ebebeb;
+}
+
+.icon-white {
+  fill: #fff;
+}
+
+.ae-light {
+  fill: #9898fe;
+}
+
+.ae-dark {
+  fill: #00005b;
+}
+
+.css-light {
+  fill: #2965f1;
+}
+
+.css-dark {
+  fill: #264de4;
+}
+
+.figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach {
+  fill-rule: evenodd;
+}
+
+.figma-purple {
+  fill: #a259ff;
+}
+
+.figma-blue {
+  fill: #1abcfe;
+}
+
+.figma-green {
+  fill: #0acf83;
+}
+
+.figma-orange {
+  fill: #f24e1e;
+}
+
+.figma-peach {
+  fill: #ff7262;
+}
+
+.figma-bg {
+  fill: #2e303a;
+}
+
+.html-light {
+  fill: #f16529;
+}
+
+.html-dark {
+  fill: #e44d26;
+}
+
+.ai-light {
+  fill: #ff9a00;
+}
+
+.ai-dark {
+  fill: #300;
+}
+
+.js-light {
+  fill: #f0db4f;
+}
+
+.js-dark {
+  fill: #323330;
+}
+
+.ps-light {
+  fill: #31a8ff;
+}
+
+.ps-dark {
+  fill: #001e36;
+}
+
+.react-light {
+  fill: #01daff;
+}
+
+.react-dark {
+  fill: #222;
+}
+
+.sass-dark {
+  fill: #cd669a;
+}
+
+.webflow-dark {
+  fill: #146df5;
+}
+
+.about section > article .quote-wrap .quote-text, .btn, h3, h2, h1 {
   font-family: "Rubik";
   color: white;
   transition: 0.2s ease-in-out;
@@ -29,7 +129,7 @@ a {
   text-decoration: none;
 }
 
-button {
+.btn {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -50,7 +150,7 @@ button {
   border: solid 2px white;
   z-index: 1;
 }
-button:before {
+.btn:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -61,7 +161,7 @@ button:before {
   box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
   transition: 0.2s ease-in-out;
 }
-button:after {
+.btn:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -73,21 +173,21 @@ button:after {
   box-shadow: 0 0 5px #ff7862, 0 0 20px #ff7862, 0 0 50px #ff7862, 0 0 100px #ff7862;
   transition: 0.2s ease-in-out;
 }
-button:hover {
+.btn:hover {
   background-color: #ff7862;
   border-radius: 32px;
   border: solid 2px white;
 }
-button:hover:before {
+.btn:hover:before {
   opacity: 0%;
 }
-button:hover:after {
+.btn:hover:after {
   opacity: 100%;
 }
-button:hover > p {
+.btn:hover > p {
   animation: hoverSquishBtn 0.4s ease-in-out;
 }
-button:hover > p:after {
+.btn:hover > p:after {
   z-index: -2;
   opacity: 100%;
 }
@@ -139,11 +239,21 @@ button:hover > p:after {
     opacity: 100%;
   }
 }
+html {
+  scroll-behavior: smooth;
+  background-color: #060e1a;
+}
+
 body {
   position: relative;
   top: 0;
   margin: 0;
   width: 100%;
+  height: 100%;
+}
+
+.scroll-hide {
+  overflow: hidden;
 }
 
 #main {
@@ -153,9 +263,6 @@ body {
   justify-content: start;
   align-items: center;
   position: relative;
-  width: calc(100% - 64px);
-  min-height: calc(100vh - 64px);
-  padding: 64px 32px 0 32px;
   background-color: #060e1a;
 }
 
@@ -190,21 +297,40 @@ main section {
 }
 
 .scroll-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   position: absolute;
   width: 100%;
   height: 100vh;
+  top: 0;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
-  z-index: 100;
+  overflow-x: hidden;
 }
 .scroll-wrap .scroll-section {
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+.scroll-wrap .footer-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   scroll-snap-align: start;
 }
 
-.projects .scroll-wrap .scroll-section, .about-img-section, .about, .home, footer .footer-wrap, nav, .banner {
+.project-grid, .projects .scroll-wrap .scroll-section, .about-img-section, .about, .home, footer .footer-wrap, nav, .banner {
   width: 100%;
   max-width: 1280px;
 }
@@ -216,6 +342,22 @@ main section {
   justify-content: start;
   align-items: center;
   position: relative;
+  width: calc(100% - 64px);
+  min-height: calc(100vh - 64px);
+  padding: 64px 32px 0 32px;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: calc(100% - 64px);
+  min-height: calc(100vh - 64px);
+  padding: 64px 32px 0 32px;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 .about section > article .quote-wrap .quote-text, strong, .text-cursor {
@@ -539,7 +681,7 @@ main section {
   }
 }
 
-.projects .project-wrap .project-sub, nav .nav-mid .nav-heading, button p {
+.projects .project-wrap .project-sub, nav .nav-mid .nav-heading, .btn p {
   position: relative;
   margin: 0;
   font-size: 24px;
@@ -547,7 +689,7 @@ main section {
   font-weight: 600;
   z-index: 1;
 }
-.projects .project-wrap .project-sub:before, nav .nav-mid .nav-heading:before, button p:before {
+.projects .project-wrap .project-sub:before, nav .nav-mid .nav-heading:before, .btn p:before {
   position: absolute;
   width: 100%;
   content: attr(text-glow);
@@ -555,7 +697,7 @@ main section {
   z-index: -1;
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
-.projects .project-wrap .project-sub:after, nav .nav-mid .nav-heading:after, button p:after {
+.projects .project-wrap .project-sub:after, nav .nav-mid .nav-heading:after, .btn p:after {
   content: attr(text-glow);
   position: absolute;
   top: 0px;
@@ -1284,14 +1426,14 @@ footer .footer-wrap h2 {
 footer .footer-wrap .h2-right {
   right: -12px;
 }
-footer .footer-wrap button {
+footer .footer-wrap .btn {
   margin-top: 32px;
   animation-duration: 2s;
 }
-footer .footer-wrap button .text-linkedin:after {
+footer .footer-wrap .btn .text-linkedin:after {
   animation-duration: 12s;
 }
-footer .footer-wrap button .text-email:after {
+footer .footer-wrap .btn .text-email:after {
   animation-duration: 20s;
 }
 footer .footer-wrap .footer-left {
@@ -1702,6 +1844,8 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 }
 
 .about section {
+  height: -moz-fit-content;
+  height: fit-content;
   z-index: 5;
 }
 .about section > article {
@@ -1750,6 +1894,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   padding-top: 64px;
   grid-template-columns: 50% 50%;
   width: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
 }
@@ -1851,34 +1996,11 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 }
 
 .projects {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
   gap: 80px;
-  width: 100%;
-  height: 100vh;
-  top: -64px;
   padding-top: 64px;
-  overflow-x: hidden;
 }
-.projects .scroll-wrap {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  overflow-x: hidden;
-  padding-left: 24px;
-  padding-right: 24px;
-  box-sizing: content-box;
+.projects ::-webkit-scrollbar {
+  width: 12px;
 }
 .projects .scroll-wrap .scroll-section {
   display: flex;
@@ -1886,11 +2008,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 100vh;
-  scroll-snap-align: start;
 }
 .projects .project-heading-wrap {
   display: flex;
@@ -1991,7 +2108,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
           backdrop-filter: blur(16px);
   z-index: 2;
   opacity: 0;
-  transition: 0.2s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .projects .project-wrap .project-text .project-heading-shimmer {
   position: relative;
@@ -1999,6 +2116,85 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 }
 .projects .project-wrap .project-text:hover {
   opacity: 100%;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap {
+  opacity: 100%;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg {
+  transform: scale(1);
+  animation: iconFade 0.5s ease-in-out forwards alternate;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .icon-grey {
+  fill: #ebebeb;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .icon-white {
+  fill: #fff;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ae-light {
+  fill: #9898fe;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ae-dark {
+  fill: #00005b;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .css-light {
+  fill: #2965f1;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .css-dark {
+  fill: #264de4;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-purple {
+  fill: #a259ff;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-blue {
+  fill: #1abcfe;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-green {
+  fill: #0acf83;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-orange {
+  fill: #f24e1e;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-peach {
+  fill: #ff7262;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-bg {
+  fill: #2e303a;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .html-light {
+  fill: #f16529;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .html-dark {
+  fill: #e44d26;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ai-light {
+  fill: #ff9a00;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ai-dark {
+  fill: #300;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .js-light {
+  fill: #f0db4f;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .js-dark {
+  fill: #323330;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ps-light {
+  fill: #31a8ff;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ps-dark {
+  fill: #001e36;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .react-light {
+  fill: #01daff;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .react-dark {
+  fill: #222;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .sass-dark {
+  fill: #cd669a;
+}
+.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .webflow-dark {
+  fill: #146df5;
 }
 .projects .project-wrap .project-text p {
   margin: 0 24px;
@@ -2014,21 +2210,29 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  left: 24px;
-  bottom: 24px;
+  left: 32px;
+  bottom: 28px;
   gap: 16px;
+  opacity: 25%;
   pointer-events: none;
   z-index: 5;
+  transition: 0.2s ease-in-out;
 }
 .projects .project-wrap .app-icons-wrap svg {
-  width: 24px;
-  height: 24px;
+  height: 32px;
+  width: -moz-fit-content;
+  width: fit-content;
+  transform: scale(0.8);
+  filter: blur(0px);
+  transition: 0.5s ease-in-out;
 }
-.projects .project-wrap .app-icons-wrap svg .fill-1 {
-  fill: white;
+.projects .project-wrap .app-icons-wrap svg .icon-grey, .projects .project-wrap .app-icons-wrap svg .icon-white, .projects .project-wrap .app-icons-wrap svg .ae-light, .projects .project-wrap .app-icons-wrap svg .css-light, .projects .project-wrap .app-icons-wrap svg .figma-purple, .projects .project-wrap .app-icons-wrap svg .figma-blue, .projects .project-wrap .app-icons-wrap svg .figma-green, .projects .project-wrap .app-icons-wrap svg .figma-orange, .projects .project-wrap .app-icons-wrap svg .figma-peach, .projects .project-wrap .app-icons-wrap svg .ai-light, .projects .project-wrap .app-icons-wrap svg .js-dark, .projects .project-wrap .app-icons-wrap svg .ps-light, .projects .project-wrap .app-icons-wrap svg .react-light {
+  transition: 0.5s ease-in-out;
+  fill: transparent;
 }
-.projects .project-wrap .app-icons-wrap svg .fill-2 {
-  fill: #e6e6e6;
+.projects .project-wrap .app-icons-wrap svg .ae-dark, .projects .project-wrap .app-icons-wrap svg .css-dark, .projects .project-wrap .app-icons-wrap svg .figma-bg, .projects .project-wrap .app-icons-wrap svg .html-light, .projects .project-wrap .app-icons-wrap svg .html-dark, .projects .project-wrap .app-icons-wrap svg .ai-dark, .projects .project-wrap .app-icons-wrap svg .js-light, .projects .project-wrap .app-icons-wrap svg .ps-dark, .projects .project-wrap .app-icons-wrap svg .react-dark, .projects .project-wrap .app-icons-wrap svg .sass-dark, .projects .project-wrap .app-icons-wrap svg .webflow-dark {
+  transition: 0.5s ease-in-out;
+  fill: #6274ff;
 }
 .projects .project-wrap .project-btn-wrap {
   display: flex;
@@ -2118,7 +2322,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   transform: translate(177.24px, 72px);
   animation: btnMain 0.5s 1s ease-in-out forwards reverse;
 }
-.projects .project-wrap .project-btn-wrap .project-btn-bot .project-btn-bg button {
+.projects .project-wrap .project-btn-wrap .project-btn-bot .project-btn-bg .btn {
   visibility: hidden;
 }
 
@@ -2146,6 +2350,86 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 
 .project-wrap:has(.project-btn:hover) .project-text {
   opacity: 100%;
+}
+
+.project-wrap:has(.project-btn:hover) .app-icons-wrap {
+  opacity: 100%;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg {
+  transform: scale(1);
+  animation: iconFade 0.5s ease-in-out forwards alternate;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .icon-grey {
+  fill: #ebebeb;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .icon-white {
+  fill: #fff;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ae-light {
+  fill: #9898fe;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ae-dark {
+  fill: #00005b;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .css-light {
+  fill: #2965f1;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .css-dark {
+  fill: #264de4;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-purple {
+  fill: #a259ff;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-blue {
+  fill: #1abcfe;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-green {
+  fill: #0acf83;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-orange {
+  fill: #f24e1e;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-peach {
+  fill: #ff7262;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-bg {
+  fill: #2e303a;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .html-light {
+  fill: #f16529;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .html-dark {
+  fill: #e44d26;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ai-light {
+  fill: #ff9a00;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ai-dark {
+  fill: #300;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .js-light {
+  fill: #f0db4f;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .js-dark {
+  fill: #323330;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ps-light {
+  fill: #31a8ff;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ps-dark {
+  fill: #001e36;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .react-light {
+  fill: #01daff;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .react-dark {
+  fill: #222;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .sass-dark {
+  fill: #cd669a;
+}
+.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .webflow-dark {
+  fill: #146df5;
 }
 
 @keyframes btnShow {
@@ -2209,10 +2493,41 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     border-radius: 0 0 0 0;
   }
 }
+@keyframes iconFade {
+  0% {
+    filter: blur(0px);
+  }
+  50% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
 .disable {
   animation-play-state: paused !important;
 }
 
 .enable {
   animation-play-state: running !important;
+}
+
+.project-grid {
+  position: relative;
+}
+.project-grid ::-webkit-scrollbar {
+  width: 12px;
+}
+.project-grid .project-img-section {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.project-grid .project-img-section .project-img-wrap {
+  position: relative;
+  width: 50%;
+}
+.project-grid .project-img-section .project-img-wrap video {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

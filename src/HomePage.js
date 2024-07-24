@@ -113,12 +113,12 @@ const HomePage = () => {
                     <div className="home-text-wrap">
                         <h2 text-shimmer="Front-End Developer">Front-End Developer</h2>
                         <div className="home-buttons-wrap">
-                            <button>
+                            <a className="btn">
                                 <p text-glow="About Me">About Me</p>
-                            </button>
-                            {/* <button>
+                            </a>
+                            {/* <a>
                                 <p text-glow="My Works">My Works</p>
-                            </button> */}
+                            </a> */}
                         </div>
                     </div>
                 </article>
@@ -150,9 +150,9 @@ const HomePage = () => {
                     <div className="article-footer">
                         <div className="article-icons"></div>
                         <div className="article-button">
-                            <button>
+                            <a className="btn">
                                 <p>Preview</p>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </article>

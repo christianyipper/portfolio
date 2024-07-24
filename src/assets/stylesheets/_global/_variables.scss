@@ -20,19 +20,132 @@ $xxl: 64px;
 $xxxl: 80px;
 $mx: 96px;
 
-// === IMAGES ===
-// src="https://drive.google.com/thumbnail?id={Enter Your ID}&sz=w1000"
-$profileImg: "1JWLEJna0gDyWjM3SxVkRmyZda8e10Cgn";
-// Head: 1DFjw656aktqcm3CijGacJePxAFCiOfQE
-// Overlay: 15cDu4VD6EPhyFj57lBlOEwBvjQucsXrY
+// === ICONS ===
+$icon-grey: #ebebeb;
+.icon-grey {
+    fill: $icon-grey;
+}
 
-$thinkingImg: "1PXQMemcZIvk0YuNHTqOaSMXA4RPdXmu9";
-// Head: 193X2NQFVbF--j1_zpM7np40WsxKv-2o3
-// Overlay: 13GYzqZbshgEzo6oeuFILzmHR3CvnSsSD
-// 1080p: 1Bte1A_4zvXfSjEKZowGW6aYxpsmwBDp3
+$icon-white: #fff;
+.icon-white {
+    fill: $icon-white;
+}
 
-$refereeImg: "1o10Cvh-bKIotrP0za_sK0Ugi9edfXVz8";
-// Head: 1IEkhy1QkJog0bLQdrT0weGqzGSEf3ipJ
-// Overlay: 1ZtYTm3pgzeB32Tgk8PlVdg59_vqVqtQR
+// AFTER EFFECTS
+$ae-light: #9898fe;
+.ae-light {
+    fill: $ae-light;
+}
 
-$skiImg: "19uDnQmdSy2nrZv6K6-r3M5KEFQC_W3pa";
+$ae-dark: #00005b;
+.ae-dark {
+    fill: $ae-dark;
+}
+
+// CSS
+$css-light: #2965f1;
+.css-light {
+    fill: $css-light;
+}
+
+$css-dark: #264de4;
+.css-dark {
+    fill: $css-dark;
+}
+
+// FIGMA
+.figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach {
+    fill-rule: evenodd;
+}
+
+$figma-purple: #a259ff;
+.figma-purple {
+    fill: $figma-purple;
+}
+
+$figma-blue: #1abcfe;
+.figma-blue {
+    fill: $figma-blue;
+}
+
+$figma-green: #0acf83;
+.figma-green {
+    fill: $figma-green;
+}
+
+$figma-orange: #f24e1e;
+.figma-orange {
+    fill: $figma-orange;
+}
+
+$figma-peach: #ff7262;
+.figma-peach {
+    fill: $figma-peach;
+}
+
+$figma-bg: #2e303a;
+.figma-bg {
+    fill: $figma-bg;
+}
+
+// HTML
+$html-light: #f16529;
+.html-light {
+    fill: $html-light;
+}
+$html-dark: #e44d26;
+.html-dark {
+    fill: $html-dark;
+}
+
+// ILLUSTRATOR
+$ai-light: #ff9a00;
+.ai-light {
+    fill: $ai-light;
+}
+$ai-dark: #300;
+.ai-dark {
+    fill: $ai-dark;
+}
+
+// JAVASCRIPT
+$js-light: #f0db4f;
+.js-light {
+    fill: $js-light;
+}
+$js-dark: #323330;
+.js-dark {
+    fill: $js-dark;
+}
+
+// PHOTOSHOP
+$ps-light: #31a8ff;
+.ps-light {
+    fill: $ps-light;
+}
+$ps-dark: #001e36;
+.ps-dark {
+    fill: $ps-dark;
+}
+
+// REACT
+$react-light: #01daff;
+.react-light {
+    fill: $react-light;
+}
+$react-dark: #222;
+.react-dark {
+    fill: $react-dark;
+}
+
+// SASS
+$sass-dark: #cd669a;
+.sass-dark {
+    fill: $sass-dark;
+}
+
+// WEBFLOW
+$webflow-dark: #146df5;
+.webflow-dark {
+    fill: $webflow-dark;
+}
