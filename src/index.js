@@ -15,7 +15,7 @@ import EdgeBoards from './edge-boards/EdgeBoards';
 // import { useEffect } from 'react';
 import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom';
 
-const router = createHashRouter( [
+const router = createBrowserRouter( [
     {
         path: '/',
         element: <HomePage />,
