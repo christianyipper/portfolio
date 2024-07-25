@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.f2cb903d.css",
-    "main.js": "/portfolio/static/js/main.55e7ffc6.js",
+    "main.css": "/portfolio/static/css/main.83866b65.css",
+    "main.js": "/portfolio/static/js/main.cad31580.js",
     "static/media/inkmask-left.png": "/portfolio/static/media/inkmask-left.6be2b7ffbda0a6adeb35.png",
     "static/media/inkmask-right.png": "/portfolio/static/media/inkmask-right.3d85368e7a59160d4692.png",
     "static/media/jphl-logo.png": "/portfolio/static/media/jphl-logo.523fd9f17883d5f462d4.png",
@@ -11,11 +11,11 @@
     "static/media/bc-hockey-logo.png": "/portfolio/static/media/bc-hockey-logo.f1fe14465b9e29bb131a.png",
     "static/media/csshl-logo.png": "/portfolio/static/media/csshl-logo.d2fa15d6fb7912bbc42f.png",
     "index.html": "/portfolio/index.html",
-    "main.f2cb903d.css.map": "/portfolio/static/css/main.f2cb903d.css.map",
-    "main.55e7ffc6.js.map": "/portfolio/static/js/main.55e7ffc6.js.map"
+    "main.83866b65.css.map": "/portfolio/static/css/main.83866b65.css.map",
+    "main.cad31580.js.map": "/portfolio/static/js/main.cad31580.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2cb903d.css",
-    "static/js/main.55e7ffc6.js"
+    "static/css/main.83866b65.css",
+    "static/js/main.cad31580.js"
   ]
 }
