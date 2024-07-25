@@ -1,5 +1,8 @@
 .home {
-    @extend %desktop-margin;
+    @include flex-wrap( nowrap, column, center, center );
+    @extend %scroll-page-template;
+    position: relative;
+    height: 100%;
 
     .loading-screen {
         @include flex-wrap( nowrap, row, center, center );
@@ -18,92 +21,106 @@
     }
 
     .home-section {
-        display: grid;
-        grid-template-columns: 50% 50%;
+        @include flex-wrap( wrap, column, center, center );
+        position: absolute;
         width: 100%;
-        min-height: 100vh;
+        height: 100%;
         top: 0;
-        position: relative;
+        pointer-events: none;
+        overflow: hidden;
+
+        .home-wrap {
+            @extend %desktop-margin;
+            position: relative;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            width: 100%;
+            height: 100%;
+            max-height: 100vh;
+        }
 
         .home-left-1 {
             transform: scale(2) translate(-30vw, 20vw);
+            position: absolute;
+            grid-column: span 2;
             animation: homeIn 3s 1.5s ease-in-out forwards alternate;
+            overflow: hidden;
             
             .banner-img-wrap {
-            @include flex-wrap( nowrap, row, start, center );
-            position: relative;
-            width: fit-content;
-            height: 100vh;
-            top: - $xxl;
-            z-index: 2;
-            @extend %float-img;
-
-            > img {
-                height: 100%;
-                aspect-ratio: 1 / 1;
-            }
-            .hat-overlay {
-                position: absolute;
-                z-index: 4;
-                animation: hatGlow 1s linear infinite alternate;
-            }
-            .gif-overlay {
-                z-index: 3;
-            }
-            .gif-bg {
-                z-index: 1;
-            }
-            .banner-svg {
-                height: 100%;
-                z-index: 20;
-                aspect-ratio: 1 / 1;
-                position: absolute;
+                @include flex-wrap( nowrap, row, start, center );
+                width: fit-content;
+                height: 100vh;
+                // top: - $xxl;
                 z-index: 2;
+                @extend %float-img;
 
-                svg {
-                    width: 100%;
+                > img {
+                    height: 100%;
+                    aspect-ratio: 1 / 1;
+                }
+                .hat-overlay {
+                    position: absolute;
+                    z-index: 4;
+                    animation: hatGlow 1s linear infinite alternate;
+                }
+                .gif-overlay {
+                    z-index: 3;
+                }
+                .gif-bg {
+                    z-index: 1;
+                }
+                .banner-svg {
+                    height: 100%;
+                    z-index: 20;
+                    aspect-ratio: 1 / 1;
+                    position: absolute;
+                    z-index: 2;
 
-                    .glasses {
-                        fill: transparent;
-                        stroke: #b2e4ff;
-                        stroke-linecap: round;
-                        stroke-linejoin: round;
-                        stroke-width: 4px;
-                    }
-                    .glasses-frame {
-                        stroke-dasharray: 1400;
-                        animation: glassesFrame 4s infinite both;
-                    }
-                    .glasses-left {
-                        stroke-dasharray: 1000;
-                        animation: glassesLeft 4s infinite both;
-                    }
-                    .glasses-right {
-                        stroke-dasharray: 1000;
-                        animation: glassesRight 4s 0.3s infinite both;
-                    }
-                    .glasses-accent1 {
-                        stroke-dasharray: 1000;
-                        animation: glassesAccent1 4s 0.3s infinite both;
-                    }
-                    .glasses-accent2 {
-                        stroke-dasharray: 1000;
-                        animation: glassesAccent2 4s 0.3s infinite both;
-                    }
-                    .glasses-accent3 {
-                        stroke-dasharray: 1000;
-                        animation: glassesAccent3 4s 0.3s infinite both;
+                    svg {
+                        width: 100%;
+
+                        .glasses {
+                            fill: transparent;
+                            stroke: #b2e4ff;
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                            stroke-width: 4px;
+                        }
+                        .glasses-frame {
+                            stroke-dasharray: 1400;
+                            animation: glassesFrame 4s infinite both;
+                        }
+                        .glasses-left {
+                            stroke-dasharray: 1000;
+                            animation: glassesLeft 4s infinite both;
+                        }
+                        .glasses-right {
+                            stroke-dasharray: 1000;
+                            animation: glassesRight 4s 0.3s infinite both;
+                        }
+                        .glasses-accent1 {
+                            stroke-dasharray: 1000;
+                            animation: glassesAccent1 4s 0.3s infinite both;
+                        }
+                        .glasses-accent2 {
+                            stroke-dasharray: 1000;
+                            animation: glassesAccent2 4s 0.3s infinite both;
+                        }
+                        .glasses-accent3 {
+                            stroke-dasharray: 1000;
+                            animation: glassesAccent3 4s 0.3s infinite both;
+                        }
                     }
                 }
             }
         }
-
-        }
         article {
             @include flex-wrap( nowrap, column, start, start );
+            grid-column: 2 / 2;
             width: 100%;
             height: 100%;
             height: fit-content;
+            padding-top: $lg;
             z-index: 10;
 
             // h1 {
@@ -114,7 +131,7 @@
             h1 {
                 font-size: 100px;
                 top: $lg;
-                @extend %float-title;                
+                @extend %float-title;   
             }
             .home-text-wrap {
                 @include flex-wrap( nowrap, column, start, start );
@@ -355,4 +372,14 @@
             opacity: 100%;
         }
     }
+}
+
+.flyin-1 {
+    animation: flyin1 2s ease-in-out forwards;
+}
+.flyin-2 {
+    animation: flyin2 2s 0.5s ease-in-out forwards;
+}
+.flyin-3 {
+    animation: flyin3 2s 1s ease-in-out forwards;
 }

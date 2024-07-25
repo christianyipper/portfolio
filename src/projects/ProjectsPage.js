@@ -8,10 +8,10 @@ import Footer from '../Footer';
 
 const ProjectsPage = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
-    const { ref: snap2, inView: inView2 } = useInView( { threshold: 0.5 } );
-    const { ref: snap3, inView: inView3 } = useInView( { threshold: 0.5 } );
-    const { ref: snap4, inView: inView4 } = useInView( { threshold: 0.5 } );
-    const { ref: snap5, inView: inView5 } = useInView( { threshold: 0.5 } );
+    const { ref: snap2, inView: inView2 } = useInView( { threshold: 1 } );
+    const { ref: snap3, inView: inView3 } = useInView( { threshold: 1 } );
+    const { ref: snap4, inView: inView4 } = useInView( { threshold: 1 } );
+    const { ref: snap5, inView: inView5 } = useInView( { threshold: 1 } );
 
     const { ref: btn1, inView: btnView1 } = useInView( { threshold: 1 } );
     const { ref: btn2, inView: btnView2 } = useInView( { threshold: 1 } );

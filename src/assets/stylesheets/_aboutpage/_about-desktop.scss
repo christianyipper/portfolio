@@ -52,17 +52,18 @@
     @extend %desktop-margin;
     display: grid;
     padding-top: $xxl;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 45% 55%;
     width: 100%;
     height: 100vh;
     position: fixed;
     top: 0;
     
     .about-img-wrap {
-        @include flex-wrap( wrap, column, start, center );
+        @include flex-wrap( wrap, column, center, center );
         position: relative;
         width: 100%;
         height: 100%;
+        padding-top: $xxxl;
 
         > div {
             @include flex-wrap( wrap, column, start, center );

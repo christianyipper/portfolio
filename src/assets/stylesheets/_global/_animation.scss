@@ -464,9 +464,10 @@
     }
 }
 
-.play-state {
-    animation-play-state: paused;
+.disable {
+    animation-play-state: paused !important;
 }
-.pause-state {
-    animation-play-state: paused;
+
+.enable {
+    animation-play-state: running !important;
 }

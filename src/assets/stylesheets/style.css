@@ -1,3 +1,7 @@
+.sn-red {
+  fill: #ed1c24;
+}
+
 .icon-grey {
   fill: #ebebeb;
 }
@@ -330,7 +334,7 @@ main section {
   scroll-snap-align: start;
 }
 
-.project-grid, .projects .scroll-wrap .scroll-section, .about-img-section, .about, .home, footer .footer-wrap, nav, .banner {
+.artifact .artifact-section, .projects .scroll-wrap .scroll-section, .about-img-section, .about, .home .home-section .home-wrap, footer .footer-wrap, nav, .banner {
   width: 100%;
   max-width: 1280px;
 }
@@ -347,7 +351,7 @@ main section {
   padding: 64px 32px 0 32px;
 }
 
-.projects {
+.artifact, .projects, .home {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -377,7 +381,7 @@ main section {
   }
 }
 
-.projects .project-heading-shimmer, .about section > article .about-heading-shimmer, .home .home-section article h2, footer .footer-wrap .footer-shimmer {
+.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer, .projects .project-heading-shimmer, .about section > article .about-heading-shimmer, .home .home-section article h2, footer .footer-wrap .footer-shimmer {
   position: relative;
   display: flex;
   flex-wrap: nowrap;
@@ -391,7 +395,7 @@ main section {
   letter-spacing: 2px;
   text-shadow: 0 0 2px white, 0 0 4px white;
 }
-.projects .project-heading-shimmer:before, .about section > article .about-heading-shimmer:before, .home .home-section article h2:before, footer .footer-wrap .footer-shimmer:before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer:before, .projects .project-heading-shimmer:before, .about section > article .about-heading-shimmer:before, .home .home-section article h2:before, footer .footer-wrap .footer-shimmer:before {
   content: attr(text-shimmer);
   position: absolute;
   -webkit-text-stroke: 2px white;
@@ -402,7 +406,7 @@ main section {
   text-shadow: 2px 2px 4px rgb(140, 169, 189);
   opacity: 25%;
 }
-.projects .project-heading-shimmer:after, .about section > article .about-heading-shimmer:after, .home .home-section article h2:after, footer .footer-wrap .footer-shimmer:after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer:after, .projects .project-heading-shimmer:after, .about section > article .about-heading-shimmer:after, .home .home-section article h2:after, footer .footer-wrap .footer-shimmer:after {
   content: attr(text-shimmer);
   position: absolute;
   top: 6px;
@@ -550,7 +554,7 @@ main section {
   }
 }
 
-.projects .project-heading-float span, .about section > article .about-heading-float span, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span, footer .footer-wrap .footer-float span {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span, .projects .project-heading-float span, .about section > article .about-heading-float span, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span, footer .footer-wrap .footer-float span {
   display: inline-block;
   color: transparent;
   -webkit-text-stroke: 2px white;
@@ -558,7 +562,7 @@ main section {
   display: inline-block;
   transition: transform 0.3s ease-in-out;
 }
-.projects .project-heading-float span:before, .about section > article .about-heading-float span:before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:before, footer .footer-wrap .footer-float span:before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:before, .projects .project-heading-float span:before, .about section > article .about-heading-float span:before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:before, footer .footer-wrap .footer-float span:before {
   position: absolute;
   color: transparent;
   text-shadow: none;
@@ -569,7 +573,7 @@ main section {
   z-index: 2;
   text-shadow: 0.05vw 0vw 0.2vw #aca9ff, 0.1vw 0vw 0.2vw #d9d8ff, 0.2vw 0vw 0.2vw #d9d8ff, 0.1vw 0vw 0.3vw #6274ff, 0.2vw 0vw 0.3vw #6274ff, 0.4vw 0vw 0.3vw #6274ff, 0.1vw 0vw 0.5vw #6274ff, 0.2vw 0vw 0.5vw #6274ff, 0.4vw 0vw 0.5vw #6274ff, 0.1vw 0vw 1vw #450be5, 0.2vw 0vw 1vw #450be5, 0.4vw 0vw 3vw #450be5, 0.1vw 0vw 2vw #3a0be5, 0.2vw 0vw 2vw #3a0be5, 0.4vw 0vw 5vw #3a0be5;
 }
-.projects .project-heading-float span:after, .about section > article .about-heading-float span:after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:after, footer .footer-wrap .footer-float span:after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:after, .projects .project-heading-float span:after, .about section > article .about-heading-float span:after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:after, footer .footer-wrap .footer-float span:after {
   position: absolute;
   text-shadow: none;
   -webkit-text-stroke: 2px white;
@@ -580,76 +584,76 @@ main section {
   z-index: 2;
   text-shadow: 2px 0vw 0.2vw #ffd1c9, 4px 0vw 0.2vw #ffded8, 5px 0vw 0.2vw #ffded8, 0.1vw 0vw 0.3vw #f26e57, 0.2vw 0vw 0.3vw #f26e57, 0.4vw 0vw 0.3vw #f26e57, 0.1vw 0vw 0.5vw #f26e57, 0.2vw 0vw 0.5vw #f26e57, 0.4vw 0vw 0.5vw #f26e57, 0.1vw 0vw 1vw #ff7862, 0.2vw 0vw 1vw #ff7862, 0.4vw 0vw 3vw #ff7862, 0.1vw 0vw 2vw #ff7862, 0.2vw 0vw 2vw #ff7862, 0.4vw 0vw 5vw #ff7862;
 }
-.projects .project-heading-float span:nth-of-type(8n + 1), .about section > article .about-heading-float span:nth-of-type(8n + 1), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1), footer .footer-wrap .footer-float span:nth-of-type(8n + 1) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1), .projects .project-heading-float span:nth-of-type(8n + 1), .about section > article .about-heading-float span:nth-of-type(8n + 1), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1), footer .footer-wrap .footer-float span:nth-of-type(8n + 1) {
   animation: float 2s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 1):before, .about section > article .about-heading-float span:nth-of-type(8n + 1):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1):before, .projects .project-heading-float span:nth-of-type(8n + 1):before, .about section > article .about-heading-float span:nth-of-type(8n + 1):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):before {
   animation: neonFade 2s ease-in-out infinite alternate-reverse;
 }
-.projects .project-heading-float span:nth-of-type(8n + 1):after, .about section > article .about-heading-float span:nth-of-type(8n + 1):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1):after, .projects .project-heading-float span:nth-of-type(8n + 1):after, .about section > article .about-heading-float span:nth-of-type(8n + 1):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):after {
   animation: neonFade 2s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 2), .about section > article .about-heading-float span:nth-of-type(8n + 2), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2), footer .footer-wrap .footer-float span:nth-of-type(8n + 2) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2), .projects .project-heading-float span:nth-of-type(8n + 2), .about section > article .about-heading-float span:nth-of-type(8n + 2), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2), footer .footer-wrap .footer-float span:nth-of-type(8n + 2) {
   animation: float 2s 0.5s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 2):before, .about section > article .about-heading-float span:nth-of-type(8n + 2):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2):before, .projects .project-heading-float span:nth-of-type(8n + 2):before, .about section > article .about-heading-float span:nth-of-type(8n + 2):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):before {
   animation: neonFade 2s 0.5s ease-in-out infinite alternate-reverse;
 }
-.projects .project-heading-float span:nth-of-type(8n + 2):after, .about section > article .about-heading-float span:nth-of-type(8n + 2):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2):after, .projects .project-heading-float span:nth-of-type(8n + 2):after, .about section > article .about-heading-float span:nth-of-type(8n + 2):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):after {
   animation: neonFade 2s 0.5s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 3), .about section > article .about-heading-float span:nth-of-type(8n + 3), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3), footer .footer-wrap .footer-float span:nth-of-type(8n + 3) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3), .projects .project-heading-float span:nth-of-type(8n + 3), .about section > article .about-heading-float span:nth-of-type(8n + 3), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3), footer .footer-wrap .footer-float span:nth-of-type(8n + 3) {
   animation: float 2s 1s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 3):before, .about section > article .about-heading-float span:nth-of-type(8n + 3):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3):before, .projects .project-heading-float span:nth-of-type(8n + 3):before, .about section > article .about-heading-float span:nth-of-type(8n + 3):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):before {
   animation: neonFade 2s 1s ease-in-out infinite alternate-reverse;
 }
-.projects .project-heading-float span:nth-of-type(8n + 3):after, .about section > article .about-heading-float span:nth-of-type(8n + 3):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3):after, .projects .project-heading-float span:nth-of-type(8n + 3):after, .about section > article .about-heading-float span:nth-of-type(8n + 3):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):after {
   animation: neonFade 2s 1s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 4), .about section > article .about-heading-float span:nth-of-type(8n + 4), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4), footer .footer-wrap .footer-float span:nth-of-type(8n + 4) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4), .projects .project-heading-float span:nth-of-type(8n + 4), .about section > article .about-heading-float span:nth-of-type(8n + 4), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4), footer .footer-wrap .footer-float span:nth-of-type(8n + 4) {
   animation: float 2s 1.5s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 4):before, .about section > article .about-heading-float span:nth-of-type(8n + 4):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4):before, .projects .project-heading-float span:nth-of-type(8n + 4):before, .about section > article .about-heading-float span:nth-of-type(8n + 4):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):before {
   animation: neonFade 2s 1.5s ease-in-out infinite alternate-reverse;
 }
-.projects .project-heading-float span:nth-of-type(8n + 4):after, .about section > article .about-heading-float span:nth-of-type(8n + 4):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4):after, .projects .project-heading-float span:nth-of-type(8n + 4):after, .about section > article .about-heading-float span:nth-of-type(8n + 4):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):after {
   animation: neonFade 2s 1.5s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 5), .about section > article .about-heading-float span:nth-of-type(8n + 5), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5), footer .footer-wrap .footer-float span:nth-of-type(8n + 5) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5), .projects .project-heading-float span:nth-of-type(8n + 5), .about section > article .about-heading-float span:nth-of-type(8n + 5), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5), footer .footer-wrap .footer-float span:nth-of-type(8n + 5) {
   animation: float 2s 2s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 5):before, .about section > article .about-heading-float span:nth-of-type(8n + 5):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5):before, .projects .project-heading-float span:nth-of-type(8n + 5):before, .about section > article .about-heading-float span:nth-of-type(8n + 5):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):before {
   animation: neonFade 2s 2s ease-in-out infinite alternate-reverse;
 }
-.projects .project-heading-float span:nth-of-type(8n + 5):after, .about section > article .about-heading-float span:nth-of-type(8n + 5):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5):after, .projects .project-heading-float span:nth-of-type(8n + 5):after, .about section > article .about-heading-float span:nth-of-type(8n + 5):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):after {
   animation: neonFade 2s 2s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 6), .about section > article .about-heading-float span:nth-of-type(8n + 6), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6), footer .footer-wrap .footer-float span:nth-of-type(8n + 6) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6), .projects .project-heading-float span:nth-of-type(8n + 6), .about section > article .about-heading-float span:nth-of-type(8n + 6), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6), footer .footer-wrap .footer-float span:nth-of-type(8n + 6) {
   animation: float 2s 2.5s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 6):before, .about section > article .about-heading-float span:nth-of-type(8n + 6):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6):before, .projects .project-heading-float span:nth-of-type(8n + 6):before, .about section > article .about-heading-float span:nth-of-type(8n + 6):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):before {
   animation: neonFade 2s 2.5s ease-in-out infinite alternate-reverse;
 }
-.projects .project-heading-float span:nth-of-type(8n + 6):after, .about section > article .about-heading-float span:nth-of-type(8n + 6):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6):after, .projects .project-heading-float span:nth-of-type(8n + 6):after, .about section > article .about-heading-float span:nth-of-type(8n + 6):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):after {
   animation: neonFade 2s 2.5s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 7), .about section > article .about-heading-float span:nth-of-type(8n + 7), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7), footer .footer-wrap .footer-float span:nth-of-type(8n + 7) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7), .projects .project-heading-float span:nth-of-type(8n + 7), .about section > article .about-heading-float span:nth-of-type(8n + 7), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7), footer .footer-wrap .footer-float span:nth-of-type(8n + 7) {
   animation: float 2s 3s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 7):before, .about section > article .about-heading-float span:nth-of-type(8n + 7):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7):before, .projects .project-heading-float span:nth-of-type(8n + 7):before, .about section > article .about-heading-float span:nth-of-type(8n + 7):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):before {
   animation: neonFade 2s 3s ease-in-out infinite alternate-reverse;
 }
-.projects .project-heading-float span:nth-of-type(8n + 7):after, .about section > article .about-heading-float span:nth-of-type(8n + 7):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7):after, .projects .project-heading-float span:nth-of-type(8n + 7):after, .about section > article .about-heading-float span:nth-of-type(8n + 7):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):after {
   animation: neonFade 2s 3s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 8), .about section > article .about-heading-float span:nth-of-type(8n + 8), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8), footer .footer-wrap .footer-float span:nth-of-type(8n + 8) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8), .projects .project-heading-float span:nth-of-type(8n + 8), .about section > article .about-heading-float span:nth-of-type(8n + 8), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8), footer .footer-wrap .footer-float span:nth-of-type(8n + 8) {
   animation: float 2s 3.5s ease-in-out infinite alternate;
 }
-.projects .project-heading-float span:nth-of-type(8n + 8):before, .about section > article .about-heading-float span:nth-of-type(8n + 8):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8):before, .projects .project-heading-float span:nth-of-type(8n + 8):before, .about section > article .about-heading-float span:nth-of-type(8n + 8):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):before {
   animation: neonFade 2s 3.5s ease-in-out infinite alternate-reverse;
 }
-.projects .project-heading-float span:nth-of-type(8n + 8):after, .about section > article .about-heading-float span:nth-of-type(8n + 8):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8):after, .projects .project-heading-float span:nth-of-type(8n + 8):after, .about section > article .about-heading-float span:nth-of-type(8n + 8):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):after {
   animation: neonFade 2s 3.5s ease-in-out infinite alternate;
 }
 @keyframes float {
@@ -794,12 +798,12 @@ main section {
     opacity: 0%;
   }
 }
-.play-state {
-  animation-play-state: paused;
+.disable {
+  animation-play-state: paused !important;
 }
 
-.pause-state {
-  animation-play-state: paused;
+.enable {
+  animation-play-state: running !important;
 }
 
 .line-r-accent, .line-p-accent, .line-r, .line-p, .line-y {
@@ -1481,6 +1485,15 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   margin-top: 64px;
 }
 
+.home {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
 .home .loading-screen {
   display: flex;
   flex-wrap: nowrap;
@@ -1500,16 +1513,32 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   animation: loadLogo 3s ease-in;
 }
 .home .home-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.home .home-section .home-wrap {
+  position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
-  min-height: 100vh;
-  top: 0;
-  position: relative;
+  height: 100%;
+  max-height: 100vh;
 }
 .home .home-section .home-left-1 {
   transform: scale(2) translate(-30vw, 20vw);
+  position: absolute;
+  grid-column: span 2;
   animation: homeIn 3s 1.5s ease-in-out forwards alternate;
+  overflow: hidden;
 }
 .home .home-section .home-left-1 .banner-img-wrap {
   display: flex;
@@ -1517,11 +1546,9 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  position: relative;
   width: -moz-fit-content;
   width: fit-content;
   height: 100vh;
-  top: -64px;
   z-index: 2;
 }
 .home .home-section .home-left-1 .banner-img-wrap > img {
@@ -1586,10 +1613,12 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  grid-column: 2/2;
   width: 100%;
   height: 100%;
   height: -moz-fit-content;
   height: fit-content;
+  padding-top: 32px;
   z-index: 10;
 }
 .home .home-section article h1 {
@@ -1843,6 +1872,18 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   }
 }
 
+.flyin-1 {
+  animation: flyin1 2s ease-in-out forwards;
+}
+
+.flyin-2 {
+  animation: flyin2 2s 0.5s ease-in-out forwards;
+}
+
+.flyin-3 {
+  animation: flyin3 2s 1s ease-in-out forwards;
+}
+
 .about section {
   height: -moz-fit-content;
   height: fit-content;
@@ -1892,7 +1933,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 .about-img-section {
   display: grid;
   padding-top: 64px;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 45% 55%;
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -1902,11 +1943,12 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   position: relative;
   width: 100%;
   height: 100%;
+  padding-top: 80px;
 }
 .about-img-section .about-img-wrap > div {
   display: flex;
@@ -2504,30 +2546,65 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     filter: blur(0px);
   }
 }
-.disable {
-  animation-play-state: paused !important;
-}
-
-.enable {
-  animation-play-state: running !important;
-}
-
-.project-grid {
-  position: relative;
-}
-.project-grid ::-webkit-scrollbar {
-  width: 12px;
-}
-.project-grid .project-img-section {
-  position: absolute;
+.artifact {
   display: flex;
-  width: 100%;
-  height: 100vh;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
 }
-.project-grid .project-img-section .project-img-wrap {
+.artifact h1, .artifact h2 {
+  margin: 0;
+}
+.artifact .artifact-section {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  pointer-events: none;
+}
+.artifact .artifact-section .artifact-wrap {
+  position: relative;
+  display: grid;
+  padding-top: 80px;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  height: 100%;
+}
+.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer {
+  width: 100%;
+}
+.artifact .artifact-section .artifact-wrap .artifact-heading-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 16px;
+}
+.artifact .artifact-section .artifact-wrap .artifact-heading-wrap h1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 0;
+}
+.artifact .artifact-section .artifact-wrap .heading-col {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.artifact .artifact-section .artifact-wrap .artifact-img-wrap {
   position: relative;
   width: 50%;
 }
-.project-grid .project-img-section .project-img-wrap video {
+.artifact .artifact-section .artifact-wrap .artifact-img-wrap video {
   width: 100%;
 }/*# sourceMappingURL=style.css.map */
