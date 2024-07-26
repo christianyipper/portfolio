@@ -2,6 +2,7 @@
     @extend %scroll-page-template;
     gap: $xxxl;
     padding-top: $xxl;
+    z-index: 2;
 
     ::-webkit-scrollbar {
         width: $xs;
@@ -47,7 +48,7 @@
     }
     .project-heading-float {
         @extend %float-heading;
-        margin-bottom: - $lg;
+        // margin-bottom: - $lg;
         animation: projectsLoad 2s ease-in-out forwards;
     }
 

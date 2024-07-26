@@ -1,220 +1,81 @@
 nav {
-    @include flex-wrap( nowrap, row, end, center );
-    @extend %desktop-margin;
-    flex: 0 1 auto;
+    @include flex-wrap( nowrap, row, center, start );
+    width: 100%;
     position: fixed;
+    padding-right: $xs;
     top: 0;
     height: $xxxl;
-    z-index: 900;
-        
-    .nav-left {
-        position: absolute;
-        left: 0;
-        width: $xxl;
-        overflow: hidden;
+    z-index: 999;
 
-        .nav-logo-wrap {
-            @include flex-wrap( nowrap, row, center, center );
+    .nav-wrap {
+        @include flex-wrap( nowrap, row, end, center );
+        @extend %desktop-margin;
+        position: relative;
+        margin: 0 $xl;
+        height: $xxxl;
+
+        .nav-left {
+            position: absolute;
+            left: 0;
             width: $xxl;
-            height: $xxl;
-
-            > svg {
-                margin-top: - $xxs;
-                margin-right: 1px;
-                scale: 4.9;
-
-                .line-nav, .accent-nav {
-                    stroke-width: $xxs;
-                }
-                .base-nav {
-                    transition: .2s ease-in-out;
-                }
-            }
-        }
-        .nav-logo-wrap:hover .base-nav {
-            fill: $primary;
-        }
-    }
-    .nav-mid {
-        @include flex-wrap( wrap, row, start, center );
-        gap: $sm;
-        position: absolute;
-        margin-right: calc( 192px + $md );
-
-        .nav-heading {
-            @include flex-wrap( wrap, row, start, center );
-            @extend %text-glow;
-            padding: $xs $lg;
-            transition: 0.2s ease-in-out;
-            z-index: 2;
-
-            &:after {
-                top: auto;
-                left: auto;
-                transform: scaleX( 1.05 ) scaleY (1.75 );
-                animation-duration: 5s;
-            }
-            &:hover {
-                animation: hoverSquish .4s .05s ease-in-out;
-            }
-        }
-        .nav-projects {
-            &:after {
-                animation-duration: 7s;
-            }
-        }
-        .nav-home:hover {
-            ~.nav-heading-bg {
-                width: 129.65px;
-                background-color: $primary;
-
-                &:before {
-                    opacity: 0%;
-                }
-                &:after {
-                    opacity: 100%;
-                }
-            }
-        }
-        .nav-about:hover {
-            ~.nav-heading-bg {
-                width: 131.82px;
-                transform: translateX( calc( 129.65px + $sm ) );
-                background-color: $primary;
+            overflow: hidden;
+            z-index: 999;
     
-                &:before {
-                    opacity: 0%;
-                }
-                &:after {
-                    opacity: 100%;
-                }
-            }
-        }
-        .nav-projects:hover {
-            ~.nav-heading-bg {
-                width: 151.91px;
-                transform: translateX( calc( 129.65px + 131.82px + ( $sm * 2 ) ) );
-                background-color: $primary;
-    
-                &:before {
-                    opacity: 0%;
-                }
-                &:after {
-                    opacity: 100%;
-                }
-            }
-        }
-        .nav-heading-bg {
-            @extend %nav-bg;
-            animation: navLoad .5s ease-in-out;
-
-            &:before {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-radius: $lg;
-                opacity: 100%;
-                z-index: -2;
-                box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
-                transition: 0.2s ease-in-out;
-            }
-            &:after {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-radius: $lg;
-                opacity: 0%;
-                border: 2px solid white;
-                z-index: -2;
-                box-shadow: 0 0 5px $primary, 0 0 20px $primary, 0 0 50px $primary, 0 0 100px $primary;
-                transition: 0.2s ease-in-out;
-            }
-        }
-    }
-    .nav-home:hover ~ .nav-about,
-    .nav-home:hover ~ .nav-projects,
-    .nav-mid:has( .nav-about:hover ) .nav-home,
-    .nav-about:hover ~ .nav-projects,
-    .nav-mid:has( .nav-projects:hover ) .nav-home,
-    .nav-mid:has( .nav-projects:hover ) .nav-about {
-        color: $accent;
-
-        &:before {
-            opacity: 0%;
-        }
-        &:after {
-            opacity: 0%;
-        }
-    }
-    .nav-right {
-        @include flex-wrap( wrap, row, end, end );
-        position: absolute;
-        right: - calc( $xs / 2 );
-        
-        .nav-icon-wrap {
-            @include flex-wrap( nowrap, row, end, center );
-            position: relative;
-            gap: $xs;
-            padding: 0 calc( $xs / 2 );
-
-            .nav-icon {
+            .nav-logo-wrap {
                 @include flex-wrap( nowrap, row, center, center );
-                width: $xl;
-                height: $xl;
+                width: $xxl;
+                height: $xxl;
+    
+                > svg {
+                    margin-top: - $xxs;
+                    margin-right: 1px;
+                    scale: 4.9;
+    
+                    .line-nav, .accent-nav {
+                        stroke-width: $xxs;
+                    }
+                    .base-nav {
+                        transition: .2s ease-in-out;
+                    }
+                }
+            }
+            .nav-logo-wrap:hover .base-nav {
+                fill: $primary;
+            }
+        }
+        .nav-mid {
+            @include flex-wrap( wrap, row, start, center );
+            gap: $sm;
+            position: absolute;
+            margin-right: calc( 192px + $md );
+    
+            .nav-heading {
+                @include flex-wrap( wrap, row, start, center );
+                @extend %text-glow;
+                padding: $xs $lg;
+                transition: 0.2s ease-in-out;
                 z-index: 2;
-                
-                // &:after {
-                //     position: absolute;
-                //     width: 100%;
-                //     -webkit-text-stroke: 2px white;
-                //     content: attr(text-glow);
-                //     opacity: 100%;
-                //     z-index: -1;
-                //     left: 0;
-                //     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff,
-                // }
-                &:hover > svg {
-                    animation: svgRotate 0.6s ease-in-out forwards alternate infinite;
-                }
-                & > svg {
-                    fill: white;
-                    transition: .2s ease-in-out;
-                }
-            }
-            .nav-email:hover ~ .nav-icon-bg {
-                width: $xl;
-                transform: translateX( - calc( ( $xl * 2 ) + ( $xs * 3 ) ) );
-                background-color: $primary;
-
-                &:before {
-                    opacity: 0%;
-                }
+    
                 &:after {
-                    opacity: 100%;
+                    top: auto;
+                    left: auto;
+                    transform: scaleX( 1.05 ) scaleY (1.75 );
+                    animation-duration: 5s;
+                }
+                &:hover {
+                    animation: hoverSquish .4s .05s ease-in-out;
                 }
             }
-            .nav-linkedin:hover ~ .nav-icon-bg {
-                width: $xl;
-                transform: translateX( - calc( $xl + ( $xs * 2 ) ) );
-                background-color: $primary;
-
-                &:before {
-                    opacity: 0%;
-                }
+            .nav-projects {
                 &:after {
-                    opacity: 100%;
+                    animation-duration: 7s;
                 }
             }
-            .nav-github {
-                margin-right: $xs;
-
-                &:hover ~ .nav-icon-bg {
-                    width: $xl;
-                    transform: translateX( - $xs );
+            .nav-home:hover {
+                ~.nav-heading-bg {
+                    width: 129.65px;
                     background-color: $primary;
-
+    
                     &:before {
                         opacity: 0%;
                     }
@@ -223,9 +84,48 @@ nav {
                     }
                 }
             }
-            .nav-icon-bg {
+            .nav-about:hover {
+                ~.nav-heading-bg {
+                    width: 131.82px;
+                    transform: translateX( calc( 129.65px + $sm ) );
+                    background-color: $primary;
+        
+                    &:before {
+                        opacity: 0%;
+                    }
+                    &:after {
+                        opacity: 100%;
+                    }
+                }
+                ~.about-preview {
+                    opacity: 100%;
+                    filter: blur(0);
+                    visibility: visible;
+                }
+            }
+            .nav-projects:hover {
+                ~.nav-heading-bg {
+                    width: 151.91px;
+                    transform: translateX( calc( 129.65px + 131.82px + ( $sm * 2 ) ) );
+                    background-color: $primary;
+        
+                    &:before {
+                        opacity: 0%;
+                    }
+                    &:after {
+                        opacity: 100%;
+                    }
+                }
+                ~.projects-preview {
+                    opacity: 100%;
+                    filter: blur(0);
+                    visibility: visible;
+                }
+            }
+            .nav-heading-bg {
                 @extend %nav-bg;
-
+                animation: navLoad .5s ease-in-out;
+    
                 &:before {
                     content: "";
                     position: absolute;
@@ -246,20 +146,184 @@ nav {
                     opacity: 0%;
                     border: 2px solid white;
                     z-index: -2;
-                    box-shadow: 0 0 5px $primary, 0 0 20px $primary, 0 0 50px $primary,
-                    0 0 100px $primary;
+                    box-shadow: 0 0 5px $primary, 0 0 20px $primary, 0 0 50px $primary, 0 0 100px $primary;
                     transition: 0.2s ease-in-out;
                 }
             }
+            .home-preview, .about-preview, .projects-preview {
+                @extend %page-template;
+                position: fixed;
+                // width: 100%;
+                top: 0;
+                left: 0;
+                height: 100%;
+                pointer-events: none;
+                opacity: 0%;
+                filter: blur(10px);
+                transition: 0.5s ease-in-out;
+                background-color: $secondary;
+                visibility: hidden;
+            }
+            .about-preview {
+                margin-left: -6px;
+                .about {
+                    width: 100%;
+                    padding: 0;
+    
+                    .about-scroll {
+                        position: relative;
+    
+                        .about-img-section {
+                            grid-template-columns: 45% 55%;
+                        }
+                        section {
+                            display: grid;
+                            grid-template-columns: 50% 50%;
+                            width: 100%;
+                            align-content: start;
+                            justify-content: start;
+        
+                            article {
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .projects-preview {
+                h1 {
+                    margin-top: -20px;
+                }
+            }
         }
-    }
-    .nav-email:hover ~ .nav-linkedin > svg,
-    .nav-email:hover ~ .nav-github > svg,
-    .nav-right:has( .nav-linkedin:hover ) .nav-email > svg,
-    .nav-linkedin:hover ~ .nav-github > svg,
-    .nav-right:has( .nav-github:hover ) .nav-linkedin > svg,
-    .nav-right:has( .nav-github:hover ) .nav-email > svg {
-        fill: $accent;
+        .nav-home:hover ~ .nav-about,
+        .nav-home:hover ~ .nav-projects,
+        .nav-mid:has( .nav-about:hover ) .nav-home,
+        .nav-about:hover ~ .nav-projects,
+        .nav-mid:has( .nav-projects:hover ) .nav-home,
+        .nav-mid:has( .nav-projects:hover ) .nav-about {
+            color: $accent;
+    
+            &:before {
+                opacity: 0%;
+            }
+            &:after {
+                opacity: 0%;
+            }
+        }
+        .nav-right {
+            @include flex-wrap( wrap, row, end, end );
+            position: absolute;
+            right: - calc( $xs / 2 );
+            
+            .nav-icon-wrap {
+                @include flex-wrap( nowrap, row, end, center );
+                position: relative;
+                gap: $xs;
+                padding: 0 calc( $xs / 2 );
+    
+                .nav-icon {
+                    @include flex-wrap( nowrap, row, center, center );
+                    width: $xl;
+                    height: $xl;
+                    z-index: 2;
+                    
+                    // &:after {
+                    //     position: absolute;
+                    //     width: 100%;
+                    //     -webkit-text-stroke: 2px white;
+                    //     content: attr(text-glow);
+                    //     opacity: 100%;
+                    //     z-index: -1;
+                    //     left: 0;
+                    //     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff,
+                    // }
+                    &:hover > svg {
+                        animation: svgRotate 0.6s ease-in-out forwards alternate infinite;
+                    }
+                    & > svg {
+                        fill: white;
+                        transition: .2s ease-in-out;
+                    }
+                }
+                .nav-email:hover ~ .nav-icon-bg {
+                    width: $xl;
+                    transform: translateX( - calc( ( $xl * 2 ) + ( $xs * 3 ) ) );
+                    background-color: $primary;
+    
+                    &:before {
+                        opacity: 0%;
+                    }
+                    &:after {
+                        opacity: 100%;
+                    }
+                }
+                .nav-linkedin:hover ~ .nav-icon-bg {
+                    width: $xl;
+                    transform: translateX( - calc( $xl + ( $xs * 2 ) ) );
+                    background-color: $primary;
+    
+                    &:before {
+                        opacity: 0%;
+                    }
+                    &:after {
+                        opacity: 100%;
+                    }
+                }
+                .nav-github {
+                    margin-right: $xs;
+    
+                    &:hover ~ .nav-icon-bg {
+                        width: $xl;
+                        transform: translateX( - $xs );
+                        background-color: $primary;
+    
+                        &:before {
+                            opacity: 0%;
+                        }
+                        &:after {
+                            opacity: 100%;
+                        }
+                    }
+                }
+                .nav-icon-bg {
+                    @extend %nav-bg;
+    
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: $lg;
+                        opacity: 100%;
+                        z-index: -2;
+                        box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
+                        transition: 0.2s ease-in-out;
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: $lg;
+                        opacity: 0%;
+                        border: 2px solid white;
+                        z-index: -2;
+                        box-shadow: 0 0 5px $primary, 0 0 20px $primary, 0 0 50px $primary,
+                        0 0 100px $primary;
+                        transition: 0.2s ease-in-out;
+                    }
+                }
+            }
+        }
+        .nav-email:hover ~ .nav-linkedin > svg,
+        .nav-email:hover ~ .nav-github > svg,
+        .nav-right:has( .nav-linkedin:hover ) .nav-email > svg,
+        .nav-linkedin:hover ~ .nav-github > svg,
+        .nav-right:has( .nav-github:hover ) .nav-linkedin > svg,
+        .nav-right:has( .nav-github:hover ) .nav-email > svg {
+            fill: $accent;
+        }
     }
 }
 

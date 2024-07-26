@@ -50,7 +50,7 @@ const StripesNation = () => {
                         <h1 className={ `artifact-heading-shimmer ${ inView1 ? `blur-in` : `blur-out` }` } text-shimmer="Brand Book">Brand Book</h1>
                     </div>
                     <div className="artifact-img-wrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7438 2122">
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7438 2122">
                             <g>
                                 <g>
                                     <polygon className="icon-white" points="1589.3 929 1514.55 1228 985.83 699.3 730.21 1721.71 399.84 1721.71 730.21 400.29 1060.58 400.29 1589.3 929"/>
@@ -75,7 +75,7 @@ const StripesNation = () => {
                                     <polygon className="sn-red" points="6543.01 514.86 6524.37 589.35 6990.76 589.35 6967.14 683.87 6966.95 684.6 6943.89 778.38 6915.26 892.94 6215.43 892.94 6244 778.38 6710.62 778.38 6729.26 703.9 6262.43 703.9 6291.09 589.35 6309.73 514.86 6338.39 400.3 7038.16 400.3 7009.52 514.86 6543.01 514.86"/>
                                 </g>
                             </g>
-                        </svg>
+                        </svg> */}
                     </div>
                 </div>
             </section>

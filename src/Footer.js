@@ -19,7 +19,7 @@ const Footer = () => {
                         <span text-glow="n">n</span>
                         <span text-glow=".">.</span>
                     </h2>
-                    <a className={ `btn ${ footerView ? `scale-in` : `scale-out` }` }>
+                    <a className={ `btn ${ footerView ? `scale-in` : `scale-out` }` } href="https://www.linkedin.com/in/christianyipper/">
                         <p className="text-linkedin" text-glow="linkedin.com">linkedin.com</p>
                     </a>
                 </div>

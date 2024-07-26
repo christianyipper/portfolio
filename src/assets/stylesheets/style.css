@@ -102,7 +102,7 @@
   fill: #146df5;
 }
 
-.about section > article .quote-wrap .quote-text, .btn, h3, h2, h1 {
+.about .about-scroll .about-section article .quote-wrap .quote-text, .btn, h3, h2, h1 {
   font-family: "Rubik";
   color: white;
   transition: 0.2s ease-in-out;
@@ -253,6 +253,7 @@ body {
   top: 0;
   margin: 0;
   width: 100%;
+  overflow: hidden;
   height: 100%;
 }
 
@@ -262,12 +263,12 @@ body {
 
 #main {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   position: relative;
-  background-color: #060e1a;
+  width: 100%;
 }
 
 main {
@@ -334,12 +335,40 @@ main section {
   scroll-snap-align: start;
 }
 
-.artifact .artifact-section, .projects .scroll-wrap .scroll-section, .about-img-section, .about, .home .home-section .home-wrap, footer .footer-wrap, nav, .banner {
+.gif-overlay {
+  position: absolute;
+}
+
+.page-visible {
+  animation: pageVisible 1s ease-in-out forwards;
+}
+
+.page-hidden {
+  animation: pageHidden 1s ease-in-out forwards;
+}
+
+@keyframes pageVisible {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes pageHidden {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+.artifact .artifact-section, .projects .scroll-wrap .scroll-section, .about .about-scroll .about-img-section, .about .about-scroll, .home .home-view .home-section .home-wrap, footer .footer-wrap, nav .nav-wrap, .banner {
   width: 100%;
   max-width: 1280px;
 }
 
-.banner, main {
+nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav .nav-wrap .nav-mid .projects-preview, .banner, main {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -351,9 +380,9 @@ main section {
   padding: 64px 32px 0 32px;
 }
 
-.artifact, .projects, .home {
+.artifact, .projects, .about, .home .home-view {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: start;
   align-items: center;
@@ -361,10 +390,11 @@ main section {
   min-height: calc(100vh - 64px);
   padding: 64px 32px 0 32px;
   height: 100vh;
+  top: 0;
   overflow-x: hidden;
 }
 
-.about section > article .quote-wrap .quote-text, strong, .text-cursor {
+.about .about-scroll .about-section article .quote-wrap .quote-text, strong, .text-cursor {
   background: linear-gradient(to right, #6274ff, #ff7862, #6274ff, #ff7862);
   background-size: 500% 100%;
   -webkit-background-clip: text;
@@ -381,7 +411,7 @@ main section {
   }
 }
 
-.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer, .projects .project-heading-shimmer, .about section > article .about-heading-shimmer, .home .home-section article h2, footer .footer-wrap .footer-shimmer {
+.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer, .projects .project-heading-shimmer, .about .about-scroll .about-section article .about-heading-shimmer, .home .home-view .home-section article h2, footer .footer-wrap .footer-shimmer {
   position: relative;
   display: flex;
   flex-wrap: nowrap;
@@ -395,7 +425,7 @@ main section {
   letter-spacing: 2px;
   text-shadow: 0 0 2px white, 0 0 4px white;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer:before, .projects .project-heading-shimmer:before, .about section > article .about-heading-shimmer:before, .home .home-section article h2:before, footer .footer-wrap .footer-shimmer:before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer:before, .projects .project-heading-shimmer:before, .about .about-scroll .about-section article .about-heading-shimmer:before, .home .home-view .home-section article h2:before, footer .footer-wrap .footer-shimmer:before {
   content: attr(text-shimmer);
   position: absolute;
   -webkit-text-stroke: 2px white;
@@ -406,7 +436,7 @@ main section {
   text-shadow: 2px 2px 4px rgb(140, 169, 189);
   opacity: 25%;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer:after, .projects .project-heading-shimmer:after, .about section > article .about-heading-shimmer:after, .home .home-section article h2:after, footer .footer-wrap .footer-shimmer:after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer:after, .projects .project-heading-shimmer:after, .about .about-scroll .about-section article .about-heading-shimmer:after, .home .home-view .home-section article h2:after, footer .footer-wrap .footer-shimmer:after {
   content: attr(text-shimmer);
   position: absolute;
   top: 6px;
@@ -428,7 +458,7 @@ main section {
   }
 }
 
-.home .home-section article h1 .floating-text {
+.home .home-view .home-section article h1 .floating-text {
   display: inline-block;
   color: transparent;
   -webkit-text-stroke: 3px white;
@@ -436,7 +466,7 @@ main section {
   transform: rotate(6deg) skew(-6deg) translateY(-10px);
   transition: transform 0.3s ease-in-out;
 }
-.home .home-section article h1 .floating-text:before {
+.home .home-view .home-section article h1 .floating-text:before {
   position: absolute;
   color: transparent;
   -webkit-text-stroke: 3px white;
@@ -446,7 +476,7 @@ main section {
   z-index: 2;
   text-shadow: 0.1vw 0vw 0.25vw #aca9ff, 0.2vw 0vw 0.25vw #d9d8ff, 0.4vw 0vw 0.25vw #d9d8ff, 0.1vw 0vw 0.3vw #6274ff, 0.2vw 0vw 0.3vw #6274ff, 0.4vw 0vw 0.3vw #6274ff, 0.1vw 0vw 0.5vw #6274ff, 0.2vw 0vw 0.5vw #6274ff, 0.4vw 0vw 0.5vw #6274ff, 0.1vw 0vw 1vw #450be5, 0.2vw 0vw 1vw #450be5, 0.4vw 0vw 3vw #450be5, 0.1vw 0vw 2vw #3a0be5, 0.2vw 0vw 2vw #3a0be5, 0.4vw 0vw 5vw #3a0be5;
 }
-.home .home-section article h1 .floating-text:after {
+.home .home-view .home-section article h1 .floating-text:after {
   position: absolute;
   -webkit-text-stroke: 3px white;
   content: attr(text-glow);
@@ -456,85 +486,85 @@ main section {
   z-index: 2;
   text-shadow: 2px 0vw 0.25vw #ffd1c9, 4px 0vw 0.25vw #ffded8, 8px 0vw 0.25vw #ffded8, 0.1vw 0vw 0.3vw #f26e57, 0.2vw 0vw 0.3vw #f26e57, 0.4vw 0vw 0.3vw #f26e57, 0.1vw 0vw 0.5vw #f26e57, 0.2vw 0vw 0.5vw #f26e57, 0.4vw 0vw 0.5vw #f26e57, 0.1vw 0vw 1vw #ff7862, 0.2vw 0vw 1vw #ff7862, 0.4vw 0vw 3vw #ff7862, 0.1vw 0vw 2vw #ff7862, 0.2vw 0vw 2vw #ff7862, 0.4vw 0vw 5vw #ff7862;
 }
-.home .home-section article h1 .float-1 {
+.home .home-view .home-section article h1 .float-1 {
   animation: floatBig 2s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-1:before {
+.home .home-view .home-section article h1 .float-1:before {
   animation: neonFade 2s ease-in-out infinite alternate-reverse;
 }
-.home .home-section article h1 .float-1:after {
+.home .home-view .home-section article h1 .float-1:after {
   animation: neonFade 2s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-2 {
+.home .home-view .home-section article h1 .float-2 {
   animation: floatBig 2s 0.5s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-2:before {
+.home .home-view .home-section article h1 .float-2:before {
   animation: neonFade 2s 0.5s ease-in-out infinite alternate-reverse;
 }
-.home .home-section article h1 .float-2:after {
+.home .home-view .home-section article h1 .float-2:after {
   animation: neonFade 2s 0.5s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-3 {
+.home .home-view .home-section article h1 .float-3 {
   animation: floatBig 2s 1s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-3:before {
+.home .home-view .home-section article h1 .float-3:before {
   animation: neonFade 2s 1s ease-in-out infinite alternate-reverse;
 }
-.home .home-section article h1 .float-3:after {
+.home .home-view .home-section article h1 .float-3:after {
   animation: neonFade 2s 1s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-4 {
+.home .home-view .home-section article h1 .float-4 {
   animation: floatBig 2s 1.5s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-4:before {
+.home .home-view .home-section article h1 .float-4:before {
   animation: neonFade 2s 1.5s ease-in-out infinite alternate-reverse;
 }
-.home .home-section article h1 .float-4:after {
+.home .home-view .home-section article h1 .float-4:after {
   animation: neonFade 2s 1.5s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-5 {
+.home .home-view .home-section article h1 .float-5 {
   animation: floatBig 2s 2s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-5:before {
+.home .home-view .home-section article h1 .float-5:before {
   animation: neonFade 2s 2s ease-in-out infinite alternate-reverse;
 }
-.home .home-section article h1 .float-5:after {
+.home .home-view .home-section article h1 .float-5:after {
   animation: neonFade 2s 2s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-6 {
+.home .home-view .home-section article h1 .float-6 {
   animation: floatBig 2s 2.5s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-6:before {
+.home .home-view .home-section article h1 .float-6:before {
   animation: neonFade 2s 2.5s ease-in-out infinite alternate-reverse;
 }
-.home .home-section article h1 .float-6:after {
+.home .home-view .home-section article h1 .float-6:after {
   animation: neonFade 2s 2.5s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-7 {
+.home .home-view .home-section article h1 .float-7 {
   animation: floatBig 2s 3s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-7:before {
+.home .home-view .home-section article h1 .float-7:before {
   animation: neonFade 2s 3s ease-in-out infinite alternate-reverse;
 }
-.home .home-section article h1 .float-7:after {
+.home .home-view .home-section article h1 .float-7:after {
   animation: neonFade 2s 3s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-8 {
+.home .home-view .home-section article h1 .float-8 {
   animation: floatBig 2s 3.5s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-8:before {
+.home .home-view .home-section article h1 .float-8:before {
   animation: neonFade 2s 3.5s ease-in-out infinite alternate-reverse;
 }
-.home .home-section article h1 .float-8:after {
+.home .home-view .home-section article h1 .float-8:after {
   animation: neonFade 2s 3.5s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-9 {
+.home .home-view .home-section article h1 .float-9 {
   animation: floatBig 2s 4s ease-in-out infinite alternate;
 }
-.home .home-section article h1 .float-9:before {
+.home .home-view .home-section article h1 .float-9:before {
   animation: neonFade 2s 4s ease-in-out infinite alternate-reverse;
 }
-.home .home-section article h1 .float-9:after {
+.home .home-view .home-section article h1 .float-9:after {
   animation: neonFade 2s 4s ease-in-out infinite alternate;
 }
 @keyframes floatBig {
@@ -554,7 +584,7 @@ main section {
   }
 }
 
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span, .projects .project-heading-float span, .about section > article .about-heading-float span, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span, footer .footer-wrap .footer-float span {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span, .projects .project-heading-float span, .about .about-scroll .about-section article .about-heading-float span, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span, footer .footer-wrap .footer-float span {
   display: inline-block;
   color: transparent;
   -webkit-text-stroke: 2px white;
@@ -562,7 +592,7 @@ main section {
   display: inline-block;
   transition: transform 0.3s ease-in-out;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:before, .projects .project-heading-float span:before, .about section > article .about-heading-float span:before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:before, footer .footer-wrap .footer-float span:before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:before, .projects .project-heading-float span:before, .about .about-scroll .about-section article .about-heading-float span:before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:before, footer .footer-wrap .footer-float span:before {
   position: absolute;
   color: transparent;
   text-shadow: none;
@@ -573,7 +603,7 @@ main section {
   z-index: 2;
   text-shadow: 0.05vw 0vw 0.2vw #aca9ff, 0.1vw 0vw 0.2vw #d9d8ff, 0.2vw 0vw 0.2vw #d9d8ff, 0.1vw 0vw 0.3vw #6274ff, 0.2vw 0vw 0.3vw #6274ff, 0.4vw 0vw 0.3vw #6274ff, 0.1vw 0vw 0.5vw #6274ff, 0.2vw 0vw 0.5vw #6274ff, 0.4vw 0vw 0.5vw #6274ff, 0.1vw 0vw 1vw #450be5, 0.2vw 0vw 1vw #450be5, 0.4vw 0vw 3vw #450be5, 0.1vw 0vw 2vw #3a0be5, 0.2vw 0vw 2vw #3a0be5, 0.4vw 0vw 5vw #3a0be5;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:after, .projects .project-heading-float span:after, .about section > article .about-heading-float span:after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:after, footer .footer-wrap .footer-float span:after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:after, .projects .project-heading-float span:after, .about .about-scroll .about-section article .about-heading-float span:after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:after, footer .footer-wrap .footer-float span:after {
   position: absolute;
   text-shadow: none;
   -webkit-text-stroke: 2px white;
@@ -584,76 +614,76 @@ main section {
   z-index: 2;
   text-shadow: 2px 0vw 0.2vw #ffd1c9, 4px 0vw 0.2vw #ffded8, 5px 0vw 0.2vw #ffded8, 0.1vw 0vw 0.3vw #f26e57, 0.2vw 0vw 0.3vw #f26e57, 0.4vw 0vw 0.3vw #f26e57, 0.1vw 0vw 0.5vw #f26e57, 0.2vw 0vw 0.5vw #f26e57, 0.4vw 0vw 0.5vw #f26e57, 0.1vw 0vw 1vw #ff7862, 0.2vw 0vw 1vw #ff7862, 0.4vw 0vw 3vw #ff7862, 0.1vw 0vw 2vw #ff7862, 0.2vw 0vw 2vw #ff7862, 0.4vw 0vw 5vw #ff7862;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1), .projects .project-heading-float span:nth-of-type(8n + 1), .about section > article .about-heading-float span:nth-of-type(8n + 1), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1), footer .footer-wrap .footer-float span:nth-of-type(8n + 1) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1), .projects .project-heading-float span:nth-of-type(8n + 1), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 1), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1), footer .footer-wrap .footer-float span:nth-of-type(8n + 1) {
   animation: float 2s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1):before, .projects .project-heading-float span:nth-of-type(8n + 1):before, .about section > article .about-heading-float span:nth-of-type(8n + 1):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1):before, .projects .project-heading-float span:nth-of-type(8n + 1):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 1):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):before {
   animation: neonFade 2s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1):after, .projects .project-heading-float span:nth-of-type(8n + 1):after, .about section > article .about-heading-float span:nth-of-type(8n + 1):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1):after, .projects .project-heading-float span:nth-of-type(8n + 1):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 1):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):after {
   animation: neonFade 2s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2), .projects .project-heading-float span:nth-of-type(8n + 2), .about section > article .about-heading-float span:nth-of-type(8n + 2), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2), footer .footer-wrap .footer-float span:nth-of-type(8n + 2) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2), .projects .project-heading-float span:nth-of-type(8n + 2), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 2), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2), footer .footer-wrap .footer-float span:nth-of-type(8n + 2) {
   animation: float 2s 0.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2):before, .projects .project-heading-float span:nth-of-type(8n + 2):before, .about section > article .about-heading-float span:nth-of-type(8n + 2):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2):before, .projects .project-heading-float span:nth-of-type(8n + 2):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 2):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):before {
   animation: neonFade 2s 0.5s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2):after, .projects .project-heading-float span:nth-of-type(8n + 2):after, .about section > article .about-heading-float span:nth-of-type(8n + 2):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2):after, .projects .project-heading-float span:nth-of-type(8n + 2):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 2):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):after {
   animation: neonFade 2s 0.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3), .projects .project-heading-float span:nth-of-type(8n + 3), .about section > article .about-heading-float span:nth-of-type(8n + 3), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3), footer .footer-wrap .footer-float span:nth-of-type(8n + 3) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3), .projects .project-heading-float span:nth-of-type(8n + 3), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 3), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3), footer .footer-wrap .footer-float span:nth-of-type(8n + 3) {
   animation: float 2s 1s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3):before, .projects .project-heading-float span:nth-of-type(8n + 3):before, .about section > article .about-heading-float span:nth-of-type(8n + 3):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3):before, .projects .project-heading-float span:nth-of-type(8n + 3):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 3):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):before {
   animation: neonFade 2s 1s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3):after, .projects .project-heading-float span:nth-of-type(8n + 3):after, .about section > article .about-heading-float span:nth-of-type(8n + 3):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3):after, .projects .project-heading-float span:nth-of-type(8n + 3):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 3):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):after {
   animation: neonFade 2s 1s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4), .projects .project-heading-float span:nth-of-type(8n + 4), .about section > article .about-heading-float span:nth-of-type(8n + 4), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4), footer .footer-wrap .footer-float span:nth-of-type(8n + 4) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4), .projects .project-heading-float span:nth-of-type(8n + 4), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 4), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4), footer .footer-wrap .footer-float span:nth-of-type(8n + 4) {
   animation: float 2s 1.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4):before, .projects .project-heading-float span:nth-of-type(8n + 4):before, .about section > article .about-heading-float span:nth-of-type(8n + 4):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4):before, .projects .project-heading-float span:nth-of-type(8n + 4):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 4):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):before {
   animation: neonFade 2s 1.5s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4):after, .projects .project-heading-float span:nth-of-type(8n + 4):after, .about section > article .about-heading-float span:nth-of-type(8n + 4):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4):after, .projects .project-heading-float span:nth-of-type(8n + 4):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 4):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):after {
   animation: neonFade 2s 1.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5), .projects .project-heading-float span:nth-of-type(8n + 5), .about section > article .about-heading-float span:nth-of-type(8n + 5), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5), footer .footer-wrap .footer-float span:nth-of-type(8n + 5) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5), .projects .project-heading-float span:nth-of-type(8n + 5), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 5), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5), footer .footer-wrap .footer-float span:nth-of-type(8n + 5) {
   animation: float 2s 2s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5):before, .projects .project-heading-float span:nth-of-type(8n + 5):before, .about section > article .about-heading-float span:nth-of-type(8n + 5):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5):before, .projects .project-heading-float span:nth-of-type(8n + 5):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 5):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):before {
   animation: neonFade 2s 2s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5):after, .projects .project-heading-float span:nth-of-type(8n + 5):after, .about section > article .about-heading-float span:nth-of-type(8n + 5):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5):after, .projects .project-heading-float span:nth-of-type(8n + 5):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 5):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):after {
   animation: neonFade 2s 2s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6), .projects .project-heading-float span:nth-of-type(8n + 6), .about section > article .about-heading-float span:nth-of-type(8n + 6), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6), footer .footer-wrap .footer-float span:nth-of-type(8n + 6) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6), .projects .project-heading-float span:nth-of-type(8n + 6), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 6), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6), footer .footer-wrap .footer-float span:nth-of-type(8n + 6) {
   animation: float 2s 2.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6):before, .projects .project-heading-float span:nth-of-type(8n + 6):before, .about section > article .about-heading-float span:nth-of-type(8n + 6):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6):before, .projects .project-heading-float span:nth-of-type(8n + 6):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 6):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):before {
   animation: neonFade 2s 2.5s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6):after, .projects .project-heading-float span:nth-of-type(8n + 6):after, .about section > article .about-heading-float span:nth-of-type(8n + 6):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6):after, .projects .project-heading-float span:nth-of-type(8n + 6):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 6):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):after {
   animation: neonFade 2s 2.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7), .projects .project-heading-float span:nth-of-type(8n + 7), .about section > article .about-heading-float span:nth-of-type(8n + 7), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7), footer .footer-wrap .footer-float span:nth-of-type(8n + 7) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7), .projects .project-heading-float span:nth-of-type(8n + 7), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 7), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7), footer .footer-wrap .footer-float span:nth-of-type(8n + 7) {
   animation: float 2s 3s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7):before, .projects .project-heading-float span:nth-of-type(8n + 7):before, .about section > article .about-heading-float span:nth-of-type(8n + 7):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7):before, .projects .project-heading-float span:nth-of-type(8n + 7):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 7):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):before {
   animation: neonFade 2s 3s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7):after, .projects .project-heading-float span:nth-of-type(8n + 7):after, .about section > article .about-heading-float span:nth-of-type(8n + 7):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7):after, .projects .project-heading-float span:nth-of-type(8n + 7):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 7):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):after {
   animation: neonFade 2s 3s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8), .projects .project-heading-float span:nth-of-type(8n + 8), .about section > article .about-heading-float span:nth-of-type(8n + 8), .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8), footer .footer-wrap .footer-float span:nth-of-type(8n + 8) {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8), .projects .project-heading-float span:nth-of-type(8n + 8), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 8), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8), footer .footer-wrap .footer-float span:nth-of-type(8n + 8) {
   animation: float 2s 3.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8):before, .projects .project-heading-float span:nth-of-type(8n + 8):before, .about section > article .about-heading-float span:nth-of-type(8n + 8):before, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):before {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8):before, .projects .project-heading-float span:nth-of-type(8n + 8):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 8):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):before {
   animation: neonFade 2s 3.5s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8):after, .projects .project-heading-float span:nth-of-type(8n + 8):after, .about section > article .about-heading-float span:nth-of-type(8n + 8):after, .home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):after {
+.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8):after, .projects .project-heading-float span:nth-of-type(8n + 8):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 8):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):after {
   animation: neonFade 2s 3.5s ease-in-out infinite alternate;
 }
 @keyframes float {
@@ -673,7 +703,7 @@ main section {
   }
 }
 
-.home .home-section .home-left-1 .banner-img-wrap, footer .footer-wrap .footer-mid {
+.home .home-view .home-section .home-left-1 .banner-img-wrap, footer .footer-wrap .footer-mid {
   animation: imgFloat 3s ease-in-out forwards alternate infinite;
 }
 @keyframes imgFloat {
@@ -685,7 +715,7 @@ main section {
   }
 }
 
-.projects .project-wrap .project-sub, nav .nav-mid .nav-heading, .btn p {
+.projects .project-wrap .project-sub, nav .nav-wrap .nav-mid .nav-heading, .btn p {
   position: relative;
   margin: 0;
   font-size: 24px;
@@ -693,7 +723,7 @@ main section {
   font-weight: 600;
   z-index: 1;
 }
-.projects .project-wrap .project-sub:before, nav .nav-mid .nav-heading:before, .btn p:before {
+.projects .project-wrap .project-sub:before, nav .nav-wrap .nav-mid .nav-heading:before, .btn p:before {
   position: absolute;
   width: 100%;
   content: attr(text-glow);
@@ -701,7 +731,7 @@ main section {
   z-index: -1;
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
-.projects .project-wrap .project-sub:after, nav .nav-mid .nav-heading:after, .btn p:after {
+.projects .project-wrap .project-sub:after, nav .nav-wrap .nav-mid .nav-heading:after, .btn p:after {
   content: attr(text-glow);
   position: absolute;
   top: 0px;
@@ -1111,21 +1141,33 @@ nav {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  flex: 0 1 auto;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
   position: fixed;
+  padding-right: 12px;
   top: 0;
   height: 80px;
-  z-index: 900;
+  z-index: 999;
 }
-nav .nav-left {
+nav .nav-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+  margin: 0 48px;
+  height: 80px;
+}
+nav .nav-wrap .nav-left {
   position: absolute;
   left: 0;
   width: 64px;
   overflow: hidden;
+  z-index: 999;
 }
-nav .nav-left .nav-logo-wrap {
+nav .nav-wrap .nav-left .nav-logo-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -1134,21 +1176,21 @@ nav .nav-left .nav-logo-wrap {
   width: 64px;
   height: 64px;
 }
-nav .nav-left .nav-logo-wrap > svg {
+nav .nav-wrap .nav-left .nav-logo-wrap > svg {
   margin-top: -8px;
   margin-right: 1px;
   scale: 4.9;
 }
-nav .nav-left .nav-logo-wrap > svg .line-nav, nav .nav-left .nav-logo-wrap > svg .accent-nav {
+nav .nav-wrap .nav-left .nav-logo-wrap > svg .line-nav, nav .nav-wrap .nav-left .nav-logo-wrap > svg .accent-nav {
   stroke-width: 8px;
 }
-nav .nav-left .nav-logo-wrap > svg .base-nav {
+nav .nav-wrap .nav-left .nav-logo-wrap > svg .base-nav {
   transition: 0.2s ease-in-out;
 }
-nav .nav-left .nav-logo-wrap:hover .base-nav {
+nav .nav-wrap .nav-left .nav-logo-wrap:hover .base-nav {
   fill: #ff7862;
 }
-nav .nav-mid {
+nav .nav-wrap .nav-mid {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -1158,7 +1200,7 @@ nav .nav-mid {
   position: absolute;
   margin-right: 216px;
 }
-nav .nav-mid .nav-heading {
+nav .nav-wrap .nav-mid .nav-heading {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -1168,54 +1210,64 @@ nav .nav-mid .nav-heading {
   transition: 0.2s ease-in-out;
   z-index: 2;
 }
-nav .nav-mid .nav-heading:after {
+nav .nav-wrap .nav-mid .nav-heading:after {
   top: auto;
   left: auto;
   transform: scaleX(1.05) scaleY 1.75;
   animation-duration: 5s;
 }
-nav .nav-mid .nav-heading:hover {
+nav .nav-wrap .nav-mid .nav-heading:hover {
   animation: hoverSquish 0.4s 0.05s ease-in-out;
 }
-nav .nav-mid .nav-projects:after {
+nav .nav-wrap .nav-mid .nav-projects:after {
   animation-duration: 7s;
 }
-nav .nav-mid .nav-home:hover ~ .nav-heading-bg {
+nav .nav-wrap .nav-mid .nav-home:hover ~ .nav-heading-bg {
   width: 129.65px;
   background-color: #ff7862;
 }
-nav .nav-mid .nav-home:hover ~ .nav-heading-bg:before {
+nav .nav-wrap .nav-mid .nav-home:hover ~ .nav-heading-bg:before {
   opacity: 0%;
 }
-nav .nav-mid .nav-home:hover ~ .nav-heading-bg:after {
+nav .nav-wrap .nav-mid .nav-home:hover ~ .nav-heading-bg:after {
   opacity: 100%;
 }
-nav .nav-mid .nav-about:hover ~ .nav-heading-bg {
+nav .nav-wrap .nav-mid .nav-about:hover ~ .nav-heading-bg {
   width: 131.82px;
   transform: translateX(145.65px);
   background-color: #ff7862;
 }
-nav .nav-mid .nav-about:hover ~ .nav-heading-bg:before {
+nav .nav-wrap .nav-mid .nav-about:hover ~ .nav-heading-bg:before {
   opacity: 0%;
 }
-nav .nav-mid .nav-about:hover ~ .nav-heading-bg:after {
+nav .nav-wrap .nav-mid .nav-about:hover ~ .nav-heading-bg:after {
   opacity: 100%;
 }
-nav .nav-mid .nav-projects:hover ~ .nav-heading-bg {
+nav .nav-wrap .nav-mid .nav-about:hover ~ .about-preview {
+  opacity: 100%;
+  filter: blur(0);
+  visibility: visible;
+}
+nav .nav-wrap .nav-mid .nav-projects:hover ~ .nav-heading-bg {
   width: 151.91px;
   transform: translateX(293.47px);
   background-color: #ff7862;
 }
-nav .nav-mid .nav-projects:hover ~ .nav-heading-bg:before {
+nav .nav-wrap .nav-mid .nav-projects:hover ~ .nav-heading-bg:before {
   opacity: 0%;
 }
-nav .nav-mid .nav-projects:hover ~ .nav-heading-bg:after {
+nav .nav-wrap .nav-mid .nav-projects:hover ~ .nav-heading-bg:after {
   opacity: 100%;
 }
-nav .nav-mid .nav-heading-bg {
+nav .nav-wrap .nav-mid .nav-projects:hover ~ .projects-preview {
+  opacity: 100%;
+  filter: blur(0);
+  visibility: visible;
+}
+nav .nav-wrap .nav-mid .nav-heading-bg {
   animation: navLoad 0.5s ease-in-out;
 }
-nav .nav-mid .nav-heading-bg:before {
+nav .nav-wrap .nav-mid .nav-heading-bg:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -1226,7 +1278,7 @@ nav .nav-mid .nav-heading-bg:before {
   box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
   transition: 0.2s ease-in-out;
 }
-nav .nav-mid .nav-heading-bg:after {
+nav .nav-wrap .nav-mid .nav-heading-bg:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -1238,31 +1290,69 @@ nav .nav-mid .nav-heading-bg:after {
   box-shadow: 0 0 5px #ff7862, 0 0 20px #ff7862, 0 0 50px #ff7862, 0 0 100px #ff7862;
   transition: 0.2s ease-in-out;
 }
-nav .nav-home:hover ~ .nav-about,
-nav .nav-home:hover ~ .nav-projects,
-nav .nav-mid:has(.nav-about:hover) .nav-home,
-nav .nav-about:hover ~ .nav-projects,
-nav .nav-mid:has(.nav-projects:hover) .nav-home,
-nav .nav-mid:has(.nav-projects:hover) .nav-about {
+nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav .nav-wrap .nav-mid .projects-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0%;
+  filter: blur(10px);
+  transition: 0.5s ease-in-out;
+  background-color: #060e1a;
+  visibility: hidden;
+}
+nav .nav-wrap .nav-mid .about-preview {
+  margin-left: -6px;
+}
+nav .nav-wrap .nav-mid .about-preview .about {
+  width: 100%;
+  padding: 0;
+}
+nav .nav-wrap .nav-mid .about-preview .about .about-scroll {
+  position: relative;
+}
+nav .nav-wrap .nav-mid .about-preview .about .about-scroll .about-img-section {
+  grid-template-columns: 45% 55%;
+}
+nav .nav-wrap .nav-mid .about-preview .about .about-scroll section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  align-content: start;
+  justify-content: start;
+}
+nav .nav-wrap .nav-mid .about-preview .about .about-scroll section article {
+  margin-top: 0;
+}
+nav .nav-wrap .nav-mid .projects-preview h1 {
+  margin-top: -20px;
+}
+nav .nav-wrap .nav-home:hover ~ .nav-about,
+nav .nav-wrap .nav-home:hover ~ .nav-projects,
+nav .nav-wrap .nav-mid:has(.nav-about:hover) .nav-home,
+nav .nav-wrap .nav-about:hover ~ .nav-projects,
+nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-home,
+nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-about {
   color: #6274ff;
 }
-nav .nav-home:hover ~ .nav-about:before,
-nav .nav-home:hover ~ .nav-projects:before,
-nav .nav-mid:has(.nav-about:hover) .nav-home:before,
-nav .nav-about:hover ~ .nav-projects:before,
-nav .nav-mid:has(.nav-projects:hover) .nav-home:before,
-nav .nav-mid:has(.nav-projects:hover) .nav-about:before {
+nav .nav-wrap .nav-home:hover ~ .nav-about:before,
+nav .nav-wrap .nav-home:hover ~ .nav-projects:before,
+nav .nav-wrap .nav-mid:has(.nav-about:hover) .nav-home:before,
+nav .nav-wrap .nav-about:hover ~ .nav-projects:before,
+nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-home:before,
+nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-about:before {
   opacity: 0%;
 }
-nav .nav-home:hover ~ .nav-about:after,
-nav .nav-home:hover ~ .nav-projects:after,
-nav .nav-mid:has(.nav-about:hover) .nav-home:after,
-nav .nav-about:hover ~ .nav-projects:after,
-nav .nav-mid:has(.nav-projects:hover) .nav-home:after,
-nav .nav-mid:has(.nav-projects:hover) .nav-about:after {
+nav .nav-wrap .nav-home:hover ~ .nav-about:after,
+nav .nav-wrap .nav-home:hover ~ .nav-projects:after,
+nav .nav-wrap .nav-mid:has(.nav-about:hover) .nav-home:after,
+nav .nav-wrap .nav-about:hover ~ .nav-projects:after,
+nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-home:after,
+nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-about:after {
   opacity: 0%;
 }
-nav .nav-right {
+nav .nav-wrap .nav-right {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -1271,7 +1361,7 @@ nav .nav-right {
   position: absolute;
   right: -6px;
 }
-nav .nav-right .nav-icon-wrap {
+nav .nav-wrap .nav-right .nav-icon-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -1281,7 +1371,7 @@ nav .nav-right .nav-icon-wrap {
   gap: 12px;
   padding: 0 6px;
 }
-nav .nav-right .nav-icon-wrap .nav-icon {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-icon {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -1291,50 +1381,50 @@ nav .nav-right .nav-icon-wrap .nav-icon {
   height: 48px;
   z-index: 2;
 }
-nav .nav-right .nav-icon-wrap .nav-icon:hover > svg {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-icon:hover > svg {
   animation: svgRotate 0.6s ease-in-out forwards alternate infinite;
 }
-nav .nav-right .nav-icon-wrap .nav-icon > svg {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-icon > svg {
   fill: white;
   transition: 0.2s ease-in-out;
 }
-nav .nav-right .nav-icon-wrap .nav-email:hover ~ .nav-icon-bg {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-email:hover ~ .nav-icon-bg {
   width: 48px;
   transform: translateX(-132px);
   background-color: #ff7862;
 }
-nav .nav-right .nav-icon-wrap .nav-email:hover ~ .nav-icon-bg:before {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-email:hover ~ .nav-icon-bg:before {
   opacity: 0%;
 }
-nav .nav-right .nav-icon-wrap .nav-email:hover ~ .nav-icon-bg:after {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-email:hover ~ .nav-icon-bg:after {
   opacity: 100%;
 }
-nav .nav-right .nav-icon-wrap .nav-linkedin:hover ~ .nav-icon-bg {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-linkedin:hover ~ .nav-icon-bg {
   width: 48px;
   transform: translateX(-72px);
   background-color: #ff7862;
 }
-nav .nav-right .nav-icon-wrap .nav-linkedin:hover ~ .nav-icon-bg:before {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-linkedin:hover ~ .nav-icon-bg:before {
   opacity: 0%;
 }
-nav .nav-right .nav-icon-wrap .nav-linkedin:hover ~ .nav-icon-bg:after {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-linkedin:hover ~ .nav-icon-bg:after {
   opacity: 100%;
 }
-nav .nav-right .nav-icon-wrap .nav-github {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-github {
   margin-right: 12px;
 }
-nav .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg {
   width: 48px;
   transform: translateX(-12px);
   background-color: #ff7862;
 }
-nav .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg:before {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg:before {
   opacity: 0%;
 }
-nav .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg:after {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-github:hover ~ .nav-icon-bg:after {
   opacity: 100%;
 }
-nav .nav-right .nav-icon-wrap .nav-icon-bg:before {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-icon-bg:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -1345,7 +1435,7 @@ nav .nav-right .nav-icon-wrap .nav-icon-bg:before {
   box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
   transition: 0.2s ease-in-out;
 }
-nav .nav-right .nav-icon-wrap .nav-icon-bg:after {
+nav .nav-wrap .nav-right .nav-icon-wrap .nav-icon-bg:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -1357,16 +1447,16 @@ nav .nav-right .nav-icon-wrap .nav-icon-bg:after {
   box-shadow: 0 0 5px #ff7862, 0 0 20px #ff7862, 0 0 50px #ff7862, 0 0 100px #ff7862;
   transition: 0.2s ease-in-out;
 }
-nav .nav-email:hover ~ .nav-linkedin > svg,
-nav .nav-email:hover ~ .nav-github > svg,
-nav .nav-right:has(.nav-linkedin:hover) .nav-email > svg,
-nav .nav-linkedin:hover ~ .nav-github > svg,
-nav .nav-right:has(.nav-github:hover) .nav-linkedin > svg,
-nav .nav-right:has(.nav-github:hover) .nav-email > svg {
+nav .nav-wrap .nav-email:hover ~ .nav-linkedin > svg,
+nav .nav-wrap .nav-email:hover ~ .nav-github > svg,
+nav .nav-wrap .nav-right:has(.nav-linkedin:hover) .nav-email > svg,
+nav .nav-wrap .nav-linkedin:hover ~ .nav-github > svg,
+nav .nav-wrap .nav-right:has(.nav-github:hover) .nav-linkedin > svg,
+nav .nav-wrap .nav-right:has(.nav-github:hover) .nav-email > svg {
   fill: #6274ff;
 }
 
-nav .nav-mid .nav-heading-bg, nav .nav-right .nav-icon-wrap .nav-icon-bg {
+nav .nav-wrap .nav-mid .nav-heading-bg, nav .nav-wrap .nav-right .nav-icon-wrap .nav-icon-bg {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -1410,9 +1500,10 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: 100%;
   height: 400px;
-  z-index: 900;
+  z-index: 800;
 }
 footer .footer-wrap {
   display: flex;
@@ -1472,8 +1563,7 @@ footer .footer-wrap img {
   height: 100%;
   max-height: 400px;
 }
-
-.copyright {
+footer .copyright {
   position: absolute;
   bottom: 0;
   left: 32px;
@@ -1491,10 +1581,19 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0;
   position: relative;
+  width: 100%;
   height: 100%;
 }
-.home .loading-screen {
+.home .home-view {
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+}
+.home .home-view .loading-screen {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -1509,10 +1608,10 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   visibility: hidden;
   animation: loadScreen 3s ease-in;
 }
-.home .loading-screen svg {
+.home .home-view .loading-screen svg {
   animation: loadLogo 3s ease-in;
 }
-.home .home-section {
+.home .home-view .home-section {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -1525,7 +1624,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   pointer-events: none;
   overflow: hidden;
 }
-.home .home-section .home-wrap {
+.home .home-view .home-section .home-wrap {
   position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -1533,14 +1632,13 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: 100%;
   max-height: 100vh;
 }
-.home .home-section .home-left-1 {
-  transform: scale(2) translate(-30vw, 20vw);
+.home .home-view .home-section .home-left-1 {
   position: absolute;
   grid-column: span 2;
   animation: homeIn 3s 1.5s ease-in-out forwards alternate;
   overflow: hidden;
 }
-.home .home-section .home-left-1 .banner-img-wrap {
+.home .home-view .home-section .home-left-1 .banner-img-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -1551,63 +1649,63 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: 100vh;
   z-index: 2;
 }
-.home .home-section .home-left-1 .banner-img-wrap > img {
+.home .home-view .home-section .home-left-1 .banner-img-wrap > img {
   height: 100%;
   aspect-ratio: 1/1;
 }
-.home .home-section .home-left-1 .banner-img-wrap .hat-overlay {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .hat-overlay {
   position: absolute;
   z-index: 4;
   animation: hatGlow 1s linear infinite alternate;
 }
-.home .home-section .home-left-1 .banner-img-wrap .gif-overlay {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .gif-overlay {
   z-index: 3;
 }
-.home .home-section .home-left-1 .banner-img-wrap .gif-bg {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .gif-bg {
   z-index: 1;
 }
-.home .home-section .home-left-1 .banner-img-wrap .banner-svg {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .banner-svg {
   height: 100%;
   z-index: 20;
   aspect-ratio: 1/1;
   position: absolute;
   z-index: 2;
 }
-.home .home-section .home-left-1 .banner-img-wrap .banner-svg svg {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .banner-svg svg {
   width: 100%;
 }
-.home .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses {
   fill: transparent;
   stroke: #b2e4ff;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 4px;
 }
-.home .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-frame {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-frame {
   stroke-dasharray: 1400;
   animation: glassesFrame 4s infinite both;
 }
-.home .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-left {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-left {
   stroke-dasharray: 1000;
   animation: glassesLeft 4s infinite both;
 }
-.home .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-right {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-right {
   stroke-dasharray: 1000;
   animation: glassesRight 4s 0.3s infinite both;
 }
-.home .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-accent1 {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-accent1 {
   stroke-dasharray: 1000;
   animation: glassesAccent1 4s 0.3s infinite both;
 }
-.home .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-accent2 {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-accent2 {
   stroke-dasharray: 1000;
   animation: glassesAccent2 4s 0.3s infinite both;
 }
-.home .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-accent3 {
+.home .home-view .home-section .home-left-1 .banner-img-wrap .banner-svg svg .glasses-accent3 {
   stroke-dasharray: 1000;
   animation: glassesAccent3 4s 0.3s infinite both;
 }
-.home .home-section article {
+.home .home-view .home-section article {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -1621,11 +1719,11 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   padding-top: 32px;
   z-index: 10;
 }
-.home .home-section article h1 {
+.home .home-view .home-section article h1 {
   font-size: 100px;
   top: 32px;
 }
-.home .home-section article .home-text-wrap {
+.home .home-view .home-section article .home-text-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -1635,7 +1733,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: 100%;
   margin-top: -48px;
 }
-.home .home-section article .home-text-wrap .home-buttons-wrap {
+.home .home-view .home-section article .home-text-wrap .home-buttons-wrap {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -1646,10 +1744,10 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   margin-top: 24px;
   margin-left: 64px;
 }
-.home .home-section article h2 {
+.home .home-view .home-section article h2 {
   margin: 0;
 }
-.home .home-section .article-wrap {
+.home .home-view .home-section .article-wrap {
   border-radius: 16px;
   background-color: rgba(98, 116, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
@@ -1657,10 +1755,10 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   padding: 24px;
   bottom: 0;
 }
-.home .home-section .article-wrap .article-content {
+.home .home-view .home-section .article-wrap .article-content {
   width: 100%;
 }
-.home .home-section .article-wrap .article-content .featured-heading-wrap {
+.home .home-view .home-section .article-wrap .article-content .featured-heading-wrap {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -1669,14 +1767,14 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   align-items: center;
   gap: 16px;
 }
-.home .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float {
+.home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: start;
   align-items: center;
 }
-.home .home-section .window-wrap {
+.home .home-view .home-section .window-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -1685,35 +1783,35 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: 100%;
   padding-top: 64px;
 }
-.home .home-section .window-wrap .window, .home .home-section .window-wrap .window-bar, .home .home-section .window-wrap .window-bg, .home .home-section .window-wrap .bgbg {
+.home .home-view .home-section .window-wrap .window, .home .home-view .home-section .window-wrap .window-bar, .home .home-view .home-section .window-wrap .window-bg, .home .home-view .home-section .window-wrap .bgbg {
   position: absolute;
   margin-left: -32px;
   width: 70%;
 }
-.home .home-section .window-wrap .window, .home .home-section .window-wrap .window-bar {
+.home .home-view .home-section .window-wrap .window, .home .home-view .home-section .window-wrap .window-bar {
   animation: hatGlow 1s linear infinite alternate;
 }
-.home .home-section .window-wrap .window {
+.home .home-view .home-section .window-wrap .window {
   z-index: 3;
 }
-.home .home-section .window-wrap .window-bar {
+.home .home-view .home-section .window-wrap .window-bar {
   z-index: 2;
 }
-.home .home-section .window-wrap .window-bg {
+.home .home-view .home-section .window-wrap .window-bg {
   z-index: 1;
 }
-.home .home-section .window-wrap .bgbg {
+.home .home-view .home-section .window-wrap .bgbg {
   aspect-ratio: 16/9;
   max-width: 65%;
   margin-top: 57px;
   margin-left: 0;
 }
-.home .home-section .window-wrap .bgbg video {
+.home .home-view .home-section .window-wrap .bgbg video {
   background-color: rgba(255, 0, 0, 0.5);
   width: 100%;
   height: 100%;
 }
-.home .logo-wrap {
+.home .home-view .logo-wrap {
   position: absolute;
   width: 100vh;
   height: 100%;
@@ -1723,7 +1821,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   overflow: hidden;
   z-index: 1;
 }
-.home .logo-wrap > svg {
+.home .home-view .logo-wrap > svg {
   margin-top: 10%;
   scale: 2.5;
 }
@@ -1884,30 +1982,33 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   animation: flyin3 2s 1s ease-in-out forwards;
 }
 
-.about section {
+.about ::-webkit-scrollbar {
+  width: 12px;
+}
+.about .about-scroll .about-section {
   height: -moz-fit-content;
   height: fit-content;
   z-index: 5;
 }
-.about section > article {
+.about .about-scroll .about-section article {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
 }
-.about section > article h1, .about section > article h2 {
+.about .about-scroll .about-section article h1, .about .about-scroll .about-section article h2 {
   margin: 0;
 }
-.about section > article p {
+.about .about-scroll .about-section article p {
   margin-top: 0;
 }
-.about section > article .about-heading-shimmer {
-  margin-top: 32px;
+.about .about-scroll .about-section article .about-heading-shimmer {
+  margin-top: 48px;
   width: 100%;
 }
-.about section > article .about-heading-float {
-  margin-bottom: 32px;
+.about .about-scroll .about-section article .about-heading-float {
+  margin-bottom: 48px;
 }
-.about section > article .about-heading-wrap {
+.about .about-scroll .about-section article .about-heading-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -1915,22 +2016,21 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   align-items: start;
   gap: 16px;
 }
-.about section > article .about-heading-wrap h1 {
+.about .about-scroll .about-section article .about-heading-wrap h1 {
   width: -moz-fit-content;
   width: fit-content;
   margin-top: 0;
 }
-.about section > article .quote-wrap {
+.about .about-scroll .about-section article .quote-wrap {
   position: relative;
   padding: 24px 0;
 }
-.about section > article .quote-wrap .quote-text {
+.about .about-scroll .about-section article .quote-wrap .quote-text {
   font-weight: 700;
   font-size: 24px;
   text-align: center;
 }
-
-.about-img-section {
+.about .about-scroll .about-img-section {
   display: grid;
   padding-top: 64px;
   grid-template-columns: 45% 55%;
@@ -1938,8 +2038,10 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: 100vh;
   position: fixed;
   top: 0;
+  z-index: -1;
+  pointer-events: none;
 }
-.about-img-section .about-img-wrap {
+.about .about-scroll .about-img-section .about-img-wrap {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -1950,7 +2052,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: 100%;
   padding-top: 80px;
 }
-.about-img-section .about-img-wrap > div {
+.about .about-scroll .about-img-section .about-img-wrap div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -1960,23 +2062,24 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: 100%;
   height: 100%;
 }
-.about-img-section .about-img-wrap > div img {
+.about .about-scroll .about-img-section .about-img-wrap div img {
   width: 100%;
   aspect-ratio: 1/1;
 }
-.about-img-section .about-img-wrap .about-img-1 {
+.about .about-scroll .about-img-section .about-img-wrap .about-img-1 {
   z-index: 4;
+  opacity: 100%;
 }
-.about-img-section .about-img-wrap .about-img-2 {
+.about .about-scroll .about-img-section .about-img-wrap .about-img-2 {
   z-index: 3;
 }
-.about-img-section .about-img-wrap .about-img-3 {
+.about .about-scroll .about-img-section .about-img-wrap .about-img-3 {
   z-index: 2;
 }
-.about-img-section .about-img-wrap .about-img-4 {
+.about .about-scroll .about-img-section .about-img-wrap .about-img-4 {
   z-index: 1;
 }
-.about-img-section .about-img-wrap .career {
+.about .about-scroll .about-img-section .about-img-wrap .career {
   position: absolute;
   width: 100%;
   height: -moz-fit-content;
@@ -1984,7 +2087,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   bottom: 0;
   visibility: hidden;
 }
-.about-img-section .about-img-wrap .career .career-stats {
+.about .about-scroll .about-img-section .about-img-wrap .career .career-stats {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -1995,7 +2098,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: -moz-fit-content;
   height: fit-content;
 }
-.about-img-section .about-img-wrap .career .career-stats .league-wrap {
+.about .about-scroll .about-img-section .about-img-wrap .career .career-stats .league-wrap {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -2003,7 +2106,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   align-items: start;
   position: relative;
 }
-.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card {
+.about .about-scroll .about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -2014,32 +2117,29 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: fit-content;
   border-radius: 8px;
 }
-.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card img {
+.about .about-scroll .about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card img {
   width: 64px;
   margin-left: 8px;
 }
-.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card article {
+.about .about-scroll .about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card article {
   margin-right: 8px;
 }
-.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card article span {
+.about .about-scroll .about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card article span {
   line-height: 1.5;
 }
-.about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card article p {
+.about .about-scroll .about-img-section .about-img-wrap .career .career-stats .league-wrap .league-card article p {
   margin-left: 12px;
   font-size: 14px;
   line-height: 14px;
 }
-.about-img-section .about-img-wrap .career .career-stats .league-wrap .featured-card {
+.about .about-scroll .about-img-section .about-img-wrap .career .career-stats .league-wrap .featured-card {
   background-color: rgba(98, 116, 255, 0.33);
-}
-
-.gif-overlay {
-  position: absolute;
 }
 
 .projects {
   gap: 80px;
   padding-top: 64px;
+  z-index: 2;
 }
 .projects ::-webkit-scrollbar {
   width: 12px;
@@ -2085,7 +2185,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   opacity: 100%;
 }
 .projects .project-heading-float {
-  margin-bottom: -32px;
   animation: projectsLoad 2s ease-in-out forwards;
 }
 .projects .project-wrap {

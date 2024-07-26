@@ -1,231 +1,241 @@
 .home {
     @include flex-wrap( nowrap, column, center, center );
-    @extend %scroll-page-template;
+    padding: 0;
     position: relative;
+    width: 100%;
     height: 100%;
 
-    .loading-screen {
-        @include flex-wrap( nowrap, row, center, center );
-        position: fixed;
+    .home-view {
+        @extend %scroll-page-template;
+        padding: 0;
+        position: relative;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         top: 0;
-        background-color: $secondary;
-        z-index: 901;
-        visibility: hidden;
-        animation: loadScreen 3s ease-in;
 
-        svg {
-            animation: loadLogo 3s ease-in;
-        }
-    }
-
-    .home-section {
-        @include flex-wrap( wrap, column, center, center );
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        pointer-events: none;
-        overflow: hidden;
-
-        .home-wrap {
-            @extend %desktop-margin;
-            position: relative;
-            display: grid;
-            grid-template-columns: 50% 50%;
+        .loading-screen {
+            @include flex-wrap( nowrap, row, center, center );
+            position: fixed;
             width: 100%;
             height: 100%;
-            max-height: 100vh;
+            top: 0;
+            background-color: $secondary;
+            z-index: 901;
+            visibility: hidden;
+            animation: loadScreen 3s ease-in;
+
+            svg {
+                animation: loadLogo 3s ease-in;
+            }
         }
 
-        .home-left-1 {
-            transform: scale(2) translate(-30vw, 20vw);
+        .home-section {
+            @include flex-wrap( wrap, column, center, center );
             position: absolute;
-            grid-column: span 2;
-            animation: homeIn 3s 1.5s ease-in-out forwards alternate;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            pointer-events: none;
             overflow: hidden;
-            
-            .banner-img-wrap {
-                @include flex-wrap( nowrap, row, start, center );
-                width: fit-content;
-                height: 100vh;
-                // top: - $xxl;
-                z-index: 2;
-                @extend %float-img;
 
-                > img {
-                    height: 100%;
-                    aspect-ratio: 1 / 1;
+            .home-wrap {
+                @extend %desktop-margin;
+                position: relative;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                width: 100%;
+                height: 100%;
+                max-height: 100vh;
+            }
+
+            .home-left-1 {
+                // transform: scale(2) translate(-30vw, 20vw);
+                position: absolute;
+                grid-column: span 2;
+                animation: homeIn 3s 1.5s ease-in-out forwards alternate;
+                overflow: hidden;
+                
+                .banner-img-wrap {
+                    @include flex-wrap( nowrap, row, start, center );
+                    width: fit-content;
+                    height: 100vh;
+                    // top: - $xxl;
+                    z-index: 2;
+                    @extend %float-img;
+
+                    > img {
+                        height: 100%;
+                        aspect-ratio: 1 / 1;
+                    }
+                    .hat-overlay {
+                        position: absolute;
+                        z-index: 4;
+                        animation: hatGlow 1s linear infinite alternate;
+                    }
+                    .gif-overlay {
+                        z-index: 3;
+                    }
+                    .gif-bg {
+                        z-index: 1;
+                    }
+                    .banner-svg {
+                        height: 100%;
+                        z-index: 20;
+                        aspect-ratio: 1 / 1;
+                        position: absolute;
+                        z-index: 2;
+
+                        svg {
+                            width: 100%;
+
+                            .glasses {
+                                fill: transparent;
+                                stroke: #b2e4ff;
+                                stroke-linecap: round;
+                                stroke-linejoin: round;
+                                stroke-width: 4px;
+                            }
+                            .glasses-frame {
+                                stroke-dasharray: 1400;
+                                animation: glassesFrame 4s infinite both;
+                            }
+                            .glasses-left {
+                                stroke-dasharray: 1000;
+                                animation: glassesLeft 4s infinite both;
+                            }
+                            .glasses-right {
+                                stroke-dasharray: 1000;
+                                animation: glassesRight 4s 0.3s infinite both;
+                            }
+                            .glasses-accent1 {
+                                stroke-dasharray: 1000;
+                                animation: glassesAccent1 4s 0.3s infinite both;
+                            }
+                            .glasses-accent2 {
+                                stroke-dasharray: 1000;
+                                animation: glassesAccent2 4s 0.3s infinite both;
+                            }
+                            .glasses-accent3 {
+                                stroke-dasharray: 1000;
+                                animation: glassesAccent3 4s 0.3s infinite both;
+                            }
+                        }
+                    }
                 }
-                .hat-overlay {
+            }
+            article {
+                @include flex-wrap( nowrap, column, start, start );
+                grid-column: 2 / 2;
+                width: 100%;
+                height: 100%;
+                height: fit-content;
+                padding-top: $lg;
+                z-index: 10;
+
+                // h1 {
+                //     // mask: url('../masks/inkmask-left.png');
+                //     // mask-size: 100% 3300%;
+                //     // animation: maskLeft 1s steps(32) forwards;
+                // }
+                h1 {
+                    font-size: 100px;
+                    top: $lg;
+                    @extend %float-title;   
+                }
+                .home-text-wrap {
+                    @include flex-wrap( nowrap, column, start, start );
+                    position: relative;
+                    width: 100%;
+                    margin-top: - $xl;
+
+                    .home-buttons-wrap {
+                        @include flex-wrap( wrap, row, start, center );
+                        width: 100%;
+                        gap: 20px;
+                        margin-top: $md;
+                        margin-left: $xxl;
+                    }
+                }
+                h2 {
+                    @extend %shimmer;   
+                    // width: 100%;
+                    margin: 0;
+                    // left: 20%;           
+                }
+            }
+            .article-wrap {
+                border-radius: $sm;
+                background-color: rgba($accent, 0.2);
+                backdrop-filter: blur(10px);
+                padding: $md;
+                bottom: 0;
+
+                .article-content {
+                    width: 100%;
+
+                    .featured-heading-wrap {
+                        width: 100%;
+                        @include flex-wrap( wrap, row, start, center );
+                        gap: $sm;
+
+                        .featured-heading-float {
+                            @include flex-wrap( wrap, row, start, center );
+                            @extend %float-heading;
+                        }
+                    }
+                }
+            }
+            .window-wrap {
+                @include flex-wrap( nowrap, row, start, start );
+                height: 100%;
+                padding-top: $xxl;
+
+                .window, .window-bar, .window-bg, .bgbg {
                     position: absolute;
-                    z-index: 4;
+                    margin-left: - $lg;
+                    // width: 960px;
+                    width: 70%;
+                }
+                .window, .window-bar {
                     animation: hatGlow 1s linear infinite alternate;
                 }
-                .gif-overlay {
+                .window {
                     z-index: 3;
                 }
-                .gif-bg {
+                .window-bar {
+                    z-index: 2;
+                }
+                .window-bg {
                     z-index: 1;
                 }
-                .banner-svg {
-                    height: 100%;
-                    z-index: 20;
-                    aspect-ratio: 1 / 1;
-                    position: absolute;
-                    z-index: 2;
+                .bgbg {
+                    aspect-ratio: 16 / 9;
+                    max-width: 65%;
+                    margin-top: $lg + 25px;
+                    margin-left: 0;
 
-                    svg {
+                    video {
+                        background-color: rgba(255, 0, 0, 0.5);
                         width: 100%;
-
-                        .glasses {
-                            fill: transparent;
-                            stroke: #b2e4ff;
-                            stroke-linecap: round;
-                            stroke-linejoin: round;
-                            stroke-width: 4px;
-                        }
-                        .glasses-frame {
-                            stroke-dasharray: 1400;
-                            animation: glassesFrame 4s infinite both;
-                        }
-                        .glasses-left {
-                            stroke-dasharray: 1000;
-                            animation: glassesLeft 4s infinite both;
-                        }
-                        .glasses-right {
-                            stroke-dasharray: 1000;
-                            animation: glassesRight 4s 0.3s infinite both;
-                        }
-                        .glasses-accent1 {
-                            stroke-dasharray: 1000;
-                            animation: glassesAccent1 4s 0.3s infinite both;
-                        }
-                        .glasses-accent2 {
-                            stroke-dasharray: 1000;
-                            animation: glassesAccent2 4s 0.3s infinite both;
-                        }
-                        .glasses-accent3 {
-                            stroke-dasharray: 1000;
-                            animation: glassesAccent3 4s 0.3s infinite both;
-                        }
+                        height: 100%;
                     }
                 }
             }
         }
-        article {
-            @include flex-wrap( nowrap, column, start, start );
-            grid-column: 2 / 2;
-            width: 100%;
+        .logo-wrap {
+            position: absolute;
+            width: 100vh;
             height: 100%;
-            height: fit-content;
-            padding-top: $lg;
-            z-index: 10;
+            top: 8vh;
+            left: 30vh;
+            opacity: 20%;
+            overflow: hidden;
+            z-index: 1;
 
-            // h1 {
-            //     // mask: url('../masks/inkmask-left.png');
-            //     // mask-size: 100% 3300%;
-            //     // animation: maskLeft 1s steps(32) forwards;
-            // }
-            h1 {
-                font-size: 100px;
-                top: $lg;
-                @extend %float-title;   
+            > svg {
+                margin-top: 10%;
+                scale: 2.5;
             }
-            .home-text-wrap {
-                @include flex-wrap( nowrap, column, start, start );
-                position: relative;
-                width: 100%;
-                margin-top: - $xl;
-
-                .home-buttons-wrap {
-                    @include flex-wrap( wrap, row, start, center );
-                    width: 100%;
-                    gap: 20px;
-                    margin-top: $md;
-                    margin-left: $xxl;
-                }
-            }
-            h2 {
-                @extend %shimmer;   
-                // width: 100%;
-                margin: 0;
-                // left: 20%;           
-            }
-        }
-        .article-wrap {
-            border-radius: $sm;
-            background-color: rgba($accent, 0.2);
-            backdrop-filter: blur(10px);
-            padding: $md;
-            bottom: 0;
-
-            .article-content {
-                width: 100%;
-
-                .featured-heading-wrap {
-                    width: 100%;
-                    @include flex-wrap( wrap, row, start, center );
-                    gap: $sm;
-
-                    .featured-heading-float {
-                        @include flex-wrap( wrap, row, start, center );
-                        @extend %float-heading;
-                    }
-                }
-            }
-        }
-        .window-wrap {
-            @include flex-wrap( nowrap, row, start, start );
-            height: 100%;
-            padding-top: $xxl;
-
-            .window, .window-bar, .window-bg, .bgbg {
-                position: absolute;
-                margin-left: - $lg;
-                // width: 960px;
-                width: 70%;
-            }
-            .window, .window-bar {
-                animation: hatGlow 1s linear infinite alternate;
-            }
-            .window {
-                z-index: 3;
-            }
-            .window-bar {
-                z-index: 2;
-            }
-            .window-bg {
-                z-index: 1;
-            }
-            .bgbg {
-                aspect-ratio: 16 / 9;
-                max-width: 65%;
-                margin-top: $lg + 25px;
-                margin-left: 0;
-
-                video {
-                    background-color: rgba(255, 0, 0, 0.5);
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-    }
-    .logo-wrap {
-        position: absolute;
-        width: 100vh;
-        height: 100%;
-        top: 8vh;
-        left: 30vh;
-        opacity: 20%;
-        overflow: hidden;
-        z-index: 1;
-
-        > svg {
-            margin-top: 10%;
-            scale: 2.5;
         }
     }
 }

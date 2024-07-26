@@ -8,6 +8,7 @@ body {
     top: 0;
     margin: 0;
     width: 100%;
+    overflow: hidden;
     height: 100%;
 }
 .scroll-hide {
@@ -15,9 +16,9 @@ body {
 }
 
 #main {
-    @include flex-wrap( nowrap, column, start, center );
+    @include flex-wrap( wrap, column, start, center );
     position: relative;
-    background-color: $secondary;
+    width: 100%;
 }
 main {
     // @extend %desktop-margin;
@@ -75,6 +76,32 @@ main {
         scroll-snap-align: start;
     }
 }
+.gif-overlay {
+    position: absolute;
+}
+
+.page-visible {
+    animation: pageVisible 1s ease-in-out forwards;
+}
+.page-hidden {
+    animation: pageHidden 1s ease-in-out forwards;
+}
+@keyframes pageVisible {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+@keyframes pageHidden {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
 
 %desktop-margin {
     width: 100%;
@@ -88,10 +115,11 @@ main {
     padding: $xxl $lg 0 $lg;
 }
 %scroll-page-template {
-    @include flex-wrap( nowrap, column, start, center );
+    @include flex-wrap( wrap, column, start, center );
     width: calc( 100% - ( $lg * 2 ) );
     min-height: calc( 100vh - $xxl );
     padding: $xxl $lg 0 $lg;
     height: 100vh;
+    top: 0;
     overflow-x: hidden;
 }

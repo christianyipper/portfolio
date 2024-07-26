@@ -29,12 +29,6 @@ const ProjectsPage = () => {
 
     return (
         <main className="projects">
-            {/* <section className="scroll-wrap">
-                <div className="scroll-section" ref={ snap1 }></div>
-                <div className="scroll-section" ref={ snap2 }></div>
-                <div className="scroll-section" ref={ snap3 }></div>
-                <div className="scroll-section" ref={ snap4 }></div>
-            </section> */}
             <h1 className="project-heading-float">
                 <span text-glow="M">M</span>
                 <span text-glow="y">y</span>
@@ -51,7 +45,7 @@ const ProjectsPage = () => {
             </h1>
             <section className="scroll-wrap">
                 <div className="scroll-section" ref={ snap1 }>
-                    <div className={ `project-wrap project-1 ${ inView1 ? `scale-in` : `scale-out` }` }>
+                    <div className={ `project-wrap project-1 ${ inView1 ? `` : `` }` }>
                         <p className="project-sub" text-glow="Web Design">Web Design</p>
                         <div className="project-corner-wrap"></div>
                         <video className="project-img" loop autoPlay muted>
