@@ -31,7 +31,7 @@ const StripesNation = () => {
             </section>
             <section className="artifact-section">
                 <div className="artifact-wrap">
-                    <div className="artifact-heading-wrap heading-col">
+                    <div className="artifact-left heading-col">
                         <h1 className={ `artifact-heading-float ${ inView1 ? `blur-in` : `blur-out` }` }>
                             <span text-glow="S">S</span>
                             <span text-glow="t">t</span>
@@ -49,7 +49,8 @@ const StripesNation = () => {
                         </h1>
                         <h1 className={ `artifact-heading-shimmer ${ inView1 ? `blur-in` : `blur-out` }` } text-shimmer="Brand Book">Brand Book</h1>
                     </div>
-                    <div className="artifact-img-wrap">
+                    <div className="artifact-right">
+                        <div className="artifact-img-wrap">
                         {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7438 2122">
                             <g>
                                 <g>
@@ -76,6 +77,7 @@ const StripesNation = () => {
                                 </g>
                             </g>
                         </svg> */}
+                    </div>
                     </div>
                 </div>
             </section>

@@ -363,12 +363,12 @@ main section {
     opacity: 0%;
   }
 }
-.artifact .artifact-section, .projects .scroll-wrap .scroll-section, .about .about-scroll .about-img-section, .about .about-scroll, .home .home-view .home-section .home-wrap, footer .footer-wrap, nav .nav-wrap, .banner {
+.artifact .artifact-section, .projects .project-container, .about .about-scroll .about-img-section, .about .about-scroll, .home .home-view .home-section .home-wrap, footer .footer-wrap, nav .nav-wrap, .banner {
   width: 100%;
   max-width: 1280px;
 }
 
-nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav .nav-wrap .nav-mid .projects-preview, .banner, main {
+.projects, nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav .nav-wrap .nav-mid .projects-preview, .banner, main {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -380,7 +380,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   padding: 64px 32px 0 32px;
 }
 
-.artifact, .projects, .about, .home .home-view {
+.artifact, .about, .home .home-view {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -411,7 +411,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   }
 }
 
-.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer, .projects .project-heading-shimmer, .about .about-scroll .about-section article .about-heading-shimmer, .home .home-view .home-section article h2, footer .footer-wrap .footer-shimmer {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-shimmer, .projects .project-heading-shimmer, .about .about-scroll .about-section article .about-heading-shimmer, .home .home-view .home-section article h2, footer .footer-wrap .footer-shimmer {
   position: relative;
   display: flex;
   flex-wrap: nowrap;
@@ -425,7 +425,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   letter-spacing: 2px;
   text-shadow: 0 0 2px white, 0 0 4px white;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer:before, .projects .project-heading-shimmer:before, .about .about-scroll .about-section article .about-heading-shimmer:before, .home .home-view .home-section article h2:before, footer .footer-wrap .footer-shimmer:before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-shimmer:before, .projects .project-heading-shimmer:before, .about .about-scroll .about-section article .about-heading-shimmer:before, .home .home-view .home-section article h2:before, footer .footer-wrap .footer-shimmer:before {
   content: attr(text-shimmer);
   position: absolute;
   -webkit-text-stroke: 2px white;
@@ -436,7 +436,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   text-shadow: 2px 2px 4px rgb(140, 169, 189);
   opacity: 25%;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer:after, .projects .project-heading-shimmer:after, .about .about-scroll .about-section article .about-heading-shimmer:after, .home .home-view .home-section article h2:after, footer .footer-wrap .footer-shimmer:after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-shimmer:after, .projects .project-heading-shimmer:after, .about .about-scroll .about-section article .about-heading-shimmer:after, .home .home-view .home-section article h2:after, footer .footer-wrap .footer-shimmer:after {
   content: attr(text-shimmer);
   position: absolute;
   top: 6px;
@@ -584,7 +584,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   }
 }
 
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span, .projects .project-heading-float span, .about .about-scroll .about-section article .about-heading-float span, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span, footer .footer-wrap .footer-float span {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span, .projects .project-heading-float span, .about .about-scroll .about-section article .about-heading-float span, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span, footer .footer-wrap .footer-float span {
   display: inline-block;
   color: transparent;
   -webkit-text-stroke: 2px white;
@@ -592,7 +592,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   display: inline-block;
   transition: transform 0.3s ease-in-out;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:before, .projects .project-heading-float span:before, .about .about-scroll .about-section article .about-heading-float span:before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:before, footer .footer-wrap .footer-float span:before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:before, .projects .project-heading-float span:before, .about .about-scroll .about-section article .about-heading-float span:before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:before, footer .footer-wrap .footer-float span:before {
   position: absolute;
   color: transparent;
   text-shadow: none;
@@ -603,7 +603,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   z-index: 2;
   text-shadow: 0.05vw 0vw 0.2vw #aca9ff, 0.1vw 0vw 0.2vw #d9d8ff, 0.2vw 0vw 0.2vw #d9d8ff, 0.1vw 0vw 0.3vw #6274ff, 0.2vw 0vw 0.3vw #6274ff, 0.4vw 0vw 0.3vw #6274ff, 0.1vw 0vw 0.5vw #6274ff, 0.2vw 0vw 0.5vw #6274ff, 0.4vw 0vw 0.5vw #6274ff, 0.1vw 0vw 1vw #450be5, 0.2vw 0vw 1vw #450be5, 0.4vw 0vw 3vw #450be5, 0.1vw 0vw 2vw #3a0be5, 0.2vw 0vw 2vw #3a0be5, 0.4vw 0vw 5vw #3a0be5;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:after, .projects .project-heading-float span:after, .about .about-scroll .about-section article .about-heading-float span:after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:after, footer .footer-wrap .footer-float span:after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:after, .projects .project-heading-float span:after, .about .about-scroll .about-section article .about-heading-float span:after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:after, footer .footer-wrap .footer-float span:after {
   position: absolute;
   text-shadow: none;
   -webkit-text-stroke: 2px white;
@@ -614,76 +614,76 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   z-index: 2;
   text-shadow: 2px 0vw 0.2vw #ffd1c9, 4px 0vw 0.2vw #ffded8, 5px 0vw 0.2vw #ffded8, 0.1vw 0vw 0.3vw #f26e57, 0.2vw 0vw 0.3vw #f26e57, 0.4vw 0vw 0.3vw #f26e57, 0.1vw 0vw 0.5vw #f26e57, 0.2vw 0vw 0.5vw #f26e57, 0.4vw 0vw 0.5vw #f26e57, 0.1vw 0vw 1vw #ff7862, 0.2vw 0vw 1vw #ff7862, 0.4vw 0vw 3vw #ff7862, 0.1vw 0vw 2vw #ff7862, 0.2vw 0vw 2vw #ff7862, 0.4vw 0vw 5vw #ff7862;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1), .projects .project-heading-float span:nth-of-type(8n + 1), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 1), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1), footer .footer-wrap .footer-float span:nth-of-type(8n + 1) {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 1), .projects .project-heading-float span:nth-of-type(8n + 1), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 1), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1), footer .footer-wrap .footer-float span:nth-of-type(8n + 1) {
   animation: float 2s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1):before, .projects .project-heading-float span:nth-of-type(8n + 1):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 1):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 1):before, .projects .project-heading-float span:nth-of-type(8n + 1):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 1):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):before {
   animation: neonFade 2s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 1):after, .projects .project-heading-float span:nth-of-type(8n + 1):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 1):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 1):after, .projects .project-heading-float span:nth-of-type(8n + 1):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 1):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 1):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 1):after {
   animation: neonFade 2s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2), .projects .project-heading-float span:nth-of-type(8n + 2), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 2), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2), footer .footer-wrap .footer-float span:nth-of-type(8n + 2) {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 2), .projects .project-heading-float span:nth-of-type(8n + 2), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 2), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2), footer .footer-wrap .footer-float span:nth-of-type(8n + 2) {
   animation: float 2s 0.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2):before, .projects .project-heading-float span:nth-of-type(8n + 2):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 2):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 2):before, .projects .project-heading-float span:nth-of-type(8n + 2):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 2):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):before {
   animation: neonFade 2s 0.5s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 2):after, .projects .project-heading-float span:nth-of-type(8n + 2):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 2):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 2):after, .projects .project-heading-float span:nth-of-type(8n + 2):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 2):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 2):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 2):after {
   animation: neonFade 2s 0.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3), .projects .project-heading-float span:nth-of-type(8n + 3), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 3), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3), footer .footer-wrap .footer-float span:nth-of-type(8n + 3) {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 3), .projects .project-heading-float span:nth-of-type(8n + 3), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 3), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3), footer .footer-wrap .footer-float span:nth-of-type(8n + 3) {
   animation: float 2s 1s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3):before, .projects .project-heading-float span:nth-of-type(8n + 3):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 3):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 3):before, .projects .project-heading-float span:nth-of-type(8n + 3):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 3):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):before {
   animation: neonFade 2s 1s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 3):after, .projects .project-heading-float span:nth-of-type(8n + 3):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 3):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 3):after, .projects .project-heading-float span:nth-of-type(8n + 3):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 3):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 3):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 3):after {
   animation: neonFade 2s 1s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4), .projects .project-heading-float span:nth-of-type(8n + 4), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 4), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4), footer .footer-wrap .footer-float span:nth-of-type(8n + 4) {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 4), .projects .project-heading-float span:nth-of-type(8n + 4), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 4), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4), footer .footer-wrap .footer-float span:nth-of-type(8n + 4) {
   animation: float 2s 1.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4):before, .projects .project-heading-float span:nth-of-type(8n + 4):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 4):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 4):before, .projects .project-heading-float span:nth-of-type(8n + 4):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 4):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):before {
   animation: neonFade 2s 1.5s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 4):after, .projects .project-heading-float span:nth-of-type(8n + 4):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 4):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 4):after, .projects .project-heading-float span:nth-of-type(8n + 4):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 4):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 4):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 4):after {
   animation: neonFade 2s 1.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5), .projects .project-heading-float span:nth-of-type(8n + 5), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 5), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5), footer .footer-wrap .footer-float span:nth-of-type(8n + 5) {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 5), .projects .project-heading-float span:nth-of-type(8n + 5), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 5), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5), footer .footer-wrap .footer-float span:nth-of-type(8n + 5) {
   animation: float 2s 2s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5):before, .projects .project-heading-float span:nth-of-type(8n + 5):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 5):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 5):before, .projects .project-heading-float span:nth-of-type(8n + 5):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 5):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):before {
   animation: neonFade 2s 2s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 5):after, .projects .project-heading-float span:nth-of-type(8n + 5):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 5):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 5):after, .projects .project-heading-float span:nth-of-type(8n + 5):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 5):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 5):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 5):after {
   animation: neonFade 2s 2s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6), .projects .project-heading-float span:nth-of-type(8n + 6), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 6), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6), footer .footer-wrap .footer-float span:nth-of-type(8n + 6) {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 6), .projects .project-heading-float span:nth-of-type(8n + 6), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 6), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6), footer .footer-wrap .footer-float span:nth-of-type(8n + 6) {
   animation: float 2s 2.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6):before, .projects .project-heading-float span:nth-of-type(8n + 6):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 6):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 6):before, .projects .project-heading-float span:nth-of-type(8n + 6):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 6):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):before {
   animation: neonFade 2s 2.5s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 6):after, .projects .project-heading-float span:nth-of-type(8n + 6):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 6):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 6):after, .projects .project-heading-float span:nth-of-type(8n + 6):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 6):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 6):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 6):after {
   animation: neonFade 2s 2.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7), .projects .project-heading-float span:nth-of-type(8n + 7), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 7), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7), footer .footer-wrap .footer-float span:nth-of-type(8n + 7) {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 7), .projects .project-heading-float span:nth-of-type(8n + 7), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 7), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7), footer .footer-wrap .footer-float span:nth-of-type(8n + 7) {
   animation: float 2s 3s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7):before, .projects .project-heading-float span:nth-of-type(8n + 7):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 7):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 7):before, .projects .project-heading-float span:nth-of-type(8n + 7):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 7):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):before {
   animation: neonFade 2s 3s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 7):after, .projects .project-heading-float span:nth-of-type(8n + 7):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 7):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 7):after, .projects .project-heading-float span:nth-of-type(8n + 7):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 7):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 7):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 7):after {
   animation: neonFade 2s 3s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8), .projects .project-heading-float span:nth-of-type(8n + 8), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 8), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8), footer .footer-wrap .footer-float span:nth-of-type(8n + 8) {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 8), .projects .project-heading-float span:nth-of-type(8n + 8), .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 8), .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8), footer .footer-wrap .footer-float span:nth-of-type(8n + 8) {
   animation: float 2s 3.5s ease-in-out infinite alternate;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8):before, .projects .project-heading-float span:nth-of-type(8n + 8):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 8):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):before {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 8):before, .projects .project-heading-float span:nth-of-type(8n + 8):before, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 8):before, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):before, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):before {
   animation: neonFade 2s 3.5s ease-in-out infinite alternate-reverse;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-float span:nth-of-type(8n + 8):after, .projects .project-heading-float span:nth-of-type(8n + 8):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 8):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):after {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-float span:nth-of-type(8n + 8):after, .projects .project-heading-float span:nth-of-type(8n + 8):after, .about .about-scroll .about-section article .about-heading-float span:nth-of-type(8n + 8):after, .home .home-view .home-section .article-wrap .article-content .featured-heading-wrap .featured-heading-float span:nth-of-type(8n + 8):after, footer .footer-wrap .footer-float span:nth-of-type(8n + 8):after {
   animation: neonFade 2s 3.5s ease-in-out infinite alternate;
 }
 @keyframes float {
@@ -715,7 +715,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   }
 }
 
-.projects .project-wrap .project-sub, nav .nav-wrap .nav-mid .nav-heading, .btn p {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-sub, nav .nav-wrap .nav-mid .nav-heading, .btn p {
   position: relative;
   margin: 0;
   font-size: 24px;
@@ -723,7 +723,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   font-weight: 600;
   z-index: 1;
 }
-.projects .project-wrap .project-sub:before, nav .nav-wrap .nav-mid .nav-heading:before, .btn p:before {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-sub:before, nav .nav-wrap .nav-mid .nav-heading:before, .btn p:before {
   position: absolute;
   width: 100%;
   content: attr(text-glow);
@@ -731,7 +731,7 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   z-index: -1;
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
-.projects .project-wrap .project-sub:after, nav .nav-wrap .nav-mid .nav-heading:after, .btn p:after {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-sub:after, nav .nav-wrap .nav-mid .nav-heading:after, .btn p:after {
   content: attr(text-glow);
   position: absolute;
   top: 0px;
@@ -1302,14 +1302,12 @@ nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav
   background-color: #060e1a;
   visibility: hidden;
 }
-nav .nav-wrap .nav-mid .about-preview {
-  margin-left: -6px;
-}
 nav .nav-wrap .nav-mid .about-preview .about {
   width: 100%;
   padding: 0;
 }
 nav .nav-wrap .nav-mid .about-preview .about .about-scroll {
+  margin-right: 11px;
   position: relative;
 }
 nav .nav-wrap .nav-mid .about-preview .about .about-scroll .about-img-section {
@@ -1325,8 +1323,21 @@ nav .nav-wrap .nav-mid .about-preview .about .about-scroll section {
 nav .nav-wrap .nav-mid .about-preview .about .about-scroll section article {
   margin-top: 0;
 }
+nav .nav-wrap .nav-mid .projects-preview .projects {
+  padding-top: 0;
+}
+nav .nav-wrap .nav-mid .projects-preview .project-gallery {
+  top: 0;
+}
 nav .nav-wrap .nav-mid .projects-preview h1 {
-  margin-top: -20px;
+  margin-top: 45px;
+}
+nav .nav-wrap .nav-mid .projects-preview img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 24px;
 }
 nav .nav-wrap .nav-home:hover ~ .nav-about,
 nav .nav-wrap .nav-home:hover ~ .nav-projects,
@@ -2137,19 +2148,8 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 }
 
 .projects {
-  gap: 80px;
   padding-top: 64px;
   z-index: 2;
-}
-.projects ::-webkit-scrollbar {
-  width: 12px;
-}
-.projects .scroll-wrap .scroll-section {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
 }
 .projects .project-heading-wrap {
   display: flex;
@@ -2172,35 +2172,95 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 .projects .project-heading-shimmer {
   width: -moz-fit-content;
   width: fit-content;
+  font-size: 24px;
   margin-top: 24px;
   margin-bottom: 24px;
   left: 24px;
-  text-align: center;
+  text-align: start;
   position: absolute;
   width: fit-content;
   top: 0;
   z-index: 3;
-}
-.projects .project-heading-shimmer:hover ~ .project-text {
-  opacity: 100%;
+  transition: 0.5s ease-in-out;
 }
 .projects .project-heading-float {
   animation: projectsLoad 2s ease-in-out forwards;
 }
-.projects .project-wrap {
+.projects .project-container {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  justify-content: end;
-  align-items: end;
+  justify-content: center;
+  align-items: start;
   position: relative;
-  top: 236px;
-  width: 100vh;
-  border-radius: 24px;
-  border: 2px solid white;
-  z-index: 100;
 }
-.projects .project-wrap .project-sub {
+.projects .project-container .project-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  width: 100%;
+}
+.projects .project-container .project-wrap .project-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  gap: 24px;
+  top: 24px;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: auto;
+  height: 50vh;
+  border-radius: 24px;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap:hover .project-artifact {
+  aspect-ratio: 16/9;
+  width: auto;
+  border-radius: 24px 24px 0 24px;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap:hover .project-artifact .project-heading-shimmer {
+  font-size: 48px;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap:hover .project-artifact .project-btn-wrap .project-top-corner {
+  width: 24px;
+  transform: translate(0, 0);
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap:hover .project-artifact .project-btn-wrap .project-top-corner::after {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 24px 0;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap:hover .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner {
+  height: 24px;
+  transform: translate(0px, 0px);
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap:hover .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner::after {
+  height: 100%;
+  border-radius: 0 0 24px 0;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap:hover .project-artifact .project-btn-wrap .project-btn-bot .project-btn-bg {
+  transform: translate(0px, 0px);
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap:hover .project-artifact ~ .project-btn {
+  opacity: 100%;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap:hover .project-artifact ~ .project-btn .btn {
+  animation: btnShow 0.5s ease-in-out forwards;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-sub {
   position: absolute;
   font-size: 18px;
   left: 0;
@@ -2209,21 +2269,49 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   color: #ff7862;
   z-index: -1;
 }
-.projects .project-wrap .project-sub:before {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-sub:before {
   text-shadow: 0 0 5px #ff7862, 0 0 10px #ff7862;
 }
-.projects .project-wrap .project-sub:after {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-sub:after {
   transform: scaleX(1.03) scaleY(1.6);
   background-image: linear-gradient(45deg, transparent 45%, #6274ff 45%, #ff7862 85%, transparent 0);
 }
-.projects .project-wrap video {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  aspect-ratio: 9/16;
+  width: auto;
+  height: 50vh;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-border {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  border: 2px solid white;
+  box-sizing: border-box;
+  z-index: 5;
+}
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact video {
+  position: absolute;
+  width: auto;
   height: 100%;
   aspect-ratio: 16/9;
   border-radius: 24px;
 }
-.projects .project-wrap .project-corner-wrap {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-corner-wrap {
   width: 24px;
   height: 24px;
   position: absolute;
@@ -2234,7 +2322,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   bottom: -14px;
   z-index: 4;
 }
-.projects .project-wrap .project-text {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-text {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -2251,96 +2339,14 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   opacity: 0;
   transition: 0.5s ease-in-out;
 }
-.projects .project-wrap .project-text .project-heading-shimmer {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-text .project-heading-shimmer {
   position: relative;
   visibility: hidden;
 }
-.projects .project-wrap .project-text:hover {
-  opacity: 100%;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap {
-  opacity: 100%;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg {
-  transform: scale(1);
-  animation: iconFade 0.5s ease-in-out forwards alternate;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .icon-grey {
-  fill: #ebebeb;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .icon-white {
-  fill: #fff;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ae-light {
-  fill: #9898fe;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ae-dark {
-  fill: #00005b;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .css-light {
-  fill: #2965f1;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .css-dark {
-  fill: #264de4;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-purple {
-  fill: #a259ff;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-blue {
-  fill: #1abcfe;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-green {
-  fill: #0acf83;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-orange {
-  fill: #f24e1e;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-peach {
-  fill: #ff7262;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .figma-bg {
-  fill: #2e303a;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .html-light {
-  fill: #f16529;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .html-dark {
-  fill: #e44d26;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ai-light {
-  fill: #ff9a00;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ai-dark {
-  fill: #300;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .js-light {
-  fill: #f0db4f;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .js-dark {
-  fill: #323330;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ps-light {
-  fill: #31a8ff;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .ps-dark {
-  fill: #001e36;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .react-light {
-  fill: #01daff;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .react-dark {
-  fill: #222;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .sass-dark {
-  fill: #cd669a;
-}
-.projects .project-wrap .project-text:hover ~ .app-icons-wrap svg .webflow-dark {
-  fill: #146df5;
-}
-.projects .project-wrap .project-text p {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-text p {
   margin: 0 24px;
 }
-.projects .project-wrap .app-icons-wrap {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -2359,7 +2365,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   z-index: 5;
   transition: 0.2s ease-in-out;
 }
-.projects .project-wrap .app-icons-wrap svg {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg {
   height: 32px;
   width: -moz-fit-content;
   width: fit-content;
@@ -2367,15 +2373,15 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   filter: blur(0px);
   transition: 0.5s ease-in-out;
 }
-.projects .project-wrap .app-icons-wrap svg .icon-grey, .projects .project-wrap .app-icons-wrap svg .icon-white, .projects .project-wrap .app-icons-wrap svg .ae-light, .projects .project-wrap .app-icons-wrap svg .css-light, .projects .project-wrap .app-icons-wrap svg .figma-purple, .projects .project-wrap .app-icons-wrap svg .figma-blue, .projects .project-wrap .app-icons-wrap svg .figma-green, .projects .project-wrap .app-icons-wrap svg .figma-orange, .projects .project-wrap .app-icons-wrap svg .figma-peach, .projects .project-wrap .app-icons-wrap svg .ai-light, .projects .project-wrap .app-icons-wrap svg .js-dark, .projects .project-wrap .app-icons-wrap svg .ps-light, .projects .project-wrap .app-icons-wrap svg .react-light {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .icon-grey, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .icon-white, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ae-light, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .css-light, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-purple, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-blue, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-green, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-orange, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-peach, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ai-light, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .js-dark, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ps-light, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .react-light {
   transition: 0.5s ease-in-out;
   fill: transparent;
 }
-.projects .project-wrap .app-icons-wrap svg .ae-dark, .projects .project-wrap .app-icons-wrap svg .css-dark, .projects .project-wrap .app-icons-wrap svg .figma-bg, .projects .project-wrap .app-icons-wrap svg .html-light, .projects .project-wrap .app-icons-wrap svg .html-dark, .projects .project-wrap .app-icons-wrap svg .ai-dark, .projects .project-wrap .app-icons-wrap svg .js-light, .projects .project-wrap .app-icons-wrap svg .ps-dark, .projects .project-wrap .app-icons-wrap svg .react-dark, .projects .project-wrap .app-icons-wrap svg .sass-dark, .projects .project-wrap .app-icons-wrap svg .webflow-dark {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ae-dark, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .css-dark, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-bg, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .html-light, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .html-dark, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ai-dark, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .js-light, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ps-dark, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .react-dark, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .sass-dark, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .webflow-dark {
   transition: 0.5s ease-in-out;
   fill: #6274ff;
 }
-.projects .project-wrap .project-btn-wrap {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -2389,33 +2395,37 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   overflow: hidden;
   right: -2px;
   bottom: -2px;
-  z-index: 3;
+  z-index: 5;
 }
-.projects .project-wrap .project-btn-wrap .project-top-corner {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-top-corner {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: end;
   align-items: end;
   z-index: 4;
-  width: 32px;
+  right: 0;
+  width: 2px;
+  height: 24px;
+  right: -18px;
+  bottom: -20px;
   transform: translate(0, 72px);
-  animation: btnTop 0.475s 1s ease-in-out forwards reverse;
+  transition: 0.5s ease-in-out;
 }
-.projects .project-wrap .project-btn-wrap .project-top-corner:after {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-top-corner:after {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 2px;
+  height: 36px;
+  border-radius: 0 0 0 0;
   bottom: -2px;
   right: 0;
   border-right: 2px solid white;
   border-bottom: 2px solid white;
-  border-radius: 0 0 24px 0;
   z-index: 5;
-  animation: btnTopBr 0.5s 1s ease-in-out forwards reverse;
+  transition: 0.5s ease-in-out;
 }
-.projects .project-wrap .project-btn-wrap .project-btn-bot {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -2425,7 +2435,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: 100%;
   z-index: 3;
 }
-.projects .project-wrap .project-btn-wrap .project-btn-bot .project-bot-corner {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -2434,22 +2444,25 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   position: relative;
   z-index: 4;
   width: 100%;
+  height: 0px;
+  right: -20px;
+  bottom: -18px;
   transform: translate(179.24px, 0);
-  animation: btnBot 0.48s 1s ease-in-out forwards reverse;
+  transition: 0.5s ease-in-out;
 }
-.projects .project-wrap .project-btn-wrap .project-btn-bot .project-bot-corner:after {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner:after {
   content: "";
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 2px;
   left: 0;
   border-right: 2px solid white;
   border-bottom: 2px solid white;
   border-radius: 0 0 24px 0;
   z-index: 5;
-  animation: btnBotBr 0.5s 1s ease-in-out forwards reverse;
+  transition: 0.5s ease-in-out;
 }
-.projects .project-wrap .project-btn-wrap .project-btn-bot .project-btn-bg {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-btn-bg {
   position: relative;
   background-color: #060e1a;
   width: -moz-fit-content;
@@ -2461,13 +2474,12 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   border-left: 2px solid white;
   z-index: 3;
   transform: translate(177.24px, 72px);
-  animation: btnMain 0.5s 1s ease-in-out forwards reverse;
+  transition: 0.5s ease-in-out;
 }
-.projects .project-wrap .project-btn-wrap .project-btn-bot .project-btn-bg .btn {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-btn-bg .btn {
   visibility: hidden;
 }
-
-.project-btn {
+.projects .project-container .project-wrap .project-btn {
   position: absolute;
   width: -moz-fit-content;
   width: fit-content;
@@ -2475,163 +2487,115 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   border-radius: 24px 0 0 0;
   pointer-events: all;
   opacity: 0;
-  z-index: 5;
-  animation: btnShow 0.2s 1.3s ease-in-out forwards;
+  right: 0;
+  bottom: 0;
+  transition: 0.2s ease-in-out;
+  z-index: 20;
 }
 
-.projects .project-wrap .project-btn-wrap .project-top-corner, .projects .project-wrap .project-btn-wrap .project-btn-bot .project-bot-corner {
+.projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-top-corner, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner {
   position: relative;
-  height: 24px;
   border-radius: 0 0 48px 0;
   border-bottom: 20px solid #060e1a;
   border-right: 20px solid #060e1a;
-  right: -20px;
-  bottom: -20px;
 }
 
-.project-wrap:has(.project-btn:hover) .project-text {
-  opacity: 100%;
+.project-artifact-wrap:has(.btn:hover) .project-text {
+  opacity: 100% !important;
 }
 
-.project-wrap:has(.project-btn:hover) .app-icons-wrap {
-  opacity: 100%;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap {
+  opacity: 100% !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg {
-  transform: scale(1);
-  animation: iconFade 0.5s ease-in-out forwards alternate;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg {
+  transform: scale(1) !important;
+  animation: iconFade 0.5s ease-in-out forwards alternate !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .icon-grey {
-  fill: #ebebeb;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .icon-grey {
+  fill: #ebebeb !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .icon-white {
-  fill: #fff;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .icon-white {
+  fill: #fff !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ae-light {
-  fill: #9898fe;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ae-light {
+  fill: #9898fe !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ae-dark {
-  fill: #00005b;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ae-dark {
+  fill: #00005b !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .css-light {
-  fill: #2965f1;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .css-light {
+  fill: #2965f1 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .css-dark {
-  fill: #264de4;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .css-dark {
+  fill: #264de4 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-purple {
-  fill: #a259ff;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-purple {
+  fill: #a259ff !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-blue {
-  fill: #1abcfe;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-blue {
+  fill: #1abcfe !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-green {
-  fill: #0acf83;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-green {
+  fill: #0acf83 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-orange {
-  fill: #f24e1e;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-orange {
+  fill: #f24e1e !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-peach {
-  fill: #ff7262;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-peach {
+  fill: #ff7262 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .figma-bg {
-  fill: #2e303a;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-bg {
+  fill: #2e303a !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .html-light {
-  fill: #f16529;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .html-light {
+  fill: #f16529 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .html-dark {
-  fill: #e44d26;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .html-dark {
+  fill: #e44d26 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ai-light {
-  fill: #ff9a00;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ai-light {
+  fill: #ff9a00 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ai-dark {
-  fill: #300;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ai-dark {
+  fill: #300 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .js-light {
-  fill: #f0db4f;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .js-light {
+  fill: #f0db4f !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .js-dark {
-  fill: #323330;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .js-dark {
+  fill: #323330 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ps-light {
-  fill: #31a8ff;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ps-light {
+  fill: #31a8ff !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .ps-dark {
-  fill: #001e36;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ps-dark {
+  fill: #001e36 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .react-light {
-  fill: #01daff;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .react-light {
+  fill: #01daff !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .react-dark {
-  fill: #222;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .react-dark {
+  fill: #222 !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .sass-dark {
-  fill: #cd669a;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .sass-dark {
+  fill: #cd669a !important;
 }
-.project-wrap:has(.project-btn:hover) .app-icons-wrap svg .webflow-dark {
-  fill: #146df5;
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .webflow-dark {
+  fill: #146df5 !important;
 }
 
 @keyframes btnShow {
   0% {
     opacity: 0;
-    transform: scale(0.75);
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0.5);
   }
   100% {
     opacity: 100%;
     transform: scale(1);
-  }
-}
-@keyframes btnMain {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(177.24px, 72px);
-  }
-}
-@keyframes btnTop {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    width: 2px;
-    transform: translate(0, 72px);
-  }
-}
-@keyframes btnTopBr {
-  0% {
-    border-radius: 0 0 24px 0;
-  }
-  60% {
-    width: 100%;
-  }
-  100% {
-    width: 2px;
-    height: 36px;
-    border-radius: 0 0 0 0;
-  }
-}
-@keyframes btnBot {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    height: 2px;
-    transform: translate(179.24px, 0);
-  }
-}
-@keyframes btnBotBr {
-  0% {
-    border-radius: 0 0 24px 0;
-  }
-  50% {
-    height: 100%;
-  }
-  100% {
-    height: 2px;
-    border-radius: 0 0 0 0;
   }
 }
 @keyframes iconFade {
@@ -2677,10 +2641,13 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: 100%;
   height: 100%;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-shimmer {
+.artifact .artifact-section .artifact-wrap .artifact-left {
   width: 100%;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-wrap {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-shimmer {
+  width: 100%;
+}
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -2688,22 +2655,27 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   align-items: start;
   gap: 16px;
 }
-.artifact .artifact-section .artifact-wrap .artifact-heading-wrap h1 {
+.artifact .artifact-section .artifact-wrap .artifact-left .artifact-heading-wrap h1 {
   width: -moz-fit-content;
   width: fit-content;
   margin-top: 0;
 }
-.artifact .artifact-section .artifact-wrap .heading-col {
+.artifact .artifact-section .artifact-wrap .artifact-left .heading-col {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: start;
   align-items: start;
 }
-.artifact .artifact-section .artifact-wrap .artifact-img-wrap {
-  position: relative;
-  width: 50%;
+.artifact .artifact-section .artifact-wrap .artifact-right {
+  width: 100%;
 }
-.artifact .artifact-section .artifact-wrap .artifact-img-wrap video {
+.artifact .artifact-section .artifact-wrap .artifact-right .artifact-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: red;
+}
+.artifact .artifact-section .artifact-wrap .artifact-right .artifact-img-wrap video {
   width: 100%;
 }/*# sourceMappingURL=style.css.map */

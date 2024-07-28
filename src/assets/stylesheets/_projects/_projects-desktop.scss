@@ -1,20 +1,7 @@
 .projects {
-    @extend %scroll-page-template;
-    gap: $xxxl;
+    @extend %page-template;
     padding-top: $xxl;
     z-index: 2;
-
-    ::-webkit-scrollbar {
-        width: $xs;
-    }
-
-    .scroll-wrap {
-
-        .scroll-section {
-            @include flex-wrap( wrap, column, start, center );
-            @extend %desktop-margin;
-        }
-    }
 
     .project-heading-wrap {
         @include flex-wrap( nowrap, row, center, start );
@@ -33,390 +20,394 @@
     .project-heading-shimmer {
         @extend %shimmer;
         width: fit-content;
+        font-size: $md;
         margin-top: $md;
         margin-bottom: $md;
         left: $md;
-        text-align: center;
+        text-align: start;
         position: absolute;
         width: fit-content;
         top: 0;
         z-index: 3;
-
-        &:hover ~ .project-text {
-            opacity: 100%;
-        }
+        transition: 0.5s ease-in-out
     }
     .project-heading-float {
         @extend %float-heading;
         // margin-bottom: - $lg;
         animation: projectsLoad 2s ease-in-out forwards;
     }
-
-    .project-wrap {
-        @include flex-wrap( nowrap, column, end, end );
+    .project-container {
+        @extend %desktop-margin;
+        @include flex-wrap( nowrap, column, center, start );
         position: relative;
-        top: 236px;
-        width: 100vh;
-        border-radius: $md;
-        border: 2px solid white;
-        z-index: 100;
-        // opacity: 0%;
 
-        .project-sub {
-            @extend %text-glow;
-            position: absolute;
-            font-size: $pg;
-            left: 0;
-            top: - $lg;
-            font-weight: 800;
-            color: $primary;
-            z-index: -1;
-
-            &:before {
-                text-shadow: 0 0 5px $primary, 0 0 10px $primary;
-            }
-            &:after {
-                transform: scaleX(1.03) scaleY(1.6);
-                background-image: linear-gradient(45deg, transparent 45%, $accent 45%, $primary 85%, transparent 0);
-            }
-        }
-        video {
+        .project-wrap {
+            @include flex-wrap( nowrap, column, start, start );
             position: relative;
             width: 100%;
-            height: 100%;
-            aspect-ratio: 16 / 9;
-            border-radius: $md;
-        }
-        .project-corner-wrap {
-            width: $md;
-            height: $md;
-            position: absolute;
-            // background-color: red;
-            border-right: 12px solid $secondary;
-            border-bottom: 12px solid $secondary;
-            border-radius: 0 0 52px 0;
-            right: -14px;
-            bottom: -14px;
-            z-index: 4;
-        }
-        .project-text {
-            @include flex-wrap( wrap, column, start, start );
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: $md;
-            background-color: rgba($secondary, 0.8);
-            backdrop-filter: blur($sm);
-            z-index: 2;
-            opacity: 0;
-            transition: 0.5s ease-in-out;
-
-            .project-heading-shimmer {
-                position: relative;
-                visibility: hidden;
-            }
-            &:hover {
-                opacity: 100%;
-
-                ~.app-icons-wrap {
-                    opacity: 100%;
-
-                    svg {
-                        transform: scale(1);
-                        animation: iconFade 0.5s ease-in-out forwards alternate;
-
-                        .icon-grey {
-                            fill: $icon-grey;
-                        }
-                        .icon-white {
-                            fill: $icon-white;
-                        }
-                        .ae-light {
-                            fill: $ae-light;
-                        }
-                        .ae-dark {
-                            fill: $ae-dark;
-                        }
-                        .css-light {
-                            fill: $css-light;
-                        }
-                        .css-dark {
-                            fill: $css-dark;
-                        }
-                        .figma-purple {
-                            fill: $figma-purple;
-                        }
-                        .figma-blue {
-                            fill: $figma-blue;
-                        }
-                        .figma-green {
-                            fill: $figma-green;
-                        }
-                        .figma-orange {
-                            fill: $figma-orange;
-                        }
-                        .figma-peach {
-                            fill: $figma-peach;
-                        }
-                        .figma-bg {
-                            fill: $figma-bg;
-                        }
-                        .html-light {
-                            fill: $html-light;
-                        }
-                        .html-dark {
-                            fill: $html-dark;
-                        }
-                        .ai-light {
-                            fill: $ai-light;
-                        }
-                        .ai-dark {
-                            fill: $ai-dark;
-                        }
-                        .js-light {
-                            fill: $js-light;
-                        }
-                        .js-dark {
-                            fill: $js-dark;
-                        }
-                        .ps-light {
-                            fill: $ps-light;
-                        }
-                        .ps-dark {
-                            fill: $ps-dark;
-                        }
-                        .react-light {
-                            fill: $react-light;
-                        }
-                        .react-dark {
-                            fill: $react-dark;
-                        }
-                        .sass-dark {
-                            fill: $sass-dark;
-                        }
-                        .webflow-dark {
-                            fill: $webflow-dark;
-                        }
-                    }
-                }
-            }
-            p {
-                margin: 0 $md;
-            }
-        }
-        .app-icons-wrap {
-            @include flex-wrap( nowrap, row, start, end );
-            position: absolute;
-            width: fit-content;
-            height: fit-content;
-            left: $lg;
-            bottom: 28px;
-            gap: $sm;
-            opacity: 25%;
-            pointer-events: none;
-            z-index: 5;
-            transition: 0.2s ease-in-out;
-
-            svg {
-                height: $lg;
-                width: fit-content;
-                transform: scale(0.8);
-                filter: blur(0px);
-                transition: 0.5s ease-in-out;
-                
-                .icon-grey, .icon-white, .ae-light, .css-light, .figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach, .ai-light, .js-dark, .ps-light, .react-light {
-                transition: 0.5s ease-in-out;
-                fill: transparent;
-                }
-                .ae-dark, .css-dark, .figma-bg, .html-light, .html-dark, .ai-dark, .js-light, .ps-dark, .react-dark, .sass-dark, .webflow-dark {
-                transition: 0.5s ease-in-out;
-                fill: $accent;
-                }
-            }
-        }
-        .project-btn-wrap {
-            @include flex-wrap( nowrap, column, end, end );
-            position: absolute;
-            width: 100%;
-            height: fit-content;
-            pointer-events: none;
-            overflow: hidden;
-            right: -2px;
-            bottom: -2px;
-            z-index: 3;
-
-            .project-top-corner {
-                @include flex-wrap( nowrap, row, end, end );
-                @extend %project-border;
-                z-index: 4;
-                width: $lg;
-                transform: translate(0, 72px);
-                animation: btnTop 0.475s 1s ease-in-out forwards reverse;
-
-                &:after {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    bottom: -2px;
-                    right: 0;
-                    border-right: 2px solid white;
-                    border-bottom: 2px solid white;
-                    border-radius: 0 0 $md 0;
-                    z-index: 5;
-                    animation: btnTopBr 0.5s 1s ease-in-out forwards reverse;
-                }
-            }
-            .project-btn-bot {
-                @include flex-wrap( nowrap, row, end, end );
+    
+            .project-gallery {
+                @include flex-wrap( nowrap, row, center, center );
                 position: relative;
                 width: 100%;
-                z-index: 3;
+                height: 100%;
+                gap: $md;
+                top: $md;
 
-                .project-bot-corner {
-                    @extend %project-border;
-                    @include flex-wrap( nowrap, row, end, end );
+                .project-artifact-wrap {
+                    @include flex-wrap( nowrap, column, center, center );
                     position: relative;
-                    z-index: 4;
-                    width: 100%;
-                    transform: translate(179.24px, 0);
-                    animation: btnBot 0.48s 1s ease-in-out forwards reverse;
+                    width: auto;
+                    height: 50vh;
+                    border-radius: $md;
 
+                    &:hover {
+                        .project-artifact {
+                        aspect-ratio: 16 / 9;
+                        width: auto;
+                        border-radius: $md $md 0 $md;
 
-                    &:after {
-                        content: "";
+                        .project-heading-shimmer {
+                            font-size: $xl;
+                        }
+
+                            .project-btn-wrap {
+                                .project-top-corner {
+                                    width: $md;
+                                    transform: translate( 0, 0 );
+
+                                    &::after {
+                                        width: 100%;
+                                        height: 100%;
+                                        border-radius: 0 0 $md 0;
+                                    }
+                                }
+                                .project-btn-bot {
+                                    .project-bot-corner {
+                                        height: $md;
+                                        transform: translate( 0px, 0px );
+
+                                        &::after {
+                                            height: 100%;
+                                            border-radius: 0 0 $md 0;
+                                        }
+                                    }
+                                    .project-btn-bg {
+                                        transform: translate( 0px, 0px );
+                                    }
+                                }
+                            }
+                            ~.project-btn {
+                                opacity: 100%;
+
+                                .btn {
+                                    animation: btnShow 0.5s ease-in-out forwards;
+                                }
+                            }
+                        }
+                    }
+                    .project-sub {
+                        @extend %text-glow;
                         position: absolute;
-                        width: 100%;
-                        height: 100%;
+                        font-size: $pg;
                         left: 0;
-                        border-right: 2px solid white;
-                        border-bottom: 2px solid white;
-                        border-radius: 0 0 $md 0;
-                        z-index: 5;
-                        animation: btnBotBr 0.5s 1s ease-in-out forwards reverse;
+                        top: - $lg;
+                        font-weight: 800;
+                        color: $primary;
+                        z-index: -1;
+            
+                        &:before {
+                            text-shadow: 0 0 5px $primary, 0 0 10px $primary;
+                        }
+                        &:after {
+                            transform: scaleX(1.03) scaleY(1.6);
+                            background-image: linear-gradient(45deg, transparent 45%, $accent 45%, $primary 85%, transparent 0);
+                        }
                     }
-                }
-                .project-btn-bg {
-                    position: relative;
-                    background-color: $secondary;
-                    width: fit-content;
-                    padding: 20px 0 0 20px;
-                    border-radius: $md 0 0 0;
-                    pointer-events: all;
-                    border-top: 2px solid white;
-                    border-left: 2px solid white;
-                    z-index: 3;
-                    transform: translate(177.24px, 72px);
-                    animation: btnMain 0.5s 1s ease-in-out forwards reverse;
+                    .project-artifact {
+                        @include flex-wrap( nowrap, column, center, center );
+                        position: relative;
+                        aspect-ratio: 9 / 16;
+                        width: auto;
+                        height: 50vh;
+                        border-radius: $md;
+                        overflow: hidden;
+                        transition: 0.5s ease-in-out;
+                        // transition: 0.5s cubic-bezier(0.3, -0.8, .4, 1.5);
 
-                    .btn {
-                        visibility: hidden;
+                        .project-border {
+                            @include flex-wrap( nowrap, column, center, center );
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: $md;
+                            border: 2px solid white;
+                            box-sizing: border-box;
+                            z-index: 5;
+                        }
+                        video {
+                            position: absolute;
+                            width: auto;
+                            height: 100%;
+                            aspect-ratio: 16 / 9;
+                            border-radius: $md;
+                        }
+                        .project-corner-wrap {
+                            width: $md;
+                            height: $md;
+                            position: absolute;
+                            border-right: 12px solid $secondary;
+                            border-bottom: 12px solid $secondary;
+                            border-radius: 0 0 52px 0;
+                            right: -14px;
+                            bottom: -14px;
+                            z-index: 4;
+                        }
+                        .project-text {
+                            @include flex-wrap( wrap, column, start, start );
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: $md;
+                            background-color: rgba($secondary, 0.8);
+                            backdrop-filter: blur($sm);
+                            z-index: 2;
+                            opacity: 0;
+                            transition: 0.5s ease-in-out;
+                
+                            .project-heading-shimmer {
+                                position: relative;
+                                visibility: hidden;
+                            }
+                            p {
+                                margin: 0 $md;
+                            }
+                        }
+                        .app-icons-wrap {
+                            @include flex-wrap( nowrap, row, start, end );
+                            position: absolute;
+                            width: fit-content;
+                            height: fit-content;
+                            left: $lg;
+                            bottom: 28px;
+                            gap: $sm;
+                            opacity: 25%;
+                            pointer-events: none;
+                            z-index: 5;
+                            transition: 0.2s ease-in-out;
+                
+                            svg {
+                                height: $lg;
+                                width: fit-content;
+                                transform: scale(0.8);
+                                filter: blur(0px);
+                                transition: 0.5s ease-in-out;
+                                
+                                .icon-grey, .icon-white, .ae-light, .css-light, .figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach, .ai-light, .js-dark, .ps-light, .react-light {
+                                transition: 0.5s ease-in-out;
+                                fill: transparent;
+                                }
+                                .ae-dark, .css-dark, .figma-bg, .html-light, .html-dark, .ai-dark, .js-light, .ps-dark, .react-dark, .sass-dark, .webflow-dark {
+                                transition: 0.5s ease-in-out;
+                                fill: $accent;
+                                }
+                            }
+                        }
+                        .project-btn-wrap {
+                            @include flex-wrap( nowrap, column, end, end );
+                            position: absolute;
+                            width: 100%;
+                            height: fit-content;
+                            pointer-events: none;
+                            overflow: hidden;
+                            right: -2px;
+                            bottom: -2px;
+                            z-index: 5;
+                
+                            .project-top-corner {
+                                @include flex-wrap( nowrap, row, end, end );
+                                @extend %project-border;
+                                z-index: 4;
+                                right: 0;
+                                width: 2px;
+                                height: $md;
+                                right: -18px;
+                                bottom: -20px;
+                                transform: translate( 0, 72px );
+                                transition: 0.5s ease-in-out;
+                
+                                &:after {
+                                    content: "";
+                                    position: absolute;
+    
+                                    width: 2px;
+                                    height: 36px;
+                                    border-radius: 0 0 0 0;
+                                    bottom: -2px;
+                                    right: 0;
+                                    border-right: 2px solid white;
+                                    border-bottom: 2px solid white;
+                                    z-index: 5;
+                                    transition: 0.5s ease-in-out;
+                                }
+                            }
+                            .project-btn-bot {
+                                @include flex-wrap( nowrap, row, end, end );
+                                position: relative;
+                                width: 100%;
+                                z-index: 3;
+                
+                                .project-bot-corner {
+                                    @extend %project-border;
+                                    @include flex-wrap( nowrap, row, end, end );
+                                    position: relative;
+                                    z-index: 4;
+                                    width: 100%;
+                                    height: 0px;
+                                    right: -20px;
+                                    bottom: -18px;
+                                    transform: translate(179.24px, 0);
+                                    transition: 0.5s ease-in-out;
+                
+                                    &:after {
+                                        content: "";
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 2px;
+                                        left: 0;
+                                        border-right: 2px solid white;
+                                        border-bottom: 2px solid white;
+                                        border-radius: 0 0 $md 0;
+                                        z-index: 5;
+                                        transition: 0.5s ease-in-out;
+                                    }
+                                }
+                                .project-btn-bg {
+                                    position: relative;
+                                    background-color: $secondary;
+                                    width: fit-content;
+                                    padding: 20px 0 0 20px;
+                                    border-radius: $md 0 0 0;
+                                    pointer-events: all;
+                                    border-top: 2px solid white;
+                                    border-left: 2px solid white;
+                                    z-index: 3;
+                                    transform: translate(177.24px, 72px);
+                                    transition: 0.5s ease-in-out;
+                
+                                    .btn {
+                                        visibility: hidden;
+                                    }
+                                }
+                                
+                            }
+                        }
                     }
                 }
+            }
+            .project-btn {
+                position: absolute;
+                width: fit-content;
+                padding: 20px 0 0 20px;
+                border-radius: $md 0 0 0;
+                pointer-events: all;
+                opacity: 0;
+                right: 0;
+                bottom: 0;
+                transition: 0.2s ease-in-out;
+                z-index: 20;
             }
         }
     }
 }
-.project-btn {
-    position: absolute;
-    width: fit-content;
-    padding: 20px 0 0 20px;
-    border-radius: $md 0 0 0;
-    pointer-events: all;
-    opacity: 0;
-    z-index: 5;
-    animation: btnShow 0.2s 1.3s ease-in-out forwards;
-}
+
 %project-border {
     position: relative;
-    height: $md;
     border-radius: 0 0 $xl 0;
     border-bottom: 20px solid $secondary;
     border-right: 20px solid $secondary;
-    right: -20px;
-    bottom: -20px;
 }
-.project-wrap:has( .project-btn:hover ) .project-text {
-    opacity: 100%;
+.project-artifact-wrap:has( .btn:hover ) .project-text {
+    opacity: 100% !important;
 }
-.project-wrap:has( .project-btn:hover ) .app-icons-wrap {
-    opacity: 100%;
+.project-artifact-wrap:has( .btn:hover ) .app-icons-wrap {
+    opacity: 100% !important;
 
     svg {
-        transform: scale(1);
-        animation: iconFade 0.5s ease-in-out forwards alternate;
+        transform: scale(1) !important;
+        animation: iconFade 0.5s ease-in-out forwards alternate !important;
 
         .icon-grey {
-            fill: $icon-grey;
+            fill: $icon-grey !important;
         }
         .icon-white {
-            fill: $icon-white;
+            fill: $icon-white !important;
         }
         .ae-light {
-            fill: $ae-light;
+            fill: $ae-light !important;
         }
         .ae-dark {
-            fill: $ae-dark;
+            fill: $ae-dark !important;
         }
         .css-light {
-            fill: $css-light;
+            fill: $css-light !important;
         }
         .css-dark {
-            fill: $css-dark;
+            fill: $css-dark !important;
         }
         .figma-purple {
-            fill: $figma-purple;
+            fill: $figma-purple !important;
         }
         .figma-blue {
-            fill: $figma-blue;
+            fill: $figma-blue !important;
         }
         .figma-green {
-            fill: $figma-green;
+            fill: $figma-green !important;
         }
         .figma-orange {
-            fill: $figma-orange;
+            fill: $figma-orange !important;
         }
         .figma-peach {
-            fill: $figma-peach;
+            fill: $figma-peach !important;
         }
         .figma-bg {
-            fill: $figma-bg;
+            fill: $figma-bg !important;
         }
         .html-light {
-            fill: $html-light;
+            fill: $html-light !important;
         }
         .html-dark {
-            fill: $html-dark;
+            fill: $html-dark !important;
         }
         .ai-light {
-            fill: $ai-light;
+            fill: $ai-light !important;
         }
         .ai-dark {
-            fill: $ai-dark;
+            fill: $ai-dark !important;
         }
         .js-light {
-            fill: $js-light;
+            fill: $js-light !important;
         }
         .js-dark {
-            fill: $js-dark;
+            fill: $js-dark !important;
         }
         .ps-light {
-            fill: $ps-light;
+            fill: $ps-light !important;
         }
         .ps-dark {
-            fill: $ps-dark;
+            fill: $ps-dark !important;
         }
         .react-light {
-            fill: $react-light;
+            fill: $react-light !important;
         }
         .react-dark {
-            fill: $react-dark;
+            fill: $react-dark !important;
         }
         .sass-dark {
-            fill: $sass-dark;
+            fill: $sass-dark !important;
         }
         .webflow-dark {
-            fill: $webflow-dark;
+            fill: $webflow-dark !important;
         }
     }
 }
@@ -424,62 +415,15 @@
 @keyframes btnShow {
     0% {
         opacity: 0;
-        transform: scale( 0.75 );
+        transform: scale( 0.5 );
+    }
+    50% {
+        opacity: 0;
+        transform: scale( 0.5 );
     }
     100% {
         opacity: 100%;
         transform: scale( 1 );
-    }
-}
-@keyframes btnMain {
-    0% {
-        transform: translate( 0, 0 );
-    }
-    100% {
-        transform: translate( 177.24px, 72px );
-    }
-}
-@keyframes btnTop {
-    0% {
-        transform: translate( 0, 0 );
-    }
-    100% {
-        width: 2px;
-        transform: translate( 0, 72px );
-    }
-}
-@keyframes btnTopBr {
-    0% {
-        border-radius: 0 0 $md 0;
-    }
-    60% {
-        width: 100%;
-    }
-    100% {
-        width: 2px;
-        height: 36px;
-        border-radius: 0 0 0 0;
-    }
-}
-@keyframes btnBot {
-    0% {
-        transform: translate( 0, 0 );
-    }
-    100% {
-        height: 2px;
-        transform: translate( 179.24px, 0 );
-    }
-}
-@keyframes btnBotBr {
-    0% {
-        border-radius: 0 0 $md 0;
-    }
-    50% {
-        height: 100%;
-    }
-    100% {
-        height: 2px;
-        border-radius: 0 0 0 0;
     }
 }
 

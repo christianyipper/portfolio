@@ -1,0 +1,505 @@
+.projects {
+    @extend %scroll-page-template;
+    gap: $xxxl;
+    padding-top: $xxl;
+    z-index: 2;
+
+    ::-webkit-scrollbar {
+        width: $xs;
+    }
+
+    .scroll-wrap {
+
+        .scroll-section {
+            @include flex-wrap( wrap, column, start, center );
+            @extend %desktop-margin;
+        }
+    }
+
+    .project-heading-wrap {
+        @include flex-wrap( nowrap, row, center, start );
+        gap: $sm;
+        width: 100%;
+    }
+    .project-heading-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: $md $md 0 $md;
+        background: ease-in-out-gradient(to bottom, $secondary, transparent, transparent);
+        opacity: 50%;
+        z-index: 1;
+    }
+    .project-heading-shimmer {
+        @extend %shimmer;
+        width: fit-content;
+        margin-top: $md;
+        margin-bottom: $md;
+        left: $md;
+        text-align: center;
+        position: absolute;
+        width: fit-content;
+        top: 0;
+        z-index: 3;
+
+        &:hover ~ .project-text {
+            opacity: 100%;
+        }
+    }
+    .project-heading-float {
+        @extend %float-heading;
+        // margin-bottom: - $lg;
+        animation: projectsLoad 2s ease-in-out forwards;
+    }
+
+    .project-wrap {
+        @include flex-wrap( nowrap, column, end, end );
+        position: relative;
+        top: 236px;
+        width: 100vh;
+        border-radius: $md;
+        border: 2px solid white;
+        z-index: 100;
+        // opacity: 0%;
+
+        .project-sub {
+            @extend %text-glow;
+            position: absolute;
+            font-size: $pg;
+            left: 0;
+            top: - $lg;
+            font-weight: 800;
+            color: $primary;
+            z-index: -1;
+
+            &:before {
+                text-shadow: 0 0 5px $primary, 0 0 10px $primary;
+            }
+            &:after {
+                transform: scaleX(1.03) scaleY(1.6);
+                background-image: linear-gradient(45deg, transparent 45%, $accent 45%, $primary 85%, transparent 0);
+            }
+        }
+        video {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: $md;
+        }
+        .project-corner-wrap {
+            width: $md;
+            height: $md;
+            position: absolute;
+            // background-color: red;
+            border-right: 12px solid $secondary;
+            border-bottom: 12px solid $secondary;
+            border-radius: 0 0 52px 0;
+            right: -14px;
+            bottom: -14px;
+            z-index: 4;
+        }
+        .project-text {
+            @include flex-wrap( wrap, column, start, start );
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: $md;
+            background-color: rgba($secondary, 0.8);
+            backdrop-filter: blur($sm);
+            z-index: 2;
+            opacity: 0;
+            transition: 0.5s ease-in-out;
+
+            .project-heading-shimmer {
+                position: relative;
+                visibility: hidden;
+            }
+            &:hover {
+                opacity: 100%;
+
+                ~.app-icons-wrap {
+                    opacity: 100%;
+
+                    svg {
+                        transform: scale(1);
+                        animation: iconFade 0.5s ease-in-out forwards alternate;
+
+                        .icon-grey {
+                            fill: $icon-grey;
+                        }
+                        .icon-white {
+                            fill: $icon-white;
+                        }
+                        .ae-light {
+                            fill: $ae-light;
+                        }
+                        .ae-dark {
+                            fill: $ae-dark;
+                        }
+                        .css-light {
+                            fill: $css-light;
+                        }
+                        .css-dark {
+                            fill: $css-dark;
+                        }
+                        .figma-purple {
+                            fill: $figma-purple;
+                        }
+                        .figma-blue {
+                            fill: $figma-blue;
+                        }
+                        .figma-green {
+                            fill: $figma-green;
+                        }
+                        .figma-orange {
+                            fill: $figma-orange;
+                        }
+                        .figma-peach {
+                            fill: $figma-peach;
+                        }
+                        .figma-bg {
+                            fill: $figma-bg;
+                        }
+                        .html-light {
+                            fill: $html-light;
+                        }
+                        .html-dark {
+                            fill: $html-dark;
+                        }
+                        .ai-light {
+                            fill: $ai-light;
+                        }
+                        .ai-dark {
+                            fill: $ai-dark;
+                        }
+                        .js-light {
+                            fill: $js-light;
+                        }
+                        .js-dark {
+                            fill: $js-dark;
+                        }
+                        .ps-light {
+                            fill: $ps-light;
+                        }
+                        .ps-dark {
+                            fill: $ps-dark;
+                        }
+                        .react-light {
+                            fill: $react-light;
+                        }
+                        .react-dark {
+                            fill: $react-dark;
+                        }
+                        .sass-dark {
+                            fill: $sass-dark;
+                        }
+                        .webflow-dark {
+                            fill: $webflow-dark;
+                        }
+                    }
+                }
+            }
+            p {
+                margin: 0 $md;
+            }
+        }
+        .app-icons-wrap {
+            @include flex-wrap( nowrap, row, start, end );
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            left: $lg;
+            bottom: 28px;
+            gap: $sm;
+            opacity: 25%;
+            pointer-events: none;
+            z-index: 5;
+            transition: 0.2s ease-in-out;
+
+            svg {
+                height: $lg;
+                width: fit-content;
+                transform: scale(0.8);
+                filter: blur(0px);
+                transition: 0.5s ease-in-out;
+                
+                .icon-grey, .icon-white, .ae-light, .css-light, .figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach, .ai-light, .js-dark, .ps-light, .react-light {
+                transition: 0.5s ease-in-out;
+                fill: transparent;
+                }
+                .ae-dark, .css-dark, .figma-bg, .html-light, .html-dark, .ai-dark, .js-light, .ps-dark, .react-dark, .sass-dark, .webflow-dark {
+                transition: 0.5s ease-in-out;
+                fill: $accent;
+                }
+            }
+        }
+        .project-btn-wrap {
+            @include flex-wrap( nowrap, column, end, end );
+            position: absolute;
+            width: 100%;
+            height: fit-content;
+            pointer-events: none;
+            overflow: hidden;
+            right: -2px;
+            bottom: -2px;
+            z-index: 3;
+
+            .project-top-corner {
+                @include flex-wrap( nowrap, row, end, end );
+                @extend %project-border;
+                z-index: 4;
+                width: $lg;
+                transform: translate(0, 72px);
+                animation: btnTop 0.475s 1s ease-in-out forwards reverse;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    bottom: -2px;
+                    right: 0;
+                    border-right: 2px solid white;
+                    border-bottom: 2px solid white;
+                    border-radius: 0 0 $md 0;
+                    z-index: 5;
+                    animation: btnTopBr 0.5s 1s ease-in-out forwards reverse;
+                }
+            }
+            .project-btn-bot {
+                @include flex-wrap( nowrap, row, end, end );
+                position: relative;
+                width: 100%;
+                z-index: 3;
+
+                .project-bot-corner {
+                    @extend %project-border;
+                    @include flex-wrap( nowrap, row, end, end );
+                    position: relative;
+                    z-index: 4;
+                    width: 100%;
+                    transform: translate(179.24px, 0);
+                    animation: btnBot 0.48s 1s ease-in-out forwards reverse;
+
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        border-right: 2px solid white;
+                        border-bottom: 2px solid white;
+                        border-radius: 0 0 $md 0;
+                        z-index: 5;
+                        animation: btnBotBr 0.5s 1s ease-in-out forwards reverse;
+                    }
+                }
+                .project-btn-bg {
+                    position: relative;
+                    background-color: $secondary;
+                    width: fit-content;
+                    padding: 20px 0 0 20px;
+                    border-radius: $md 0 0 0;
+                    pointer-events: all;
+                    border-top: 2px solid white;
+                    border-left: 2px solid white;
+                    z-index: 3;
+                    transform: translate(177.24px, 72px);
+                    animation: btnMain 0.5s 1s ease-in-out forwards reverse;
+
+                    .btn {
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+}
+.project-btn {
+    position: absolute;
+    width: fit-content;
+    padding: 20px 0 0 20px;
+    border-radius: $md 0 0 0;
+    pointer-events: all;
+    opacity: 0;
+    z-index: 5;
+    animation: btnShow 0.2s 1.3s ease-in-out forwards;
+}
+%project-border {
+    position: relative;
+    height: $md;
+    border-radius: 0 0 $xl 0;
+    border-bottom: 20px solid $secondary;
+    border-right: 20px solid $secondary;
+    right: -20px;
+    bottom: -20px;
+}
+.project-wrap:has( .project-btn:hover ) .project-text {
+    opacity: 100%;
+}
+.project-wrap:has( .project-btn:hover ) .app-icons-wrap {
+    opacity: 100%;
+
+    svg {
+        transform: scale(1);
+        animation: iconFade 0.5s ease-in-out forwards alternate;
+
+        .icon-grey {
+            fill: $icon-grey;
+        }
+        .icon-white {
+            fill: $icon-white;
+        }
+        .ae-light {
+            fill: $ae-light;
+        }
+        .ae-dark {
+            fill: $ae-dark;
+        }
+        .css-light {
+            fill: $css-light;
+        }
+        .css-dark {
+            fill: $css-dark;
+        }
+        .figma-purple {
+            fill: $figma-purple;
+        }
+        .figma-blue {
+            fill: $figma-blue;
+        }
+        .figma-green {
+            fill: $figma-green;
+        }
+        .figma-orange {
+            fill: $figma-orange;
+        }
+        .figma-peach {
+            fill: $figma-peach;
+        }
+        .figma-bg {
+            fill: $figma-bg;
+        }
+        .html-light {
+            fill: $html-light;
+        }
+        .html-dark {
+            fill: $html-dark;
+        }
+        .ai-light {
+            fill: $ai-light;
+        }
+        .ai-dark {
+            fill: $ai-dark;
+        }
+        .js-light {
+            fill: $js-light;
+        }
+        .js-dark {
+            fill: $js-dark;
+        }
+        .ps-light {
+            fill: $ps-light;
+        }
+        .ps-dark {
+            fill: $ps-dark;
+        }
+        .react-light {
+            fill: $react-light;
+        }
+        .react-dark {
+            fill: $react-dark;
+        }
+        .sass-dark {
+            fill: $sass-dark;
+        }
+        .webflow-dark {
+            fill: $webflow-dark;
+        }
+    }
+}
+
+@keyframes btnShow {
+    0% {
+        opacity: 0;
+        transform: scale( 0.75 );
+    }
+    100% {
+        opacity: 100%;
+        transform: scale( 1 );
+    }
+}
+@keyframes btnMain {
+    0% {
+        transform: translate( 0, 0 );
+    }
+    100% {
+        transform: translate( 177.24px, 72px );
+    }
+}
+@keyframes btnTop {
+    0% {
+        transform: translate( 0, 0 );
+    }
+    100% {
+        width: 2px;
+        transform: translate( 0, 72px );
+    }
+}
+@keyframes btnTopBr {
+    0% {
+        border-radius: 0 0 $md 0;
+    }
+    60% {
+        width: 100%;
+    }
+    100% {
+        width: 2px;
+        height: 36px;
+        border-radius: 0 0 0 0;
+    }
+}
+@keyframes btnBot {
+    0% {
+        transform: translate( 0, 0 );
+    }
+    100% {
+        height: 2px;
+        transform: translate( 179.24px, 0 );
+    }
+}
+@keyframes btnBotBr {
+    0% {
+        border-radius: 0 0 $md 0;
+    }
+    50% {
+        height: 100%;
+    }
+    100% {
+        height: 2px;
+        border-radius: 0 0 0 0;
+    }
+}
+
+@keyframes iconFade {
+    0% {
+        filter: blur(0px);
+    }
+    50% {
+        filter: blur(5px);
+    }
+    100% {
+        filter: blur(0px);
+    }
+}
+
+// @keyframes projectsLoad {
+//     0% {
+//         margin-bottom: 80vh;
+//     }
+//     100% {
+//         margin-bottom: - $lg;
+//     }
+// }

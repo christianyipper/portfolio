@@ -157,7 +157,7 @@ const About = () => {
                         <h3 className={ `${ text4 ? `blur-in-fast` : `blur-out-fast` }` }>Collaboration</h3>
                         <p ref={ textSection4 } className={ `${ text4 ? `blur-in-fast` : `blur-out-fast` }` }>I believe the best innovations starts with collaborative ideas. The most successful teams I’ve been involved in support each other, balancing individual weaknesses with each other’s strengths. I cherish and value the connections I make with others as we pioneer the future.</p>
                         <h3 className={ `${ text5 ? `blur-in-fast` : `blur-out-fast` }` }>Leadership</h3>
-                        <p ref={ textSection5 } className={ `${ text5 ? `blur-in-fast` : `blur-out-fast` }` }>From a hockey team captain to officiating coach, driving your peers to success . Since then, I value people who find courage to posses this trait.</p>
+                        <p ref={ textSection5 } className={ `${ text5 ? `blur-in-fast` : `blur-out-fast` }` }>From a team leader to officiating coach, my experiences and focus on mentorship have enabled me to create positive environments and inspire growth. Through my time, I’m grateful to have the opportunity to empower individuals as they achieve success.</p>
                         <h3 className={ `${ text6 ? `blur-in-fast` : `blur-out-fast` }` }>Determination</h3>
                         <p ref={ textSection6 } className={ `${ text6 ? `blur-in-fast` : `blur-out-fast` }` }>My determination comes from collaborating with like-minded people who strive to achieve their best work. I believe this plays a vital role in the industry as we need to push through barriers to be creative and innovative.</p>
                     </article>
