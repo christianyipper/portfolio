@@ -1,5 +1,6 @@
 .about {
     @extend %scroll-page-template;
+    padding-top: 0;
     // background-color: blue;
 
     ::-webkit-scrollbar {
@@ -8,6 +9,7 @@
 
     .about-scroll {
         @extend %desktop-margin;
+        padding-top: $xxl;
         // background-color: red;
 
         .about-section {

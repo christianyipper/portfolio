@@ -17,7 +17,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        top: $xxxl;
+        top: $xxl;
         pointer-events: none;
 
         .artifact-wrap {
@@ -81,6 +81,9 @@
 
                 p, li, h2 {
                     padding-right: calc($md / 2);
+                }
+                .h1-sm {
+                    font-size: $xl;
                 }
             }
             .artifact-left-sm {

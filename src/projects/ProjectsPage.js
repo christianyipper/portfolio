@@ -327,21 +327,23 @@ const ProjectsPage = () => {
                                 </a>
                             </div>
                         </section>
-                        <section className="project-artifact-wrap"
+                        {/* <section className="project-artifact-wrap"
                         onMouseEnter={ edgeBoardsEnter }
-                        onMouseLeave={ edgeBoardsLeave }>
+                        onMouseLeave={ edgeBoardsLeave }> */}
+                        <section className="project-artifact-wrap">
                             <p className="sub-heading" text-glow="Branding">Branding</p>
                             <div className="project-artifact">
                                 <div className="project-border"></div>
                                 <div className="project-corner-wrap"></div>
-                                <video className="project-img"
+                                {/* <video className="project-img"
                                 loop
                                 muted
                                 ref={ EdgeBoards }
                                 onMouseOver={ event => event.target.play() }
                                 onMouseOut={ event => event.target.pause() }>
                                     <source src="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1" type="video/mp4"/>
-                                </video>
+                                </video> */}
+                                <img className="project-img edge-img" src="https://www.dropbox.com/scl/fi/7ideer4088vg3r97ofxbp/Edgeboards-Poster-Wide.png?rlkey=s18c413b5gww7yqn3oj7q2abz&st=mmnqfqk5&raw=1" alt="" />
                                 <h2 className="project-heading-shimmer" text-shimmer="Edge Boards">Edge Boards</h2>
                                 <article className="project-text">
                                     <h2 className="project-heading-shimmer" text-shimmer="Edge Boards">Edge Boards</h2>

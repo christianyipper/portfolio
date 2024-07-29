@@ -1,6 +1,5 @@
 .projects {
     @extend %page-template;
-    padding-top: $xxl;
     z-index: 2;
 
     .project-heading-wrap {
@@ -317,6 +316,12 @@
             }
         }
     }
+}
+.edge-img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    border-radius: $md;
 }
 
 %project-border {

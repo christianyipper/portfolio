@@ -171,8 +171,9 @@ nav {
                     padding: 0;
     
                     .about-scroll {
-                        margin-right: 11px;
                         position: relative;
+                        margin-right: 11px;
+                        padding: 0;
     
                         .about-img-section {
                             grid-template-columns: 45% 55%;
@@ -205,7 +206,6 @@ nav {
                     position: absolute;
                     width: auto;
                     height: 100%;
-                    aspect-ratio: 16 / 9;
                     border-radius: $md;
                 }
             }

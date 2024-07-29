@@ -51,7 +51,7 @@ const StripesNation = () => {
                             <span text-glow="o">o</span>
                             <span text-glow="n">n</span>
                         </h1>
-                        <h1 className={ `artifact-heading-shimmer ${ inView1 ? `blur-in` : `blur-out` }` } text-shimmer="Branding">Branding</h1>
+                        <h1 className={ `artifact-heading-shimmer h1-sm ${ inView1 ? `blur-in` : `blur-out` }` } text-shimmer="- Branding">- Branding</h1>
                         <p>Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery.</p>
                         <p>I utilize my design skillset in Photoshop, Illustrator, Figma, and After Effects throughout this project. Join me as I embark on a journey to create Stripes Nation from the ground up.</p>
                     </div>

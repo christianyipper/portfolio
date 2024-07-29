@@ -1323,8 +1323,9 @@ nav .nav-wrap .nav-mid .about-preview .about {
   padding: 0;
 }
 nav .nav-wrap .nav-mid .about-preview .about .about-scroll {
-  margin-right: 11px;
   position: relative;
+  margin-right: 11px;
+  padding: 0;
 }
 nav .nav-wrap .nav-mid .about-preview .about .about-scroll .about-img-section {
   grid-template-columns: 45% 55%;
@@ -1352,7 +1353,6 @@ nav .nav-wrap .nav-mid .projects-preview img {
   position: absolute;
   width: auto;
   height: 100%;
-  aspect-ratio: 16/9;
   border-radius: 24px;
 }
 nav .nav-wrap .nav-home:hover ~ .nav-about,
@@ -1630,6 +1630,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: 100%;
   height: 100%;
   top: 0;
+  padding-bottom: 80px;
   background-color: #060e1a;
   z-index: 901;
   visibility: hidden;
@@ -1654,14 +1655,28 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 .home .home-view .home-section .home-wrap {
   position: relative;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-auto-columns: 8.3333333333%;
   width: 100%;
   height: 100%;
   max-height: 100vh;
 }
+.home .home-view .home-section .home-wrap .recommend-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  grid-column: 1/12;
+  width: 100%;
+  height: 100%;
+}
+.home .home-view .home-section .home-wrap .recommend-wrap article {
+  width: 100%;
+  height: 100%;
+}
 .home .home-view .home-section .home-left-1 {
   position: absolute;
-  grid-column: span 2;
+  grid-column: 1/6;
   animation: homeIn 3s 1.5s ease-in-out forwards alternate;
   overflow: hidden;
 }
@@ -1738,7 +1753,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  grid-column: 2/2;
+  grid-column: 7/13;
   width: 100%;
   height: 100%;
   height: -moz-fit-content;
@@ -1775,11 +1790,10 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   margin: 0;
 }
 .home .home-view .home-section .article-wrap {
+  grid-column: 9/13;
+  grid-row: 1;
+  margin-top: 90px;
   border-radius: 16px;
-  background-color: rgba(98, 116, 255, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  padding: 24px;
   bottom: 0;
 }
 .home .home-view .home-section .article-wrap .article-content {
@@ -1801,19 +1815,27 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   justify-content: start;
   align-items: center;
 }
+.home .home-view .home-section .article-wrap .article-content .p-padding {
+  padding: 24px 0;
+}
 .home .home-view .home-section .window-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: start;
   align-items: start;
+  position: relative;
+  grid-column: 1/9;
+  grid-row: 1;
+  width: 100%;
   height: 100%;
-  padding-top: 64px;
+  padding-top: 90px;
+  padding-right: 24px;
 }
 .home .home-view .home-section .window-wrap .window, .home .home-view .home-section .window-wrap .window-bar, .home .home-view .home-section .window-wrap .window-bg, .home .home-view .home-section .window-wrap .bgbg {
   position: absolute;
   margin-left: -32px;
-  width: 70%;
+  width: 100%;
 }
 .home .home-view .home-section .window-wrap .window, .home .home-view .home-section .window-wrap .window-bar {
   animation: hatGlow 1s linear infinite alternate;
@@ -1827,14 +1849,13 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 .home .home-view .home-section .window-wrap .window-bg {
   z-index: 1;
 }
-.home .home-view .home-section .window-wrap .bgbg {
+.home .home-view .home-section .window-wrap .window-video {
   aspect-ratio: 16/9;
-  max-width: 65%;
+  max-width: 97%;
   margin-top: 57px;
   margin-left: 0;
 }
-.home .home-view .home-section .window-wrap .bgbg video {
-  background-color: rgba(255, 0, 0, 0.5);
+.home .home-view .home-section .window-wrap .window-video video {
   width: 100%;
   height: 100%;
 }
@@ -1851,6 +1872,13 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 .home .home-view .logo-wrap > svg {
   margin-top: 10%;
   scale: 2.5;
+}
+.home .home-view .home-footer {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
 }
 
 @keyframes maskUp {
@@ -2009,8 +2037,14 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   animation: flyin3 2s 1s ease-in-out forwards;
 }
 
+.about {
+  padding-top: 0;
+}
 .about ::-webkit-scrollbar {
   width: 12px;
+}
+.about .about-scroll {
+  padding-top: 64px;
 }
 .about .about-scroll .about-section {
   height: -moz-fit-content;
@@ -2164,7 +2198,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 }
 
 .projects {
-  padding-top: 64px;
   z-index: 2;
 }
 .projects .project-heading-wrap {
@@ -2507,6 +2540,13 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   z-index: 20;
 }
 
+.edge-img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  border-radius: 24px;
+}
+
 .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-top-corner, .projects .project-container .project-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner {
   position: relative;
   border-radius: 0 0 48px 0;
@@ -2648,7 +2688,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 80px;
+  top: 64px;
   pointer-events: none;
 }
 .artifact .artifact-section .artifact-wrap {
@@ -2701,6 +2741,9 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 }
 .artifact .artifact-section .artifact-wrap .artifact-left p, .artifact .artifact-section .artifact-wrap .artifact-left li, .artifact .artifact-section .artifact-wrap .artifact-left h2 {
   padding-right: 12px;
+}
+.artifact .artifact-section .artifact-wrap .artifact-left .h1-sm {
+  font-size: 48px;
 }
 .artifact .artifact-section .artifact-wrap .artifact-left-sm {
   grid-column: 1/5;

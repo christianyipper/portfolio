@@ -2,6 +2,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 // import { Outlet } from 'react-router-dom';
 import ReactPlayer from 'react-player';
+import Footer from './Footer';
 
 const HomePage = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
@@ -21,11 +22,11 @@ const HomePage = () => {
     return (
         <main className="home">
             <div className="home-view">
-                <section className='scroll-wrap'>
-                    <div className='scroll-section' ref={ snap1 }></div>
-                    <div className='scroll-section' ref={ snap2 }></div>
-                    <div className='scroll-section' ref={ snap3 }></div>
-                    <div className='scroll-section' ref={ snap4 }></div>
+                <section className="scroll-wrap">
+                    <div className="scroll-section" ref={ snap1 }></div>
+                    <div className="scroll-section" ref={ snap2 }></div>
+                    {/* <div className="scroll-section" ref={ snap3 }></div> */}
+                    <div className="scroll-section" ref={ snap4 }></div>
                 </section>
                 <section className="loading-screen">
                     <svg xmlns="http://www.w3.org/2000/svg" id="Logo-SVG" data-name="Logo-SVG" viewBox="0 0 1440 700">
@@ -55,7 +56,7 @@ const HomePage = () => {
                         </g>
                     </svg>
                 </section>
-                <section className={ `home-section ${ inView1 ? `` : `` }` }>
+                <section className={ `home-section ${ inView1 ? `blur-in` : `blur-out` }` }>
                     <div className="home-wrap">
                         <div className="home-left-1">
                             <div className="banner-img-wrap">
@@ -139,24 +140,17 @@ const HomePage = () => {
                 </section>
                 <section className={ `home-section ${ inView2 ? `blur-in` : `blur-out` }` }>
                     <div className="home-wrap">
-                        <div className="featured-heading-wrap">
-                                <h2 className="featured-heading-shimmer" text-shimmer="Featured">Featured</h2>
-                                <h2 className="featured-heading-float">
-                                    <span text-glow="P">P</span>
-                                    <span text-glow="r">r</span>
-                                    <span text-glow="o">o</span>
-                                    <span text-glow="j">j</span>
-                                    <span text-glow="e">e</span>
-                                    <span text-glow="c">c</span>
-                                    <span text-glow="t">t</span>
-                                    <span text-glow=".">.</span>
-                                </h2>
-                            </div>
                         <div className="window-wrap">
                             <img className="window" src="https://drive.google.com/thumbnail?id=1-sfapRmWf0WAtDT7HuCJ7ck7ny7bhyLB&sz=w1000" alt='Glowing neon window border'/>
                             <img className="window-bar" src="https://drive.google.com/thumbnail?id=1Nba2j4QNbJRQ3N12CIh2mIBaHldhFBRM&sz=w1000" alt='Glowing neon window search bar'/>
                             <img className="window-bg" src="https://drive.google.com/thumbnail?id=1oygEPyxWN9CKRrCDAapVhuhZgU-qTseM&sz=w1000" alt='Neon window background'/>
-                            <img className="bgbg" src="https://www.dropbox.com/scl/fi/vilvc058wjbgiq3811i68/ItsYipper-Preiew.gif?rlkey=c6fccjwuka23drz48npbon838&st=n6iod8sn&raw=1" alt='ItsYipper project trailer'/>
+                            <video className="window-video"
+                                poster="https://www.dropbox.com/scl/fi/dwu10b5gjpzz8tuc78d3h/itsyipper-thumb-comp.png?rlkey=rvakfjhv84t26pwfthgmhttqy&st=89spahic&raw=1"
+                                loop
+                                autoPlay
+                                muted>
+                                <source src="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=7hxbgikt&raw=1" type="video/mp4"/>
+                            </video>
                         </div>
                         <article className="article-wrap">
                             <div className="article-content">
@@ -173,7 +167,7 @@ const HomePage = () => {
                                         <span text-glow=".">.</span>
                                     </h2>
                                 </div>
-                                <p>Its Yipper is a gaming news outlet where we review new games and talk about trending topics in the gaming community. In addition to our blog, we post weekly video content across YouTube, Instagram, and TikTok.</p>
+                                <p className="p-padding">ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories.</p>
                             </div>
                             <div className="article-footer">
                                 <div className="article-icons"></div>
@@ -185,6 +179,14 @@ const HomePage = () => {
                             </div>
                         </article>
                     </div>
+                </section>
+                <section className={ `home-section home-footer ${ inView4 ? `blur-in` : `blur-out` }` }>
+                    <div className="home-wrap">
+                        <div className="recommend-wrap">
+                            <article></article>
+                        </div>
+                    </div>
+                    <Footer />
                 </section>
             </div>
         </main>
