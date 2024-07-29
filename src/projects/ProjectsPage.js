@@ -73,7 +73,7 @@ const ProjectsPage = () => {
                         <section className="project-artifact-wrap"
                         onMouseEnter={ itsYipperEnter }
                         onMouseLeave={ itsYipperLeave }>
-                            <p className="project-sub" text-glow="Web Design">Web Design</p>
+                            <p className="sub-heading" text-glow="Web Design">Web Design</p>
                             <div className="project-artifact">
                                 <div className="project-border"></div>
                                 <div className="project-corner-wrap"></div>
@@ -149,7 +149,7 @@ const ProjectsPage = () => {
                         <section className="project-artifact-wrap"
                         onMouseEnter={ stripesNationEnter }
                         onMouseLeave={ stripesNationLeave }>
-                            <p className="project-sub" text-glow="Branding">Branding</p>
+                            <p className="sub-heading" text-glow="Branding">Branding</p>
                             <div className="project-artifact">
                                 <div className="project-border"></div>
                                 <div className="project-corner-wrap"></div>
@@ -227,7 +227,7 @@ const ProjectsPage = () => {
                                     <div className="project-btn-bot">
                                         <div className="project-bot-corner"></div>
                                         <div className="project-btn-bg">
-                                            <a className="btn" href="/itsyipper">
+                                            <a className="btn" href="/stripes-nation">
                                                 <p>Preview</p>
                                             </a>
                                         </div>
@@ -235,7 +235,7 @@ const ProjectsPage = () => {
                                 </div>
                             </div>
                             <div className="project-btn">
-                                <a className="btn" href="/itsyipper">
+                                <a className="btn" href="/stripes-nation">
                                     <p text-glow="Preview">Preview</p>
                                 </a>
                             </div>
@@ -243,7 +243,7 @@ const ProjectsPage = () => {
                         <section className="project-artifact-wrap"
                         onMouseEnter={ sonicAniEnter }
                         onMouseLeave={ sonicAniLeave }>
-                            <p className="project-sub" text-glow="Web Design">Web Design</p>
+                            <p className="sub-heading" text-glow="Web Design">Web Design</p>
                             <div className="project-artifact">
                                 <div className="project-border"></div>
                                 <div className="project-corner-wrap"></div>
@@ -314,7 +314,7 @@ const ProjectsPage = () => {
                                     <div className="project-btn-bot">
                                         <div className="project-bot-corner"></div>
                                         <div className="project-btn-bg">
-                                            <a className="btn" href="/itsyipper">
+                                            <a className="btn" href="/sonic-animation">
                                                 <p>Preview</p>
                                             </a>
                                         </div>
@@ -322,7 +322,7 @@ const ProjectsPage = () => {
                                 </div>
                             </div>
                             <div className="project-btn">
-                                <a className="btn" href="/itsyipper">
+                                <a className="btn" href="/sonic-animation">
                                     <p text-glow="Preview">Preview</p>
                                 </a>
                             </div>
@@ -330,7 +330,7 @@ const ProjectsPage = () => {
                         <section className="project-artifact-wrap"
                         onMouseEnter={ edgeBoardsEnter }
                         onMouseLeave={ edgeBoardsLeave }>
-                            <p className="project-sub" text-glow="Branding">Branding</p>
+                            <p className="sub-heading" text-glow="Branding">Branding</p>
                             <div className="project-artifact">
                                 <div className="project-border"></div>
                                 <div className="project-corner-wrap"></div>

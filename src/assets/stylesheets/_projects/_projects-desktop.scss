@@ -106,16 +106,14 @@
                             }
                         }
                     }
-                    .project-sub {
-                        @extend %text-glow;
+                    .sub-heading {
+                        @extend %sub-heading; // Not extending
                         position: absolute;
+                        top: - $lg;
                         font-size: $pg;
                         left: 0;
-                        top: - $lg;
                         font-weight: 800;
-                        color: $primary;
-                        z-index: -1;
-            
+
                         &:before {
                             text-shadow: 0 0 5px $primary, 0 0 10px $primary;
                         }

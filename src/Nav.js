@@ -98,7 +98,7 @@ const Nav = () => {
                                     </h1>
                                     <div className="project-gallery">
                                         <section className="project-artifact-wrap">
-                                            <p className="project-sub" text-glow="Web Design">Web Design</p>
+                                            <p className="sub-heading" text-glow="Web Design">Web Design</p>
                                             <div className="project-artifact">
                                                 <div className="project-border"></div>
                                                 <div className="project-corner-wrap"></div>
@@ -163,7 +163,7 @@ const Nav = () => {
                                             </div>
                                         </section>
                                         <section className="project-artifact-wrap">
-                                            <p className="project-sub" text-glow="Branding">Branding</p>
+                                            <p className="sub-heading" text-glow="Branding">Branding</p>
                                             <div className="project-artifact">
                                                 <div className="project-border"></div>
                                                 <div className="project-corner-wrap"></div>
@@ -246,7 +246,7 @@ const Nav = () => {
                                             </div>
                                         </section>
                                         <section className="project-artifact-wrap">
-                                            <p className="project-sub" text-glow="Web Design">Web Design</p>
+                                            <p className="sub-heading" text-glow="Web Design">Web Design</p>
                                             <div className="project-artifact">
                                                 <div className="project-border"></div>
                                                 <div className="project-corner-wrap"></div>
@@ -322,7 +322,7 @@ const Nav = () => {
                                             </div>
                                         </section>
                                         <section className="project-artifact-wrap">
-                                            <p className="project-sub" text-glow="Branding">Branding</p>
+                                            <p className="sub-heading" text-glow="Branding">Branding</p>
                                             <div className="project-artifact">
                                                 <div className="project-border"></div>
                                                 <div className="project-corner-wrap"></div>
