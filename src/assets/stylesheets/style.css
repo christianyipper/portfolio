@@ -355,6 +355,14 @@ main section {
   position: absolute;
 }
 
+.pointer-show {
+  pointer-events: all;
+}
+
+.pointer-hide {
+  pointer-events: none;
+}
+
 .page-visible {
   animation: pageVisible 1s ease-in-out forwards;
 }
@@ -2735,7 +2743,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 }
 .artifact .artifact-section .artifact-wrap .artifact-left {
   position: relative;
-  grid-column: 1/7;
   grid-row: 1/1;
   width: 100%;
 }
@@ -2745,8 +2752,14 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 .artifact .artifact-section .artifact-wrap .artifact-left .h1-sm {
   font-size: 48px;
 }
-.artifact .artifact-section .artifact-wrap .artifact-left-sm {
+.artifact .artifact-section .artifact-wrap .left-sm {
   grid-column: 1/5;
+}
+.artifact .artifact-section .artifact-wrap .left-md {
+  grid-column: 1/7;
+}
+.artifact .artifact-section .artifact-wrap .left-lg {
+  grid-column: 1/9;
 }
 .artifact .artifact-section .artifact-wrap .artifact-center {
   position: relative;
@@ -2754,9 +2767,17 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   grid-row: 1/1;
   width: 100%;
 }
+.artifact .artifact-section .artifact-wrap .right-sm {
+  grid-column: 9/13;
+}
+.artifact .artifact-section .artifact-wrap .right-md {
+  grid-column: 7/13;
+}
+.artifact .artifact-section .artifact-wrap .right-lg {
+  grid-column: 5/13;
+}
 .artifact .artifact-section .artifact-wrap .artifact-right {
   position: relative;
-  grid-column: 7/13;
   grid-row: 1/1;
   width: 100%;
 }
@@ -2799,7 +2820,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: fit-content;
   overflow: hidden;
   text-decoration: none;
-  left: 12px;
 }
 .artifact .artifact-section .artifact-wrap .artifact-right .toc .toc-link h3::before {
   content: attr(toc);
@@ -2846,7 +2866,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   align-items: center;
 }
 .artifact .artifact-section .artifact-wrap .artifact-right .toc .toc-link a {
-  pointer-events: all;
+  left: 12px;
 }
 .artifact .artifact-section .artifact-wrap .artifact-right .toc .toc-link a:hover ~ .page-num {
   color: #ff7862;
@@ -2867,10 +2887,10 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   max-height: 100%;
   border-radius: 24px;
 }
-.artifact .artifact-section .artifact-wrap .img-sm-left {
+.artifact .artifact-section .artifact-wrap .img-left-sm {
   grid-column: 7/10;
 }
-.artifact .artifact-section .artifact-wrap .img-sm-right {
+.artifact .artifact-section .artifact-wrap .img-right-sm {
   grid-column: 10/13;
 }
 .artifact .artifact-section .artifact-wrap .img-left {

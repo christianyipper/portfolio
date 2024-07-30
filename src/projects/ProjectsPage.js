@@ -49,7 +49,7 @@ const ProjectsPage = () => {
         setIsHovered(false);
         EdgeBoards.current.pause();
     };
-    // I have all this shinanigans because I couldnt get my hook to work :(
+    // Not sure how I should go about making a hook for this. It seems I would need to add everything inside the section which might be a lot of work... :(
 
     return (
         <main className="projects">
@@ -77,8 +77,7 @@ const ProjectsPage = () => {
                             <div className="project-artifact">
                                 <div className="project-border"></div>
                                 <div className="project-corner-wrap"></div>
-                                <video 
-                                className="project-img"
+                                <video className="project-img"
                                 poster="https://www.dropbox.com/scl/fi/dwu10b5gjpzz8tuc78d3h/itsyipper-thumb-comp.png?rlkey=rvakfjhv84t26pwfthgmhttqy&st=89spahic&raw=1"
                                 loop
                                 muted
@@ -153,8 +152,7 @@ const ProjectsPage = () => {
                             <div className="project-artifact">
                                 <div className="project-border"></div>
                                 <div className="project-corner-wrap"></div>
-                                <video 
-                                className="project-img"
+                                <video className="project-img"
                                 poster="https://www.dropbox.com/scl/fi/444jjpr2zh7s91t43xu2q/stripesnation-thumb-comp.png?rlkey=m206g74xrn3z44qac0i73ljd3&st=xhx8upg5&raw=1"
                                 loop
                                 muted
@@ -247,8 +245,7 @@ const ProjectsPage = () => {
                             <div className="project-artifact">
                                 <div className="project-border"></div>
                                 <div className="project-corner-wrap"></div>
-                                <video 
-                                className="project-img"
+                                <video className="project-img"
                                 poster="https://www.dropbox.com/scl/fi/uh74vqvxay4lx4dwt682q/sonic-thumb-comp.png?rlkey=jufydzsubr3e9li62l1249rgs&st=x4kykj4q&raw=1"
                                 loop
                                 muted
@@ -327,23 +324,22 @@ const ProjectsPage = () => {
                                 </a>
                             </div>
                         </section>
-                        {/* <section className="project-artifact-wrap"
+                        <section className="project-artifact-wrap"
                         onMouseEnter={ edgeBoardsEnter }
-                        onMouseLeave={ edgeBoardsLeave }> */}
-                        <section className="project-artifact-wrap">
+                        onMouseLeave={ edgeBoardsLeave }>
                             <p className="sub-heading" text-glow="Branding">Branding</p>
                             <div className="project-artifact">
                                 <div className="project-border"></div>
                                 <div className="project-corner-wrap"></div>
-                                {/* <video className="project-img"
+                                <video className="project-img"
+                                poster="https://www.dropbox.com/scl/fi/06induswo23lu4c1o8ybi/edgeboards-poster-wide.png?rlkey=m2c1p4kjdi2pe0qx4jsvncyuj&st=pxyuiju3&raw=1"
                                 loop
                                 muted
                                 ref={ EdgeBoards }
                                 onMouseOver={ event => event.target.play() }
                                 onMouseOut={ event => event.target.pause() }>
-                                    <source src="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1" type="video/mp4"/>
-                                </video> */}
-                                <img className="project-img edge-img" src="https://www.dropbox.com/scl/fi/7ideer4088vg3r97ofxbp/Edgeboards-Poster-Wide.png?rlkey=s18c413b5gww7yqn3oj7q2abz&st=mmnqfqk5&raw=1" alt="" />
+                                    <source src="https://www.dropbox.com/scl/fi/h69ieqh7sfy7zoo29ishj/edgeboards-skilift-1080p-comp.mp4?rlkey=kmtnff10c80h6k7ni1kyjc9ob&st=t4be6ajj&raw=1" type="video/mp4"/>
+                                </video>
                                 <h2 className="project-heading-shimmer" text-shimmer="Edge Boards">Edge Boards</h2>
                                 <article className="project-text">
                                     <h2 className="project-heading-shimmer" text-shimmer="Edge Boards">Edge Boards</h2>

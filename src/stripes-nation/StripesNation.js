@@ -35,7 +35,7 @@ const StripesNation = () => {
             </section>
             <section className={ `artifact-section artifact-home ${ inView1 ? `blur-in` : `blur-out` }` }>
                 <div className="artifact-wrap">
-                    <div className="artifact-left heading-col">
+                    <div className="artifact-left left-lg heading-col">
                         <h1 className={ `artifact-heading-float ${ inView1 ? `blur-in` : `blur-out` }` }>
                             <span text-glow="S">S</span>
                             <span text-glow="t">t</span>
@@ -55,7 +55,7 @@ const StripesNation = () => {
                         <p>Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery.</p>
                         <p>I utilize my design skillset in Photoshop, Illustrator, Figma, and After Effects throughout this project. Join me as I embark on a journey to create Stripes Nation from the ground up.</p>
                     </div>
-                    <div className={ `artifact-right ${ inView1 ? `blur-in` : `blur-out` }` }>
+                    <div className={ `artifact-right right-sm ${ inView1 ? `blur-in` : `blur-out` }` }>
                         {/* <div className="artifact-img-wrap">
                             <img src="https://www.dropbox.com/scl/fi/bn53u2b1dqhyhtgo8tgpi/stripesnation-wordmark.png?rlkey=b5a1v40aiws5t4g962fki0l2x&st=e01aqlpf&raw=1" alt="" />
                         </div> */}
@@ -64,7 +64,7 @@ const StripesNation = () => {
                             <div className="toc-link">
                                 <p className="sub-heading-grey" text-glow="Illustrator">Illustrator</p>
                                 <div>
-                                    <a href="#LogoConcepts">
+                                    <a href="#LogoConcepts" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
                                         <h3 toc="Logo Concepts">Logo Concepts</h3>
                                     </a>
                                     <p className="page-num">2</p>
@@ -73,7 +73,7 @@ const StripesNation = () => {
                             <div className="toc-link">
                                 <p className="sub-heading-grey" text-glow="Illustrator">Illustrator</p>
                                 <div>
-                                    <a href="#LogoDevelopment">
+                                    <a href="#LogoDevelopment" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
                                         <h3 toc="Logo Dexelopment">Logo Development</h3>
                                     </a>
                                     <p className="page-num">3</p>
@@ -82,7 +82,7 @@ const StripesNation = () => {
                             <div className="toc-link">
                                 <p className="sub-heading-grey" text-glow="Photoshop">Photoshop</p>
                                 <div>
-                                    <a href="#MarketingMockups">
+                                    <a href="#MarketingMockups" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
                                         <h3 toc="Marketing Mockups">Marketing Mockups</h3>
                                     </a>
                                     <p className="page-num">4</p>
@@ -91,7 +91,7 @@ const StripesNation = () => {
                             <div className="toc-link">
                                 <p className="sub-heading-grey" text-glow="After Effects">After Effects</p>
                                 <div>
-                                    <a href="#BumperVideo">
+                                    <a href="#BumperVideo" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
                                         <h3 toc="Bumper dixeo">Bumper Video</h3>
                                     </a>
                                     <p className="page-num">5</p>
@@ -100,7 +100,7 @@ const StripesNation = () => {
                             <div className="toc-link">
                                 <p className="sub-heading-grey" text-glow="Figma | Photoshop">Figma | Photoshop</p>
                                 <div>
-                                    <a href="#BrandBook">
+                                    <a href="#BrandBook" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
                                         <h3 toc="Brand Book">Brand Book</h3>
                                     </a>
                                     <p className="page-num">6</p>
@@ -112,7 +112,7 @@ const StripesNation = () => {
             </section>
             <section className={ `artifact-section ${ inView2 ? `blur-in` : `blur-out` }` }>
                 <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
-                    <article className="artifact-left">
+                    <article className="artifact-left left-md">
                         <p className="sub-heading" text-glow="Illustrator">Illustrator</p>
                         <h2 className="artifact-heading-shimmer" text-shimmer="Logo Concepts">Logo Concepts</h2>
                         <p>When creating the Stripes Nation logo, it was important to incorporate elements from the hockey referee uniform and the sport into the design. There were three key aspects to consider:</p>
@@ -128,11 +128,11 @@ const StripesNation = () => {
                             </li>
                         </ul>
                     </article>
-                    <div className="artifact-img-wrap img-sm-left">
+                    <div className="artifact-img-wrap img-left-sm">
                         <img src="https://www.dropbox.com/scl/fi/o45qn8dhp6h85jiwgc356/stripesnation-logo-primary.png?rlkey=art9ntknrjif9fwtwi8mvs88u&st=g7g4tp7l&raw=1" alt="Stripes Nation Logo" />
                         <p className="alt-text" text-glow="Design Concept 1">Design Concept 1</p>
                     </div>
-                    <div className="artifact-img-wrap img-sm-right">
+                    <div className="artifact-img-wrap img-right-sm">
                         <img className="img-md" src="https://www.dropbox.com/scl/fi/5n2718wxnubjm258kgw7x/sn-draft-alt.png?rlkey=wslq49ry5g4uckisupqba0yxn&st=p8av3sdn&raw=1" alt="Stripes Nation Logo Concept" />
                         <p className="alt-text" text-glow="Design Concept 2">Design Concept 2</p>
                     </div>
@@ -145,7 +145,7 @@ const StripesNation = () => {
                             <source src="https://www.dropbox.com/scl/fi/5ppn95cg0nzpdbeefw8fm/stripesnation-draft-1080p.mp4?rlkey=zftk8be37con1v5joy1dog55i&st=ezcj0qnt&raw=1"/>
                         </video>
                     </div>
-                    <article className="artifact-right">
+                    <article className="artifact-right right-md">
                         <p className="sub-heading" text-glow="Illustrator">Illustrator</p>
                         <h2 className="artifact-heading-shimmer" text-shimmer="Logo Development">Logo Development</h2>
                         <ul>
@@ -161,7 +161,7 @@ const StripesNation = () => {
             </section>
             <section className={ `artifact-section ${ inView4 ? `blur-in` : `blur-out` }` }>
                 <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
-                    <article className="artifact-left">
+                    <article className="artifact-left left-md">
                         <p className="sub-heading" text-glow="Photoshop">Photoshop</p>
                         <h2 className="artifact-heading-shimmer" text-shimmer="Marketing Mockups">Marketing Mockups</h2>
                         <p>After my brand assets were finalized, I exported them into Photoshop and started creating mockups with open-source templates to use as a foundation.</p>
@@ -187,7 +187,7 @@ const StripesNation = () => {
                         <video className="bumper" loop autoPlay muted>
                             <source src="https://www.dropbox.com/scl/fi/tky5ce4my00ba9ig7duxn/stripesnation-bumper-comp.mp4?rlkey=crxokuquu0j7a2gud57lzt5e3&st=9g4xgoqx&raw=1"/>
                         </video>                    </div>
-                    <article className="artifact-right">
+                    <article className="artifact-right right-md">
                         <p className="sub-heading" text-glow="After Effects">After Effects</p>
                         <h2 className="artifact-heading-shimmer" text-shimmer="Bumper Video">Bumper Video</h2>
                         <p>With an online presence at its forefront, I needed to create a bumper video that showcases the Stripes Performance brand.</p>
@@ -204,7 +204,7 @@ const StripesNation = () => {
             </section>
             <section className={ `artifact-section ${ inView6 ? `blur-in` : `blur-out` }` }>
                 <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
-                    <article className="artifact-left artifact-left-sm">
+                    <article className="artifact-left left-sm">
                         <p className="sub-heading" text-glow="Figma | Photoshop">Figma | Photoshop</p>
                         <h2 className="artifact-heading-shimmer" text-shimmer="Brand Book">Brand Book</h2>
                         <p>To wrap it all up, I designed the brand book pages in Figma using their intuitive organization systems.</p>

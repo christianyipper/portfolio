@@ -75,7 +75,6 @@
             }
             .artifact-left {
                 position: relative;
-                grid-column: 1 / 7;
                 grid-row: 1 / 1;
                 width: 100%;
 
@@ -86,8 +85,14 @@
                     font-size: $xl;
                 }
             }
-            .artifact-left-sm {
+            .left-sm {
                 grid-column: 1 / 5;
+            }
+            .left-md {
+                grid-column: 1 / 7;
+            }
+            .left-lg {
+                grid-column: 1 / 9;
             }
             .artifact-center {
                 position: relative;
@@ -95,9 +100,17 @@
                 grid-row: 1 / 1;
                 width: 100%;
             }
+            .right-sm {
+                grid-column: 9 / 13;
+            }
+            .right-md {
+                grid-column: 7 / 13;
+            }
+            .right-lg {
+                grid-column: 5 / 13;
+            }
             .artifact-right {
                 position: relative;
-                grid-column: 7 / 13;
                 grid-row: 1 / 1;
                 width: 100%;
 
@@ -138,7 +151,6 @@
                             width: fit-content;
                             overflow: hidden;
                             text-decoration: none;
-                            left: calc( $md / 2 );
 
                             &::before {
                                 content: attr( toc );
@@ -183,7 +195,7 @@
                             @include flex-wrap( nowrap, row, space-between, center );
                         }
                         a {
-                            pointer-events: all;
+                            left: calc( $md / 2 );
 
                             &:hover {
                                 ~.page-num {
@@ -207,10 +219,10 @@
                     border-radius: $md;
                 }
             }
-            .img-sm-left {
+            .img-left-sm {
                 grid-column: 7 / 10;
             }
-            .img-sm-right {
+            .img-right-sm {
                 grid-column: 10 / 13;
             }
             .img-left {

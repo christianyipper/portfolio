@@ -326,12 +326,7 @@ const Nav = () => {
                                             <div className="project-artifact">
                                                 <div className="project-border"></div>
                                                 <div className="project-corner-wrap"></div>
-                                                {/* <video className="project-img"
-                                                loop
-                                                muted>
-                                                    <source src="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1" type="video/mp4"/>
-                                                </video> */}
-                                                <img className="edge-img" src="https://www.dropbox.com/scl/fi/1btgauw1v4beh4m0g0h1k/Edgeboards-Ad1.jpg?rlkey=dugmcq9fz1pn6lrsoaeuuo7zv&st=mt7m7yc2&raw=1" alt="" />
+                                                <img className="edge-img" src="https://www.dropbox.com/scl/fi/06induswo23lu4c1o8ybi/edgeboards-poster-wide.png?rlkey=m2c1p4kjdi2pe0qx4jsvncyuj&st=694v4gmf&raw=1" alt="Edge Boards Poster" />
                                                 <h2 className="project-heading-shimmer" text-shimmer="Edge Boards">Edge Boards</h2>
                                                 <article className="project-text">
                                                     <h2 className="project-heading-shimmer" text-shimmer="Edge Boards">Edge Boards</h2>

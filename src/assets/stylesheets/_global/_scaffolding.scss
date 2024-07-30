@@ -80,6 +80,13 @@ main {
     position: absolute;
 }
 
+.pointer-show {
+    pointer-events: all;
+}
+.pointer-hide {
+    pointer-events: none;
+}
+
 .page-visible {
     animation: pageVisible 1s ease-in-out forwards;
 }
