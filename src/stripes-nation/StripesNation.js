@@ -1,6 +1,9 @@
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import Footer from '../Footer';
+import TocLink from '../components/TocLink';
+import ListItem from '../components/ListItem';
+import SubHeading from '../components/SubHeading';
 
 const StripesNation = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
@@ -11,15 +14,6 @@ const StripesNation = () => {
     const { ref: snap6, inView: inView6 } = useInView( { threshold: 0.5 } );
     const { ref: snap7, inView: inView7 } = useInView( { threshold: 0.5 } );
 
-    useEffect( () => {
-        document.body.classList.add("scroll-hide");
-    
-        return () => {
-        document.body.classList.remove("scroll-hide");
-        };
-    }, 
-    [] );
-    
     return (
         <main className="artifact">
             <section className="scroll-wrap">
@@ -60,52 +54,14 @@ const StripesNation = () => {
                             <img src="https://www.dropbox.com/scl/fi/bn53u2b1dqhyhtgo8tgpi/stripesnation-wordmark.png?rlkey=b5a1v40aiws5t4g962fki0l2x&st=e01aqlpf&raw=1" alt="" />
                         </div> */}
                         <h2 className="artifact-heading-shimmer" text-shimmer="Table of Contents">Table of Contents</h2>
+                        {/* <div className={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` }> */}
                         <div className="toc">
-                            <div className="toc-link">
-                                <p className="sub-heading-grey" text-glow="Illustrator">Illustrator</p>
-                                <div>
-                                    <a href="#LogoConcepts" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
-                                        <h3 toc="Logo Concepts">Logo Concepts</h3>
-                                    </a>
-                                    <p className="page-num">2</p>
-                                </div>
-                            </div>
-                            <div className="toc-link">
-                                <p className="sub-heading-grey" text-glow="Illustrator">Illustrator</p>
-                                <div>
-                                    <a href="#LogoDevelopment" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
-                                        <h3 toc="Logo Dexelopment">Logo Development</h3>
-                                    </a>
-                                    <p className="page-num">3</p>
-                                </div>
-                            </div>
-                            <div className="toc-link">
-                                <p className="sub-heading-grey" text-glow="Photoshop">Photoshop</p>
-                                <div>
-                                    <a href="#MarketingMockups" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
-                                        <h3 toc="Marketing Mockups">Marketing Mockups</h3>
-                                    </a>
-                                    <p className="page-num">4</p>
-                                </div>
-                            </div>
-                            <div className="toc-link">
-                                <p className="sub-heading-grey" text-glow="After Effects">After Effects</p>
-                                <div>
-                                    <a href="#BumperVideo" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
-                                        <h3 toc="Bumper dixeo">Bumper Video</h3>
-                                    </a>
-                                    <p className="page-num">5</p>
-                                </div>
-                            </div>
-                            <div className="toc-link">
-                                <p className="sub-heading-grey" text-glow="Figma | Photoshop">Figma | Photoshop</p>
-                                <div>
-                                    <a href="#BrandBook" className={ ` ${ inView1 ? `pointer-show` : `pointer-hide` }` }>
-                                        <h3 toc="Brand Book">Brand Book</h3>
-                                    </a>
-                                    <p className="page-num">6</p>
-                                </div>
-                            </div>
+                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Illustrator" mainHeading="Logo Concepts" path="#LogoConcepts" num="2" />
+                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Illustrator" mainHeading="Logo Development" path="#LogoDevelopment" num="3" />
+                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Photoshop" mainHeading="Marketing Mockups" path="#MarketingMockups" num="4" />
+                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="After Effects" mainHeading="Bumper Video" path="#BumperVideo" num="5" />
+                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Figma | Photoshop" mainHeading="Brand Book" path="#BrandBook" num="6" />
+                            {/* <TocLink subHeading="" mainHeading="" path="" num="" /> */}
                         </div>
                     </div>
                 </div>
@@ -113,19 +69,12 @@ const StripesNation = () => {
             <section className={ `artifact-section ${ inView2 ? `blur-in` : `blur-out` }` }>
                 <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
                     <article className="artifact-left left-md">
-                        <p className="sub-heading" text-glow="Illustrator">Illustrator</p>
-                        <h2 className="artifact-heading-shimmer" text-shimmer="Logo Concepts">Logo Concepts</h2>
+                        <SubHeading subHeading="Illustrator" mainHeading="Logo Concepts"/>
                         <p>When creating the Stripes Nation logo, it was important to incorporate elements from the hockey referee uniform and the sport into the design. There were three key aspects to consider:</p>
                         <ul>
-                            <li><strong>Referee Armbands</strong>
-                                <li>The eye-catching red armbands are unique to hockey officials and was imperative to include the striking colour into the design.</li>
-                            </li>
-                            <li><strong>Striped Uniform</strong>
-                                <li>Undoubtedly the most iconic part of an officiating uniform are the black and white stripes. I wanted the design to reflect this predominant pattern throughout.</li>
-                            </li>
-                            <li><strong>Speed</strong>
-                                <li>Designing a logo around the high-speed and intense action of the sport was important, as it plays an integral role in every game.</li>
-                            </li>
+                            <ListItem itemName="Referee Armbands" itemDesc="The eye-catching red armbands are unique to hockey officials and was imperative to include the striking colour into the design."/>
+                            <ListItem itemName="Striped Uniform" itemDesc="Undoubtedly the most iconic part of an officiating uniform are the black and white stripes. I wanted the design to reflect this predominant pattern throughout."/>
+                            <ListItem itemName="Speed" itemDesc="Designing a logo around the high-speed and intense action of the sport was important, as it plays an integral role in every game."/>
                         </ul>
                     </article>
                     <div className="artifact-img-wrap img-left-sm">
@@ -146,15 +95,10 @@ const StripesNation = () => {
                         </video>
                     </div>
                     <article className="artifact-right right-md">
-                        <p className="sub-heading" text-glow="Illustrator">Illustrator</p>
-                        <h2 className="artifact-heading-shimmer" text-shimmer="Logo Development">Logo Development</h2>
+                        <SubHeading subHeading="Illustrator" mainHeading="Logo Development" />
                         <ul>
-                            <li><strong>Pen & Shape Builder</strong>
-                                <li>The shape builder and pen tools were used to create the aesthetic of the Stripes Nation logo and wordmark. Diagonal lines were used to create the outlines of the logo and were combined to create negative space between the shapes.</li>
-                            </li>
-                            <li><strong>Selection & Path Offset</strong>
-                                <li>The wordmark name “Stripes Nation” was custom-made, based on the nausea font. Path offset and selection tools were used to match the angle and weight of the final logo while also changing some of the original typography landscape. Spacing between the individual characters, words, and logo were made consistent.</li>
-                            </li>
+                        <ListItem itemName="Pen & Shape Builder" itemDesc="The shape builder and pen tools were used to create the aesthetic of the Stripes Nation logo and wordmark. Diagonal lines were used to create the outlines of the logo and were combined to create negative space between the shapes."/>
+                        <ListItem itemName="Selection & Path Offset" itemDesc="The wordmark name “Stripes Nation” was custom-made, based on the nausea font. Path offset and selection tools were used to match the angle and weight of the final logo while also changing some of the original typography landscape. Spacing between the individual characters, words, and logo were made consistent."/>
                         </ul>
                     </article>
                 </div>
@@ -162,16 +106,11 @@ const StripesNation = () => {
             <section className={ `artifact-section ${ inView4 ? `blur-in` : `blur-out` }` }>
                 <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
                     <article className="artifact-left left-md">
-                        <p className="sub-heading" text-glow="Photoshop">Photoshop</p>
-                        <h2 className="artifact-heading-shimmer" text-shimmer="Marketing Mockups">Marketing Mockups</h2>
+                        <SubHeading subHeading="Photoshop" mainHeading="Marketing Mockups" />
                         <p>After my brand assets were finalized, I exported them into Photoshop and started creating mockups with open-source templates to use as a foundation.</p>
                         <ul>
-                            <li><strong>Warp & Feather</strong>
-                                <li>I utilized a combination of warping and feathering to create a realistic landscape. This helped show depth in wrinkled clothing and rough textures.</li>
-                            </li>
-                            <li><strong>Masks & Blends</strong>
-                                <li>Masking layers also helped create shadows and textures for objects and clothing. By changing blend modes, I was able to enhance the lighting effects in the scene. </li>
-                            </li>
+                            <ListItem itemName="Warp & Feather" itemDesc="I utilized a combination of warping and feathering to create a realistic landscape. This helped show depth in wrinkled clothing and rough textures."/>
+                            <ListItem itemName="Masks & Blends" itemDesc="Masking layers also helped create shadows and textures for objects and clothing. By changing blend modes, I was able to enhance the lighting effects in the scene."/>
                         </ul>
                     </article>
                     <div className="artifact-img-wrap img-right">
@@ -188,16 +127,11 @@ const StripesNation = () => {
                             <source src="https://www.dropbox.com/scl/fi/tky5ce4my00ba9ig7duxn/stripesnation-bumper-comp.mp4?rlkey=crxokuquu0j7a2gud57lzt5e3&st=9g4xgoqx&raw=1"/>
                         </video>                    </div>
                     <article className="artifact-right right-md">
-                        <p className="sub-heading" text-glow="After Effects">After Effects</p>
-                        <h2 className="artifact-heading-shimmer" text-shimmer="Bumper Video">Bumper Video</h2>
+                        <SubHeading subHeading="After Effects" mainHeading="Bumper Video" />
                         <p>With an online presence at its forefront, I needed to create a bumper video that showcases the Stripes Performance brand.</p>
                         <ul>
-                            <li><strong>Masking</strong>
-                                <li>I predominantly used masks to animate the logo by hiding each stroke. The end result is a crispy line animation that reveals the logo.</li>
-                            </li>
-                            <li><strong>Timing Functions</strong>
-                                <li>In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result.</li>
-                            </li>
+                            <ListItem itemName="Masking" itemDesc="I predominantly used masks to animate the logo by hiding each stroke. The end result is a crispy line animation that reveals the logo."/>
+                            <ListItem itemName="Timing Functions" itemDesc="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result."/>
                         </ul>
                     </article>
                 </div>
@@ -205,16 +139,11 @@ const StripesNation = () => {
             <section className={ `artifact-section ${ inView6 ? `blur-in` : `blur-out` }` }>
                 <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
                     <article className="artifact-left left-sm">
-                        <p className="sub-heading" text-glow="Figma | Photoshop">Figma | Photoshop</p>
-                        <h2 className="artifact-heading-shimmer" text-shimmer="Brand Book">Brand Book</h2>
+                        <SubHeading subHeading="Figma | Photoshop" mainHeading="Brand Book" />
                         <p>To wrap it all up, I designed the brand book pages in Figma using their intuitive organization systems.</p>
                         <ul>
-                            <li><strong>Grids</strong>
-                                <li>Figma's grid system made it easy to distribute information and create appealing layouts.</li>
-                            </li>
-                            <li><strong>Components & Variables</strong>
-                                <li>In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result.</li>
-                            </li>
+                            <ListItem itemName="Grids" itemDesc="Figma's grid system made it easy to distribute information and create appealing layouts."/>
+                            <ListItem itemName="Components & Variables" itemDesc="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result."/>
                         </ul>
                     </article>
                     <div className="artifact-img-wrap img-right-lg">

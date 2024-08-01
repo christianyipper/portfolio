@@ -1,29 +1,29 @@
-import { useState, useRef } from 'react';
+// import { useState, useRef } from 'react';
 
-const VideoHoverHook = () => {
-    const [ isHovered, setIsHovered ] = useState( false );
-    const videoHover = useRef( null );
+// const videoRefHook = () => {
+//     const [ isHovered, setIsHovered ] = useState( false );
+//     const videoRef = useRef( null );
 
-    const mouseEnter = () => {
-        setIsHovered( true );
-        if ( videoHover.current ) {
-            videoHover.current.play();
-        }
-    };
+//     const mouseEnter = () => {
+//         setIsHovered( true );
+//         if ( videoRef.current ) {
+//             videoRef.current.play();
+//         }
+//     };
 
-    const mouseLeave = () => {
-        setIsHovered( false );
-        if ( videoHover.current ) {
-            videoHover.current.pause();
-        }
-    };
+//     const mouseLeave = () => {
+//         setIsHovered( false );
+//         if ( videoRef.current ) {
+//             videoRef.current.pause();
+//         }
+//     };
 
-    return {
-        videoHover,
-        isHovered,
-        mouseEnter,
-        mouseLeave,
-    };
-};
+//     return {
+//         videoRef,
+//         isHovered,
+//         mouseEnter,
+//         mouseLeave,
+//     };
+// };
 
-export default VideoHoverHook;
+// export default videoRefHook;
