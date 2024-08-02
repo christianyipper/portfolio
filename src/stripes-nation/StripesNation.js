@@ -2,7 +2,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import Footer from '../Footer';
 import TocLink from '../components/TocLink';
-import ListItem from '../components/ListItem';
+import List from '../components/List';
 import SubHeading from '../components/SubHeading';
 
 const StripesNation = () => {
@@ -71,11 +71,14 @@ const StripesNation = () => {
                     <article className="artifact-left left-md">
                         <SubHeading subHeading="Illustrator" mainHeading="Logo Concepts"/>
                         <p>When creating the Stripes Nation logo, it was important to incorporate elements from the hockey referee uniform and the sport into the design. There were three key aspects to consider:</p>
-                        <ul>
-                            <ListItem itemName="Referee Armbands" itemDesc="The eye-catching red armbands are unique to hockey officials and was imperative to include the striking colour into the design."/>
-                            <ListItem itemName="Striped Uniform" itemDesc="Undoubtedly the most iconic part of an officiating uniform are the black and white stripes. I wanted the design to reflect this predominant pattern throughout."/>
-                            <ListItem itemName="Speed" itemDesc="Designing a logo around the high-speed and intense action of the sport was important, as it plays an integral role in every game."/>
-                        </ul>
+                        <List 
+                            heading1="Referee Armbands" 
+                            text1="The eye-catching red armbands are unique to hockey officials and was imperative to include the striking colour into the design." 
+                            heading2="Striped Uniform" 
+                            text2="Undoubtedly the most iconic part of an officiating uniform are the black and white stripes. I wanted the design to reflect this predominant pattern throughout." 
+                            heading3="Speed" 
+                            text3="Designing a logo around the high-speed and intense action of the sport was important, as it plays an integral role in every game."
+                        />
                     </article>
                     <div className="artifact-img-wrap img-left-sm">
                         <img src="https://www.dropbox.com/scl/fi/o45qn8dhp6h85jiwgc356/stripesnation-logo-primary.png?rlkey=art9ntknrjif9fwtwi8mvs88u&st=g7g4tp7l&raw=1" alt="Stripes Nation Logo" />
@@ -96,10 +99,13 @@ const StripesNation = () => {
                     </div>
                     <article className="artifact-right right-md">
                         <SubHeading subHeading="Illustrator" mainHeading="Logo Development" />
-                        <ul>
-                        <ListItem itemName="Pen & Shape Builder" itemDesc="The shape builder and pen tools were used to create the aesthetic of the Stripes Nation logo and wordmark. Diagonal lines were used to create the outlines of the logo and were combined to create negative space between the shapes."/>
-                        <ListItem itemName="Selection & Path Offset" itemDesc="The wordmark name “Stripes Nation” was custom-made, based on the nausea font. Path offset and selection tools were used to match the angle and weight of the final logo while also changing some of the original typography landscape. Spacing between the individual characters, words, and logo were made consistent."/>
-                        </ul>
+                        <List 
+                            heading1="Pen & Shape Builder" 
+                            text1="The shape builder and pen tools were used to create the aesthetic of the Stripes Nation logo and wordmark. Diagonal lines were used to create the outlines of the logo and were combined to create negative space between the shapes." 
+                            heading2="Selection & Path Offset" 
+                            text2="The wordmark name “Stripes Nation” was custom-made, based on the nausea font. Path offset and selection tools were used to match the angle and weight of the final logo while also changing some of the original typography landscape. Spacing between the individual characters, words, and logo were made consistent." 
+                            name3="none"
+                        />
                     </article>
                 </div>
             </section>
@@ -108,10 +114,13 @@ const StripesNation = () => {
                     <article className="artifact-left left-md">
                         <SubHeading subHeading="Photoshop" mainHeading="Marketing Mockups" />
                         <p>After my brand assets were finalized, I exported them into Photoshop and started creating mockups with open-source templates to use as a foundation.</p>
-                        <ul>
-                            <ListItem itemName="Warp & Feather" itemDesc="I utilized a combination of warping and feathering to create a realistic landscape. This helped show depth in wrinkled clothing and rough textures."/>
-                            <ListItem itemName="Masks & Blends" itemDesc="Masking layers also helped create shadows and textures for objects and clothing. By changing blend modes, I was able to enhance the lighting effects in the scene."/>
-                        </ul>
+                        <List 
+                            heading1="Warp & Feather" 
+                            text1="I utilized a combination of warping and feathering to create a realistic landscape. This helped show depth in wrinkled clothing and rough textures." 
+                            heading2="Masks & Blends" 
+                            text2="Masking layers also helped create shadows and textures for objects and clothing. By changing blend modes, I was able to enhance the lighting effects in the scene."
+                            name3="none" 
+                        />
                     </article>
                     <div className="artifact-img-wrap img-right">
                         <video loop autoPlay muted>
@@ -129,10 +138,13 @@ const StripesNation = () => {
                     <article className="artifact-right right-md">
                         <SubHeading subHeading="After Effects" mainHeading="Bumper Video" />
                         <p>With an online presence at its forefront, I needed to create a bumper video that showcases the Stripes Performance brand.</p>
-                        <ul>
-                            <ListItem itemName="Masking" itemDesc="I predominantly used masks to animate the logo by hiding each stroke. The end result is a crispy line animation that reveals the logo."/>
-                            <ListItem itemName="Timing Functions" itemDesc="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result."/>
-                        </ul>
+                        <List 
+                            heading1="Masking" 
+                            text1="I predominantly used masks to animate the logo by hiding each stroke. The end result is a crispy line animation that reveals the logo." 
+                            heading2="Timing Functions" 
+                            text2="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result." 
+                            name3="none"
+                        />
                     </article>
                 </div>
             </section>
@@ -141,10 +153,13 @@ const StripesNation = () => {
                     <article className="artifact-left left-sm">
                         <SubHeading subHeading="Figma | Photoshop" mainHeading="Brand Book" />
                         <p>To wrap it all up, I designed the brand book pages in Figma using their intuitive organization systems.</p>
-                        <ul>
-                            <ListItem itemName="Grids" itemDesc="Figma's grid system made it easy to distribute information and create appealing layouts."/>
-                            <ListItem itemName="Components & Variables" itemDesc="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result."/>
-                        </ul>
+                        <List 
+                            heading1="Grids" 
+                            text1="Figma's grid system made it easy to distribute information and create appealing layouts." 
+                            heading2="Components & Variables" 
+                            text2="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result." 
+                            name3="none"
+                        />
                     </article>
                     <div className="artifact-img-wrap img-right-lg">
                         <video loop autoPlay muted>

@@ -145,15 +145,11 @@
                 padding-top: $lg;
                 z-index: 10;
 
-                // h1 {
-                //     // mask: url('../masks/inkmask-left.png');
-                //     // mask-size: 100% 3300%;
-                //     // animation: maskLeft 1s steps(32) forwards;
-                // }
-                h1 {
-                    font-size: 100px;
-                    top: $lg;
-                    @extend %float-title;   
+                .home-title {
+                    h1 {
+                        font-size: 100px;
+                        margin: 0;
+                    }
                 }
                 .home-text-wrap {
                     @include flex-wrap( nowrap, column, start, start );
@@ -195,7 +191,6 @@
 
                         .featured-heading-float {
                             @include flex-wrap( wrap, row, start, center );
-                            @extend %float-heading;
                         }
                     }
                     .p-padding {

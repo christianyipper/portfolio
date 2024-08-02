@@ -1,6 +1,11 @@
 import { useInView } from 'react-intersection-observer';
 import { useTypewriter } from 'react-simple-typewriter';
 import Footer from '../Footer';
+import TitleFloat from '../components/TitleFloat';
+import TitleShimmer from '../components/TitleShimmer';
+import HeadingFloat from '../components/HeadingFloat';
+import HeadingShimmer from '../components/HeadingShimmer';
+import Paragraph from '../components/Paragraph';
 
 import bchl from '../assets/images/icons/bchl-logo.png';
 import bcehl from '../assets/images/icons/bcehl-logo.png';
@@ -88,104 +93,130 @@ const About = () => {
                 </section>
                 <section ref={ aboutSection1 } className="about-section">
                     <article>
-                        <h1 ref={ headingSection1 } className="about-heading-shimmer" text-shimmer="Hey There!">Hey There!</h1>
+                        <TitleShimmer 
+                            reference={ headingSection1 } 
+                            heading="Hey There!"
+                        />
                         <div className="about-heading-wrap">
                             <span className="indent"/>
-                            <h1 className="about-heading-shimmer" text-shimmer="I'm">I'm</h1>
-                            <h1 className="about-heading-float">
-                                <span text-glow="C">C</span>
-                                <span text-glow="h">h</span>
-                                <span text-glow="r">r</span>
-                                <span text-glow="i">i</span>
-                                <span text-glow="s">s</span>
-                                <span text-glow="t">t</span>
-                                <span text-glow="i">i</span>
-                                <span text-glow="a">a</span>
-                                <span text-glow="n">n</span>
-                                <span text-glow=".">.</span>
-                            </h1>
+                            <TitleShimmer 
+                                heading="I'm"
+                            />
+                            <TitleFloat 
+                                meta=" Christian." 
+                                a="C" b="h" c="r" d="i" e="s" f="t" g="i" h="a" i="n" j="."
+                            />
                         </div>
                         <div className="quote-wrap">
                             <p className="quote-text">Empowering users by creating intuitive,<br/>engaging, and innovative experiences.</p>
                         </div>
-                        <h3>About Me</h3>
-                        <p>From ice hockey official to photography enthusiast, front-end development marks the next chapter in life.</p>
-                        <p>My passion to explore creative ideas has led me to deliver unique user experiences. I hope to build engaging websites that highlight diverse personalities.</p>
+                        <Paragraph 
+                            heading="About Me" 
+                            text1="From ice hockey official to photography enthusiast, front-end development marks the next chapter in life." text2="My passion to explore creative ideas has led me to deliver unique user experiences. I hope to build engaging websites that highlight diverse personalities."
+                        />
                     </article>
                 </section>
                 <section ref={ aboutSection2 } className="about-section">
                     <article>
-                        <h2 className={ `about-heading-shimmer ${ heading2 ? `scale-in` : `scale-out` }` } text-shimmer="My Social">My Social</h2>
+                        <HeadingShimmer 
+                            animation={ `${ heading2 ? `scale-in` : `scale-out` }` } 
+                            heading="My Social"
+                        />
                         <div ref={ headingSection2 } className="about-heading-wrap">
                             <span className="indent"/>
-                            <h2 className={ `about-heading-float ${ heading2 ? `scale-in` : `scale-out` }` }>
-                                <span text-glow="S">S</span>
-                                <span text-glow="k">k</span>
-                                <span text-glow="i">i</span>
-                                <span text-glow="l">l</span>
-                                <span text-glow="l">l</span>
-                                <span text-glow="s">s</span>
-                                <span text-glow="e">e</span>
-                                <span text-glow="t">t</span>
-                                <span text-glow=".">.</span>
-                            </h2>
+                            <HeadingFloat 
+                                animation={ `${ heading2 ? `scale-in` : `scale-out` }` } 
+                                meta=" Skillset." 
+                                a="S" b="k" c="i" d="l" e="l" f="s" g="e" h="t" i="."
+                            />
                         </div>
-                        <h3 className={ `${ text1 ? `blur-in-fast` : `blur-out-fast` }` }>Communication</h3>
-                        <p ref={ textSection1 } className={ `${ text1 ? `blur-in-fast` : `blur-out-fast` }` }>As a hockey referee, communication with coaches, players, and fellow officials is vital to keep the game running smoothly. Whether I’m coaching players on the faceoff or diffusing an emotional situation, I continue to improve my ability to effectively communicate with others.</p>
-                        <h3 className={ `${ text2 ? `blur-in-fast` : `blur-out-fast` }` }>Teamwork</h3>
-                        <p ref={ textSection2 } className={ `${ text2 ? `blur-in-fast` : `blur-out-fast` }` }>Whether I’m competing in a hockey tournament or playing video games, teamwork has become a natural skill I’ve learned. I’ve accomplished the most in life through leading and collaborating with my peers. I strive to fill the gaps in any team environment to achieve success.</p>
-                        <h3 className={ `${ text3 ? `blur-in-fast` : `blur-out-fast` }` }>Conflict-Management</h3>
-                        <p ref={ textSection3 } className={ `${ text3 ? `blur-in-fast` : `blur-out-fast` }` }>Diffusing tense situations has become a frequent task in my officiating career. Managing stress and emotions is difficult and I often use various approaches that best resolve conflict. Through these experiences, staying calm and being a great listener has helped strengthen my interpersonal skillset.</p>
+                        <Paragraph 
+                            reference={ textSection1 } 
+                            animation={ `${ text1 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            heading="Communication" 
+                            text1="As a hockey referee, communication with coaches, players, and fellow officials is vital to keep the game running smoothly. Whether I’m coaching players on the faceoff or diffusing an emotional situation, I continue to improve my ability to effectively communicate with others."
+                        />
+                        <Paragraph 
+                            reference={ textSection2 } 
+                            animation={ `${ text2 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            heading="Teamwork" 
+                            text1="Whether I’m competing in a hockey tournament or playing video games, teamwork has become a natural skill I’ve learned. I’ve accomplished the most in life through leading and collaborating with my peers. I strive to fill the gaps in any team environment to achieve success."
+                        />
+                        <Paragraph 
+                            reference={ textSection3 } 
+                            animation={ `${ text3 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            heading="Conflict-Management" 
+                            text1="Diffusing tense situations has become a frequent task in my officiating career. Managing stress and emotions is difficult and I often use various approaches that best resolve conflict. Through these experiences, staying calm and being a great listener has helped strengthen my interpersonal skillset."
+                        />
                     </article>
                     <div/>
                 </section>
                 <section ref={ aboutSection3 } className="about-section">
                     <article>
-                        <h2 className={ `about-heading-shimmer ${ heading3 ? `scale-in` : `scale-out` }` } text-shimmer="My Core">My Core</h2>
+                        <HeadingShimmer 
+                            animation={ `${ heading3 ? `scale-in` : `scale-out` }` } 
+                            heading="My Core"
+                        />
                         <div ref={ headingSection3 } className="about-heading-wrap">
                             <span className="indent"/>
-                            <h2 className={ `about-heading-float ${ heading3 ? `scale-in` : `scale-out` }` }>
-                                <span text-glow="V">V</span>
-                                <span text-glow="a">a</span>
-                                <span text-glow="l">l</span>
-                                <span text-glow="u">u</span>
-                                <span text-glow="e">e</span>
-                                <span text-glow="s">s</span>
-                                <span text-glow=".">.</span>
-                            </h2>
+                            <HeadingFloat 
+                                animation={ `${ heading3 ? `scale-in` : `scale-out` }` } 
+                                meta=" Values." 
+                                a="V" b="a" c="l" d="u" e="e" f="s" g="."
+                            />
                         </div>
-                        <h3 className={ `${ text4 ? `blur-in-fast` : `blur-out-fast` }` }>Collaboration</h3>
-                        <p ref={ textSection4 } className={ `${ text4 ? `blur-in-fast` : `blur-out-fast` }` }>I believe the best innovations starts with collaborative ideas. The most successful teams I’ve been involved in support each other, balancing individual weaknesses with each other’s strengths. I cherish and value the connections I make with others as we pioneer the future.</p>
-                        <h3 className={ `${ text5 ? `blur-in-fast` : `blur-out-fast` }` }>Leadership</h3>
-                        <p ref={ textSection5 } className={ `${ text5 ? `blur-in-fast` : `blur-out-fast` }` }>From a team leader to officiating coach, my experiences and focus on mentorship have enabled me to create positive environments and inspire growth. Through my time, I’m grateful to have the opportunity to empower individuals as they achieve success.</p>
-                        <h3 className={ `${ text6 ? `blur-in-fast` : `blur-out-fast` }` }>Determination</h3>
-                        <p ref={ textSection6 } className={ `${ text6 ? `blur-in-fast` : `blur-out-fast` }` }>My determination comes from collaborating with like-minded people who strive to achieve their best work. I believe this plays a vital role in the industry as we need to push through barriers to be creative and innovative.</p>
+                        <Paragraph 
+                            reference={ textSection4 } 
+                            animation={ `${ text4 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            heading="Collaboration" 
+                            text1="I believe the best innovations starts with collaborative ideas. The most successful teams I’ve been involved in support each other, balancing individual weaknesses with each other’s strengths. I cherish and value the connections I make with others as we pioneer the future."
+                        />
+                        <Paragraph 
+                            reference={ textSection5 } 
+                            animation={ `${ text5 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            heading="Leadership" 
+                            text1="From a team leader to officiating coach, my experiences and focus on mentorship have enabled me to create positive environments and inspire growth. Through my time, I’m grateful to have the opportunity to empower individuals as they achieve success."
+                        />
+                        <Paragraph 
+                            reference={ textSection6 } 
+                            animation={ `${ text6 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            heading="Determination" 
+                            text1="My determination comes from collaborating with like-minded people who strive to achieve their best work. I believe this plays a vital role in the industry as we need to push through barriers to be creative and innovative."
+                        />
                     </article>
                     <div/>
                 </section>
                 <section ref={ aboutSection4 } className="about-section">
                     <article>
-                        <h2 className={ `about-heading-shimmer ${ heading4 ? `scale-in` : `scale-out` }` } text-shimmer="During My">During My</h2>
+                        <HeadingShimmer 
+                            animation={ `${ heading4 ? `scale-in` : `scale-out` }` } 
+                            heading="During My"
+                        />
                         <div ref={ headingSection4 } className="about-heading-wrap">
                             <span className="indent"/>
-                            <h2 className={ `about-heading-float ${ heading4 ? `scale-in` : `scale-out` }` }>
-                                <span text-glow="D">D</span>
-                                <span text-glow="o">o</span>
-                                <span text-glow="w">w</span>
-                                <span text-glow="n">n</span>
-                                <span text-glow="t">t</span>
-                                <span text-glow="i">i</span>
-                                <span text-glow="m">m</span>
-                                <span text-glow="e">e</span>
-                                <span text-glow=".">.</span>
-                            </h2>
+                            <HeadingFloat 
+                                animation={ `${ heading4 ? `scale-in` : `scale-out` }` } 
+                                meta=" Downtime." a="D" b="o" c="w" d="n" e="t" f="i" g="m" h="e" i="."
+                            />
                         </div>
-                        <h3 className={ `${ text7 ? `blur-in-fast` : `blur-out-fast` }` }>Backcountry Skiing</h3>
-                        <p ref={ textSection7 } className={ `${ text7 ? `blur-in-fast` : `blur-out-fast` }` }>I love navigating through intricate slopes and dense forests of the backcountry. I’m always seeking to conquer new challenges that push my skiing ability to the limits. The thrill of cliff drops and uncharted terrain makes our local mountains an irresistible playground!</p>
-                        <h3 className={ `${ text8 ? `blur-in-fast` : `blur-out-fast` }` }>Action Photography</h3>
-                        <p ref={ textSection8 } className={ `${ text8 ? `blur-in-fast` : `blur-out-fast` }` }>When I’m not on the ice at the hockey rink, I’m the one behind the camera. The game of hockey is packed with high-intensity action and emotion, and capturing these moments is an art I strive to master.</p>
-                        <h3 className={ `${ text9 ? `blur-in-fast` : `blur-out-fast` }` }>Video Games</h3>
-                        <p ref={ textSection9 } className={ `${ text9 ? `blur-in-fast` : `blur-out-fast` }` }>I’ve always been into video games as a kid and over 20 years later, nothing has changed! I love exploring different genres, all with their unique quirks.</p>
+                        <Paragraph 
+                            reference={ textSection7 } 
+                            animation={ `${ text7 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            heading="Backcountry Skiing" 
+                            text1="I love navigating through intricate slopes and dense forests of the backcountry. I’m always seeking to conquer new challenges that push my skiing ability to the limits. The thrill of cliff drops and uncharted terrain makes our local mountains an irresistible playground!"
+                        />
+                        <Paragraph 
+                            reference={ textSection8 } 
+                            animation={ `${ text8 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            heading="Action Photography" 
+                            text1="When I’m not on the ice at the hockey rink, I’m the one behind the camera. The game of hockey is packed with high-intensity action and emotion, and capturing these moments is an art I strive to master."
+                        />
+                        <Paragraph 
+                            reference={ textSection9 } 
+                            animation={ `${ text9 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            heading="Video Games" 
+                            text1="I’ve always been into video games as a kid and over 20 years later, nothing has changed! I love exploring different genres, all with their unique quirks."
+                        />
                     </article>
                     <div/>
                 </section>

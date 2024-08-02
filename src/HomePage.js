@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 // import { Outlet } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import Footer from './Footer';
+import TitleFloat from './components/TitleFloat';
 
 const HomePage = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
@@ -76,7 +77,17 @@ const HomePage = () => {
                             </div>
                         </div>
                         <article>
-                            <h1 className="home-heading">
+                            <div className="home-title">
+                                <TitleFloat 
+                                    meta="Christian" 
+                                    a="C" b="h" c="r" d="i" e="s" f="t" g="i" h="a" i="n"
+                                />
+                                <TitleFloat 
+                                    meta=" Yipper" 
+                                    a="Y" b="i" c="p" d="p" e="e" f="r"
+                                />
+                            </div>
+                            {/* <h1 className="home-heading">
                                 <span className="floating-wrap">
                                     <span className="floating-text float-1" text-glow="C">C</span>
                                 </span>
@@ -123,7 +134,7 @@ const HomePage = () => {
                                 <span className="floating-wrap">
                                     <span className="floating-text float-6" text-glow="r">r</span>
                                 </span>
-                            </h1> 
+                            </h1> */}
                             <div className="home-text-wrap">
                                 <h2 text-shimmer="Front-End Developer">Front-End Developer</h2>
                                 <div className="home-buttons-wrap">

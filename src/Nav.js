@@ -1,3 +1,7 @@
+import TitleFloat from './components/TitleFloat';
+import TitleShimmer from './components/TitleShimmer';
+import Paragraph from './components/Paragraph';
+
 const Nav = () => {
     return (
         <nav>
@@ -50,29 +54,26 @@ const Nav = () => {
                                 </section>
                                 <section className="about-section">
                                     <article>
-                                        <h1 className="about-heading-shimmer" text-shimmer="Hey There!">Hey There!</h1>
+                                        <TitleShimmer 
+                                            heading="Hey There!"
+                                        />
                                         <div className="about-heading-wrap">
                                             <span className="indent"/>
-                                            <h1 className="about-heading-shimmer" text-shimmer="I'm">I'm</h1>
-                                            <h1 className="about-heading-float">
-                                                <span text-glow="C">C</span>
-                                                <span text-glow="h">h</span>
-                                                <span text-glow="r">r</span>
-                                                <span text-glow="i">i</span>
-                                                <span text-glow="s">s</span>
-                                                <span text-glow="t">t</span>
-                                                <span text-glow="i">i</span>
-                                                <span text-glow="a">a</span>
-                                                <span text-glow="n">n</span>
-                                                <span text-glow=".">.</span>
-                                            </h1>
+                                            <TitleShimmer 
+                                                heading="I'm"
+                                            />
+                                            <TitleFloat 
+                                                meta=" Christian." 
+                                                a="C" b="h" c="r" d="i" e="s" f="t" g="i" h="a" i="n" j="."
+                                            />
                                         </div>
                                         <div className="quote-wrap">
                                             <p className="quote-text">Empowering users by creating intuitive,<br/>engaging, and innovative experiences.</p>
                                         </div>
-                                        <h3>About Me</h3>
-                                        <p>From ice hockey official to photography enthusiast, front-end development marks the next chapter in life.</p>
-                                        <p>My passion to explore creative ideas has led me to deliver unique user experiences. I hope to build engaging websites that highlight diverse personalities.</p>
+                                        <Paragraph 
+                                            heading="About Me" 
+                                            text1="From ice hockey official to photography enthusiast, front-end development marks the next chapter in life." text2="My passion to explore creative ideas has led me to deliver unique user experiences. I hope to build engaging websites that highlight diverse personalities."
+                                        />
                                     </article>
                                 </section>
                             </div>
@@ -82,20 +83,10 @@ const Nav = () => {
                         <div className="projects">
                             <div className="project-container">
                                 <div className="project-wrap">
-                                    <h1 className="project-heading-float">
-                                        <span text-glow="M">M</span>
-                                        <span text-glow="y">y</span>
-                                        <span className="space"></span>
-                                        <span text-glow="P">P</span>
-                                        <span text-glow="r">r</span>
-                                        <span text-glow="o">o</span>
-                                        <span text-glow="j">j</span>
-                                        <span text-glow="e">e</span>
-                                        <span text-glow="c">c</span>
-                                        <span text-glow="t">t</span>
-                                        <span text-glow="s">s</span>
-                                        <span text-glow=".">.</span>
-                                    </h1>
+                                    <TitleFloat 
+                                        meta="My Projects." 
+                                        a="M" b="y" spaceC="space" d="P" e="r" f="o" g="j" h="e" i="c" j="t" k="s" l="."
+                                    />
                                     <div className="project-gallery-wrap">
                                         <div className="project-gallery">
                                             <section className="project-artifact-wrap">

@@ -3,6 +3,11 @@ import React, { useState, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import Footer from '../Footer';
+import TitleFloat from '../components/TitleFloat';
+import TitleShimmer from '../components/TitleShimmer';
+import HeadingFloat from '../components/HeadingFloat';
+import HeadingShimmer from '../components/HeadingShimmer';
+import Paragraph from '../components/Paragraph';
 // import VideoHover from './VideoHover';
 
 
@@ -55,20 +60,10 @@ const ProjectsPage = () => {
         <main className="projects">
             <div className="project-container">
                 <div className="project-wrap">
-                    <h1 className="project-heading-float">
-                        <span text-glow="M">M</span>
-                        <span text-glow="y">y</span>
-                        <span className="space"></span>
-                        <span text-glow="P">P</span>
-                        <span text-glow="r">r</span>
-                        <span text-glow="o">o</span>
-                        <span text-glow="j">j</span>
-                        <span text-glow="e">e</span>
-                        <span text-glow="c">c</span>
-                        <span text-glow="t">t</span>
-                        <span text-glow="s">s</span>
-                        <span text-glow=".">.</span>
-                    </h1>
+                    <TitleFloat 
+                        meta="My Projects." 
+                        a="M" b="y" spaceC="space" d="P" e="r" f="o" g="j" h="e" i="c" j="t" k="s" l="."
+                    />
                     <div className="project-gallery-wrap">
                         <div className="project-gallery">
                             <section id="artifact-1" className="project-artifact-wrap"
@@ -87,9 +82,9 @@ const ProjectsPage = () => {
                                     onMouseOut={ event => event.target.pause() }>
                                         <source src="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1" type="video/mp4"/>
                                     </video>
-                                    <h2 className="project-heading-shimmer" text-shimmer="ItsYipper">ItsYipper</h2>
+                                    <HeadingShimmer heading="My Social"/>
                                     <article className="project-text">
-                                        <h2 className="project-heading-shimmer" text-shimmer="ItsYipper">ItsYipper</h2>
+                                        <HeadingShimmer heading="My Social"/>
                                         <p>ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories.</p>
                                     </article>
                                     <div className="app-icons-wrap">
@@ -162,9 +157,9 @@ const ProjectsPage = () => {
                                     onMouseOut={ event => event.target.pause() }>
                                         <source src="https://www.dropbox.com/scl/fi/yd79axbaddk06h76ytb4m/StripesNation-1080p-comp.mp4?rlkey=iry6dsr7ct2umpe48n5gwlb5z&st=qcuh5kru&raw=1" type="video/mp4"/>
                                     </video>
-                                    <h2 className="project-heading-shimmer" text-shimmer="Stripes Nation">Stripes Nation</h2>
+                                    <HeadingShimmer heading="Stripes Nation"/>
                                     <article className="project-text">
-                                        <h2 className="project-heading-shimmer" text-shimmer="Stripes Nation">Stripes Nation</h2>
+                                        <HeadingShimmer heading="Stripes Nation"/>
                                         <p>Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery.</p>
                                     </article>
                                     <div className="app-icons-wrap">
@@ -247,17 +242,19 @@ const ProjectsPage = () => {
                                     <div className="project-border"></div>
                                     <div className="project-corner-wrap"></div>
                                     <video className="project-img"
-                                    poster="https://www.dropbox.com/scl/fi/uh74vqvxay4lx4dwt682q/sonic-thumb-comp.png?rlkey=jufydzsubr3e9li62l1249rgs&st=x4kykj4q&raw=1"
-                                    loop
-                                    muted
-                                    ref={ SonicAni }
-                                    onMouseOver={ event => event.target.play() }
-                                    onMouseOut={ event => event.target.pause() }>
+                                        poster="https://www.dropbox.com/scl/fi/uh74vqvxay4lx4dwt682q/sonic-thumb-comp.png?rlkey=jufydzsubr3e9li62l1249rgs&st=x4kykj4q&raw=1"
+                                        loop
+                                        muted
+                                        defaultMuted
+                                        playsInline
+                                        ref={ SonicAni }
+                                        onMouseOver={ event => event.target.play() }
+                                        onMouseOut={ event => event.target.pause() }>
                                     <source src="https://www.dropbox.com/scl/fi/xx8gfihs9jvk66lezrmlw/Sonic-Preview-720p-comp.mp4?rlkey=s4bep7n5vsit23jm21pht2oil&st=25ay3jsm&raw=1" type="video/mp4"/>
                                 </video>
-                                    <h2 className="project-heading-shimmer" text-shimmer="Sonic Animation">Sonic Animation</h2>
+                                    <HeadingShimmer heading="Sonic Animation"/>
                                     <article className="project-text">
-                                        <h2 className="project-heading-shimmer" text-shimmer="Sonic Animation">Sonic Animation</h2>
+                                        <HeadingShimmer heading="Sonic Animation"/>
                                         <p>ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories.</p>
                                     </article>
                                     <div className="app-icons-wrap">
@@ -332,18 +329,21 @@ const ProjectsPage = () => {
                                 <div className="project-artifact">
                                     <div className="project-border"></div>
                                     <div className="project-corner-wrap"></div>
-                                    <video className="project-img"
-                                    poster="https://www.dropbox.com/scl/fi/06induswo23lu4c1o8ybi/edgeboards-poster-wide.png?rlkey=m2c1p4kjdi2pe0qx4jsvncyuj&st=pxyuiju3&raw=1"
-                                    loop
-                                    muted
-                                    ref={ EdgeBoards }
-                                    onMouseOver={ event => event.target.play() }
-                                    onMouseOut={ event => event.target.pause() }>
+                                    <video 
+                                        className="project-img"
+                                        poster="https://www.dropbox.com/scl/fi/06induswo23lu4c1o8ybi/edgeboards-poster-wide.png?rlkey=m2c1p4kjdi2pe0qx4jsvncyuj&st=pxyuiju3&raw=1"
+                                        loop
+                                        muted
+                                        defaultMuted
+                                        playsInline
+                                        ref={ EdgeBoards }
+                                        onMouseOver={ event => event.target.play() }
+                                        onMouseOut={ event => event.target.pause() }>
                                         <source src="https://www.dropbox.com/scl/fi/h69ieqh7sfy7zoo29ishj/edgeboards-skilift-1080p-comp.mp4?rlkey=kmtnff10c80h6k7ni1kyjc9ob&st=t4be6ajj&raw=1" type="video/mp4"/>
                                     </video>
-                                    <h2 className="project-heading-shimmer" text-shimmer="Edge Boards">Edge Boards</h2>
+                                    <HeadingShimmer heading="Edge Boards"/>
                                     <article className="project-text">
-                                        <h2 className="project-heading-shimmer" text-shimmer="Edge Boards">Edge Boards</h2>
+                                        <HeadingShimmer heading="Edge Boards"/>
                                         <p>ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories.</p>
                                     </article>
                                     <div className="app-icons-wrap">

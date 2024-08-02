@@ -10,7 +10,6 @@
     .about-scroll {
         @extend %desktop-margin;
         padding-top: $xxl;
-        // background-color: red;
 
         .about-section {
             height: fit-content;
@@ -26,13 +25,12 @@
                 p {
                     margin-top: 0;
                 }
-                .about-heading-shimmer {
+                .heading-shimmer {
                     @extend %shimmer;
                     margin-top: $xl;
                     width: 100%;
                 }
-                .about-heading-float {
-                    @extend %float-heading;
+                .heading-float {
                     margin-bottom: $xl;
                 }
                 .about-heading-wrap {

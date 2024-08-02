@@ -111,6 +111,10 @@ main {
     }
 }
 
+.none {
+    display: none !important;
+}
+
 %desktop-margin {
     width: 100%;
     max-width: 1280px;

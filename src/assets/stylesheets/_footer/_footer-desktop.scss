@@ -23,9 +23,6 @@ footer {
         .footer-shimmer {
             @extend %shimmer;                
         }
-        .footer-float {
-            @extend %float-heading;
-        }
 
         .btn {
             margin-top: $lg;

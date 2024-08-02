@@ -28,9 +28,6 @@
             width: 100%;
             height: 100%;
 
-            .artifact-heading-float {
-                @extend %float-heading;
-            }
             .artifact-heading-wrap {
                 @include flex-wrap( nowrap, row, start, start );
                 gap: $sm;
@@ -56,14 +53,6 @@
                 // @extend %sub-heading; // Not extending
                 @extend %artifact-sub;
                 color: $accent;
-
-                // &:before {
-                //     text-shadow: 0 0 5px $accent, 0 0 10px $accent;
-                // }
-                // &:after {
-                //     transform: scaleX(1.03) scaleY(1.6);
-                //     background-image: linear-gradient(45deg, transparent 45%, $accent 45%, $accent 85%, transparent 0);
-                // }
             }
             .heading-col {
                 @include flex-wrap( nowrap, column, start, start );
