@@ -1,8 +1,8 @@
 %shimmer, .heading-shimmer {
     position: relative;
-    @include flex-wrap( nowrap, column, start, start );
+    @include flex-wrap( wrap, column, start, start );
     width: fit-content;
-    padding-right: 6px;
+    height: fit-content;
     color: white;
     letter-spacing: 2px;
     text-shadow: 0 0 2px white, 0 0 4px white;
@@ -10,6 +10,7 @@
     &:before {
         content: attr( text-shimmer );
         position: absolute;
+        width: 100%;
         -webkit-text-stroke: 2px white;
         top: -2px;
         left: -2px;
@@ -21,6 +22,7 @@
     &:after {
         content: attr( text-shimmer );
         position: absolute;
+        width: 100%;
         top: 6px;
         left: 6px;
         z-index: -1;

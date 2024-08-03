@@ -17,12 +17,6 @@ footer {
         h2 {
             margin: 0;
         }
-        .h2-right {
-            right: -12px;
-        }
-        .footer-shimmer {
-            @extend %shimmer;                
-        }
 
         .btn {
             margin-top: $lg;

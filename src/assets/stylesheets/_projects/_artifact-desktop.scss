@@ -61,13 +61,6 @@
                 position: relative;
                 grid-row: 1 / 1;
                 width: 100%;
-
-                // p, li, h2 {
-                //     padding-right: calc($md / 2);
-                // }
-                .h1-sm {
-                    font-size: $xl;
-                }
             }
             .left-sm {
                 grid-column: 1 / 5;
@@ -97,15 +90,6 @@
                 position: relative;
                 grid-row: 1 / 1;
                 width: 100%;
-
-                // p, ul, h2 {
-                //     padding-left: calc( $md / 2 );
-                // }
-                h2 {
-                    &::before, &::after {
-                        padding-left: calc( $md / 2 );
-                    }
-                }
             }
             .artifact-img-wrap {
                 @include flex-wrap( nowrap, column, start, center );
@@ -174,6 +158,9 @@
     font-size: $pg;
     left: 0;
     font-weight: 800;
+}
+.h1-sm {
+    font-size: $md;
 }
 
 // @keyframes underlineDash {

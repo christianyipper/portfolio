@@ -3,7 +3,12 @@ import { useEffect } from 'react';
 import Footer from '../Footer';
 import TocLink from '../components/TocLink';
 import List from '../components/List';
+import TitleFloat from '../components/TitleFloat';
+import TitleShimmer from '../components/TitleShimmer'
+import HeadingFloat from '../components/HeadingFloat';
+import HeadingShimmer from '../components/HeadingShimmer';
 import SubHeading from '../components/SubHeading';
+
 
 const StripesNation = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
@@ -30,22 +35,15 @@ const StripesNation = () => {
             <section className={ `artifact-section artifact-home ${ inView1 ? `blur-in` : `blur-out` }` }>
                 <div className="artifact-wrap">
                     <div className="artifact-left left-lg heading-col">
-                        <h1 className={ `artifact-heading-float ${ inView1 ? `blur-in` : `blur-out` }` }>
-                            <span text-glow="S">S</span>
-                            <span text-glow="t">t</span>
-                            <span text-glow="r">r</span>
-                            <span text-glow="i">i</span>
-                            <span text-glow="p">p</span>
-                            <span text-glow="e">e</span>
-                            <span text-glow="s">s</span>
-                            <span className="space" text-glow="N">N</span>
-                            <span text-glow="a">a</span>
-                            <span text-glow="t">t</span>
-                            <span text-glow="i">i</span>
-                            <span text-glow="o">o</span>
-                            <span text-glow="n">n</span>
-                        </h1>
-                        <h1 className={ `artifact-heading-shimmer h1-sm ${ inView1 ? `blur-in` : `blur-out` }` } text-shimmer="- Branding">- Branding</h1>
+                        <TitleFloat 
+                            animation={ `artifact-heading-float ${ inView1 ? `blur-in` : `blur-out` }` }
+                            meta="Stripes Nation" 
+                            a="S" b="t" c="r" d="i" e="p" f="e" g="s" spaceH="space" h="N" i="a" j="t" k="i" l="o" m="n"
+                        />
+                        <TitleShimmer 
+                            animation={ inView1 ? `blur-in` : `blur-out` }
+                            heading="- Branding"
+                        />
                         <p>Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery.</p>
                         <p>I utilize my design skillset in Photoshop, Illustrator, Figma, and After Effects throughout this project. Join me as I embark on a journey to create Stripes Nation from the ground up.</p>
                     </div>
@@ -53,14 +51,13 @@ const StripesNation = () => {
                         {/* <div className="artifact-img-wrap">
                             <img src="https://www.dropbox.com/scl/fi/bn53u2b1dqhyhtgo8tgpi/stripesnation-wordmark.png?rlkey=b5a1v40aiws5t4g962fki0l2x&st=e01aqlpf&raw=1" alt="" />
                         </div> */}
-                        <h2 className="artifact-heading-shimmer" text-shimmer="Table of Contents">Table of Contents</h2>
-                        {/* <div className={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` }> */}
+                        <HeadingShimmer heading="Table of Contents" />
                         <div className="toc">
-                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Illustrator" mainHeading="Logo Concepts" path="#LogoConcepts" num="2" />
+                            {/* <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Illustrator" mainHeading="Logo Concepts" path="#LogoConcepts" num="2" />
                             <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Illustrator" mainHeading="Logo Development" path="#LogoDevelopment" num="3" />
                             <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Photoshop" mainHeading="Marketing Mockups" path="#MarketingMockups" num="4" />
                             <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="After Effects" mainHeading="Bumper Video" path="#BumperVideo" num="5" />
-                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Figma | Photoshop" mainHeading="Brand Book" path="#BrandBook" num="6" />
+                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Figma | Photoshop" mainHeading="Brand Book" path="#BrandBook" num="6" /> */}
                             {/* <TocLink subHeading="" mainHeading="" path="" num="" /> */}
                         </div>
                     </div>
@@ -69,7 +66,10 @@ const StripesNation = () => {
             <section className={ `artifact-section ${ inView2 ? `blur-in` : `blur-out` }` }>
                 <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
                     <article className="artifact-left left-md">
-                        <SubHeading subHeading="Illustrator" mainHeading="Logo Concepts"/>
+                        <SubHeading 
+                            subHeading="Illustrator" 
+                            mainHeading="Logo Concepts"
+                        />
                         <p>When creating the Stripes Nation logo, it was important to incorporate elements from the hockey referee uniform and the sport into the design. There were three key aspects to consider:</p>
                         <List 
                             heading1="Referee Armbands" 

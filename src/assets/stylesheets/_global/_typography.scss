@@ -121,6 +121,18 @@ a {
         background-image: linear-gradient(45deg, transparent 45%, $accent 45%, $primary 85%, transparent 0);
     }
 }
+.heading-wrap {
+    width: 100%;
+    height: fit-content;
+}
+.heading-auto {
+    width: auto;
+}
+.heading-right {
+    @include flex-wrap( wrap, column, end, end );
+    text-align: right;
+    right: 0;
+}
 .indent {
     margin-left: $mx;
 }
@@ -129,6 +141,7 @@ a {
 }
 .space {
     margin-left: $md;
+    content: "";
 }
 strong {
     @extend %gradient;

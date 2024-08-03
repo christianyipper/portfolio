@@ -1,11 +1,6 @@
 .sub-heading-wrap {
     @include flex-wrap( wrap, column, start, start );
 
-    .sub-heading {
-        &::after {
-            padding-left: calc( $md / 2 );
-        }
-    }
     .main-heading {
         @extend %shimmer;
         width: 100%;

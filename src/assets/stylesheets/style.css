@@ -1,107 +1,3 @@
-.sn-red {
-  fill: #ed1c24;
-}
-
-.icon-grey {
-  fill: #ebebeb;
-}
-
-.icon-white {
-  fill: #fff;
-}
-
-.ae-light {
-  fill: #9898fe;
-}
-
-.ae-dark {
-  fill: #00005b;
-}
-
-.css-light {
-  fill: #2965f1;
-}
-
-.css-dark {
-  fill: #264de4;
-}
-
-.figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach {
-  fill-rule: evenodd;
-}
-
-.figma-purple {
-  fill: #a259ff;
-}
-
-.figma-blue {
-  fill: #1abcfe;
-}
-
-.figma-green {
-  fill: #0acf83;
-}
-
-.figma-orange {
-  fill: #f24e1e;
-}
-
-.figma-peach {
-  fill: #ff7262;
-}
-
-.figma-bg {
-  fill: #2e303a;
-}
-
-.html-light {
-  fill: #f16529;
-}
-
-.html-dark {
-  fill: #e44d26;
-}
-
-.ai-light {
-  fill: #ff9a00;
-}
-
-.ai-dark {
-  fill: #300;
-}
-
-.js-light {
-  fill: #f0db4f;
-}
-
-.js-dark {
-  fill: #323330;
-}
-
-.ps-light {
-  fill: #31a8ff;
-}
-
-.ps-dark {
-  fill: #001e36;
-}
-
-.react-light {
-  fill: #01daff;
-}
-
-.react-dark {
-  fill: #222;
-}
-
-.sass-dark {
-  fill: #cd669a;
-}
-
-.webflow-dark {
-  fill: #146df5;
-}
-
 html {
   scroll-behavior: smooth;
   background-color: #060e1a;
@@ -375,6 +271,26 @@ a {
   background-image: linear-gradient(45deg, transparent 45%, #6274ff 45%, #ff7862 85%, transparent 0);
 }
 
+.heading-wrap {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.heading-auto {
+  width: auto;
+}
+
+.heading-right {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  text-align: right;
+  right: 0;
+}
+
 .indent {
   margin-left: 96px;
 }
@@ -385,6 +301,7 @@ a {
 
 .space {
   margin-left: 24px;
+  content: "";
 }
 
 .bold {
@@ -545,6 +462,56 @@ nav .nav-wrap .nav-mid .nav-heading:after, .btn p:after, .artifact .artifact-sec
   }
   100% {
     opacity: 0%;
+  }
+}
+.move-in {
+  animation: moveIn 1s cubic-bezier(0.1, 0.8, 0.4, 2) forwards;
+}
+
+.move-out {
+  animation: moveOut 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+@keyframes moveOut {
+  0% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+}
+.leap-in {
+  animation: leapIn 2s cubic-bezier(0.1, 0.8, 0.4, 2) forwards;
+}
+
+.leap-out {
+  animation: moveOut 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes leapIn {
+  0% {
+    opacity: 0;
+    transform: translate(32px, 16px);
+  }
+  25% {
+    opacity: 0;
+    transform: translate(16px, 16px);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 100%;
   }
 }
 .scale-in {
@@ -978,9 +945,6 @@ a:hover ~ .cursor {
   justify-content: start;
   align-items: start;
 }
-.sub-heading-wrap .sub-heading::after {
-  padding-left: 12px;
-}
 .sub-heading-wrap .main-heading {
   width: 100%;
   margin-top: 0;
@@ -1064,23 +1028,25 @@ a:hover ~ .cursor {
   }
 }
 
-.about .about-scroll .about-section article .heading-shimmer, .home .home-view .home-section article h2, footer .footer-wrap .footer-shimmer, .sub-heading-wrap .main-heading, .heading-shimmer {
+.about .about-scroll .about-section article .heading-shimmer, .sub-heading-wrap .main-heading, .heading-shimmer {
   position: relative;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   width: -moz-fit-content;
   width: fit-content;
-  padding-right: 6px;
+  height: -moz-fit-content;
+  height: fit-content;
   color: white;
   letter-spacing: 2px;
   text-shadow: 0 0 2px white, 0 0 4px white;
 }
-.about .about-scroll .about-section article .heading-shimmer:before, .home .home-view .home-section article h2:before, footer .footer-wrap .footer-shimmer:before, .sub-heading-wrap .main-heading:before, .heading-shimmer:before {
+.about .about-scroll .about-section article .heading-shimmer:before, .sub-heading-wrap .main-heading:before, .heading-shimmer:before {
   content: attr(text-shimmer);
   position: absolute;
+  width: 100%;
   -webkit-text-stroke: 2px white;
   top: -2px;
   left: -2px;
@@ -1089,9 +1055,10 @@ a:hover ~ .cursor {
   text-shadow: 2px 2px 4px rgb(140, 169, 189);
   opacity: 25%;
 }
-.about .about-scroll .about-section article .heading-shimmer:after, .home .home-view .home-section article h2:after, footer .footer-wrap .footer-shimmer:after, .sub-heading-wrap .main-heading:after, .heading-shimmer:after {
+.about .about-scroll .about-section article .heading-shimmer:after, .sub-heading-wrap .main-heading:after, .heading-shimmer:after {
   content: attr(text-shimmer);
   position: absolute;
+  width: 100%;
   top: 6px;
   left: 6px;
   z-index: -1;
@@ -1109,6 +1076,192 @@ a:hover ~ .cursor {
     background-position: 0 0;
     background-position: 100% 100%;
   }
+}
+
+.sn-red {
+  fill: #ed1c24;
+}
+
+.icon-grey {
+  fill: #ebebeb;
+}
+
+.icon-white {
+  fill: #fff;
+}
+
+.ae-light {
+  fill: #9898fe;
+}
+
+.ae-dark {
+  fill: #00005b;
+}
+
+.css-light {
+  fill: #2965f1;
+}
+
+.css-dark {
+  fill: #264de4;
+}
+
+.figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach {
+  fill-rule: evenodd;
+}
+
+.figma-purple {
+  fill: #a259ff;
+}
+
+.figma-blue {
+  fill: #1abcfe;
+}
+
+.figma-green {
+  fill: #0acf83;
+}
+
+.figma-orange {
+  fill: #f24e1e;
+}
+
+.figma-peach {
+  fill: #ff7262;
+}
+
+.figma-bg {
+  fill: #2e303a;
+}
+
+.html-light {
+  fill: #f16529;
+}
+
+.html-dark {
+  fill: #e44d26;
+}
+
+.ai-light {
+  fill: #ff9a00;
+}
+
+.ai-dark {
+  fill: #300;
+}
+
+.js-light {
+  fill: #f0db4f;
+}
+
+.js-dark {
+  fill: #323330;
+}
+
+.ps-light {
+  fill: #31a8ff;
+}
+
+.ps-dark {
+  fill: #001e36;
+}
+
+.react-light {
+  fill: #01daff;
+}
+
+.react-dark {
+  fill: #222;
+}
+
+.sass-dark {
+  fill: #cd669a;
+}
+
+.webflow-dark {
+  fill: #146df5;
+}
+
+.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .icon-grey, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .icon-white, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ae-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .css-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-purple, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-blue, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-green, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-orange, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-peach, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ai-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .js-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ps-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .react-light {
+  transition: 0.5s ease-in-out;
+  fill: transparent;
+}
+.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ae-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .css-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-bg, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .html-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .html-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ai-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .js-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ps-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .react-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .sass-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .webflow-dark {
+  transition: 0.5s ease-in-out;
+  fill: #6274ff;
+}
+
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .icon-grey {
+  fill: #ebebeb !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .icon-white {
+  fill: #fff !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ae-light {
+  fill: #9898fe !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ae-dark {
+  fill: #00005b !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .css-light {
+  fill: #2965f1 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .css-dark {
+  fill: #264de4 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-purple {
+  fill: #a259ff !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-blue {
+  fill: #1abcfe !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-green {
+  fill: #0acf83 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-orange {
+  fill: #f24e1e !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-peach {
+  fill: #ff7262 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-bg {
+  fill: #2e303a !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .html-light {
+  fill: #f16529 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .html-dark {
+  fill: #e44d26 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ai-light {
+  fill: #ff9a00 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ai-dark {
+  fill: #300 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .js-light {
+  fill: #f0db4f !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .js-dark {
+  fill: #323330 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ps-light {
+  fill: #31a8ff !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ps-dark {
+  fill: #001e36 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .react-light {
+  fill: #01daff !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .react-dark {
+  fill: #222 !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .sass-dark {
+  fill: #cd669a !important;
+}
+.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .webflow-dark {
+  fill: #146df5 !important;
 }
 
 nav {
@@ -1503,9 +1656,6 @@ footer .footer-wrap {
 footer .footer-wrap h2 {
   margin: 0;
 }
-footer .footer-wrap .h2-right {
-  right: -12px;
-}
 footer .footer-wrap .btn {
   margin-top: 32px;
   animation-duration: 2s;
@@ -1714,10 +1864,20 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   grid-column: 7/13;
   width: 100%;
   height: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
   padding-top: 32px;
   z-index: 10;
+}
+.home .home-view .home-section article .home-title {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 80px;
+  margin-bottom: 64px;
 }
 .home .home-view .home-section article .home-title h1 {
   font-size: 100px;
@@ -1731,7 +1891,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   align-items: start;
   position: relative;
   width: 100%;
-  margin-top: -48px;
 }
 .home .home-view .home-section article .home-text-wrap .home-buttons-wrap {
   display: flex;
@@ -2395,14 +2554,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   filter: blur(0px);
   transition: 0.5s ease-in-out;
 }
-.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .icon-grey, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .icon-white, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ae-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .css-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-purple, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-blue, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-green, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-orange, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-peach, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ai-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .js-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ps-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .react-light {
-  transition: 0.5s ease-in-out;
-  fill: transparent;
-}
-.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ae-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .css-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .figma-bg, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .html-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .html-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ai-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .js-light, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .ps-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .react-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .sass-dark, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap svg .webflow-dark {
-  transition: 0.5s ease-in-out;
-  fill: #6274ff;
-}
 .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap {
   display: flex;
   flex-wrap: nowrap;
@@ -2540,78 +2691,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   transform: scale(1) !important;
   animation: iconFade 0.5s ease-in-out forwards alternate !important;
 }
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .icon-grey {
-  fill: #ebebeb !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .icon-white {
-  fill: #fff !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ae-light {
-  fill: #9898fe !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ae-dark {
-  fill: #00005b !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .css-light {
-  fill: #2965f1 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .css-dark {
-  fill: #264de4 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-purple {
-  fill: #a259ff !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-blue {
-  fill: #1abcfe !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-green {
-  fill: #0acf83 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-orange {
-  fill: #f24e1e !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-peach {
-  fill: #ff7262 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .figma-bg {
-  fill: #2e303a !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .html-light {
-  fill: #f16529 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .html-dark {
-  fill: #e44d26 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ai-light {
-  fill: #ff9a00 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ai-dark {
-  fill: #300 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .js-light {
-  fill: #f0db4f !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .js-dark {
-  fill: #323330 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ps-light {
-  fill: #31a8ff !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .ps-dark {
-  fill: #001e36 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .react-light {
-  fill: #01daff !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .react-dark {
-  fill: #222 !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .sass-dark {
-  fill: #cd669a !important;
-}
-.project-artifact-wrap:has(.btn:hover) .app-icons-wrap svg .webflow-dark {
-  fill: #146df5 !important;
-}
 
 @keyframes btnShow {
   0% {
@@ -2717,9 +2796,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   grid-row: 1/1;
   width: 100%;
 }
-.artifact .artifact-section .artifact-wrap .artifact-left .h1-sm {
-  font-size: 48px;
-}
 .artifact .artifact-section .artifact-wrap .left-sm {
   grid-column: 1/5;
 }
@@ -2748,9 +2824,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   position: relative;
   grid-row: 1/1;
   width: 100%;
-}
-.artifact .artifact-section .artifact-wrap .artifact-right h2::before, .artifact .artifact-section .artifact-wrap .artifact-right h2::after {
-  padding-left: 12px;
 }
 .artifact .artifact-section .artifact-wrap .artifact-img-wrap {
   display: flex;
@@ -2817,6 +2890,10 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   font-size: 18px;
   left: 0;
   font-weight: 800;
+}
+
+.h1-sm {
+  font-size: 24px;
 }
 
 @keyframes underlineDash {

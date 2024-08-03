@@ -100,6 +100,7 @@ const About = () => {
                         <div className="about-heading-wrap">
                             <span className="indent"/>
                             <TitleShimmer 
+                                animation="heading-auto"
                                 heading="I'm"
                             />
                             <TitleFloat 
@@ -132,19 +133,22 @@ const About = () => {
                         </div>
                         <Paragraph 
                             reference={ textSection1 } 
-                            animation={ `${ text1 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            animation={ `${ text1 ? `move-in` : `move-out` }` } 
+                            animationHead={ `${ text1 ? `leap-in` : `leap-out` }` }
                             heading="Communication" 
                             text1="As a hockey referee, communication with coaches, players, and fellow officials is vital to keep the game running smoothly. Whether I’m coaching players on the faceoff or diffusing an emotional situation, I continue to improve my ability to effectively communicate with others."
                         />
                         <Paragraph 
                             reference={ textSection2 } 
-                            animation={ `${ text2 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            animation={ `${ text2 ? `move-in` : `move-out` }` } 
+                            animationHead={ `${ text2 ? `leap-in` : `leap-out` }` }
                             heading="Teamwork" 
                             text1="Whether I’m competing in a hockey tournament or playing video games, teamwork has become a natural skill I’ve learned. I’ve accomplished the most in life through leading and collaborating with my peers. I strive to fill the gaps in any team environment to achieve success."
                         />
                         <Paragraph 
                             reference={ textSection3 } 
-                            animation={ `${ text3 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            animation={ `${ text3 ? `move-in` : `move-out` }` } 
+                            animationHead={ `${ text3 ? `leap-in` : `leap-out` }` }
                             heading="Conflict-Management" 
                             text1="Diffusing tense situations has become a frequent task in my officiating career. Managing stress and emotions is difficult and I often use various approaches that best resolve conflict. Through these experiences, staying calm and being a great listener has helped strengthen my interpersonal skillset."
                         />
@@ -167,19 +171,22 @@ const About = () => {
                         </div>
                         <Paragraph 
                             reference={ textSection4 } 
-                            animation={ `${ text4 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            animation={ `${ text4 ? `move-in` : `move-out` }` } 
+                            animationHead={ `${ text4 ? `leap-in` : `leap-out` }` }
                             heading="Collaboration" 
                             text1="I believe the best innovations starts with collaborative ideas. The most successful teams I’ve been involved in support each other, balancing individual weaknesses with each other’s strengths. I cherish and value the connections I make with others as we pioneer the future."
                         />
                         <Paragraph 
                             reference={ textSection5 } 
-                            animation={ `${ text5 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            animation={ `${ text5 ? `move-in` : `move-out` }` } 
+                            animationHead={ `${ text5 ? `leap-in` : `leap-out` }` }
                             heading="Leadership" 
                             text1="From a team leader to officiating coach, my experiences and focus on mentorship have enabled me to create positive environments and inspire growth. Through my time, I’m grateful to have the opportunity to empower individuals as they achieve success."
                         />
                         <Paragraph 
                             reference={ textSection6 } 
-                            animation={ `${ text6 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            animation={ `${ text6 ? `move-in` : `move-out` }` } 
+                            animationHead={ `${ text6 ? `leap-in` : `leap-out` }` } 
                             heading="Determination" 
                             text1="My determination comes from collaborating with like-minded people who strive to achieve their best work. I believe this plays a vital role in the industry as we need to push through barriers to be creative and innovative."
                         />
@@ -201,19 +208,22 @@ const About = () => {
                         </div>
                         <Paragraph 
                             reference={ textSection7 } 
-                            animation={ `${ text7 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            animation={ `${ text7 ? `move-in` : `move-out` }` } 
+                            animationHead={ `${ text7 ? `leap-in` : `leap-out` }` } 
                             heading="Backcountry Skiing" 
                             text1="I love navigating through intricate slopes and dense forests of the backcountry. I’m always seeking to conquer new challenges that push my skiing ability to the limits. The thrill of cliff drops and uncharted terrain makes our local mountains an irresistible playground!"
                         />
                         <Paragraph 
                             reference={ textSection8 } 
-                            animation={ `${ text8 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            animation={ `${ text8 ? `move-in` : `move-out` }` } 
+                            animationHead={ `${ text8 ? `leap-in` : `leap-out` }` } 
                             heading="Action Photography" 
                             text1="When I’m not on the ice at the hockey rink, I’m the one behind the camera. The game of hockey is packed with high-intensity action and emotion, and capturing these moments is an art I strive to master."
                         />
                         <Paragraph 
                             reference={ textSection9 } 
-                            animation={ `${ text9 ? `blur-in-fast` : `blur-out-fast` }` } 
+                            animation={ `${ text9 ? `move-in` : `move-out` }` } 
+                            animationHead={ `${ text9 ? `leap-in` : `leap-out` }` } 
                             heading="Video Games" 
                             text1="I’ve always been into video games as a kid and over 20 years later, nothing has changed! I love exploring different genres, all with their unique quirks."
                         />

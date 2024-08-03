@@ -87,54 +87,6 @@ const HomePage = () => {
                                     a="Y" b="i" c="p" d="p" e="e" f="r"
                                 />
                             </div>
-                            {/* <h1 className="home-heading">
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-1" text-glow="C">C</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-2" text-glow="h">h</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-3" text-glow="r">r</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-4" text-glow="i">i</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-5" text-glow="s">s</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-6" text-glow="t">t</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-7" text-glow="i">i</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-8" text-glow="a">a</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-9" text-glow="n">n</span>
-                                </span>
-                                <br/>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-1 indent" text-glow="Y">Y</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-2" text-glow="i">i</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-3" text-glow="p">p</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-4" text-glow="p">p</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-5" text-glow="e">e</span>
-                                </span>
-                                <span className="floating-wrap">
-                                    <span className="floating-text float-6" text-glow="r">r</span>
-                                </span>
-                            </h1> */}
                             <div className="home-text-wrap">
                                 <h2 text-shimmer="Front-End Developer">Front-End Developer</h2>
                                 <div className="home-buttons-wrap">

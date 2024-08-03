@@ -250,6 +250,54 @@
     }
 }
 
+.move-in {
+    animation: moveIn 1s cubic-bezier( 0.1, 0.8, 0.4, 2 ) forwards;
+}
+.move-out {
+    animation: moveOut 1.5s cubic-bezier( 0.175, 0.885, 0.32, 1.275 ) forwards;
+}
+@keyframes moveIn {
+    0% {
+        opacity: 0;
+        transform: translateY( $lg );
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY( 0 );
+    }
+}
+@keyframes moveOut {
+    0% {
+        opacity: 100%;
+        transform: translateY( 0 );
+    }
+    100% {
+        opacity: 0;
+        transform: translateY( $lg );
+    }
+}
+
+.leap-in {
+    animation: leapIn 2s cubic-bezier( 0.1, 0.8, 0.4, 2 ) forwards;
+}
+.leap-out {
+    animation: moveOut 1.5s cubic-bezier( 0.175, 0.885, 0.32, 1.275 ) forwards;
+}
+@keyframes leapIn {
+    0% {
+        opacity: 0;
+        transform: translate( $lg, calc( $lg / 2 ) );
+    }
+    25% {
+        opacity: 0;
+        transform: translate( calc( $lg / 2 ), calc( $lg / 2 ) );
+    }
+    100% {
+        transform: translate( 0, 0 );
+        opacity: 100%;
+    }
+}
+
 .scale-in {
     animation: projIn 1s ease-in-out forwards;
 }

@@ -210,20 +210,12 @@
                                 transition: 0.2s ease-in-out;
                     
                                 svg {
+                                    @extend %svg-grey;
                                     height: $lg;
                                     width: fit-content;
                                     transform: scale(0.8);
                                     filter: blur(0px);
                                     transition: 0.5s ease-in-out;
-                                    
-                                    .icon-grey, .icon-white, .ae-light, .css-light, .figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach, .ai-light, .js-dark, .ps-light, .react-light {
-                                    transition: 0.5s ease-in-out;
-                                    fill: transparent;
-                                    }
-                                    .ae-dark, .css-dark, .figma-bg, .html-light, .html-dark, .ai-dark, .js-light, .ps-dark, .react-dark, .sass-dark, .webflow-dark {
-                                    transition: 0.5s ease-in-out;
-                                    fill: $accent;
-                                    }
                                 }
                             }
                             .project-btn-wrap {
@@ -354,81 +346,9 @@
     opacity: 100% !important;
 
     svg {
+        @extend %svg-color;
         transform: scale(1) !important;
         animation: iconFade 0.5s ease-in-out forwards alternate !important;
-
-        .icon-grey {
-            fill: $icon-grey !important;
-        }
-        .icon-white {
-            fill: $icon-white !important;
-        }
-        .ae-light {
-            fill: $ae-light !important;
-        }
-        .ae-dark {
-            fill: $ae-dark !important;
-        }
-        .css-light {
-            fill: $css-light !important;
-        }
-        .css-dark {
-            fill: $css-dark !important;
-        }
-        .figma-purple {
-            fill: $figma-purple !important;
-        }
-        .figma-blue {
-            fill: $figma-blue !important;
-        }
-        .figma-green {
-            fill: $figma-green !important;
-        }
-        .figma-orange {
-            fill: $figma-orange !important;
-        }
-        .figma-peach {
-            fill: $figma-peach !important;
-        }
-        .figma-bg {
-            fill: $figma-bg !important;
-        }
-        .html-light {
-            fill: $html-light !important;
-        }
-        .html-dark {
-            fill: $html-dark !important;
-        }
-        .ai-light {
-            fill: $ai-light !important;
-        }
-        .ai-dark {
-            fill: $ai-dark !important;
-        }
-        .js-light {
-            fill: $js-light !important;
-        }
-        .js-dark {
-            fill: $js-dark !important;
-        }
-        .ps-light {
-            fill: $ps-light !important;
-        }
-        .ps-dark {
-            fill: $ps-dark !important;
-        }
-        .react-light {
-            fill: $react-light !important;
-        }
-        .react-dark {
-            fill: $react-dark !important;
-        }
-        .sass-dark {
-            fill: $sass-dark !important;
-        }
-        .webflow-dark {
-            fill: $webflow-dark !important;
-        }
     }
 }
 
