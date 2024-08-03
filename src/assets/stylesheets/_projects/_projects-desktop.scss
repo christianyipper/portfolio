@@ -67,6 +67,10 @@
                     height: 100%;
                     gap: $md;
                     transition: 0.5s ease-in-out;
+
+                    &:hover .project-artifact-wrap:not(:hover) {
+                        filter: grayscale(100%) blur(4px);
+                    }
                     
                     .project-artifact-wrap {
                         @include flex-wrap( nowrap, column, center, center );
@@ -76,7 +80,40 @@
                         border-radius: $md;
                         transition: 0.5s ease-in-out;
 
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                            top: 0;
+                            border-radius: $md;
+                            background-color: white;
+                            filter: blur( 8px );
+                            z-index: -2;
+                            transition: 0.5s ease-in-out;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                            top: 0;
+                            border-radius: $md;
+                            background-color: white;
+                            filter: blur( 2px );
+                            z-index: -2;
+                            transition: 0.5s ease-in-out;
+                        }
+
                         &:hover {
+                            &::before {
+                                background-color: transparent;
+                            }
+                            &::after {
+                                background-color: transparent;
+                            }
                             .project-artifact {
                             aspect-ratio: 16 / 9;
                             width: auto;
@@ -146,6 +183,7 @@
                             border-radius: $md;
                             overflow: hidden;
                             transition: 0.5s ease-in-out;
+                            filter: grayscale(0) blur(0);
                             // transition: 0.5s cubic-bezier(0.3, -0.8, .4, 1.5);
     
                             .project-border {

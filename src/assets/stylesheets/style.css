@@ -1327,6 +1327,17 @@ nav .nav-wrap .nav-mid {
   position: absolute;
   margin-right: 216px;
 }
+nav .nav-wrap .nav-mid:hover .nav-heading:not(:hover) {
+  color: #6274ff;
+  filter: blur(1.5px);
+  transform: scale(0.9);
+}
+nav .nav-wrap .nav-mid:hover .nav-heading:not(:hover):before {
+  opacity: 0%;
+}
+nav .nav-wrap .nav-mid:hover .nav-heading:not(:hover):after {
+  opacity: 0%;
+}
 nav .nav-wrap .nav-mid .nav-heading {
   display: flex;
   flex-wrap: wrap;
@@ -1466,30 +1477,6 @@ nav .nav-wrap .nav-mid .projects-preview img {
   height: 100%;
   border-radius: 24px;
 }
-nav .nav-wrap .nav-home:hover ~ .nav-about,
-nav .nav-wrap .nav-home:hover ~ .nav-projects,
-nav .nav-wrap .nav-mid:has(.nav-about:hover) .nav-home,
-nav .nav-wrap .nav-about:hover ~ .nav-projects,
-nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-home,
-nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-about {
-  color: #6274ff;
-}
-nav .nav-wrap .nav-home:hover ~ .nav-about:before,
-nav .nav-wrap .nav-home:hover ~ .nav-projects:before,
-nav .nav-wrap .nav-mid:has(.nav-about:hover) .nav-home:before,
-nav .nav-wrap .nav-about:hover ~ .nav-projects:before,
-nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-home:before,
-nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-about:before {
-  opacity: 0%;
-}
-nav .nav-wrap .nav-home:hover ~ .nav-about:after,
-nav .nav-wrap .nav-home:hover ~ .nav-projects:after,
-nav .nav-wrap .nav-mid:has(.nav-about:hover) .nav-home:after,
-nav .nav-wrap .nav-about:hover ~ .nav-projects:after,
-nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-home:after,
-nav .nav-wrap .nav-mid:has(.nav-projects:hover) .nav-about:after {
-  opacity: 0%;
-}
 nav .nav-wrap .nav-right {
   display: flex;
   flex-wrap: wrap;
@@ -1498,6 +1485,11 @@ nav .nav-wrap .nav-right {
   align-items: end;
   position: absolute;
   right: -6px;
+}
+nav .nav-wrap .nav-right:hover .nav-icon:not(:hover) svg {
+  fill: #6274ff;
+  filter: blur(1.5px);
+  transform: scale(0.9);
 }
 nav .nav-wrap .nav-right .nav-icon-wrap {
   display: flex;
@@ -1584,14 +1576,6 @@ nav .nav-wrap .nav-right .nav-icon-wrap .nav-icon-bg:after {
   z-index: -2;
   box-shadow: 0 0 5px #ff7862, 0 0 20px #ff7862, 0 0 50px #ff7862, 0 0 100px #ff7862;
   transition: 0.2s ease-in-out;
-}
-nav .nav-wrap .nav-email:hover ~ .nav-linkedin > svg,
-nav .nav-wrap .nav-email:hover ~ .nav-github > svg,
-nav .nav-wrap .nav-right:has(.nav-linkedin:hover) .nav-email > svg,
-nav .nav-wrap .nav-linkedin:hover ~ .nav-github > svg,
-nav .nav-wrap .nav-right:has(.nav-github:hover) .nav-linkedin > svg,
-nav .nav-wrap .nav-right:has(.nav-github:hover) .nav-email > svg {
-  fill: #6274ff;
 }
 
 nav .nav-wrap .nav-mid .nav-heading-bg, nav .nav-wrap .nav-right .nav-icon-wrap .nav-icon-bg {
@@ -2397,6 +2381,9 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   gap: 24px;
   transition: 0.5s ease-in-out;
 }
+.projects .project-container .project-wrap .project-gallery-wrap .project-gallery:hover .project-artifact-wrap:not(:hover) {
+  filter: grayscale(100%) blur(4px);
+}
 .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap {
   display: flex;
   flex-wrap: nowrap;
@@ -2408,6 +2395,38 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: 25vw;
   border-radius: 24px;
   transition: 0.5s ease-in-out;
+}
+.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 24px;
+  background-color: white;
+  filter: blur(8px);
+  z-index: -2;
+  transition: 0.5s ease-in-out;
+}
+.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 24px;
+  background-color: white;
+  filter: blur(2px);
+  z-index: -2;
+  transition: 0.5s ease-in-out;
+}
+.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap:hover::before {
+  background-color: transparent;
+}
+.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap:hover::after {
+  background-color: transparent;
 }
 .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap:hover .project-artifact {
   aspect-ratio: 16/9;
@@ -2470,6 +2489,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   border-radius: 24px;
   overflow: hidden;
   transition: 0.5s ease-in-out;
+  filter: grayscale(0) blur(0);
 }
 .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-border {
   display: flex;

@@ -181,8 +181,8 @@ const ProjectsPage = () => {
                                         playsInline
                                         ref={ SonicAni }
                                     >
-                                    <source src="https://www.dropbox.com/scl/fi/xx8gfihs9jvk66lezrmlw/Sonic-Preview-720p-comp.mp4?rlkey=s4bep7n5vsit23jm21pht2oil&st=25ay3jsm&raw=1" type="video/mp4"/>
-                                </video>
+                                        <source src="https://www.dropbox.com/scl/fi/xx8gfihs9jvk66lezrmlw/Sonic-Preview-720p-comp.mp4?rlkey=s4bep7n5vsit23jm21pht2oil&st=25ay3jsm&raw=1" type="video/mp4"/>
+                                    </video>
                                     <HeadingShimmer heading="Sonic Animation"/>
                                     <article className="project-text">
                                         <HeadingShimmer heading="Sonic Animation"/>

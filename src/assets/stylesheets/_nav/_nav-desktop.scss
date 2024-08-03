@@ -48,6 +48,19 @@ nav {
             gap: $sm;
             position: absolute;
             margin-right: calc( 192px + $md );
+
+            &:hover .nav-heading:not( :hover ) {
+                color: $accent;
+                filter: blur( 1.5px );
+                transform: scale( 0.9 );
+
+                &:before {
+                    opacity: 0%;
+                }
+                &:after {
+                    opacity: 0%;
+                }
+            }
     
             .nav-heading {
                 @include flex-wrap( wrap, row, start, center );
@@ -210,26 +223,18 @@ nav {
                 }
             }
         }
-        .nav-home:hover ~ .nav-about,
-        .nav-home:hover ~ .nav-projects,
-        .nav-mid:has( .nav-about:hover ) .nav-home,
-        .nav-about:hover ~ .nav-projects,
-        .nav-mid:has( .nav-projects:hover ) .nav-home,
-        .nav-mid:has( .nav-projects:hover ) .nav-about {
-            color: $accent;
-    
-            &:before {
-                opacity: 0%;
-            }
-            &:after {
-                opacity: 0%;
-            }
-        }
         .nav-right {
             @include flex-wrap( wrap, row, end, end );
             position: absolute;
             right: - calc( $xs / 2 );
-            
+
+            &:hover .nav-icon:not( :hover ) {
+                svg {
+                    fill: $accent;
+                    filter: blur( 1.5px );
+                    transform: scale( 0.9 )
+                }
+            }
             .nav-icon-wrap {
                 @include flex-wrap( nowrap, row, end, center );
                 position: relative;
@@ -329,14 +334,6 @@ nav {
                     }
                 }
             }
-        }
-        .nav-email:hover ~ .nav-linkedin > svg,
-        .nav-email:hover ~ .nav-github > svg,
-        .nav-right:has( .nav-linkedin:hover ) .nav-email > svg,
-        .nav-linkedin:hover ~ .nav-github > svg,
-        .nav-right:has( .nav-github:hover ) .nav-linkedin > svg,
-        .nav-right:has( .nav-github:hover ) .nav-email > svg {
-            fill: $accent;
         }
     }
 }
