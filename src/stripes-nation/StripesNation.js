@@ -1,7 +1,8 @@
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Footer from '../Footer';
-import TocLink from '../components/TocLink';
+import TableOfContents from '../components/TableOfContents';
 import List from '../components/List';
 import TitleFloat from '../components/TitleFloat';
 import TitleShimmer from '../components/TitleShimmer'
@@ -19,10 +20,50 @@ const StripesNation = () => {
     const { ref: snap6, inView: inView6 } = useInView( { threshold: 0.5 } );
     const { ref: snap7, inView: inView7 } = useInView( { threshold: 0.5 } );
 
+    const [isActive, setIsActive] = useState(false);
+    const [dotLottie, setDotLottie] = React.useState(null);
+    const homeView = useRef(null);
+
+    const dotLottieRefCallback = (dotLottie) => {
+        setDotLottie(dotLottie);
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+            setIsActive(true);
+            } else {
+            setIsActive(false);
+            }
+        },
+        { threshold: 0.5 } 
+        );
+
+        if (homeView.current) {
+        observer.observe(homeView.current);
+        }
+
+        return () => {
+        if (homeView.current) {
+            observer.unobserve(homeView.current);
+            }
+        };
+    }, []);
+
+    const tocClick = () => {
+        setIsActive(!isActive);
+        if(dotLottie){
+            dotLottie.setFrame(0);
+        }
+    };
+
     return (
         <main className="artifact">
             <section className="scroll-wrap">
-                <div className="scroll-section" ref={ snap1 }></div>
+                <div className="scroll-section" ref={ snap1 }>
+                    <div ref={ homeView }></div>
+                </div>
                 <div id="LogoConcepts" className="scroll-section" ref={ snap2 }></div>
                 <div id="LogoDevelopment" className="scroll-section" ref={ snap3 }></div>
                 <div id="MarketingMockups" className="scroll-section" ref={ snap4 }></div>
@@ -32,34 +73,60 @@ const StripesNation = () => {
                     <Footer />
                 </div>
             </section>
-            <section className={ `artifact-section artifact-home ${ inView1 ? `blur-in` : `blur-out` }` }>
+            <section className="artifact-section artifact-home">
                 <div className="artifact-wrap">
-                    <div className="artifact-left left-lg heading-col">
+                    <article className={ `artifact-left left-lg heading-col ${ inView1 ? `blur-in` : `blur-out` }` }>
                         <TitleFloat 
                             animation={ `artifact-heading-float ${ inView1 ? `blur-in` : `blur-out` }` }
                             meta="Stripes Nation" 
                             a="S" b="t" c="r" d="i" e="p" f="e" g="s" spaceH="space" h="N" i="a" j="t" k="i" l="o" m="n"
                         />
                         <TitleShimmer 
-                            animation={ inView1 ? `blur-in` : `blur-out` }
+                            animation={ inView1 ? "blur-in" : "blur-out" }
                             heading="- Branding"
                         />
                         <p>Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery.</p>
                         <p>I utilize my design skillset in Photoshop, Illustrator, Figma, and After Effects throughout this project. Join me as I embark on a journey to create Stripes Nation from the ground up.</p>
-                    </div>
-                    <div className={ `artifact-right right-sm ${ inView1 ? `blur-in` : `blur-out` }` }>
+                    </article>
+                    <div className="artifact-right right-sm">
                         {/* <div className="artifact-img-wrap">
                             <img src="https://www.dropbox.com/scl/fi/bn53u2b1dqhyhtgo8tgpi/stripesnation-wordmark.png?rlkey=b5a1v40aiws5t4g962fki0l2x&st=e01aqlpf&raw=1" alt="" />
                         </div> */}
-                        <HeadingShimmer heading="Table of Contents" />
-                        <div className="toc">
-                            {/* <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Illustrator" mainHeading="Logo Concepts" path="#LogoConcepts" num="2" />
-                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Illustrator" mainHeading="Logo Development" path="#LogoDevelopment" num="3" />
-                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Photoshop" mainHeading="Marketing Mockups" path="#MarketingMockups" num="4" />
-                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="After Effects" mainHeading="Bumper Video" path="#BumperVideo" num="5" />
-                            <TocLink view={ `toc ${ inView1 ? `pointer-show` : `pointer-hide` }` } subHeading="Figma | Photoshop" mainHeading="Brand Book" path="#BrandBook" num="6" /> */}
-                            {/* <TocLink subHeading="" mainHeading="" path="" num="" /> */}
-                        </div>
+                        <TableOfContents
+                            menu={ isActive ? "toc-show" : "toc-hide" }
+                            click={ tocClick }
+                            view={ isActive ? "pointer-show" : "pointer-hide" }
+
+                            subHeading1="Illustrator"
+                            mainHeading1="Logo Concepts"
+                            path1="#LogoConcepts"
+                            num1="2"
+                            display1="toc-display"
+
+                            subHeading2="Illustrator"
+                            mainHeading2="Logo Development"
+                            path2="#LogoDevelopment"
+                            num2="3"
+                            display2="toc-display"
+
+                            subHeading3="Photoshop"
+                            mainHeading3="Marketing Mockups"
+                            path3="#MarketingMockups"
+                            num3="4"
+                            display3="toc-display"
+
+                            subHeading4="After Effects"
+                            mainHeading4="Bumper Video"
+                            path4="#BumperVideo"
+                            num4="5"
+                            display4="toc-display"
+
+                            subHeading5="Figma | Photoshop"
+                            mainHeading5="Brand Book"
+                            path5="#BrandBook"
+                            num5="6"
+                            display5="toc-display"
+                        />
                     </div>
                 </div>
             </section>

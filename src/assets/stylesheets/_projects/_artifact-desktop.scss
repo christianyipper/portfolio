@@ -38,8 +38,9 @@
                 }
             }
             .sub-heading {
-                @extend %sub-heading; // Not extending
+                @extend %sub-heading;
                 @extend %artifact-sub;
+                @extend %text-glow;
 
                 &:before {
                     text-shadow: 0 0 5px $primary, 0 0 10px $primary;
@@ -50,7 +51,6 @@
                 }
             }
             .alt-text {
-                // @extend %sub-heading; // Not extending
                 @extend %artifact-sub;
                 color: $accent;
             }
@@ -161,28 +161,4 @@
 }
 .h1-sm {
     font-size: $md;
-}
-
-@keyframes underlineDash {
-    0% {
-        left: 0%;
-    }
-    19% {
-        opacity: 100%;
-        left: 100%;
-    }
-    20% {
-        opacity: 0;
-        left: 100%;
-    }
-    21% {
-        opacity: 0;
-        left: -100%;
-    }
-    22% {
-        opacity: 100%;
-    }
-    100% {
-        left: 0%;
-    }
 }

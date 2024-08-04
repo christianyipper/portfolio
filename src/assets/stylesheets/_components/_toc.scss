@@ -1,78 +1,178 @@
-.toc {
-    @include flex-wrap( nowrap, column, start, center );
-    top: $md;
-    // margin-left: $md;
+.toc-container {
+    height: calc( 100% - ( 80px + $lg ) );
+    position: absolute;
+    width: 100%;
+    bottom: $xxl + $lg;
+    right: 0;
+    border-radius: $md;
+    border: 2px solid white;
+    overflow: hidden;
+    background-color: rgba( $secondary, 0.5 );
+    backdrop-filter: blur( 10px );
+    transition: 0.7s ease-in-out;
 
-    .toc-link {
-        position: relative;
-        margin-top: $sm;
-        height: fit-content;
+    &.toc-show {
         width: 100%;
+        height: calc( 100% - ( 80px + $lg ) );
 
-        .sub-heading-grey {
-            position: relative;
-            font-weight: 600;
-            color: $accent;
-            margin-bottom: - $xxs;
-            opacity: 50%;
+        .toc-wrap {
+            animation: tocIn 0.7s ease-in-out forwards;
         }
-        h3 {
-            position: relative;
-            display: inline-block;
-            width: fit-content;
-            overflow: hidden;
-            text-decoration: none;
+        .icon-open {
+            opacity: 0;
+        }
+        .icon-close {
+            opacity: 100%;
+        }
+    }
+    &.toc-hide {
+        width: $xl;
+        height: $xl;
 
-            &::before {
-                content: attr( toc );
-                position: absolute;
-                color: $secondary;
-                -webkit-text-stroke-width: 8px;
-                -webkit-text-stroke-color: $secondary;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
+        .toc-wrap {
+            animation: tocOut 0.4s ease-in-out forwards;
+        }
+        .icon-open {
+            opacity: 100%;
+        }
+        .icon-close {
+            opacity: 0;
+        }
+    }
+    .toc {
+        @include flex-wrap( nowrap, column, start, start );
+        position: relative;
+        width: 100%;
+        height: 100%;
+    
+        .toc-display {
+            margin-top: $sm;
+        }
+        .toc-wrap {
+            position: relative;
+            height: fit-content;
+            width: 100%;
+    
+            div {
+                margin-left: $md;
             }
-            &::after {
-                content: "";
-                position: absolute;
-                color: white;
-                left: 0;
-                bottom: 4px;
-                width: 100%;
-                height: 100%;
-                border-bottom: 3px solid white;
-                z-index: -2;
+            .sub-heading-grey {
+                position: relative;
+                font-weight: 600;
+                color: $accent;
+                margin-bottom: - $xxs;
+                margin-left: $md;
+                opacity: 50%;
+            }
+            a {
+                @extend %text-glow;
+                position: relative;
+                display: inline-block;
+                width: fit-content;
+                height: fit-content;
+                text-decoration: none;
                 transition: 0.2s ease-in-out;
-            }
-            &:hover {
-                color: $primary;
-
+                &::before {
+                    transition: 0.2s ease-in-out;
+                }
                 &::after {
-                    border-color: $primary;
-                    animation: underlineDash 2s cubic-bezier(0.215, 0.7, 0.7, 1) infinite;
+                    animation-duration: 20s;
+                    transition: 0.2s ease-in-out;
                 }
-            }
-        }
-        h3, .page-num {
-            font-size: $md;
-            font-weight: 700;
-        }
-        p, h3 {
-            margin: 0
-        }
-        div {
-            @include flex-wrap( nowrap, row, space-between, center );
-        }
-        a {
-            left: calc( $md / 2 );
-
-            &:hover {
-                ~.page-num {
+                // &::before {
+                //     content: attr( toc );
+                //     position: absolute;
+                //     color: white;
+                //     // -webkit-text-stroke-width: 2px;
+                //     -webkit-text-stroke-color: white;
+                //     filter: blur(4px);
+                //     bottom: 0;
+                //     width: 100%;
+                //     height: 100%;
+                //     z-index: -1;
+                // }
+                // &::after {
+                //     content: "";
+                //     position: absolute;
+                //     color: white;
+                //     background-color: white;
+                //     left: 0;
+                //     bottom: 4px;
+                //     width: 100%;
+                //     height: 3px;
+                //     border-radius: $md;
+                //     // border-bottom: 3px solid white;
+                //     z-index: -2;
+                //     transition: 0.2s ease-in-out;
+                // }
+                &:hover {
                     color: $primary;
+                    &::before {
+                        text-shadow: 0 0 5px $primary, 0 0 10px $primary;
+                    }
+                    &::after {
+                        background-image: linear-gradient(45deg, transparent 45%, $accent 45%, $primary 85%, transparent 0);
+                    }
+                    ~.page-num {
+                        color: $primary;
+                    }
                 }
             }
+            a, .page-num {
+                font-size: $md;
+                font-weight: 700;
+            }
+            .page-num {
+                margin-right: $md;
+            }
+            p, a {
+                margin: 0
+            }
+            div {
+                @include flex-wrap( nowrap, row, space-between, center );
+            }
         }
+    }
+    .toc-icon-wrap {
+        // @include flex-wrap( nowrap, row, center, center );
+        position: absolute;
+        width: $xl;
+        height: $xl;
+        border-radius: $lg;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
+        pointer-events: all;
+        transition: 0.2s ease-in-out;
+
+        svg {
+            fill: white;
+        }
+        .icon-open, .icon-close {
+            transition: 0.2s ease-in-out;
+        }
+        &:hover {
+            background-color: $primary;
+        }
+    }
+}
+
+@keyframes tocOut {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes tocIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
     }
 }
