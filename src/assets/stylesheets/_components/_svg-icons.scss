@@ -4,6 +4,14 @@ $sn-red: #ed1c24;
     fill: $sn-red;
 }
 
+.menu-stroke {
+    fill: #fff;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 70px;
+}
+
 // === ICONS ===
 $icon-grey: #ebebeb;
 .icon-grey {

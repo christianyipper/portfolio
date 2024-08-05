@@ -70,6 +70,10 @@
             }
             .left-lg {
                 grid-column: 1 / 9;
+
+                p {
+                    padding-right: $md;
+                }
             }
             .artifact-center {
                 position: relative;

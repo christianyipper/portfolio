@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Burger_1" data-name="Burger 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 80px;
+      }
+    </style>
+  </defs>
+  <g id="Close_1" data-name="Close 1">
+    <line class="cls-1" x1="198" y1="198" x2="522" y2="522"/>
+    <line class="cls-1" x1="522" y1="198" x2="198" y2="522"/>
+  </g>
+</svg>

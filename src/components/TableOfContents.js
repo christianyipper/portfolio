@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import HeadingShimmer from '../components/HeadingShimmer';
-import SvgEmail from '../components/svg/SvgEmail'
-import SvgLinkedIn from '../components/svg/SvgLinkedIn'
+import SvgBurger from '../components/svg/SvgBurger'
+import SvgClose from '../components/svg/SvgClose'
 
 const TableOfContents = ( { 
     subHeading1, subHeading2, subHeading3, subHeading4, subHeading5, subHeading6, subHeading7, subHeading8, subHeading9, 
@@ -25,7 +25,7 @@ const TableOfContents = ( {
                             text-glow={ mainHeading1 }
                             onClick={ click }
                         >{ mainHeading1 }</a>
-                        <p className="page-num">{ num1 }</p>
+                        <p className="page-num" text-glow={ num1 }>{ num1 }</p>
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display2 }` }>
@@ -37,7 +37,7 @@ const TableOfContents = ( {
                             text-glow={ mainHeading2 }
                             onClick={ click }
                         >{ mainHeading2 }</a>
-                        <p className="page-num">{ num2 }</p>
+                        <p className="page-num" text-glow={ num2 }>{ num2 }</p>
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display3 }` }>
@@ -49,7 +49,7 @@ const TableOfContents = ( {
                             text-glow={ mainHeading3 }
                             onClick={ click }
                         >{ mainHeading3 }</a>
-                        <p className="page-num">{ num3 }</p>
+                        <p className="page-num" text-glow={ num3 }>{ num3 }</p>
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display4 }` }>
@@ -61,7 +61,7 @@ const TableOfContents = ( {
                             text-glow={ mainHeading4 }
                             onClick={ click }
                         >{ mainHeading4 }</a>
-                        <p className="page-num">{ num4 }</p>
+                        <p className="page-num" text-glow={ num4 }>{ num4 }</p>
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display5 }` }>
@@ -73,7 +73,7 @@ const TableOfContents = ( {
                             text-glow={ mainHeading5 }
                             onClick={ click }
                         >{ mainHeading5 }</a>
-                        <p className="page-num">{ num5 }</p>
+                        <p className="page-num" text-glow={ num5 }>{ num5 }</p>
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display6 }` }>
@@ -85,7 +85,7 @@ const TableOfContents = ( {
                             text-glow={ mainHeading6 }
                             onClick={ click }
                         >{ mainHeading6 }</a>
-                        <p className="page-num">{ num6 }</p>
+                        <p className="page-num" text-glow={ num6 }>{ num6 }</p>
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display7 }` }>
@@ -97,7 +97,7 @@ const TableOfContents = ( {
                             text-glow={ mainHeading7 }
                             onClick={ click }
                         >{ mainHeading7 }</a>
-                        <p className="page-num">{ num7 }</p>
+                        <p className="page-num" text-glow={ num7 }>{ num7 }</p>
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display8 }` }>
@@ -109,7 +109,7 @@ const TableOfContents = ( {
                             text-glow={ mainHeading8 }
                             onClick={ click }
                         >{ mainHeading8 }</a>
-                        <p className="page-num">{ num8 }</p>
+                        <p className="page-num" text-glow={ num8 }>{ num8 }</p>
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display9 }` }>
@@ -121,21 +121,20 @@ const TableOfContents = ( {
                             text-glow={ mainHeading9 }
                             onClick={ click }
                         >{ mainHeading9 }</a>
-                        <p className="page-num">{ num9 }</p>
+                        <p className="page-num" text-glow={ num9 }>{ num9 }</p>
                     </div>
                 </div>
             </article>
             <div className="toc-icon-wrap" onClick={ click }>
-                <DotLottieReact
+                {/* <DotLottieReact
                     src="https://lottie.host/96ccc72a-7bd2-428f-af74-bcc8bf675c9d/yeAFqNLd3q.json"
-                    loop
-                />
-                {/* <div className="icon-open">
-                    <SvgEmail/>
+                /> */}
+                <div className="icon-open">
+                    <SvgBurger/>
                 </div>
                 <div className="icon-close">
-                    <SvgLinkedIn/>
-                </div> */}
+                    <SvgClose/>
+                </div>
             </div>
         </div>
     );

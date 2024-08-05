@@ -6,11 +6,34 @@
     right: 0;
     border-radius: $md;
     border: 2px solid white;
-    overflow: hidden;
     background-color: rgba( $secondary, 0.5 );
     backdrop-filter: blur( 10px );
     transition: 0.7s ease-in-out;
 
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: $md;
+        opacity: 100%;
+        z-index: -2;
+        box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
+        transition: 0.2s ease-in-out;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: $md;
+        opacity: 0%;
+        left: 0;
+        bottom: 0;
+        z-index: -2;
+        box-shadow: 0 0 5px $primary, 0 0 20px $primary, 0 0 50px $primary, 0 0 100px $primary;
+        transition: 0.2s ease-in-out;
+    }
     &.toc-show {
         width: 100%;
         height: calc( 100% - ( 80px + $lg ) );
@@ -20,6 +43,7 @@
         }
         .icon-open {
             opacity: 0;
+            display: none;
         }
         .icon-close {
             opacity: 100%;
@@ -37,6 +61,14 @@
         }
         .icon-close {
             opacity: 0;
+        }
+        &:hover {
+            &::before {
+                opacity: 0;
+            }
+            &::after {
+                opacity: 100%;
+            }
         }
     }
     .toc {
@@ -60,12 +92,15 @@
                 position: relative;
                 font-weight: 600;
                 color: $accent;
-                margin-bottom: - $xxs;
                 margin-left: $md;
                 opacity: 50%;
             }
-            a {
+            a, .page-num {
                 @extend %text-glow;
+                font-size: $md;
+                font-weight: 700;
+            }
+            a {
                 position: relative;
                 display: inline-block;
                 width: fit-content;
@@ -107,6 +142,7 @@
                 // }
                 &:hover {
                     color: $primary;
+
                     &::before {
                         text-shadow: 0 0 5px $primary, 0 0 10px $primary;
                     }
@@ -115,15 +151,22 @@
                     }
                     ~.page-num {
                         color: $primary;
+                        
+                        &::before {
+                            text-shadow: 0 0 5px $primary, 0 0 10px $primary;
+                        }
+                        &::after {
+                            background-image: linear-gradient(45deg, transparent 45%, $accent 45%, $primary 85%, transparent 0);
+                        }
                     }
                 }
             }
-            a, .page-num {
-                font-size: $md;
-                font-weight: 700;
-            }
             .page-num {
                 margin-right: $md;
+
+                &::after {
+                    animation-duration: 2s;
+                }
             }
             p, a {
                 margin: 0
@@ -139,6 +182,7 @@
         width: $xl;
         height: $xl;
         border-radius: $lg;
+        overflow: hidden;
         bottom: 0;
         right: 0;
         z-index: 5;
@@ -149,10 +193,13 @@
             fill: white;
         }
         .icon-open, .icon-close {
-            transition: 0.2s ease-in-out;
+        border-radius: $lg;
+        transition: 0.2s ease-in-out;
         }
-        &:hover {
-            background-color: $primary;
+        .icon-open {
+            &:hover {
+                background-color: $primary;
+            }
         }
     }
 }
