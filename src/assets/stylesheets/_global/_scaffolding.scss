@@ -81,6 +81,13 @@ main {
     position: absolute;
 }
 
+.opacity-0 {
+    opacity: 0;
+}
+.opacity-100 {
+    opacity: 100%;
+}
+
 .pointer-show {
     pointer-events: all;
 }

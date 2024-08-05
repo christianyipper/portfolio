@@ -162,14 +162,6 @@
                 };
             }
         }
-        .arrow-wrap {
-            @include flex-wrap( nowrap, row, start, center );
-            position: absolute;
-            width: $lg;
-            height: $lg;
-            bottom: $xxl + $lg;
-            left: 0;
-        }
         .leap-in {
             animation-duration: 1s;
 

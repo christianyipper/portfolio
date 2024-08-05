@@ -10,9 +10,9 @@ import TitleShimmer from '../components/TitleShimmer'
 import HeadingFloat from '../components/HeadingFloat';
 import HeadingShimmer from '../components/HeadingShimmer';
 import SubHeading from '../components/SubHeading';
-import SvgArrowDown from '../components/svg/SvgArrowDown';
 import VideoAutoplay from '../components/VideoAutoplay';
 import Image from '../components/Image';
+import ScrollDown from '../components/ScrollDown';
 
 
 const StripesNation = () => {
@@ -99,40 +99,55 @@ const StripesNation = () => {
                             subHeading1="Illustrator"
                             mainHeading1="Logo Concepts"
                             path1="#LogoConcepts"
-                            num1="2"
+                            num1="1"
                             display1="toc-display"
 
                             subHeading2="Illustrator"
                             mainHeading2="Logo Development"
                             path2="#LogoDevelopment"
-                            num2="3"
+                            num2="2"
                             display2="toc-display"
 
                             subHeading3="Photoshop"
                             mainHeading3="Marketing Mockups"
                             path3="#MarketingMockups"
-                            num3="4"
+                            num3="3"
                             display3="toc-display"
 
                             subHeading4="After Effects"
                             mainHeading4="Bumper Video"
                             path4="#BumperVideo"
-                            num4="5"
+                            num4="4"
                             display4="toc-display"
 
                             subHeading5="Figma | Photoshop"
                             mainHeading5="Brand Book"
                             path5="#BrandBook"
-                            num5="6"
+                            num5="5"
                             display5="toc-display"
                         />
                     </div>
-                    <div className="arrow-wrap">
-                        <SvgArrowDown/>
-                        <div className="arrow-heading-wrap">
+                    <ScrollDown
+                        heading1="Next - Logo Concepts"
+                        link1="#LogoConcepts"
+                        animation1={ inView1 ? "opacity-100" : "opacity-0"}
 
-                        </div>
-                    </div>
+                        heading2="Next - Logo Development"
+                        link2="#LogoDevelopment"
+                        animation2={ inView2 ? "opacity-100" : "opacity-0"}
+
+                        heading3="Next - Marketing Mockups"
+                        link3="#MarketingMockups"
+                        animation3={ inView3 ? "opacity-100" : "opacity-0"}
+
+                        heading4="Next - Bumper Video"
+                        link4="#BumperVideo"
+                        animation4={ inView4 ? "opacity-100" : "opacity-0"}
+
+                        heading5="Next - Brand Book"
+                        link5="#BrandBook"
+                        animation5={ inView5 ? "opacity-100" : "opacity-0"}
+                    />
                 </div>
             </section>
             <section className={ `artifact-section ${ inView2 ? "" : "artifact-hide" }` }>
