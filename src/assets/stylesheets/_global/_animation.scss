@@ -279,6 +279,7 @@
 
 .leap-in {
     animation: leapIn 2s cubic-bezier( 0.1, 0.8, 0.4, 2 ) forwards;
+    opacity: 0;
 }
 .leap-out {
     animation: moveOut 1.5s cubic-bezier( 0.175, 0.885, 0.32, 1.275 ) forwards;

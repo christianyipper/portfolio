@@ -334,7 +334,7 @@ a {
     opacity: 100%;
   }
 }
-.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .sub-heading, .about .about-scroll .about-section article .quote-wrap .quote-text, strong, .text-cursor {
+.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .sub-heading, .about .about-scroll .about-section article .quote-wrap .quote-text, .toc-container .toc .toc-wrap .sub-heading-grey, strong, .text-cursor {
   background: linear-gradient(to right, #6274ff, #ff7862, #6274ff, #ff7862);
   background-size: 500% 100%;
   -webkit-background-clip: text;
@@ -489,6 +489,7 @@ a {
 }
 .leap-in {
   animation: leapIn 2s cubic-bezier(0.1, 0.8, 0.4, 2) forwards;
+  opacity: 0;
 }
 
 .leap-out {
@@ -891,7 +892,6 @@ a:hover ~ .cursor {
 }
 .toc-container.toc-show {
   width: 100%;
-  height: calc(100% - 112px);
 }
 .toc-container.toc-show .toc-wrap {
   animation: tocIn 0.7s ease-in-out forwards;
@@ -946,10 +946,8 @@ a:hover ~ .cursor {
 }
 .toc-container .toc .toc-wrap .sub-heading-grey {
   position: relative;
-  font-weight: 600;
-  color: #6274ff;
+  font-weight: 700;
   margin-left: 24px;
-  opacity: 50%;
 }
 .toc-container .toc .toc-wrap a, .toc-container .toc .toc-wrap .page-num {
   font-size: 24px;
@@ -1198,6 +1196,11 @@ a:hover ~ .cursor {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 70px;
+}
+
+.menu-circle {
+  fill: #fff;
+  stroke-width: 0px;
 }
 
 .icon-grey {
@@ -2883,6 +2886,18 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   height: 100%;
   top: 64px;
   pointer-events: none;
+  transition: display 1s, opacity 0.5s;
+  transition-behavior: allow-discrete;
+  opacity: 100%;
+}
+.artifact .artifact-section.artifact-hide {
+  display: none;
+  opacity: 0;
+}
+@starting-style {
+  .artifact .artifact-section.artifact-hide {
+    opacity: 100%;
+  }
 }
 .artifact .artifact-section .artifact-wrap {
   position: relative;
@@ -3012,6 +3027,30 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 }
 .artifact .artifact-section .artifact-wrap .bumper-wrap .bumper {
   width: 120%;
+}
+.artifact .artifact-section .arrow-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  bottom: 96px;
+  left: 0;
+}
+.artifact .artifact-section .leap-in {
+  animation-duration: 1s;
+}
+.artifact .artifact-section .leap-in.leap1 {
+  animation-delay: 0.3s;
+}
+.artifact .artifact-section .leap-in.leap2 {
+  animation-delay: 0.6s;
+}
+.artifact .artifact-section .leap-in.leap3 {
+  animation-delay: 0.9s;
 }
 
 .hide {

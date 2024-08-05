@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_14" data-name="Layer 14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 80px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Close_1" data-name="Close 1">
+    <line class="cls-1" x1="179.71" y1="378.74" x2="359.71" y2="558.74"/>
+    <line class="cls-1" x1="540.29" y1="378.16" x2="360.29" y2="558.16"/>
+  </g>
+  <circle class="cls-2" cx="360.58" cy="338.2" r="39.96"/>
+  <circle class="cls-2" cx="359.75" cy="201.22" r="39.96"/>
+</svg>

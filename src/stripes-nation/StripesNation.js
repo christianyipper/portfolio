@@ -4,11 +4,15 @@ import { useState, useEffect, useRef } from 'react';
 import Footer from '../Footer';
 import TableOfContents from '../components/TableOfContents';
 import List from '../components/List';
+import Paragraph from '../components/Paragraph';
 import TitleFloat from '../components/TitleFloat';
 import TitleShimmer from '../components/TitleShimmer'
 import HeadingFloat from '../components/HeadingFloat';
 import HeadingShimmer from '../components/HeadingShimmer';
 import SubHeading from '../components/SubHeading';
+import SvgArrowDown from '../components/svg/SvgArrowDown';
+import VideoAutoplay from '../components/VideoAutoplay';
+import Image from '../components/Image';
 
 
 const StripesNation = () => {
@@ -21,12 +25,7 @@ const StripesNation = () => {
     const { ref: snap7, inView: inView7 } = useInView( { threshold: 0.5 } );
 
     const [isActive, setIsActive] = useState(false);
-    const [dotLottie, setDotLottie] = React.useState(null);
     const homeView = useRef(null);
-
-    const dotLottieRefCallback = (dotLottie) => {
-        setDotLottie(dotLottie);
-    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -53,9 +52,6 @@ const StripesNation = () => {
 
     const tocClick = () => {
         setIsActive(!isActive);
-        if(dotLottie){
-            dotLottie.setFrame(0);
-        }
     };
 
     return (
@@ -75,9 +71,9 @@ const StripesNation = () => {
             </section>
             <section className="artifact-section artifact-home">
                 <div className="artifact-wrap">
-                    <article className={ `artifact-left left-lg heading-col ${ inView1 ? `blur-in` : `blur-out` }` }>
+                    <article className={ `artifact-left left-lg heading-col ${ inView1 ? "blur-in" : "blur-out" }` }>
                         <TitleFloat 
-                            animation={ `artifact-heading-float ${ inView1 ? `blur-in` : `blur-out` }` }
+                            animation={ `artifact-heading-float ${ inView1 ? "blur-in" : "blur-out" }` }
                             meta="Stripes Nation" 
                             a="S" b="t" c="r" d="i" e="p" f="e" g="s" spaceH="space" h="N" i="a" j="t" k="i" l="o" m="n"
                         />
@@ -85,13 +81,16 @@ const StripesNation = () => {
                             animation={ inView1 ? "blur-in" : "blur-out" }
                             heading="- Branding"
                         />
-                        <p>Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery.</p>
-                        <p>I utilize my design skillset in Photoshop, Illustrator, Figma, and After Effects throughout this project. Join me as I embark on a journey to create Stripes Nation from the ground up.</p>
+                        <Paragraph 
+                            animation={ inView1 ? "leap-in" : ""}
+                            text1="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
+                        />
+                        <Paragraph 
+                            animation={ inView1 ? "leap-in leap1" : ""}
+                            text1="I utilize my design skillset in Photoshop, Illustrator, Figma, and After Effects throughout this project. Join me as I embark on a journey to create Stripes Nation from the ground up."
+                        />
                     </article>
                     <div className="artifact-right right-sm">
-                        {/* <div className="artifact-img-wrap">
-                            <img src="https://www.dropbox.com/scl/fi/bn53u2b1dqhyhtgo8tgpi/stripesnation-wordmark.png?rlkey=b5a1v40aiws5t4g962fki0l2x&st=e01aqlpf&raw=1" alt="" />
-                        </div> */}
                         <TableOfContents
                             menu={ isActive ? "toc-show" : "toc-hide" }
                             click={ tocClick }
@@ -128,111 +127,183 @@ const StripesNation = () => {
                             display5="toc-display"
                         />
                     </div>
+                    <div className="arrow-wrap">
+                        <SvgArrowDown/>
+                        <div className="arrow-heading-wrap">
+
+                        </div>
+                    </div>
                 </div>
             </section>
-            <section className={ `artifact-section ${ inView2 ? `blur-in` : `blur-out` }` }>
-                <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
+            <section className={ `artifact-section ${ inView2 ? "" : "artifact-hide" }` }>
+                <div className="artifact-wrap">
                     <article className="artifact-left left-md">
                         <SubHeading 
                             subHeading="Illustrator" 
                             mainHeading="Logo Concepts"
+                            animation={ inView2 ? "scale-in" : ""}
                         />
-                        <p>When creating the Stripes Nation logo, it was important to incorporate elements from the hockey referee uniform and the sport into the design. There were three key aspects to consider:</p>
+                        <Paragraph 
+                            animation={ inView2 ? "leap-in" : ""}
+                            text1="When creating the Stripes Nation logo, it was important to incorporate elements from the hockey referee uniform and the sport into the design. There were three key aspects to consider:"
+                        />
                         <List 
                             heading1="Referee Armbands" 
                             text1="The eye-catching red armbands are unique to hockey officials and was imperative to include the striking colour into the design." 
+                            animation1={ inView2 ? "leap-in leap1" : ""}
+                            
                             heading2="Striped Uniform" 
                             text2="Undoubtedly the most iconic part of an officiating uniform are the black and white stripes. I wanted the design to reflect this predominant pattern throughout." 
+                            animation2={ inView2 ? "leap-in leap2" : ""}
+                            
                             heading3="Speed" 
                             text3="Designing a logo around the high-speed and intense action of the sport was important, as it plays an integral role in every game."
+                            animation3={ inView2 ? "leap-in leap3" : ""}
                         />
                     </article>
-                    <div className="artifact-img-wrap img-left-sm">
-                        <img src="https://www.dropbox.com/scl/fi/o45qn8dhp6h85jiwgc356/stripesnation-logo-primary.png?rlkey=art9ntknrjif9fwtwi8mvs88u&st=g7g4tp7l&raw=1" alt="Stripes Nation Logo" />
-                        <p className="alt-text" text-glow="Design Concept 1">Design Concept 1</p>
-                    </div>
-                    <div className="artifact-img-wrap img-right-sm">
-                        <img className="img-md" src="https://www.dropbox.com/scl/fi/5n2718wxnubjm258kgw7x/sn-draft-alt.png?rlkey=wslq49ry5g4uckisupqba0yxn&st=p8av3sdn&raw=1" alt="Stripes Nation Logo Concept" />
-                        <p className="alt-text" text-glow="Design Concept 2">Design Concept 2</p>
-                    </div>
+                    <Image
+                        name="artifact-img-wrap img-left-sm"
+                        animation={ inView2 ? "blur-in" : ""}
+
+                        link="https://www.dropbox.com/scl/fi/o45qn8dhp6h85jiwgc356/stripesnation-logo-primary.png?rlkey=art9ntknrjif9fwtwi8mvs88u&st=g7g4tp7l&raw=1"
+                        description="Stripes Nation Logo"
+
+                        textName="alt-text"
+                        text="Design Concept 1"
+                    />
+                    <Image
+                        name="artifact-img-wrap img-right-sm"
+                        animation={ inView2 ? "blur-in" : ""}
+
+                        imgName="img-md"
+                        link="https://www.dropbox.com/scl/fi/5n2718wxnubjm258kgw7x/sn-draft-alt.png?rlkey=wslq49ry5g4uckisupqba0yxn&st=p8av3sdn&raw=1"
+                        description="Stripes Nation Logo Concept"
+
+                        textName="alt-text"
+                        text="Design Concept 2"
+                    />
                 </div>
             </section>
-            <section className={ `artifact-section ${ inView3 ? `blur-in` : `blur-out` }` }>
-                <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
-                    <div className="artifact-img-wrap">
-                        <video loop autoPlay muted>
-                            <source src="https://www.dropbox.com/scl/fi/5ppn95cg0nzpdbeefw8fm/stripesnation-draft-1080p.mp4?rlkey=zftk8be37con1v5joy1dog55i&st=ezcj0qnt&raw=1"/>
-                        </video>
-                    </div>
+            <section className={ `artifact-section ${ inView3 ? "" : "artifact-hide" }` }>
+                <div className="artifact-wrap">
+                    <VideoAutoplay
+                        name="artifact-img-wrap"
+                        animation={ inView3 ? "blur-in" : ""}
+                        link="https://www.dropbox.com/scl/fi/5ppn95cg0nzpdbeefw8fm/stripesnation-draft-1080p.mp4?rlkey=zftk8be37con1v5joy1dog55i&st=ezcj0qnt&raw=1"
+                    />
                     <article className="artifact-right right-md">
-                        <SubHeading subHeading="Illustrator" mainHeading="Logo Development" />
+                        <SubHeading 
+                            subHeading="Illustrator" 
+                            mainHeading="Logo Development"
+                            animation={ inView3 ? "scale-in" : ""}
+                        />
                         <List 
+                        
                             heading1="Pen & Shape Builder" 
                             text1="The shape builder and pen tools were used to create the aesthetic of the Stripes Nation logo and wordmark. Diagonal lines were used to create the outlines of the logo and were combined to create negative space between the shapes." 
+                            animation1={ inView3 ? "leap-in leap1" : ""}
+                            
                             heading2="Selection & Path Offset" 
                             text2="The wordmark name “Stripes Nation” was custom-made, based on the nausea font. Path offset and selection tools were used to match the angle and weight of the final logo while also changing some of the original typography landscape. Spacing between the individual characters, words, and logo were made consistent." 
-                            name3="none"
+                            animation2={ inView3 ? "leap-in leap2" : ""}
+                            
+                            display3="none"
                         />
                     </article>
                 </div>
             </section>
-            <section className={ `artifact-section ${ inView4 ? `blur-in` : `blur-out` }` }>
-                <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
+            <section className={ `artifact-section ${ inView4 ? "" : "artifact-hide" }` }>
+                <div className="artifact-wrap">
                     <article className="artifact-left left-md">
-                        <SubHeading subHeading="Photoshop" mainHeading="Marketing Mockups" />
-                        <p>After my brand assets were finalized, I exported them into Photoshop and started creating mockups with open-source templates to use as a foundation.</p>
+                        <SubHeading 
+                            subHeading="Photoshop" 
+                            mainHeading="Marketing Mockups" 
+                            animation={ inView4 ? "scale-in" : ""}
+                        />
+                        <Paragraph 
+                            animation={ inView4 ? "leap-in" : ""}
+                            text1="After my brand assets were finalized, I exported them into Photoshop and started creating mockups with open-source templates to use as a foundation."
+                        />
                         <List 
                             heading1="Warp & Feather" 
                             text1="I utilized a combination of warping and feathering to create a realistic landscape. This helped show depth in wrinkled clothing and rough textures." 
+                            animation1={ inView4 ? "leap-in leap1" : ""}
+
                             heading2="Masks & Blends" 
                             text2="Masking layers also helped create shadows and textures for objects and clothing. By changing blend modes, I was able to enhance the lighting effects in the scene."
-                            name3="none" 
+                            animation2={ inView4 ? "leap-in leap2" : ""}
+
+                            display3="none" 
                         />
                     </article>
-                    <div className="artifact-img-wrap img-right">
-                        <video loop autoPlay muted>
-                            <source src="https://www.dropbox.com/scl/fi/px2nj5vdyjv79ukzr0y3z/StripesNation-Cards-1080p-comp.mp4?rlkey=5peprap5ifs5tuv4f4tea1a1r&st=2c97k3ay&raw=1"/>
-                        </video>
-                    </div>
+                    <VideoAutoplay
+                        name="artifact-img-wrap img-right"
+                        animation={ inView4 ? "blur-in" : ""}
+                        link="https://www.dropbox.com/scl/fi/px2nj5vdyjv79ukzr0y3z/StripesNation-Cards-1080p-comp.mp4?rlkey=5peprap5ifs5tuv4f4tea1a1r&st=2c97k3ay&raw=1"
+                    />
                 </div>
             </section>
-            <section className={ `artifact-section ${ inView5 ? `blur-in` : `blur-out` }` }>
-                <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
-                    <div className="artifact-img-wrap img-left bumper-wrap">
-                        <video className="bumper" loop autoPlay muted>
-                            <source src="https://www.dropbox.com/scl/fi/tky5ce4my00ba9ig7duxn/stripesnation-bumper-comp.mp4?rlkey=crxokuquu0j7a2gud57lzt5e3&st=9g4xgoqx&raw=1"/>
-                        </video>                    </div>
+            <section className={ `artifact-section ${ inView5 ? "" : "artifact-hide" }` }>
+                <div className="artifact-wrap">
+                    <VideoAutoplay
+                        name="artifact-img-wrap img-left bumper-wrap"
+                        videoName="bumper"
+                        animation={ inView5 ? "blur-in" : ""}
+                        link="https://www.dropbox.com/scl/fi/tky5ce4my00ba9ig7duxn/stripesnation-bumper-comp.mp4?rlkey=crxokuquu0j7a2gud57lzt5e3&st=9g4xgoqx&raw=1"
+                    />
                     <article className="artifact-right right-md">
-                        <SubHeading subHeading="After Effects" mainHeading="Bumper Video" />
-                        <p>With an online presence at its forefront, I needed to create a bumper video that showcases the Stripes Performance brand.</p>
+                        <SubHeading 
+                            subHeading="After Effects" 
+                            mainHeading="Bumper Video" 
+                            animation={ inView5 ? "scale-in" : ""}
+                        />
+                        <Paragraph 
+                            animation={ inView5 ? "leap-in" : ""}
+                            text1="With an online presence at its forefront, I needed to create a bumper video that showcases the Stripes Performance brand."
+                        />
                         <List 
-                            heading1="Masking" 
+                            heading1="Masking"
                             text1="I predominantly used masks to animate the logo by hiding each stroke. The end result is a crispy line animation that reveals the logo." 
+                            animation1={ inView5 ? "leap-in leap1" : ""}
+
                             heading2="Timing Functions" 
                             text2="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result." 
-                            name3="none"
+                            animation2={ inView5 ? "leap-in leap2" : ""}
+
+                            display3="none"
                         />
                     </article>
                 </div>
             </section>
-            <section className={ `artifact-section ${ inView6 ? `blur-in` : `blur-out` }` }>
-                <div className={ `artifact-wrap ${ inView1 ? `hide` : `` }` }>
+            <section className={ `artifact-section ${ inView6 ? "" : "artifact-hide" }` }>
+                <div className="artifact-wrap">
                     <article className="artifact-left left-sm">
-                        <SubHeading subHeading="Figma | Photoshop" mainHeading="Brand Book" />
-                        <p>To wrap it all up, I designed the brand book pages in Figma using their intuitive organization systems.</p>
+                        <SubHeading 
+                            subHeading="Figma | Photoshop" 
+                            mainHeading="Brand Book" 
+                            animation={ inView6 ? "scale-in" : ""}
+                        />
+                        <Paragraph 
+                            animation={ inView6 ? "leap-in" : ""}
+                            text1="To wrap it all up, I designed the brand book pages in Figma using their intuitive organization systems."
+                        />
                         <List 
                             heading1="Grids" 
                             text1="Figma's grid system made it easy to distribute information and create appealing layouts." 
+                            animation1={ inView6 ? "leap-in leap1" : ""}
+
                             heading2="Components & Variables" 
                             text2="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result." 
-                            name3="none"
+                            animation2={ inView6 ? "leap-in leap2" : ""}
+
+                            display3="none"
                         />
                     </article>
-                    <div className="artifact-img-wrap img-right-lg">
-                        <video loop autoPlay muted>
-                            <source src="https://www.dropbox.com/scl/fi/uegla6jtusg5r4gsc58bu/stripesnation-brandbook-preview.mp4?rlkey=bhnyuwrvyd3uesj8z81o0hl49&st=latcu33b&raw=1"/>
-                        </video>
-                    </div>
+                    <VideoAutoplay
+                        name="artifact-img-wrap img-right-lg"
+                        animation={ inView6 ? "blur-in" : ""}
+                        link="https://www.dropbox.com/scl/fi/uegla6jtusg5r4gsc58bu/stripesnation-brandbook-preview.mp4?rlkey=bhnyuwrvyd3uesj8z81o0hl49&st=latcu33b&raw=1"
+                    />
                 </div>
             </section>
         </main>
