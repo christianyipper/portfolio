@@ -1,7 +1,7 @@
-import TitleFloat from './components/TitleFloat';
-import TitleShimmer from './components/TitleShimmer';
-import HeadingShimmer from './components/HeadingShimmer';
-import Paragraph from './components/Paragraph';
+import TitleFloat from './components/text/TitleFloat';
+import TitleShimmer from './components/text/TitleShimmer';
+import HeadingShimmer from './components/text/HeadingShimmer';
+import Paragraph from './components/text/Paragraph';
 
 import SvgWebflow from './components/svg/SvgWebflow';
 import SvgPhotoshop from './components/svg/SvgPhotoshop';

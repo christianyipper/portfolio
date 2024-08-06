@@ -26,7 +26,10 @@ const router = createBrowserRouter(
             <Route path="about" element={<AboutPage />} />
             <Route path="projects" element={<ProjectsPage />} />
 
+            <Route path="itsyipper" element={<ItsYipper />} />
             <Route path="stripes-nation" element={<StripesNation />} />
+            <Route path="sonic-animation" element={<SonicAnimation />} />
+            <Route path="edge-boards" element={<EdgeBoards />} />
         </>
     )
 );

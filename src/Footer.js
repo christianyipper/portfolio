@@ -1,6 +1,6 @@
 import { useInView } from 'react-intersection-observer';
-import HeadingFloat from './components/HeadingFloat';
-import HeadingShimmer from './components/HeadingShimmer';
+import HeadingFloat from './components/text/HeadingFloat';
+import HeadingShimmer from './components/text/HeadingShimmer';
 
 const Footer = () => {
     const { ref: footer, inView: footerView } = useInView( { threshold: 0.5 } );

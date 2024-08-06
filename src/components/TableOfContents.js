@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import HeadingShimmer from '../components/HeadingShimmer';
 import SvgBurger from '../components/svg/SvgBurger'
 import SvgClose from '../components/svg/SvgClose'
 
@@ -10,12 +7,11 @@ const TableOfContents = ( {
     path1, path2, path3, path4, path5, path6, path7, path8, path9, 
     num1, num2, num3, num4, num5, num6, num7, num8, num9, 
     display1, display2, display3, display4, display5, display6, display7, display8, display9,
-    view, menu, click } ) => {
+    view, menu, click, animation } ) => {
 
     return (
-        <div className={ `toc-container ${ menu }` }>
+        <div className={ `toc-container ${ menu } ${ animation }` }>
             <article className="toc">
-                {/* <HeadingShimmer heading="Table of Contents"/> */}
                 <div className={ `toc-wrap ${ display1 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading1 }>{ subHeading1 }</p>
                     <div>
@@ -126,9 +122,6 @@ const TableOfContents = ( {
                 </div>
             </article>
             <div className="toc-icon-wrap" onClick={ click }>
-                {/* <DotLottieReact
-                    src="https://lottie.host/96ccc72a-7bd2-428f-af74-bcc8bf675c9d/yeAFqNLd3q.json"
-                /> */}
                 <div className="icon-open">
                     <SvgBurger/>
                 </div>

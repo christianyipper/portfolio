@@ -3,12 +3,13 @@ import { useEffect } from 'react';
 // import { Outlet } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import Footer from './Footer';
-import TitleFloat from './components/TitleFloat';
+import TitleFloat from './components/text/TitleFloat';
+import Button from './components/text/Button';
 
 const HomePage = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
     const { ref: snap2, inView: inView2 } = useInView( { threshold: 0.5 } );
-    const { ref: snap3, inView: inView3 } = useInView( { threshold: 0.5 } );
+    // const { ref: snap3, inView: inView3 } = useInView( { threshold: 0.5 } );
     const { ref: snap4, inView: inView4 } = useInView( { threshold: 0.5 } );
 
     useEffect( () => {
@@ -90,9 +91,7 @@ const HomePage = () => {
                             <div className="home-text-wrap">
                                 <h2 text-shimmer="Front-End Developer">Front-End Developer</h2>
                                 <div className="home-buttons-wrap">
-                                    <a className="btn">
-                                        <p text-glow="About Me">About Me</p>
-                                    </a>
+                                    <Button text="About Me" link="/about"/>
                                     {/* <a>
                                         <p text-glow="My Works">My Works</p>
                                     </a> */}
@@ -135,9 +134,7 @@ const HomePage = () => {
                             <div className="article-footer">
                                 <div className="article-icons"></div>
                                 <div className="article-button">
-                                    <a className="btn">
-                                        <p>Preview</p>
-                                    </a>
+                                    <Button text="Preview" link="/itsyipper"/>
                                 </div>
                             </div>
                         </article>

@@ -71,11 +71,15 @@ main section {
   overflow-x: hidden;
 }
 .scroll-wrap .scroll-section {
+  display: none;
   position: relative;
   width: 100%;
   height: 100vh;
   min-height: 100vh;
   scroll-snap-align: start;
+}
+.scroll-wrap .scroll-section.scroll-show {
+  display: block;
 }
 .scroll-wrap .footer-section {
   display: flex;
@@ -100,6 +104,14 @@ main section {
 
 .opacity-100 {
   opacity: 100%;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }
 
 .pointer-show {
@@ -198,69 +210,6 @@ h3 {
 
 a {
   text-decoration: none;
-}
-
-.btn {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 12px 32px;
-  border-radius: 12px;
-  pointer-events: auto;
-  cursor: pointer;
-  color: white;
-  box-sizing: border-box;
-  background-color: transparent;
-  border: solid 2px white;
-  z-index: 1;
-}
-.btn:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  opacity: 100%;
-  z-index: -1;
-  box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
-  transition: 0.2s ease-in-out;
-}
-.btn:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: solid 2px white;
-  border-radius: 32px;
-  opacity: 0%;
-  z-index: -2;
-  box-shadow: 0 0 5px #ff7862, 0 0 20px #ff7862, 0 0 50px #ff7862, 0 0 100px #ff7862;
-  transition: 0.2s ease-in-out;
-}
-.btn:hover {
-  background-color: #ff7862;
-  border-radius: 32px;
-  border: solid 2px white;
-}
-.btn:hover:before {
-  opacity: 0%;
-}
-.btn:hover:after {
-  opacity: 100%;
-}
-.btn:hover > p {
-  animation: hoverSquishBtn 0.4s ease-in-out;
-}
-.btn:hover > p:after {
-  z-index: -2;
-  opacity: 100%;
 }
 
 .artifact .artifact-section .artifact-wrap .sub-heading, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .sub-heading {
@@ -388,7 +337,7 @@ a {
   }
 }
 
-.artifact .artifact-section .artifact-wrap .sub-heading, nav .nav-wrap .nav-mid .nav-heading, .toc-container .toc .toc-wrap a, .toc-container .toc .toc-wrap .page-num, .btn p {
+.artifact .artifact-section .artifact-wrap .sub-heading, nav .nav-wrap .nav-mid .nav-heading, .btn p, .toc-container .toc .toc-wrap a, .toc-container .toc .toc-wrap .page-num {
   position: relative;
   margin: 0;
   font-size: 24px;
@@ -396,7 +345,7 @@ a {
   font-weight: 600;
   z-index: 1;
 }
-.artifact .artifact-section .artifact-wrap .sub-heading:before, nav .nav-wrap .nav-mid .nav-heading:before, .toc-container .toc .toc-wrap a:before, .toc-container .toc .toc-wrap .page-num:before, .btn p:before {
+.artifact .artifact-section .artifact-wrap .sub-heading:before, nav .nav-wrap .nav-mid .nav-heading:before, .btn p:before, .toc-container .toc .toc-wrap a:before, .toc-container .toc .toc-wrap .page-num:before {
   position: absolute;
   width: 100%;
   content: attr(text-glow);
@@ -404,7 +353,7 @@ a {
   z-index: -1;
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
-.artifact .artifact-section .artifact-wrap .sub-heading:after, nav .nav-wrap .nav-mid .nav-heading:after, .toc-container .toc .toc-wrap a:after, .toc-container .toc .toc-wrap .page-num:after, .btn p:after {
+.artifact .artifact-section .artifact-wrap .sub-heading:after, nav .nav-wrap .nav-mid .nav-heading:after, .btn p:after, .toc-container .toc .toc-wrap a:after, .toc-container .toc .toc-wrap .page-num:after {
   content: attr(text-glow);
   position: absolute;
   top: 0px;
@@ -1194,6 +1143,69 @@ a:hover ~ .cursor {
   }
 }
 
+.btn {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 12px 32px;
+  border-radius: 12px;
+  pointer-events: auto;
+  cursor: pointer;
+  color: white;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: solid 2px white;
+  z-index: 1;
+}
+.btn:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  opacity: 100%;
+  z-index: -1;
+  box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
+  transition: 0.2s ease-in-out;
+}
+.btn:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: solid 2px white;
+  border-radius: 32px;
+  opacity: 0%;
+  z-index: -2;
+  box-shadow: 0 0 5px #ff7862, 0 0 20px #ff7862, 0 0 50px #ff7862, 0 0 100px #ff7862;
+  transition: 0.2s ease-in-out;
+}
+.btn:hover {
+  background-color: #ff7862;
+  border-radius: 32px;
+  border: solid 2px white;
+}
+.btn:hover:before {
+  opacity: 0%;
+}
+.btn:hover:after {
+  opacity: 100%;
+}
+.btn:hover > p {
+  animation: hoverSquishBtn 0.4s ease-in-out;
+}
+.btn:hover > p:after {
+  z-index: -2;
+  opacity: 100%;
+}
+
 .sn-red {
   fill: #ed1c24;
 }
@@ -1405,6 +1417,7 @@ a:hover ~ .cursor {
   gap: 12px;
   bottom: 96px;
   left: 0;
+  transition: 0.5s ease-in-out;
 }
 .scroll-down .arrow-wrap {
   width: 32px;
@@ -2724,9 +2737,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   position: relative;
   visibility: hidden;
 }
-.projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-text p {
-  margin: 0 24px;
-}
 .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .app-icons-wrap {
   display: flex;
   flex-wrap: nowrap;
@@ -2871,6 +2881,13 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: auto;
   height: 100%;
   border-radius: 24px;
+}
+
+.project-text-margin h3 {
+  display: none;
+}
+.project-text-margin p {
+  margin: 0 24px;
 }
 
 .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-top-corner, .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner {

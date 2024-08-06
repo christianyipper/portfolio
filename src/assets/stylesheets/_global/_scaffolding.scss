@@ -62,11 +62,16 @@ main {
     overflow-x: hidden;
 
     .scroll-section {
+        display: none;
         position: relative;
         width: 100%;
         height: 100vh;
         min-height: 100vh;
         scroll-snap-align: start;
+
+        &.scroll-show {
+            display: block;
+        }
     }
     .footer-section {
         @include flex-wrap( wrap, column, center, center );
@@ -86,6 +91,13 @@ main {
 }
 .opacity-100 {
     opacity: 100%;
+}
+
+.display-block {
+    display: block;
+}
+.display-none {
+    display: none;
 }
 
 .pointer-show {

@@ -1,11 +1,11 @@
 import { useInView } from 'react-intersection-observer';
 import { useTypewriter } from 'react-simple-typewriter';
 import Footer from '../Footer';
-import TitleFloat from '../components/TitleFloat';
-import TitleShimmer from '../components/TitleShimmer';
-import HeadingFloat from '../components/HeadingFloat';
-import HeadingShimmer from '../components/HeadingShimmer';
-import Paragraph from '../components/Paragraph';
+import TitleFloat from '../components/text/TitleFloat';
+import TitleShimmer from '../components/text/TitleShimmer';
+import HeadingFloat from '../components/text/HeadingFloat';
+import HeadingShimmer from '../components/text/HeadingShimmer';
+import Paragraph from '../components/text/Paragraph';
 
 import bchl from '../assets/images/icons/bchl-logo.png';
 import bcehl from '../assets/images/icons/bcehl-logo.png';

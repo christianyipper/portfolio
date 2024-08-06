@@ -3,11 +3,11 @@ import React, { useState, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import Footer from '../Footer';
-import TitleFloat from '../components/TitleFloat';
-import TitleShimmer from '../components/TitleShimmer';
-import HeadingFloat from '../components/HeadingFloat';
-import HeadingShimmer from '../components/HeadingShimmer';
-import Paragraph from '../components/Paragraph';
+import TitleFloat from '../components/text/TitleFloat';
+import TitleShimmer from '../components/text/TitleShimmer';
+import HeadingFloat from '../components/text/HeadingFloat';
+import HeadingShimmer from '../components/text/HeadingShimmer';
+import Paragraph from '../components/text/Paragraph';
 
 import SvgPhotoshop from '../components/svg/SvgPhotoshop';
 import SvgWebflow from '../components/svg/SvgWebflow';
@@ -17,6 +17,7 @@ import SvgFigma from '../components/svg/SvgFigma';
 import SvgHtml from '../components/svg/SvgHtml';
 import SvgCss from '../components/svg/SvgCss';
 import SvgJs from '../components/svg/SvgJs';
+import Button from '../components/text/Button';
 
 
 const ProjectsPage = () => {
@@ -93,7 +94,7 @@ const ProjectsPage = () => {
                                     <HeadingShimmer heading="ItsYipper"/>
                                     <article className="project-text">
                                         <HeadingShimmer heading="ItsYipper"/>
-                                        <p>ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories.</p>
+                                        <Paragraph name="project-text-margin" text1="ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories."/>
                                     </article>
                                     <div className="app-icons-wrap">
                                         <SvgWebflow/>
@@ -106,17 +107,13 @@ const ProjectsPage = () => {
                                         <div className="project-btn-bot">
                                             <div className="project-bot-corner"></div>
                                             <div className="project-btn-bg">
-                                                <a className="btn" href="/itsyipper">
-                                                    <p>Preview</p>
-                                                </a>
+                                                <Button text="Preview" link="/itsyipper"/>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="project-btn">
-                                    <a className="btn" href="/itsyipper">
-                                        <p text-glow="Preview">Preview</p>
-                                    </a>
+                                    <Button text="Preview" link="/itsyipper"/>
                                 </div>
                             </section>
                             <section id="artifact-2" className="project-artifact-wrap"
@@ -138,7 +135,7 @@ const ProjectsPage = () => {
                                     <HeadingShimmer heading="Stripes Nation"/>
                                     <article className="project-text">
                                         <HeadingShimmer heading="Stripes Nation"/>
-                                        <p>Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery.</p>
+                                        <Paragraph name="project-text-margin" text1="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."/>
                                     </article>
                                     <div className="app-icons-wrap">
                                         <SvgPhotoshop/>
@@ -152,17 +149,13 @@ const ProjectsPage = () => {
                                         <div className="project-btn-bot">
                                             <div className="project-bot-corner"></div>
                                             <div className="project-btn-bg">
-                                                <a className="btn" href="/stripes-nation">
-                                                    <p>Preview</p>
-                                                </a>
+                                                <Button text="Preview" link="/stripes-nation"/>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="project-btn">
-                                    <a className="btn" href="/stripes-nation">
-                                        <p text-glow="Preview">Preview</p>
-                                    </a>
+                                    <Button text="Preview" link="/stripes-nation"/>
                                 </div>
                             </section>
                             <section id="artifact-3" className="project-artifact-wrap"
@@ -186,7 +179,7 @@ const ProjectsPage = () => {
                                     <HeadingShimmer heading="Sonic Animation"/>
                                     <article className="project-text">
                                         <HeadingShimmer heading="Sonic Animation"/>
-                                        <p>ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories.</p>
+                                        <Paragraph name="project-text-margin" text1="ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories."/>
                                     </article>
                                     <div className="app-icons-wrap">
                                         <SvgHtml/>
@@ -199,17 +192,13 @@ const ProjectsPage = () => {
                                         <div className="project-btn-bot">
                                             <div className="project-bot-corner"></div>
                                             <div className="project-btn-bg">
-                                                <a className="btn" href="/sonic-animation">
-                                                    <p>Preview</p>
-                                                </a>
+                                                <Button text="Preview" link="/sonic-animation"/>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="project-btn">
-                                    <a className="btn" href="/sonic-animation">
-                                        <p text-glow="Preview">Preview</p>
-                                    </a>
+                                    <Button text="Preview" link="/sonic-animation"/>
                                 </div>
                             </section>
                             <section id="artifact-4" className="project-artifact-wrap"
@@ -233,7 +222,7 @@ const ProjectsPage = () => {
                                     <HeadingShimmer heading="Edge Boards"/>
                                     <article className="project-text">
                                         <HeadingShimmer heading="Edge Boards"/>
-                                        <p>ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories.</p>
+                                        <Paragraph name="project-text-margin" text1="ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories."/>
                                     </article>
                                     <div className="app-icons-wrap">
                                         <SvgWebflow/>
@@ -246,17 +235,13 @@ const ProjectsPage = () => {
                                         <div className="project-btn-bot">
                                             <div className="project-bot-corner"></div>
                                             <div className="project-btn-bg">
-                                                <a className="btn" href="/itsyipper">
-                                                    <p>Preview</p>
-                                                </a>
+                                                <Button text="Preview" link="/edge-boards"/>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="project-btn">
-                                    <a className="btn" href="/itsyipper">
-                                        <p text-glow="Preview">Preview</p>
-                                    </a>
+                                    <Button text="Preview" link="/edge-boards"/>
                                 </div>
                             </section>
                         </div>

@@ -1,6 +1,7 @@
 import SvgArrowDown from '../components/svg/SvgArrowDown';
 
 const ScrollDown = ( { 
+    animation,
     link1, heading1, animation1,
     link2, heading2, animation2,
     link3, heading3, animation3,
@@ -13,7 +14,7 @@ const ScrollDown = ( {
     } ) => {
 
     return (
-        <div className="scroll-down">
+        <div className={ `scroll-down ${ animation }` }>
             <div className="arrow-wrap">
                 <SvgArrowDown/>
             </div>

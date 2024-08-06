@@ -4,15 +4,16 @@ import { useState, useEffect, useRef } from 'react';
 import Footer from '../Footer';
 import TableOfContents from '../components/TableOfContents';
 import List from '../components/List';
-import Paragraph from '../components/Paragraph';
-import TitleFloat from '../components/TitleFloat';
-import TitleShimmer from '../components/TitleShimmer'
-import HeadingFloat from '../components/HeadingFloat';
-import HeadingShimmer from '../components/HeadingShimmer';
-import SubHeading from '../components/SubHeading';
+import Paragraph from '../components/text/Paragraph';
+import TitleFloat from '../components/text/TitleFloat';
+import TitleShimmer from '../components/text/TitleShimmer'
+import HeadingFloat from '../components/text/HeadingFloat';
+import HeadingShimmer from '../components/text/HeadingShimmer';
+import SubHeading from '../components/text/SubHeading';
 import VideoAutoplay from '../components/VideoAutoplay';
 import Image from '../components/Image';
 import ScrollDown from '../components/ScrollDown';
+import ScrollSnap from '../components/ScrollSnap';
 
 
 const StripesNation = () => {
@@ -56,19 +57,36 @@ const StripesNation = () => {
 
     return (
         <main className="artifact">
-            <section className="scroll-wrap">
-                <div className="scroll-section" ref={ snap1 }>
-                    <div ref={ homeView }></div>
-                </div>
-                <div id="LogoConcepts" className="scroll-section" ref={ snap2 }></div>
-                <div id="LogoDevelopment" className="scroll-section" ref={ snap3 }></div>
-                <div id="MarketingMockups" className="scroll-section" ref={ snap4 }></div>
-                <div id="BumperVideo" className="scroll-section" ref={ snap5 }></div>
-                <div id="BrandBook" className="scroll-section" ref={ snap6 }></div>
-                <div className="footer-section" ref={ snap7 }>
-                    <Footer />
-                </div>
-            </section>
+            <ScrollSnap
+                id1=""
+                reference1={ snap1 }
+                display1="scroll-show"
+                homeView={ homeView }
+
+                id2="LogoConcepts"
+                reference2={ snap2 }
+                display2="scroll-show"
+
+                id3="LogoDevelopments"
+                reference3={ snap3 }
+                display3="scroll-show"
+
+                id4="MarketingCards"
+                reference4={ snap4 }
+                display4="scroll-show"
+
+                id5="BumperVideo"
+                reference5={ snap5 }
+                display5="scroll-show"
+
+                id6="BrandBook"
+                reference6={ snap6 }
+                display6="scroll-show"
+                
+                id7="Footer"
+                reference7={ snap7 }
+                display7="scroll-show"
+            />
             <section className="artifact-section artifact-home">
                 <div className="artifact-wrap">
                     <article className={ `artifact-left left-lg heading-col ${ inView1 ? "blur-in" : "blur-out" }` }>
@@ -77,9 +95,9 @@ const StripesNation = () => {
                             meta="Stripes Nation" 
                             a="S" b="t" c="r" d="i" e="p" f="e" g="s" spaceH="space" h="N" i="a" j="t" k="i" l="o" m="n"
                         />
-                        <TitleShimmer 
+                        <HeadingShimmer 
                             animation={ inView1 ? "blur-in" : "blur-out" }
-                            heading="- Branding"
+                            heading="Branding"
                         />
                         <Paragraph 
                             animation={ inView1 ? "leap-in" : ""}
@@ -95,6 +113,7 @@ const StripesNation = () => {
                             menu={ isActive ? "toc-show" : "toc-hide" }
                             click={ tocClick }
                             view={ isActive ? "pointer-show" : "pointer-hide" }
+                            animation={ inView7 ? "opacity-0" : "opacity-100"}
 
                             subHeading1="Illustrator"
                             mainHeading1="Logo Concepts"
@@ -128,6 +147,8 @@ const StripesNation = () => {
                         />
                     </div>
                     <ScrollDown
+                        animation={ inView7 ? "opacity-0" : "opacity-100"}
+
                         heading1="Next - Logo Concepts"
                         link1="#LogoConcepts"
                         animation1={ inView1 ? "opacity-100" : "opacity-0"}
@@ -147,6 +168,10 @@ const StripesNation = () => {
                         heading5="Next - Brand Book"
                         link5="#BrandBook"
                         animation5={ inView5 ? "opacity-100" : "opacity-0"}
+                        
+                        heading6="Next - More Projects"
+                        link6="#Footer"
+                        animation6={ inView6 ? "opacity-100" : "opacity-0"}
                     />
                 </div>
             </section>
@@ -320,6 +345,18 @@ const StripesNation = () => {
                         link="https://www.dropbox.com/scl/fi/uegla6jtusg5r4gsc58bu/stripesnation-brandbook-preview.mp4?rlkey=bhnyuwrvyd3uesj8z81o0hl49&st=latcu33b&raw=1"
                     />
                 </div>
+            </section>
+            <section className={ `artifact-section ${ inView7 ? "" : "artifact-hide" }` }>
+                <div className="artifact-wrap">
+                    <article className="artifact-left left-sm">
+                        <SubHeading 
+                            subHeading="Figma | Photoshop" 
+                            mainHeading="Brand Book" 
+                            animation={ inView6 ? "scale-in" : ""}
+                        />
+                    </article>
+                </div>
+                <Footer/>
             </section>
         </main>
     )

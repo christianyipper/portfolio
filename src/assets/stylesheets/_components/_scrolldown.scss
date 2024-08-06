@@ -6,6 +6,7 @@
     gap: $xs;
     bottom: $xxl + $lg;
     left: 0;
+    transition: 0.5s ease-in-out;
 
     .arrow-wrap {
         width: $lg;
