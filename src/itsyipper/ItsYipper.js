@@ -62,29 +62,25 @@ const ItsYipper = () => {
                 display1="scroll-show"
                 homeView={ homeView }
 
-                id2="Prototyping"
+                id2="CmsItems"
                 reference2={ snap2 }
                 display2="scroll-show"
 
-                id3="CmsItems"
+                id3="Animations"
                 reference3={ snap3 }
                 display3="scroll-show"
 
-                id4="MarketingCards"
+                id4="Forms"
                 reference4={ snap4 }
                 display4="scroll-show"
 
-                id5="ModalForms"
+                id5="ProductMockups"
                 reference5={ snap5 }
                 display5="scroll-show"
-
-                id6="ProductMockups"
+                
+                id6="Footer"
                 reference6={ snap6 }
                 display6="scroll-show"
-                
-                id7="Footer"
-                reference7={ snap7 }
-                display7="scroll-show"
             />
             <section className="artifact-section artifact-home">
                 <div className="artifact-wrap">
@@ -114,72 +110,62 @@ const ItsYipper = () => {
                             view={ isActive ? "pointer-show" : "pointer-hide" }
                             animation={ inView7 ? "opacity-0" : "opacity-100"}
 
-                            subHeading1="Figma"
-                            mainHeading1="Prototyping"
-                            path1="#Prototyping"
+                            subHeading1="Webflow"
+                            mainHeading1="CMS Items"
+                            path1="#CmsItems"
                             num1="1"
                             display1="toc-display"
 
-                            subHeading2="Webflow"
-                            mainHeading2="CMS Items"
-                            path2="#CmsItems"
+                            subHeading2="Webflow | Illustrator"
+                            mainHeading2="Animations"
+                            path2="#Animations"
                             num2="2"
                             display2="toc-display"
 
-                            subHeading3="Webflow | Illustrator"
-                            mainHeading3="Animations"
-                            path3="#Animations"
+                            subHeading3="Webflow"
+                            mainHeading3="Forms"
+                            path3="#Forms"
                             num3="3"
                             display3="toc-display"
 
-                            subHeading4="Webflow"
-                            mainHeading4="Modal & Forms"
-                            path4="#ModalForms"
+                            subHeading4="Photoshop"
+                            mainHeading4="Product Mockups"
+                            path4="#ProductMockups"
                             num4="4"
                             display4="toc-display"
-
-                            subHeading5="Photoshop"
-                            mainHeading5="Product Mockups"
-                            path5="#ProductMockups"
-                            num5="5"
-                            display5="toc-display"
                         />
                     </div>
                     <ScrollDown
-                        animation={ inView7 ? "opacity-0" : "opacity-100"}
+                        animation={ inView6 ? "opacity-0" : "opacity-100"}
 
-                        heading1="Next - Prototyping"
-                        link1="#Prototype"
+                        heading1="Next - CMS Items"
+                        link1="#CmsItems"
                         animation1={ inView1 ? "opacity-100" : "opacity-0"}
 
-                        heading2="Next - CMS Items"
-                        link2="#CmsItems"
+                        heading2="Next - Animations"
+                        link2="#Animation"
                         animation2={ inView2 ? "opacity-100" : "opacity-0"}
 
-                        heading3="Next - Animations"
-                        link3="#Animations"
+                        heading3="Next - Forms"
+                        link3="#Forms"
                         animation3={ inView3 ? "opacity-100" : "opacity-0"}
 
-                        heading4="Next - Modal & Forms"
-                        link4="#ModalForms"
+                        heading4="Next - Product Mockups"
+                        link4="#ProductMockups"
                         animation4={ inView4 ? "opacity-100" : "opacity-0"}
 
-                        heading5="Next - Product Mockups"
-                        link5="#ProductMockups"
+                        heading5="Next - More Projects"
+                        link5="#Footer"
                         animation5={ inView5 ? "opacity-100" : "opacity-0"}
-                        
-                        heading6="Next - More Projects"
-                        link6="#Footer"
-                        animation6={ inView6 ? "opacity-100" : "opacity-0"}
                     />
                 </div>
             </section>
             <section className={ `artifact-section ${ inView2 ? "" : "artifact-hide" }` }>
                 <div className="artifact-wrap">
-                    <article className="artifact-left left-md">
+                    <article className="artifact-left left-sm">
                         <SubHeading 
-                            subHeading="Figma" 
-                            mainHeading="Prototyping"
+                            subHeading="Webflow" 
+                            mainHeading="CMS Items"
                             animation={ inView2 ? "scale-in" : ""}
                         />
                         <Paragraph 
@@ -200,50 +186,41 @@ const ItsYipper = () => {
                             animation3={ inView2 ? "leap-in leap3" : ""}
                         />
                     </article>
-                    <Image
-                        name="artifact-img-wrap img-left-sm"
-                        animation={ inView2 ? "blur-in" : ""}
-
-                        link="https://www.dropbox.com/scl/fi/o45qn8dhp6h85jiwgc356/stripesnation-logo-primary.png?rlkey=art9ntknrjif9fwtwi8mvs88u&st=g7g4tp7l&raw=1"
-                        description="Stripes Nation Logo"
-
-                        textName="alt-text"
-                        text="Design Concept 1"
-                    />
-                    <Image
-                        name="artifact-img-wrap img-right-sm"
-                        animation={ inView2 ? "blur-in" : ""}
-
-                        imgName="img-md"
-                        link="https://www.dropbox.com/scl/fi/5n2718wxnubjm258kgw7x/sn-draft-alt.png?rlkey=wslq49ry5g4uckisupqba0yxn&st=p8av3sdn&raw=1"
-                        description="Stripes Nation Logo Concept"
-
-                        textName="alt-text"
-                        text="Design Concept 2"
-                    />
+                    <div className="right-lg space-between">
+                        <VideoAutoplay
+                            name="artifact-img-wrap video-cms-backend"
+                            animation={ inView2 ? "blur-in" : ""}
+                            link="https://www.dropbox.com/scl/fi/fu24uqkco8viszdp83uod/ItsYipper-cms-backend-1080p-comp.mp4?rlkey=epycs1mwklki46c0czid0hre3&st=42q9kmxo&raw=1"
+                        />
+                        <VideoAutoplay
+                            name="artifact-img-wrap video-cms-layout"
+                            animation={ inView2 ? "blur-in" : ""}
+                            link="https://www.dropbox.com/scl/fi/2bqedy9zsre4uysvozrma/itsYipper-cms-layout-comp.mp4?rlkey=9bhmw5yvfx6hljadoqp8jwf3l&st=5wutd0fl&raw=1"
+                        />
+                    </div>
                 </div>
             </section>
             <section className={ `artifact-section ${ inView3 ? "" : "artifact-hide" }` }>
                 <div className="artifact-wrap">
                     <VideoAutoplay
-                        name="artifact-img-wrap"
+                        name="artifact-img-wrap img-left"
                         animation={ inView3 ? "blur-in" : ""}
-                        link="https://www.dropbox.com/scl/fi/5ppn95cg0nzpdbeefw8fm/stripesnation-draft-1080p.mp4?rlkey=zftk8be37con1v5joy1dog55i&st=ezcj0qnt&raw=1"
+                        link="https://www.dropbox.com/scl/fi/ex7r9640fmtarva9sjava/Yipper-Card-Animation-1080p-comp.mp4?rlkey=l79tdljwtsw078gn14iuw02q5&st=9xvw8c65&raw=1"
                     />
                     <article className="artifact-right right-md">
                         <SubHeading 
-                            subHeading="Webflow" 
-                            mainHeading="CMS Items"
+                            subHeading="Webflow | Illustrator" 
+                            mainHeading="Animations"
                             animation={ inView3 ? "scale-in" : ""}
                         />
                         <List 
                         
-                            heading1="Pen & Shape Builder" 
-                            text1="The shape builder and pen tools were used to create the aesthetic of the Stripes Nation logo and wordmark. Diagonal lines were used to create the outlines of the logo and were combined to create negative space between the shapes." 
+                            heading1="Hover Effect" 
+                            text1="I used a combination of actions to trigger on hover in and out. I resized the overlay to cover the card while also scaling the background image to add a zooming effect. Additionally, I changed the text and border colour to the secondary and accent colours." 
                             animation1={ inView3 ? "leap-in leap1" : ""}
                             
-                            heading2="Selection & Path Offset" 
-                            text2="The wordmark name “Stripes Nation” was custom-made, based on the nausea font. Path offset and selection tools were used to match the angle and weight of the final logo while also changing some of the original typography landscape. Spacing between the individual characters, words, and logo were made consistent." 
+                            heading2="Page Effect" 
+                            text2='I created my own blinking eye "gif" using graphics from Illustrator and an infinite looping animation. I changed opacity of different layers to show and hide them, creating a "blinking" eye effect.' 
                             animation2={ inView3 ? "leap-in leap2" : ""}
                             
                             display3="none"
@@ -255,8 +232,8 @@ const ItsYipper = () => {
                 <div className="artifact-wrap">
                     <article className="artifact-left left-md">
                         <SubHeading 
-                            subHeading="Webflow | Illustrator" 
-                            mainHeading="Animations" 
+                            subHeading="Webflow" 
+                            mainHeading="Forms" 
                             animation={ inView4 ? "scale-in" : ""}
                         />
                         <Paragraph 
@@ -292,8 +269,8 @@ const ItsYipper = () => {
                     />
                     <article className="artifact-right right-md">
                         <SubHeading 
-                            subHeading="Webflow" 
-                            mainHeading="Modal & Forms" 
+                            subHeading="Photoshop" 
+                            mainHeading="Product Mockups" 
                             animation={ inView5 ? "scale-in" : ""}
                         />
                         <Paragraph 
@@ -318,40 +295,9 @@ const ItsYipper = () => {
                 <div className="artifact-wrap">
                     <article className="artifact-left left-sm">
                         <SubHeading 
-                            subHeading="Photoshop" 
-                            mainHeading="Product Mockups" 
-                            animation={ inView6 ? "scale-in" : ""}
-                        />
-                        <Paragraph 
-                            animation={ inView6 ? "leap-in" : ""}
-                            text1="To wrap it all up, I designed the brand book pages in Figma using their intuitive organization systems."
-                        />
-                        <List 
-                            heading1="Grids" 
-                            text1="Figma's grid system made it easy to distribute information and create appealing layouts." 
-                            animation1={ inView6 ? "leap-in leap1" : ""}
-
-                            heading2="Components & Variables" 
-                            text2="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result." 
-                            animation2={ inView6 ? "leap-in leap2" : ""}
-
-                            display3="none"
-                        />
-                    </article>
-                    <VideoAutoplay
-                        name="artifact-img-wrap img-right-lg"
-                        animation={ inView6 ? "blur-in" : ""}
-                        link="https://www.dropbox.com/scl/fi/uegla6jtusg5r4gsc58bu/stripesnation-ProductMockups-preview.mp4?rlkey=bhnyuwrvyd3uesj8z81o0hl49&st=latcu33b&raw=1"
-                    />
-                </div>
-            </section>
-            <section className={ `artifact-section ${ inView7 ? "" : "artifact-hide" }` }>
-                <div className="artifact-wrap">
-                    <article className="artifact-left left-sm">
-                        <SubHeading 
                             subHeading="Figma | Photoshop" 
                             mainHeading="Brand Book" 
-                            animation={ inView6 ? "scale-in" : ""}
+                            animation={ inView5 ? "scale-in" : ""}
                         />
                     </article>
                 </div>

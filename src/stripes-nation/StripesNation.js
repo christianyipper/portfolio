@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect, useRef } from 'react';
+
 import Footer from '../Footer';
 import TableOfContents from '../components/TableOfContents';
 import List from '../components/List';
@@ -10,10 +11,21 @@ import TitleShimmer from '../components/text/TitleShimmer'
 import HeadingFloat from '../components/text/HeadingFloat';
 import HeadingShimmer from '../components/text/HeadingShimmer';
 import SubHeading from '../components/text/SubHeading';
+import Button from '../components/text/Button';
+
 import VideoAutoplay from '../components/VideoAutoplay';
 import Image from '../components/Image';
 import ScrollDown from '../components/ScrollDown';
 import ScrollSnap from '../components/ScrollSnap';
+
+import SvgPhotoshop from '../components/svg/SvgPhotoshop';
+import SvgWebflow from '../components/svg/SvgWebflow';
+import SvgIllustrator from '../components/svg/SvgIllustrator';
+import SvgAfterEffects from '../components/svg/SvgAfterEffects';
+import SvgFigma from '../components/svg/SvgFigma';
+import SvgHtml from '../components/svg/SvgHtml';
+import SvgCss from '../components/svg/SvgCss';
+import SvgJs from '../components/svg/SvgJs';
 
 
 const StripesNation = () => {

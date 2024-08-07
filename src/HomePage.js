@@ -5,11 +5,12 @@ import ReactPlayer from 'react-player';
 import Footer from './Footer';
 import TitleFloat from './components/text/TitleFloat';
 import Button from './components/text/Button';
+import ScrollSnap from './components/ScrollSnap';
 
 const HomePage = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
     const { ref: snap2, inView: inView2 } = useInView( { threshold: 0.5 } );
-    // const { ref: snap3, inView: inView3 } = useInView( { threshold: 0.5 } );
+    const { ref: snap3, inView: inView3 } = useInView( { threshold: 0.5 } );
     const { ref: snap4, inView: inView4 } = useInView( { threshold: 0.5 } );
 
     useEffect( () => {
@@ -24,12 +25,23 @@ const HomePage = () => {
     return (
         <main className="home">
             <div className="home-view">
-                <section className="scroll-wrap">
-                    <div className="scroll-section" ref={ snap1 }></div>
-                    <div className="scroll-section" ref={ snap2 }></div>
-                    {/* <div className="scroll-section" ref={ snap3 }></div> */}
-                    <div className="scroll-section" ref={ snap4 }></div>
-                </section>
+                <ScrollSnap
+                    id1=""
+                    reference1={ snap1 }
+                    display1="scroll-show"
+
+                    id2=""
+                    reference2={ snap2 }
+                    display2="scroll-show"
+
+                    id3=""
+                    reference3={ snap3 }
+                    display3="scroll-show"
+
+                    id4=""
+                    reference4={ snap4 }
+                    display4="scroll-show"
+                />
                 <section className="loading-screen">
                     <svg xmlns="http://www.w3.org/2000/svg" id="Logo-SVG" data-name="Logo-SVG" viewBox="0 0 1440 700">
                         <defs>

@@ -81,6 +81,11 @@ main {
         scroll-snap-align: start;
     }
 }
+.space-between {
+    @include flex-wrap( nowrap, row, space-between, center );
+    position: relative;
+    gap: $md;
+}
 
 .gif-overlay {
     position: absolute;

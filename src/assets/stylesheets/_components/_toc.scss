@@ -1,8 +1,9 @@
 .toc-container {
-    height: calc( 100% - ( 80px + $lg ) );
+    @include flex-wrap( nowrap, column, start, start );
+    // height: calc( 100% - $lg );
     position: absolute;
     width: 100%;
-    bottom: $xxl + $lg;
+    bottom: $lg;
     right: 0;
     border-radius: $md;
     border: 2px solid white;
@@ -36,6 +37,8 @@
     }
     &.toc-show {
         width: 100%;
+        max-height: 50vh;
+        padding-bottom: $xxl;
 
         .toc-wrap {
             animation: tocIn 0.7s ease-in-out forwards;
@@ -50,7 +53,8 @@
     }
     &.toc-hide {
         width: $xl;
-        height: $xl;
+        max-height: $xl;
+        padding-bottom: 0;
 
         .toc-wrap {
             animation: tocOut 0.4s ease-in-out forwards;
