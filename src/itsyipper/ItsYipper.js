@@ -170,20 +170,18 @@ const ItsYipper = () => {
                         />
                         <Paragraph 
                             animation={ inView2 ? "leap-in" : ""}
-                            text1="When creating the Stripes Nation logo, it was important to incorporate elements from the hockey referee uniform and the sport into the design. There were three key aspects to consider:"
+                            text1="When creating our blogging page, we utilized Webflow's built in content management system (CMS) to create and display our blogs."
                         />
                         <List 
-                            heading1="Referee Armbands" 
-                            text1="The eye-catching red armbands are unique to hockey officials and was imperative to include the striking colour into the design." 
+                            heading1="Content Management System" 
+                            text1="Using custom fields, I added images, video, links and rich text inputs to display the blog content on the page." 
                             animation1={ inView2 ? "leap-in leap1" : ""}
                             
-                            heading2="Striped Uniform" 
-                            text2="Undoubtedly the most iconic part of an officiating uniform are the black and white stripes. I wanted the design to reflect this predominant pattern throughout." 
+                            heading2="Design" 
+                            text2="Using Webflow's drag and drop feature, I designed the page layout with text, image, and video and linked the CMS fields to these elements." 
                             animation2={ inView2 ? "leap-in leap2" : ""}
                             
-                            heading3="Speed" 
-                            text3="Designing a logo around the high-speed and intense action of the sport was important, as it plays an integral role in every game."
-                            animation3={ inView2 ? "leap-in leap3" : ""}
+                            display3="none"
                         />
                     </article>
                     <div className="right-lg space-between">
@@ -213,8 +211,11 @@ const ItsYipper = () => {
                             mainHeading="Animations"
                             animation={ inView3 ? "scale-in" : ""}
                         />
+                        <Paragraph 
+                            animation={ inView3 ? "leap-in" : ""}
+                            text1="After creating the page, I wanted to add some engaging animation effects."
+                        />
                         <List 
-                        
                             heading1="Hover Effect" 
                             text1="I used a combination of actions to trigger on hover in and out. I resized the overlay to cover the card while also scaling the background image to add a zooming effect. Additionally, I changed the text and border colour to the secondary and accent colours." 
                             animation1={ inView3 ? "leap-in leap1" : ""}
@@ -238,15 +239,15 @@ const ItsYipper = () => {
                         />
                         <Paragraph 
                             animation={ inView4 ? "leap-in" : ""}
-                            text1="After my brand assets were finalized, I exported them into Photoshop and started creating mockups with open-source templates to use as a foundation."
+                            text1="To make our subscription form and modal, I used a combination of Webflow's form elements and animations."
                         />
                         <List 
-                            heading1="Warp & Feather" 
-                            text1="I utilized a combination of warping and feathering to create a realistic landscape. This helped show depth in wrinkled clothing and rough textures." 
+                            heading1="Form Elements" 
+                            text1="To make the form, we only utilized the text input and submit button elements. When the form is submitted, the display values of the text changes to welcome the user." 
                             animation1={ inView4 ? "leap-in leap1" : ""}
 
-                            heading2="Masks & Blends" 
-                            text2="Masking layers also helped create shadows and textures for objects and clothing. By changing blend modes, I was able to enhance the lighting effects in the scene."
+                            heading2="Animations" 
+                            text2='When opening and closing the modal, I utilized animations to display "block" and "none" to change the visibility during the beginning and end of the animation. I also translated Y position and changed the opacity.'
                             animation2={ inView4 ? "leap-in leap2" : ""}
 
                             display3="none" 
@@ -255,17 +256,17 @@ const ItsYipper = () => {
                     <VideoAutoplay
                         name="artifact-img-wrap img-right"
                         animation={ inView4 ? "blur-in" : ""}
-                        link="https://www.dropbox.com/scl/fi/px2nj5vdyjv79ukzr0y3z/StripesNation-Cards-1080p-comp.mp4?rlkey=5peprap5ifs5tuv4f4tea1a1r&st=2c97k3ay&raw=1"
+                        link="https://www.dropbox.com/scl/fi/ljrosp79had7pt9k88uk1/Yipper-Form-720p-comp.mp4?rlkey=qgzkw6e7gtpdtqr1e3z3t2txn&st=1m47fn0s&raw=1"
                     />
                 </div>
             </section>
             <section className={ `artifact-section ${ inView5 ? "" : "artifact-hide" }` }>
                 <div className="artifact-wrap">
                     <VideoAutoplay
-                        name="artifact-img-wrap img-left bumper-wrap"
+                        name="artifact-img-wrap img-left"
                         videoName="bumper"
                         animation={ inView5 ? "blur-in" : ""}
-                        link="https://www.dropbox.com/scl/fi/tky5ce4my00ba9ig7duxn/stripesnation-bumper-comp.mp4?rlkey=crxokuquu0j7a2gud57lzt5e3&st=9g4xgoqx&raw=1"
+                        link="https://www.dropbox.com/scl/fi/6n7ofgfwvv7f084272giz/Yipper-Mockups-720p-comp.mp4?rlkey=xn6yxpdw5cfnjhv27r6ywcc7h&st=k4b9q02h&raw=1"
                     />
                     <article className="artifact-right right-md">
                         <SubHeading 

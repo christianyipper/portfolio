@@ -79,11 +79,11 @@ const StripesNation = () => {
                 reference2={ snap2 }
                 display2="scroll-show"
 
-                id3="LogoDevelopments"
+                id3="LogoDevelopment"
                 reference3={ snap3 }
                 display3="scroll-show"
 
-                id4="MarketingCards"
+                id4="MarketingMockups"
                 reference4={ snap4 }
                 display4="scroll-show"
 
