@@ -276,15 +276,15 @@ const ItsYipper = () => {
                         />
                         <Paragraph 
                             animation={ inView5 ? "leap-in" : ""}
-                            text1="With an online presence at its forefront, I needed to create a bumper video that showcases the Stripes Performance brand."
+                            text1="Additionally, I was also tasked to create product mockups for our online store. I used open-source templates from Unsplash and created themed designs in Photoshop."
                         />
                         <List 
-                            heading1="Masking"
-                            text1="I predominantly used masks to animate the logo by hiding each stroke. The end result is a crispy line animation that reveals the logo." 
+                            heading1="Design"
+                            text1="The bucket hat template came with two zones: the brim and top. I created a wavy pattern using the pen tool and duplicated the pattern across the two zones. I then matched the seams together to make a cohesive design." 
                             animation1={ inView5 ? "leap-in leap1" : ""}
 
-                            heading2="Timing Functions" 
-                            text2="In contrast with the primary logo, I eased in the wordmark animations when sliding into frame. This adds a bit of variety and polish to the overall result." 
+                            heading2="Blending" 
+                            text2="Most of the templates provided lighting, shadow, and texture overlays. I feathered some layers to enhance these effects and also warped some designs (like the hoodie mockup) to bring out depth." 
                             animation2={ inView5 ? "leap-in leap2" : ""}
 
                             display3="none"
