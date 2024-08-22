@@ -166,7 +166,6 @@ nav {
             .home-preview, .about-preview, .projects-preview {
                 @extend %page-template;
                 position: fixed;
-                // width: 100%;
                 top: 0;
                 left: 0;
                 height: 100%;

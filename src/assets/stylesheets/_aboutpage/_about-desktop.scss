@@ -1,7 +1,6 @@
 .about {
     @extend %scroll-page-template;
     padding-top: 0;
-    // background-color: blue;
 
     ::-webkit-scrollbar {
         width: $xs;

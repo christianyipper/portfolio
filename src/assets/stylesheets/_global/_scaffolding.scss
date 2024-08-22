@@ -153,6 +153,15 @@ video {
     min-height: calc( 100vh - $xxl );
     padding: $xxl $lg 0 $lg;
 }
+@media only screen and ( max-width: 500px ) {
+    %page-template {
+        @include flex-wrap( wrap, column, start, center );
+        position: relative;
+        width: calc( 100% - ( $sm * 2 ) );
+        min-height: calc( 100vh - $xxl );
+        padding: $xxl $sm 0 $sm;
+    }
+}
 %scroll-page-template {
     @include flex-wrap( wrap, column, start, center );
     width: calc( 100% - ( $lg * 2 ) );
