@@ -15,10 +15,6 @@
     z-index: 1;
     @include before-glow( $xs );
     @include after-glow( $lg );
-
-    p {
-        @include text-glow( block );
-    }
     
     &:hover {
     background-color: $primary;

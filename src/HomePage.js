@@ -79,7 +79,7 @@ const HomePage = () => {
                                 /> */}
                                 <div className="home-buttons-wrap">
                                     <Button text="About Me" link="/about"/>
-                                    <Button text="My Projects" link="/about" variant="btn-alt"/>
+                                    <Button text="My Projects" link="/projects" variant="btn-alt"/>
                                 </div>
                             </div>
                         </article>

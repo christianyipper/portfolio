@@ -1,5 +1,6 @@
 import SvgBurger from '../components/svg/SvgBurger'
 import SvgClose from '../components/svg/SvgClose'
+import TextGlow from './text/TextGlow';
 
 const TableOfContents = ( { 
     subHeading1, subHeading2, subHeading3, subHeading4, subHeading5, subHeading6, subHeading7, subHeading8, subHeading9, 
@@ -15,109 +16,154 @@ const TableOfContents = ( {
                 <div className={ `toc-wrap ${ display1 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading1 }>{ subHeading1 }</p>
                     <div>
-                        <a 
-                            href={ path1 } 
-                            className={ view }
-                            text-glow={ mainHeading1 }
-                            onClick={ click }
-                        >{ mainHeading1 }</a>
-                        <p className="page-num" text-glow={ num1 }>{ num1 }</p>
+                        <TextGlow
+                            name={ view }
+                            link={ path1 }
+                            text={ mainHeading1 }
+                            click={ click }
+                        />
+                        <TextGlow
+                            name="page-num"
+                            link={ path1 }
+                            text={ num1 }
+                            click={ click }
+                        />
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display2 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading2 }>{ subHeading2 }</p>
                     <div>
-                        <a 
-                            href={ path2 } 
-                            className={ view }
-                            text-glow={ mainHeading2 }
-                            onClick={ click }
-                        >{ mainHeading2 }</a>
-                        <p className="page-num" text-glow={ num2 }>{ num2 }</p>
+                        <TextGlow
+                            name={ view }
+                            link={ path2 }
+                            text={ mainHeading2 }
+                            click={ click }
+                        />
+                        <TextGlow
+                            name="page-num"
+                            link={ path2 }
+                            text={ num2 }
+                            click={ click }
+                        />
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display3 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading3 }>{ subHeading3 }</p>
                     <div>
-                        <a 
-                            href={ path3 } 
-                            className={ view }
-                            text-glow={ mainHeading3 }
-                            onClick={ click }
-                        >{ mainHeading3 }</a>
-                        <p className="page-num" text-glow={ num3 }>{ num3 }</p>
+                        <TextGlow
+                            name={ view }
+                            link={ path3 }
+                            text={ mainHeading3 }
+                            click={ click }
+                        />
+                        <TextGlow
+                            name="page-num"
+                            link={ path3 }
+                            text={ num3 }
+                            click={ click }
+                        />
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display4 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading4 }>{ subHeading4 }</p>
                     <div>
-                        <a 
-                            href={ path4 } 
-                            className={ view }
-                            text-glow={ mainHeading4 }
-                            onClick={ click }
-                        >{ mainHeading4 }</a>
-                        <p className="page-num" text-glow={ num4 }>{ num4 }</p>
+                        <TextGlow
+                            name={ view }
+                            link={ path4 }
+                            text={ mainHeading4 }
+                            click={ click }
+                        />
+                        <TextGlow
+                            name="page-num"
+                            link={ path4 }
+                            text={ num4 }
+                            click={ click }
+                        />
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display5 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading5 }>{ subHeading5 }</p>
                     <div>
-                        <a 
-                            href={ path5 } 
-                            className={ view }
-                            text-glow={ mainHeading5 }
-                            onClick={ click }
-                        >{ mainHeading5 }</a>
-                        <p className="page-num" text-glow={ num5 }>{ num5 }</p>
+                        <TextGlow
+                            name={ view }
+                            link={ path5 }
+                            text={ mainHeading5 }
+                            click={ click }
+                        />
+                        <TextGlow
+                            name="page-num"
+                            link={ path5 }
+                            text={ num5 }
+                            click={ click }
+                        />
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display6 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading6 }>{ subHeading6 }</p>
                     <div>
-                        <a 
-                            href={ path6 } 
-                            className={ view }
-                            text-glow={ mainHeading6 }
-                            onClick={ click }
-                        >{ mainHeading6 }</a>
-                        <p className="page-num" text-glow={ num6 }>{ num6 }</p>
+                        <TextGlow
+                            name={ view }
+                            link={ path6 }
+                            text={ mainHeading6 }
+                            click={ click }
+                        />
+                        <TextGlow
+                            name="page-num"
+                            link={ path6 }
+                            text={ num6 }
+                            click={ click }
+                        />
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display7 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading7 }>{ subHeading7 }</p>
                     <div>
-                        <a 
-                            href={ path7 } 
-                            className={ view }
-                            text-glow={ mainHeading7 }
-                            onClick={ click }
-                        >{ mainHeading7 }</a>
-                        <p className="page-num" text-glow={ num7 }>{ num7 }</p>
+                        <TextGlow
+                            name={ view }
+                            link={ path7 }
+                            text={ mainHeading7 }
+                            click={ click }
+                        />
+                        <TextGlow
+                            name="page-num"
+                            link={ path7 }
+                            text={ num7 }
+                            click={ click }
+                        />
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display8 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading8 }>{ subHeading8 }</p>
                     <div>
-                        <a 
-                            href={ path8 } 
-                            className={ view }
-                            text-glow={ mainHeading8 }
-                            onClick={ click }
-                        >{ mainHeading8 }</a>
-                        <p className="page-num" text-glow={ num8 }>{ num8 }</p>
+                        <TextGlow
+                            name={ view }
+                            link={ path8 }
+                            text={ mainHeading8 }
+                            click={ click }
+                        />
+                        <TextGlow
+                            name="page-num"
+                            link={ path8 }
+                            text={ num8 }
+                            click={ click }
+                        />
                     </div>
                 </div>
                 <div className={ `toc-wrap ${ display9 }` }>
                     <p className="sub-heading-grey" text-glow={ subHeading9 }>{ subHeading9 }</p>
                     <div>
-                        <a 
-                            href={ path9 } 
-                            className={ view }
-                            text-glow={ mainHeading9 }
-                            onClick={ click }
-                        >{ mainHeading9 }</a>
-                        <p className="page-num" text-glow={ num9 }>{ num9 }</p>
+                        <TextGlow
+                            name={ view }
+                            link={ path9 }
+                            text={ mainHeading9 }
+                            click={ click }
+                        />
+                        <TextGlow
+                            name="page-num"
+                            link={ path9 }
+                            text={ num9 }
+                            click={ click }
+                        />
                     </div>
                 </div>
             </article>

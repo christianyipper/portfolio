@@ -100,7 +100,6 @@
                 // opacity: 50%;
             }
             a, .page-num {
-                @include text-glow( block );
                 font-size: $md;
                 font-weight: 700;
             }

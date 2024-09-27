@@ -4,6 +4,7 @@ import TitleFloat from './text/TitleFloat';
 import TitleShimmer from './text/TitleShimmer';
 import HeadingShimmer from './text/HeadingShimmer';
 import Paragraph from './text/Paragraph';
+import TextGlow from './text/TextGlow';
 
 import SvgLogo from './svg/SvgLogo';
 import SvgEmail from './svg/SvgEmail';
@@ -32,9 +33,21 @@ const Nav = () => {
                     </a>
                 </section>
                 <section className="nav-mid">
-                    <a className="nav-heading nav-home" href="/" text-glow="Home">Home</a>
-                    <a className="nav-heading nav-about" href="about" text-glow="About">About</a>
-                    <a className="nav-heading nav-projects" href="projects" text-glow="Projects">Projects</a>
+                    <TextGlow
+                        name="nav-heading nav-home"
+                        link="/"
+                        text="Home"
+                    />
+                    <TextGlow
+                        name="nav-heading nav-about"
+                        link="about"
+                        text="About"
+                    />
+                    <TextGlow
+                        name="nav-heading nav-projects"
+                        link="projects"
+                        text="Projects"
+                    />
                     <div className="nav-heading-bg"></div>
                 </section>
                 <section className="nav-right">

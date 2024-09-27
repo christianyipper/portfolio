@@ -70,7 +70,6 @@ nav {
     
             .nav-heading {
                 @include flex-wrap( wrap, row, start, center );
-                @include text-glow( flex );
                 padding: $xs $lg;
                 transition: 0.2s ease-in-out;
                 z-index: 2;

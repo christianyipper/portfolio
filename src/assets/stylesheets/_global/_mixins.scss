@@ -178,7 +178,7 @@
 //         }
 //     }
 // }
-@mixin text-glow( $display ) {
+@mixin text-glow( $display, $lines ) {
     display: $display;
     position: relative;
     margin: 0;
@@ -208,7 +208,7 @@
         color: transparent;
         filter: blur( 4px );
         transform: scaleX( 1.03 ) scaleY( 1.75 );
-        animation: lines 8s linear infinite alternate;
+        animation: $lines 8s linear infinite alternate;
     }
     @keyframes lines {
         0% {

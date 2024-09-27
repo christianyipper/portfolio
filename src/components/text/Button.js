@@ -1,10 +1,14 @@
+import TextGlow from "./TextGlow";
+
 const Button = ( { 
     text, link, variant
     } ) => {
 
     return (
         <a className={ `btn ${ variant }` } href={ link }>
-            <p text-glow={ text }>{ text }</p>
+            <TextGlow
+                text={ text }
+            />
         </a>
     );
 };

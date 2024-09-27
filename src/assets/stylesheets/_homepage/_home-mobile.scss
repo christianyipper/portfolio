@@ -41,7 +41,6 @@
                 overflow: hidden;
     
                 .home-wrap {
-                    @extend %desktop-margin;
                     position: relative;
                     display: grid;
                     grid-auto-columns: calc(100% / 4);
@@ -61,24 +60,21 @@
                         }
                     }
                 }
-    
                 .home-left-1 {
-                    // transform: scale(2) translate(-30vw, 20vw);
                     position: absolute;
-                    grid-column: 1 / 4;
+                    grid-column: 1 / span 4;
+                    left: -10%;
                     animation: homeIn 3s 1.5s ease-in-out forwards alternate;
                     overflow: hidden;
                     
                     .banner-img-wrap {
-                        @include flex-wrap( nowrap, row, start, center );
-                        width: fit-content;
-                        height: 50vh;
-                        // top: - $xxl;
+                        @include flex-wrap( nowrap, row, start, start );
+                        width: 100%;                   
                         z-index: 2;
-                        @extend %float-img;
     
                         > img {
-                            height: 100%;
+                            width: 110%;
+                            height: auto;
                             aspect-ratio: 1 / 1;
                         }
                         .hat-overlay {
@@ -93,14 +89,15 @@
                             z-index: 1;
                         }
                         .banner-svg {
-                            height: 100%;
+                            width: 100%;
+                            height: auto;
                             z-index: 20;
                             aspect-ratio: 1 / 1;
                             position: absolute;
                             z-index: 2;
     
                             svg {
-                                width: 100%;
+                                width: 110%;
     
                                 .glasses {
                                     fill: transparent;
@@ -138,11 +135,12 @@
                     }
                 }
                 article {
-                    @include flex-wrap( nowrap, column, start, start );
+                    @include flex-wrap( nowrap, column, start, center );
                     grid-column: 1 / span 4;
                     width: 100%;
                     height: 100%;
-                    padding-top: $lg;
+                    padding-top: 0;
+                    margin-top: 75%;
                     z-index: 10;
     
                     .home-title {
@@ -150,10 +148,10 @@
                         position: relative;
                         width: fit-content;
                         margin-top: $xxxl;
-                        margin-bottom: $xxl;
+                        margin-bottom: 0;
     
                         h1 {
-                            font-size: $xl;
+                            font-size: $xxl;
                             margin: 0;
                         }
                     }
@@ -161,6 +159,10 @@
                         @include flex-wrap( nowrap, column, start, start );
                         position: relative;
                         width: 100%;
+
+                        .quote-text {
+                            font-size: $md;
+                        }
     
                         .home-buttons-wrap {
                             @include flex-wrap( wrap, row, start, center );
