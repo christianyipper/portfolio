@@ -106,7 +106,6 @@ const ProjectsPage = () => {
                                 <SvgPhotoshop/>
                                 <SvgIllustrator/>
                             </ArtifactCard>
-                            
                         </div>
                     </div>
                 </div>

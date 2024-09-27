@@ -37,21 +37,12 @@
                     gap: $sm;
     
                     h1 {
-                        width: fit-content;
                         margin-top: 0;
                     }
                 }
                 .quote-wrap {
                     position: relative;
                     padding: $md 0;
-    
-                    .quote-text {
-                        @extend %heading-style;
-                        @extend %gradient;
-                        font-weight: 700;
-                        font-size: $md;
-                        text-align: center;
-                    }
                 }
             }
         }

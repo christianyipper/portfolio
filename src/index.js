@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './assets/stylesheets/style.css';
 
 import Cursor from './Cursor';
-import Nav from './Nav';
+import Nav from './components/Nav';
 import Footer from './Footer';
 import HomePage from './HomePage';
 import AboutPage from './about/AboutPage';

@@ -53,7 +53,7 @@
             .sub-heading {
                 @extend %sub-heading;
                 @extend %artifact-sub;
-                @extend %text-glow;
+                @include text-glow( block );
 
                 &:before {
                     text-shadow: 0 0 5px $primary, 0 0 10px $primary;

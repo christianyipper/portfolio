@@ -6,6 +6,7 @@ import TitleShimmer from '../components/text/TitleShimmer';
 import HeadingFloat from '../components/text/HeadingFloat';
 import HeadingShimmer from '../components/text/HeadingShimmer';
 import Paragraph from '../components/text/Paragraph';
+import Indent from '../components/text/Indent';
 
 import bchl from '../assets/images/icons/bchl-logo.png';
 import bcehl from '../assets/images/icons/bcehl-logo.png';
@@ -98,7 +99,7 @@ const About = () => {
                             heading="Hey There!"
                         />
                         <div className="about-heading-wrap">
-                            <span className="indent"/>
+                            <Indent/>
                             <TitleShimmer 
                                 animation="heading-auto"
                                 heading="I'm"
@@ -124,7 +125,7 @@ const About = () => {
                             heading="My Social"
                         />
                         <div ref={ headingSection2 } className="about-heading-wrap">
-                            <span className="indent"/>
+                            <Indent/>
                             <HeadingFloat 
                                 animation={ heading2 ? "scale-in" : "scale-out" } 
                                 meta=" Skillset." 
@@ -162,7 +163,7 @@ const About = () => {
                             heading="My Core"
                         />
                         <div ref={ headingSection3 } className="about-heading-wrap">
-                            <span className="indent"/>
+                            <Indent/>
                             <HeadingFloat 
                                 animation={ heading3 ? "scale-in" : "scale-out" } 
                                 meta=" Values." 
@@ -200,7 +201,7 @@ const About = () => {
                             heading="During My"
                         />
                         <div ref={ headingSection4 } className="about-heading-wrap">
-                            <span className="indent"/>
+                            <Indent/>
                             <HeadingFloat 
                                 animation={ heading4 ? "scale-in" : "scale-out" } 
                                 meta=" Downtime." a="D" b="o" c="w" d="n" e="t" f="i" g="m" h="e" i="."

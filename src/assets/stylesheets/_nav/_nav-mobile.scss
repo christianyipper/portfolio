@@ -1,0 +1,108 @@
+@media only screen and ( max-width: 500px ) {
+    nav {
+        @include flex-wrap( nowrap, column, center, start );
+        position: fixed;
+        width: 100%;
+        top: 0;
+        padding: 0;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 998;
+        
+        .nav-wrap {
+            @include flex-wrap( nowrap, column, center, center );
+            display: flex;
+            position: relative;
+            height: 100vh;
+            margin: 0;
+            background-color: rgba( $secondary, 0.5 );
+            backdrop-filter: blur( $xxs );
+
+            .nav-left {
+                display: none;
+                width: 100%;
+            }
+            .nav-mid {
+                @include flex-wrap( nowrap, column, center, center );
+                position: relative;
+                width: 100%;
+                margin: 0;
+
+                .nav-heading-bg {
+                    display: none;
+                    opacity: 0;
+                }
+            }
+            .nav-right {
+                @include flex-wrap( nowrap, row, center, center );
+                width: fit-content;
+                margin: 0;
+                bottom: $sm;
+                right: calc( $md + $xl );
+
+                .nav-icon-wrap {
+                    gap: $md;
+
+                    .nav-icon {
+                        position: relative;
+                        border-radius: $lg;
+                        border: solid 2px white;
+                        @include before-glow( $xl );
+                        
+                        & > svg {
+                            animation: svgRotate 0.6s ease-in-out forwards alternate infinite;
+                        }
+                    }
+                    .nav-linkedin > svg {
+                        animation-delay: 0.15s;
+                    }
+                    .nav-github > svg {
+                        animation-delay: 0.3s;
+                    }
+                    .nav-icon-bg {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        .nav-burger {
+            display: flex;
+            position: absolute;
+            width: $xl;
+            height: $xl;
+            background-color: rgba( $secondary, 0.5 );
+            bottom: $sm;
+            right: $sm;
+            border-radius: $lg;
+            border: solid 2px white;
+            z-index: 999;
+            pointer-events: all;
+
+            @include before-glow( $xl );
+        }
+    }
+    .nav-open {
+        opacity: 100%;
+        pointer-events: all;
+        transition: 0.5s ease-in-out;
+    }
+    .nav-close {
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.5s ease-in-out;
+    }
+    
+    %nav-bg {
+        @include flex-wrap( nowrap, row, center, center );
+        position: absolute;
+        background-color: rgba( 6, 14, 26, 0.25 );
+        backdrop-filter: blur(5px);
+        box-sizing: border-box;
+        border: solid 2px rgba( 255, 255, 255, 1 );
+        border-radius: 100px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: .2s ease-in-out;
+    }
+}

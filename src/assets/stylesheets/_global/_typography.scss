@@ -14,22 +14,18 @@
 h1 {
     @extend %heading-style;
     font-size: $xxl;
-    // margin-bottom: $lg;
 }
 h2 {
     @extend %heading-style;
     font-size: $xl;
-    // margin-bottom: $md;
 }
 h3 {
     @extend %heading-style;
     font-size: $lg;
     margin-bottom: $xs;
 }
-
 p {
     @extend %text-style;
-    // margin-bottom: $sm;
 }
 li {
     @extend %text-style;
@@ -61,6 +57,13 @@ a {
     text-align: right;
     right: 0;
 }
+.quote-text {
+    @extend %heading-style;
+    @include gradient( block );
+    font-weight: 700;
+    font-size: $md;
+    text-align: center;
+}
 .indent {
     margin-left: $mx;
 }
@@ -72,13 +75,13 @@ a {
     content: "";
 }
 strong {
-    @extend %gradient;
+    @include gradient( block );
 }
 .bold {
     font-weight: 800;
 }
 .text-cursor {
-    @extend %gradient;
+    @include gradient( block );
     animation-name: gradient, blinking;
     animation-duration: 8s, 1s;
     animation-timing-function: linear;
@@ -107,5 +110,27 @@ strong {
     }
     100% {
         opacity: 100%;
+    }
+}
+
+@media only screen and ( max-width: 500px ) {
+    h1 {
+        font-size: $xl;
+    }
+    h2 {
+        font-size: $lg;
+    }
+    h3 {
+        font-size: $md;
+        margin-bottom: $xs;
+    }
+    %text-style {
+        font-size: $sm;
+    }
+    %sub-heading {
+        font-size: $sm;
+    }
+    .indent {
+        margin-left: $xl;
     }
 }

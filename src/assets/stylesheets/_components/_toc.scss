@@ -92,7 +92,7 @@
                 margin-left: $md;
             }
             .sub-heading-grey {
-                @extend %gradient;
+                @include gradient( block );
                 position: relative;
                 font-weight: 700;
                 // color: $accent;
@@ -100,7 +100,7 @@
                 // opacity: 50%;
             }
             a, .page-num {
-                @extend %text-glow;
+                @include text-glow( block );
                 font-size: $md;
                 font-weight: 700;
             }

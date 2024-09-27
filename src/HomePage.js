@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import Footer from './Footer';
 import TitleFloat from './components/text/TitleFloat';
+import HeadingShimmer from './components/text/HeadingShimmer';
 import Button from './components/text/Button';
 import ScrollSnap from './components/ScrollSnap';
 import SvgLogo from './components/svg/SvgLogo';
@@ -71,9 +72,14 @@ const HomePage = () => {
                                 />
                             </div>
                             <div className="home-text-wrap">
-                                <h2 text-shimmer="Front-End Developer">Front-End Developer</h2>
+                                <p className="quote-text">My name's Christian. My colleagues call me Yipper.<br/>And my friends? They have their own ideas!</p>
+                                {/* <HeadingShimmer 
+                                    // animation={ heading2 ? "scale-in" : "scale-out" } 
+                                    heading="Front-End Developer"
+                                /> */}
                                 <div className="home-buttons-wrap">
                                     <Button text="About Me" link="/about"/>
+                                    <Button text="My Projects" link="/about" variant="btn-alt"/>
                                 </div>
                             </div>
                         </article>
