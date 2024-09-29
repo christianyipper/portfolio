@@ -57,7 +57,7 @@ a {
     text-align: right;
     right: 0;
 }
-.quote-text {
+.quote-text, .quote-text-mobile {
     @extend %heading-style;
     @include gradient( block );
     font-weight: 700;

@@ -161,7 +161,12 @@
                         width: 100%;
 
                         .quote-text {
-                            font-size: $md;
+                            display: none;
+                        }
+                        .quote-text-mobile {
+                            display: block;
+                            font-size: $pg
+
                         }
     
                         .home-buttons-wrap {

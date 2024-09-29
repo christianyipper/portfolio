@@ -1,15 +1,13 @@
 @media only screen and ( max-width: 500px ) {
     .about {
-        @extend %scroll-page-template;
         padding-top: 0;
-    
+
         ::-webkit-scrollbar {
             width: $xs;
         }
     
         .about-scroll {
-            @extend %desktop-margin;
-            padding-top: $xxl;
+            padding-top: 40vh;
     
             .about-section {
                 height: fit-content;
@@ -50,23 +48,24 @@
                 }
             }
             .about-img-section {
-                @extend %desktop-margin;
-                display: grid;
-                padding-top: $xxl;
-                grid-template-columns: 45% 55%;
+                display: flex;
                 width: 100%;
-                height: 100vh;
+                height: auto;
                 position: fixed;
-                top: 0;
-                z-index: -1;
-                pointer-events: none;
+                top: -$xxs;
+                left: 0;
+                padding-top: 0;
+                z-index: 50;
                 
                 .about-img-wrap {
                     @include flex-wrap( wrap, column, center, center );
                     position: relative;
                     width: 100%;
                     height: 100%;
-                    padding-top: $xxxl;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    aspect-ratio: 1 / 1;
+                    background: linear-gradient(0deg, rgba( $secondary, 0 ) 0%, rgba( $secondary, 1 ) 10%);
             
                     div {
                         @include flex-wrap( wrap, column, start, center );
@@ -75,7 +74,7 @@
                         height: 100%;  
             
                         img {
-                            width: 100%;
+                            width: 90%;
                             aspect-ratio: 1 / 1;
                         }
                     }

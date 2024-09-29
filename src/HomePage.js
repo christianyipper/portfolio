@@ -73,6 +73,7 @@ const HomePage = () => {
                             </div>
                             <div className="home-text-wrap">
                                 <p className="quote-text">My name's Christian. My colleagues call me Yipper.<br/>And my friends? They have their own ideas!</p>
+                                <p className="quote-text-mobile">My name's Christian. My colleagues call me Yipper. And my friends? They have their own ideas!</p>
                                 {/* <HeadingShimmer 
                                     // animation={ heading2 ? "scale-in" : "scale-out" } 
                                     heading="Front-End Developer"
