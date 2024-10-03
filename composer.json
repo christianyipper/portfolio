@@ -1,7 +1,5 @@
 {
     "require": {
-        "framer-motion": "^11.2.13",
-        "freezeframe": "^5.0.2",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-freezeframe": "^5.0.2",
@@ -12,7 +10,6 @@
         "react-simple-typewriter": "^5.0.1",
         "sass": "^1.77.6",
         "smooth-scrollbar": "^8.8.4",
-        "smooth-scrollbar-react": "^2.4.1",
-        "web-vitals": "^2.1.4"
+        "smooth-scrollbar-react": "^2.4.1"
     }
 }
