@@ -1,9 +1,0 @@
-.sub-heading-wrap {
-    @include flex-wrap( wrap, column, start, start );
-
-    .main-heading {
-        @extend %shimmer;
-        width: 100%;
-        margin-top: 0
-    }
-}
