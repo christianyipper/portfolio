@@ -13,7 +13,7 @@ import SvgGlasses from './components/svg/SvgGlasses';
 const HomePage = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
     const { ref: snap2, inView: inView2 } = useInView( { threshold: 0.5 } );
-    const { ref: snap3, inView: inView3 } = useInView( { threshold: 0.5 } );
+    // const { ref: snap3, inView: inView3 } = useInView( { threshold: 0.5 } );
     const { ref: snap4, inView: inView4 } = useInView( { threshold: 0.5 } );
 
     useEffect( () => {
@@ -37,9 +37,9 @@ const HomePage = () => {
                     reference2={ snap2 }
                     display2="scroll-show"
 
-                    id3=""
-                    reference3={ snap3 }
-                    display3="scroll-show"
+                    // id3=""
+                    // reference3={ snap3 }
+                    // display3="scroll-show"
 
                     id4=""
                     reference4={ snap4 }

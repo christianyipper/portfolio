@@ -1,6 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 import HeadingFloat from './components/text/HeadingFloat';
 import HeadingShimmer from './components/text/HeadingShimmer';
+import Button from './components/text/Button';
 
 const Footer = () => {
     const { ref: footer, inView: footerView } = useInView( { threshold: 0.5 } );
@@ -18,9 +19,11 @@ const Footer = () => {
                         meta="LinkedIn." 
                         a="L" b="i" c="n" d="k" e="e" f="d" g="I" h="n" i="."
                     />
-                    <a className={ `btn ${ footerView ? `scale-in` : `scale-out` }` } href="https://www.linkedin.com/in/christianyipper/">
-                        <p className="text-linkedin" text-glow="linkedin.com">linkedin.com</p>
-                    </a>
+                    <Button
+                        text="linkedin.com"
+                        link="https://www.linkedin.com/in/christianyipper/"
+                        duration="glow-18"
+                    />
                 </div>
                 <div className="footer-mid">
                     <img className={ `gif-overlay ${ footerView ? `blur-in` : `blur-out` }` } src="https://www.dropbox.com/scl/fi/rf1u88wl47o3ni7vo7ltn/yipper-profile-overlay-400p-27fps-comp.gif?rlkey=bdevz0gcrtbgz4ygq8y1hrtne&st=r9liec8y&raw=1" alt='Christian Yip "Yipper" profile shirt gif'/>
@@ -37,9 +40,11 @@ const Footer = () => {
                         direction="heading-right"
                         heading="By Email."
                     />
-                    <a className={ `btn ${ footerView ? `scale-in` : `scale-out` }` }>
-                        <p className="text-email" text-glow="christian@yipper.ca">christian@yipper.ca</p>
-                    </a>
+                    <Button
+                        text="christian@yipper.ca"
+                        link="christian@yipper.ca"
+                        duration="glow-24"
+                    />
                 </div>
             </div>
             <p className="copyright">© Yipper 2024</p>

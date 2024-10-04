@@ -37,16 +37,19 @@ const Nav = () => {
                         name="nav-heading nav-home"
                         link="/"
                         text="Home"
+                        duration="glow-12"
                     />
                     <TextGlow
                         name="nav-heading nav-about"
                         link="about"
                         text="About"
+                        duration="glow-12"
                     />
                     <TextGlow
                         name="nav-heading nav-projects"
                         link="projects"
                         text="Projects"
+                        duration="glow-8"
                     />
                     <div className="nav-heading-bg"></div>
                 </section>

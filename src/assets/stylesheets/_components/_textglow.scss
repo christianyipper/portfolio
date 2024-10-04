@@ -28,15 +28,27 @@
         color: transparent;
         filter: blur( 4px );
         transform: scaleX( 1.03 ) scaleY( 1.75 );
-        animation: lines 8s linear infinite alternate;
-    }
-    @keyframes lines {
-        0% {
-            background-position: 0 0;
-            background-position: 100% 100%;
-        }
     }
 }
+.glow-8:after {
+    animation: lines 8s linear infinite alternate;
+}
+.glow-12:after {
+    animation: lines 12s linear infinite alternate;
+}
+.glow-18:after {
+    animation: lines 18s linear infinite alternate;
+}
+.glow-24:after {
+    animation: lines 24s linear infinite alternate;
+}
+@keyframes lines {
+    0% {
+        background-position: 0 0;
+        background-position: 100% 100%;
+    }
+}
+
 @media only screen and ( max-width: 500px ) {
     .text-glow:after {
         animation: none;
