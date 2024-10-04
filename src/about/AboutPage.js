@@ -1,5 +1,4 @@
 import { useInView } from 'react-intersection-observer';
-import { useTypewriter } from 'react-simple-typewriter';
 import Footer from '../Footer';
 import TitleFloat from '../components/text/TitleFloat';
 import TitleShimmer from '../components/text/TitleShimmer';
