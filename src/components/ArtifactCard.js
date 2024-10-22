@@ -2,14 +2,18 @@ import HeadingShimmer from '../components/text/HeadingShimmer';
 import Paragraph from '../components/text/Paragraph';
 import Button from '../components/text/Button';
 
-const ArtifactCard = ( { enter, leave, poster, reference, video, subheading, heading, text, children, link } ) => {
+const ArtifactCard = ( { enter, leave, poster, reference, video, subheading, heading, text, children, link, bgImageMobile } ) => {
+
+    const style = {
+        backgroundImage: `url(${ bgImageMobile })`,
+    }
 
     return (
         <section className="project-artifact-wrap"
         onMouseEnter={ enter }
         onMouseLeave={ leave }>
             <p className="sub-heading" text-glow={ subheading }>{ subheading }</p>
-            <div className="project-artifact">
+            <div className="project-artifact" style={ style }>
                 <div className="project-border"></div>
                 <div className="project-corner-wrap"></div>
                 <video 

@@ -23,6 +23,12 @@
 .blur-out-fast {
     animation: blurOut 1s ease-in-out forwards;
 }
+.footer-blur-in {
+    animation: blurIn 2s ease-in-out forwards;
+}
+.footer-blur-out {
+    animation: blurOut 2s ease-in-out forwards;
+}
 @keyframes blurIn {
     0% {
         filter: blur( 10px );
@@ -146,3 +152,19 @@
         transform: rotateZ( 20deg );
     }
 } 
+
+@media only screen and ( max-width: 500px ) {
+    .scale-in, .scale-out {
+        animation: none;
+    }
+    .move-in, .move-out {
+        animation: none;
+    }
+    .footer-blur-in, .footer-blur-out {
+        animation: none;
+    }
+    .leap-in, .leap-out {
+        animation: none;
+        opacity: 100%;
+    }
+}

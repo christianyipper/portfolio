@@ -26,6 +26,14 @@
   animation: blurOut 1s ease-in-out forwards;
 }
 
+.footer-blur-in {
+  animation: blurIn 2s ease-in-out forwards;
+}
+
+.footer-blur-out {
+  animation: blurOut 2s ease-in-out forwards;
+}
+
 @keyframes blurIn {
   0% {
     filter: blur(10px);
@@ -149,6 +157,21 @@
   }
   to {
     transform: rotateZ(20deg);
+  }
+}
+@media only screen and (max-width: 500px) {
+  .scale-in, .scale-out {
+    animation: none;
+  }
+  .move-in, .move-out {
+    animation: none;
+  }
+  .footer-blur-in, .footer-blur-out {
+    animation: none;
+  }
+  .leap-in, .leap-out {
+    animation: none;
+    opacity: 100%;
   }
 }
 html {
@@ -2259,6 +2282,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     width: 100%;
     height: 1000px;
     position: relative;
+    opacity: 100% !important;
   }
   footer .footer-wrap h2 {
     margin: 0;
@@ -2282,6 +2306,9 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     margin-top: 400px;
     width: 100%;
     position: relative;
+  }
+  footer .footer-wrap .footer-left div {
+    opacity: 100% !important;
   }
   footer .footer-wrap .footer-mid {
     display: flex;
@@ -3924,7 +3951,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     width: fit-content;
     height: 100%;
     width: 100%;
-    gap: 24px;
+    gap: 64px;
     transition: 0.5s ease-in-out;
   }
   .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap {
@@ -3936,7 +3963,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     position: relative;
     width: 100%;
     height: auto;
-    aspect-ratio: 16/9;
+    aspect-ratio: 9/16;
     border-radius: 24px;
     transition: 0.5s ease-in-out;
   }
@@ -3995,13 +4022,13 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     justify-content: center;
     align-items: center;
     position: relative;
-    aspect-ratio: 16/9;
     width: 100%;
     height: auto;
     border-radius: 24px;
     overflow: hidden;
     transition: 0.5s ease-in-out;
     filter: grayscale(0) blur(0);
+    background-color: red;
   }
   .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-border {
     display: flex;
@@ -4023,6 +4050,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     height: 100%;
     aspect-ratio: 16/9;
     border-radius: 24px;
+    display: none;
   }
   .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-corner-wrap {
     width: 24px;
@@ -4036,21 +4064,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     z-index: 4;
   }
   .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-text {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 24px;
-    background-color: rgba(6, 14, 26, 0.8);
-    -webkit-backdrop-filter: blur(16px);
-            backdrop-filter: blur(16px);
-    z-index: 2;
-    opacity: 0;
-    transition: 0.5s ease-in-out;
+    opacity: 100%;
   }
   .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-text .heading-shimmer {
     position: relative;
@@ -4083,116 +4097,34 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
     filter: blur(0px);
     transition: 0.5s ease-in-out;
   }
-  .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: end;
-    align-items: end;
-    position: absolute;
-    width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
-    pointer-events: none;
-    overflow: hidden;
-    right: -2px;
-    bottom: -2px;
-    z-index: 5;
-  }
   .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-top-corner {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: end;
-    align-items: end;
-    z-index: 4;
-    right: 0;
-    width: 2px;
-    height: 24px;
-    right: -18px;
-    bottom: -20px;
-    transform: translate(0, 72px);
-    transition: 0.5s ease-in-out;
+    width: 24px;
+    transform: translate(0, 0);
   }
-  .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-top-corner:after {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 36px;
-    border-radius: 0 0 0 0;
-    bottom: -2px;
-    right: 0;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-    z-index: 5;
-    transition: 0.5s ease-in-out;
-  }
-  .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: end;
-    align-items: end;
-    position: relative;
+  .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-top-corner::after {
     width: 100%;
-    z-index: 3;
+    height: 100%;
+    border-radius: 0 0 24px 0;
   }
   .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: end;
-    align-items: end;
-    position: relative;
-    z-index: 4;
-    width: 100%;
-    height: 0px;
-    right: -20px;
-    bottom: -18px;
-    transform: translate(179.24px, 0);
-    transition: 0.5s ease-in-out;
+    height: 24px;
+    transform: translate(0px, 0px);
   }
-  .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
+  .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-bot-corner::after {
+    height: 100%;
     border-radius: 0 0 24px 0;
-    z-index: 5;
-    transition: 0.5s ease-in-out;
   }
   .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-btn-bg {
-    position: relative;
-    background-color: #060e1a;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding: 20px 0 0 20px;
-    border-radius: 24px 0 0 0;
-    pointer-events: all;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    z-index: 3;
-    transform: translate(177.24px, 72px);
-    transition: 0.5s ease-in-out;
+    transform: translate(0px, 0px);
   }
-  .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap .project-btn-bot .project-btn-bg .btn {
-    visibility: hidden;
+  .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap ~ .project-btn {
+    opacity: 100%;
+  }
+  .projects .project-container .project-wrap .project-gallery-wrap .project-gallery .project-artifact-wrap .project-artifact .project-btn-wrap ~ .project-btn .btn {
+    visibility: visible;
   }
   .projects .project-container .project-wrap .project-btn {
-    position: absolute;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding: 20px 0 0 20px;
-    border-radius: 24px 0 0 0;
-    pointer-events: all;
-    opacity: 0;
-    right: 0;
-    bottom: 0;
-    transition: 0.2s ease-in-out;
-    z-index: 20;
+    opacity: 100%;
   }
   .edge-img {
     position: absolute;

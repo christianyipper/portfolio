@@ -12,6 +12,7 @@
             width: 100%;
             height: 1000px;
             position: relative;
+            opacity: 100% !important;
     
             h2 {
                 margin: 0;
@@ -38,6 +39,10 @@
                 margin-top: 400px;
                 width: 100%;
                 position: relative;
+                
+                div {
+                    opacity: 100% !important;
+                }
             }
             .footer-mid {
                 @include flex-wrap( nowrap, row, center, start );
