@@ -131,6 +131,13 @@ video {
     overflow-x: hidden;
 }
 @media only screen and ( max-width: 500px ) {
+    body {
+        overflow: auto;
+    }
+    .scroll-hide {
+        overflow: auto;
+    }
+
     %page-template {
         @include flex-wrap( wrap, column, start, center );
         position: relative;
