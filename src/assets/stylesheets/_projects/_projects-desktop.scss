@@ -375,7 +375,8 @@
     opacity: 100% !important;
 
     svg {
-        @extend %svg-color;
+        // @extend %svg-color;
+        @include svg-color();
         transform: scale(1) !important;
         animation: iconFade 0.5s ease-in-out forwards alternate !important;
     }

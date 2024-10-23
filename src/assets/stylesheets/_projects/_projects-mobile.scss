@@ -62,7 +62,7 @@
                         height: 100%;
                         width: 100%;
                         gap: $xxl;
-                        transition: 0.5s ease-in-out;
+                        pointer-events: none;
                         
                         // === Artifact Card Styles ===
                         .project-artifact-wrap {
@@ -72,7 +72,7 @@
                             height: auto;
                             aspect-ratio: 9 / 16;
                             border-radius: $md;
-                            transition: 0.5s ease-in-out;
+                            pointer-events: none;
 
                             &::before {
                                 content: "";
@@ -82,8 +82,8 @@
                                 left: 0;
                                 top: 0;
                                 border-radius: $md;
-                                background-color: white;
-                                filter: blur( 8px );
+                                background-color: transparent;
+                                filter: blur( 0 );
                                 z-index: -2;
                                 transition: 0.5s ease-in-out;
                             }
@@ -95,8 +95,8 @@
                                 left: 0;
                                 top: 0;
                                 border-radius: $md;
-                                background-color: white;
-                                filter: blur( 2px );
+                                background-color: transparent;
+                                filter: blur( 0 );
                                 z-index: -2;
                                 transition: 0.5s ease-in-out;
                             }
@@ -118,9 +118,6 @@
                                 border-radius: $md;
                                 overflow: hidden;
                                 transition: 0.5s ease-in-out;
-                                filter: grayscale(0) blur(0);
-                                background-color: red;
-                                // transition: 0.5s cubic-bezier(0.3, -0.8, .4, 1.5);
         
                                 .project-border {
                                     @include flex-wrap( nowrap, column, center, center );
@@ -151,12 +148,22 @@
                                     bottom: -14px;
                                     z-index: 4;
                                 }
+                                .sm-heading {
+                                    visibility: hidden;
+                                }
                                 .project-text {
+                                    @include flex-wrap( nowrap, column, end, end );
                                     opacity: 100%;
+                                    position: absolute;
+                                    bottom: 0;
+                                    // height: fit-content;
+                                    // background-color: red;
+                                    background-image: linear-gradient(transparent 0%, transparent 30%, rgba($primary, 0.5) 100%);
+                                    padding-bottom: 100px;
                         
                                     .heading-shimmer {
                                         position: relative;
-                                        visibility: hidden;
+                                        visibility: visible;
                                     }
                                 }
                                 .app-icons-wrap {
@@ -245,16 +252,13 @@
         border-bottom: 20px solid $secondary;
         border-right: 20px solid $secondary;
     }
-    .project-artifact-wrap:has( .btn:hover ) .project-text {
+    .app-icons-wrap {
         opacity: 100% !important;
-    }
-    .project-artifact-wrap:has( .btn:hover ) .app-icons-wrap {
-        opacity: 100% !important;
+        width: 10%;
     
         svg {
-            @extend %svg-color;
+            @include svg-color();
             transform: scale(1) !important;
-            animation: iconFade 0.5s ease-in-out forwards alternate !important;
         }
     }
     

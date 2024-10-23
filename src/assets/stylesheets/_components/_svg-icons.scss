@@ -158,7 +158,7 @@ $webflow-dark: #146df5;
     }
 }
 
-%svg-color {
+@mixin svg-color() {
     .icon-grey {
         fill: $icon-grey !important;
     }
