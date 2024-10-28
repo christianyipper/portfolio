@@ -20,7 +20,7 @@
         }
         .heading-shimmer {
             width: fit-content;
-            font-size: $md;
+            font-size: $lg;
             margin-top: $md;
             margin-bottom: $md;
             left: $md;
@@ -117,8 +117,9 @@
                                 height: auto;
                                 border-radius: $md;
                                 overflow: hidden;
-                                transition: 0.5s ease-in-out;
-        
+                                background-position: center;
+                                background-size: cover;
+
                                 .project-border {
                                     @include flex-wrap( nowrap, column, center, center );
                                     position: relative;
@@ -156,10 +157,10 @@
                                     opacity: 100%;
                                     position: absolute;
                                     bottom: 0;
-                                    // height: fit-content;
-                                    // background-color: red;
-                                    background-image: linear-gradient(transparent 0%, transparent 30%, rgba($primary, 0.5) 100%);
+                                    background-image: linear-gradient(transparent 0%, transparent 25%, rgba($secondary, 0.75) 66%, rgba($secondary, 1) 100%);
+                                    background-color: rgba($secondary, 0.2);
                                     padding-bottom: 100px;
+                                    backdrop-filter: blur( 0 );
                         
                                     .heading-shimmer {
                                         position: relative;
@@ -171,7 +172,7 @@
                                     position: absolute;
                                     width: fit-content;
                                     height: fit-content;
-                                    left: $lg;
+                                    left: $md;
                                     bottom: 28px;
                                     gap: $sm;
                                     opacity: 25%;

@@ -50,7 +50,6 @@ const ProjectsPage = () => {
                             leave={ () => mouseLeave( ItsYipper ) }
                             poster="https://www.dropbox.com/scl/fi/dwu10b5gjpzz8tuc78d3h/itsyipper-thumb-comp.png?rlkey=rvakfjhv84t26pwfthgmhttqy&st=89spahic&raw=1"
                             video="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1"
-                            bgImageMobile=""
                             reference={ ItsYipper }
                             subheading="Web Design"
                             heading="ItsYipper"
