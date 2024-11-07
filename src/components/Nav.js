@@ -19,6 +19,10 @@ const Nav = () => {
         setBurgerActive(!burgerActive);
     };
 
+    const email = 'christian@yipper.ca';
+    const subject = 'Your Subject';
+    const body = 'Hello Christian,';
+
     return (
         <nav>
             <div className={ `nav-burger ${ burgerActive ? "burger-open" : "" }` }
@@ -55,7 +59,7 @@ const Nav = () => {
                 </section>
                 <section className="nav-right">
                     <div className="nav-icon-wrap">
-                        <a className="nav-icon nav-email" href="">
+                        <a className="nav-icon nav-email" href={`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}>
                             <SvgEmail/>
                         </a>
                         <a className="nav-icon nav-linkedin" href="https://www.linkedin.com/in/christianyipper/" target="_blank">
