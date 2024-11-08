@@ -2,7 +2,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect, useRef } from 'react';
 
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import List from '../components/List';
 import Paragraph from '../components/text/Paragraph';

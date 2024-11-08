@@ -2,7 +2,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 // import { Outlet } from 'react-router-dom';
 import ReactPlayer from 'react-player';
-import Footer from './Footer';
+import Footer from './components/Footer';
 import TitleFloat from './components/text/TitleFloat';
 import HeadingShimmer from './components/text/HeadingShimmer';
 import Button from './components/text/Button';

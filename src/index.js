@@ -4,7 +4,7 @@ import './assets/stylesheets/style.css';
 
 import Cursor from './Cursor';
 import Nav from './components/Nav';
-import Footer from './Footer';
+import Footer from './components/Footer';
 import HomePage from './HomePage';
 import AboutPage from './about/AboutPage';
 import ProjectsPage from './projects/ProjectsPage';

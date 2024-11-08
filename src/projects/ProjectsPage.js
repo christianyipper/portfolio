@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 import TitleFloat from '../components/text/TitleFloat';
 import TitleShimmer from '../components/text/TitleShimmer';
 
