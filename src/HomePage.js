@@ -1,6 +1,8 @@
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import { Helmet } from "react-helmet-async";
 // import { Outlet } from 'react-router-dom';
+
 import ReactPlayer from 'react-player';
 import Footer from './components/Footer';
 import TitleFloat from './components/text/TitleFloat';
@@ -27,6 +29,17 @@ const HomePage = () => {
 
     return (
         <main className="home">
+            <Helmet>
+                <title>Yipper Portfolio</title>
+                <meta property="og:title" content="Yipper Portfolio"/>
+
+                <meta name="description" content="Christian Yip, a passionate front-end developer and designer striving to create intuitive, engaging, and innovative digital experiences."/>
+                <meta name="og:description" content="Christian Yip, a passionate front-end developer and designer striving to create intuitive, engaging, and innovative digital experiences."/>
+
+                <meta name="keywords" content="front-end developer, graphics designer, portfolio, hockey referee, sports photographer"/>
+
+                <meta property="og:url" content="https://yipper.ca"/>
+            </Helmet>
             <div className="home-view">
                 <ScrollSnap
                     id1=""

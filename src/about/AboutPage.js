@@ -1,4 +1,6 @@
 import { useInView } from 'react-intersection-observer';
+import { Helmet } from "react-helmet-async";
+
 import Footer from '../components/Footer';
 import TitleFloat from '../components/text/TitleFloat';
 import TitleShimmer from '../components/text/TitleShimmer';
@@ -36,6 +38,17 @@ const About = () => {
 
     return (
         <main className="about">
+            <Helmet>
+                <title>Yipper Portfolio | About</title>
+                <meta property="og:title" content="Yipper Portfolio | About"/>
+
+                <meta name="description" content="Christian Yip, a passionate front-end developer and designer striving to create intuitive, engaging, and innovative digital experiences."/>
+                <meta name="og:description" content="Christian Yip, a passionate front-end developer and designer striving to create intuitive, engaging, and innovative digital experiences."/>
+
+                <meta name="keywords" content="front-end developer, graphics designer, portfolio, hockey referee, sports photographer"/>
+
+                <meta property="og:url" content="https://yipper.ca/about"/>
+            </Helmet>
             <div className="about-scroll">
                 <section className="about-img-section">
                     <article/>

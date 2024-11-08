@@ -2,6 +2,8 @@
 import React, { useState, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import { Helmet } from "react-helmet-async";
+
 import Footer from '../components/Footer';
 import TitleFloat from '../components/text/TitleFloat';
 import TitleShimmer from '../components/text/TitleShimmer';
@@ -37,6 +39,17 @@ const ProjectsPage = () => {
 
     return (
         <main className="projects">
+            <Helmet>
+                <title>Yipper Portfolio | Projects</title>
+                <meta property="og:title" content="Yipper Portfolio | Projects"/>
+
+                <meta name="description" content="Front-end developer and designer Christian Yip's creative work. View his skills in front-end and branding."/>
+                <meta name="og:description" content="Front-end developer and designer Christian Yip's creative work. View his skills in front-end and branding."/>
+
+                <meta name="keywords" content="front-end developer, graphics designer, portfolio, hockey referee, sports photographer"/>
+
+                <meta property="og:url" content="https://yipper.ca/projects"/>
+            </Helmet>
             <div className="project-container">
                 <div className="project-wrap">
                     <TitleFloat 

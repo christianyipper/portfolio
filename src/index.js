@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './assets/stylesheets/style.css';
+import { HelmetProvider } from 'react-helmet-async';
 
 import Cursor from './Cursor';
 import Nav from './components/Nav';
@@ -36,10 +37,12 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <div id="main">
-            <Nav />
-            <RouterProvider router={router} />
-            <Cursor />
-        </div>
+        <HelmetProvider>
+            <div id="main">
+                <Nav />
+                <RouterProvider router={router} />
+                <Cursor />
+            </div>
+        </HelmetProvider>
     </React.StrictMode>
 );

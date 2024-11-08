@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect, useRef } from 'react';
+import { Helmet } from "react-helmet-async";
 
 import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
