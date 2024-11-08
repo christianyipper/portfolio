@@ -76,7 +76,7 @@ const ProjectsPage = () => {
                                 <SvgAfterEffects/>
                                 <SvgFigma/>
                             </ArtifactCard>
-                            <ArtifactCard
+                            {/* <ArtifactCard
                             enter={ () => mouseEnter( SonicAni ) }
                             leave={ () => mouseLeave( SonicAni ) }
                             poster="https://www.dropbox.com/scl/fi/uh74vqvxay4lx4dwt682q/sonic-thumb-comp.png?rlkey=jufydzsubr3e9li62l1249rgs&st=x4kykj4q&raw=1"
@@ -105,7 +105,7 @@ const ProjectsPage = () => {
                                 <SvgWebflow/>
                                 <SvgPhotoshop/>
                                 <SvgIllustrator/>
-                            </ArtifactCard>
+                            </ArtifactCard> */}
                         </div>
                     </div>
                 </div>
