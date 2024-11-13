@@ -3312,7 +3312,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   }
 }
 .projects {
-  overflow-x: hidden;
   height: 100vh;
   z-index: 2;
 }
@@ -3348,6 +3347,10 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   z-index: 3;
   transition: 0.5s ease-in-out;
 }
+.projects .heading-float {
+  position: relative;
+  z-index: 10;
+}
 .projects .project-heading-float {
   animation: projectsLoad 2s ease-in-out forwards;
 }
@@ -3358,7 +3361,6 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   justify-content: center;
   align-items: start;
   position: relative;
-  height: 200vh;
 }
 .projects .project-container .project-wrap {
   display: flex;
@@ -3369,19 +3371,27 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   position: relative;
   width: 100%;
 }
+.projects .project-container .project-wrap .fade-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(6, 14, 26) 0%, rgba(6, 14, 26, 0) 10%, rgba(6, 14, 26, 0) 90%, rgb(6, 14, 26) 100%);
+  z-index: 5;
+  pointer-events: none;
+}
 .projects .project-container .project-wrap .project-gallery-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   width: 100%;
   height: 100%;
-  gap: 24px;
-  top: 24px;
-  left: -8px;
-  padding-left: 8px;
+  overflow-x: scroll;
+  overflow-y: visible;
+  padding-bottom: 64px;
+  padding-top: 32px;
   transition: 0.5s ease-in-out;
   margin-bottom: 48px;
 }
@@ -3395,7 +3405,9 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: -moz-fit-content;
   width: fit-content;
   height: 100%;
-  gap: 24px;
+  gap: 32px;
+  padding-left: 7vw;
+  padding-right: 7vw;
   transition: 0.5s ease-in-out;
 }
 .projects .project-container .project-wrap .project-gallery-wrap .project-gallery:hover .project-artifact-wrap:not(:hover) {
@@ -3409,7 +3421,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   align-items: center;
   position: relative;
   width: auto;
-  height: 25vw;
+  height: 30vw;
   border-radius: 24px;
   transition: 0.5s ease-in-out;
 }
@@ -3510,7 +3522,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   position: relative;
   aspect-ratio: 9/16;
   width: auto;
-  height: 25vw;
+  height: 30vw;
   border-radius: 24px;
   overflow: hidden;
   transition: 0.5s ease-in-out;

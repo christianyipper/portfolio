@@ -24,11 +24,61 @@ import ArtifactCard from '../components/ArtifactCard';
 
 const ProjectsPage = () => {
 
+    // Horizontal scroll
+    const scrollContainerRef = useRef(null);
+    useEffect(() => {
+        const scrollContainer = scrollContainerRef.current;
+        
+        const handleWheel = (e) => {
+            // Prevent the default vertical scroll
+            e.preventDefault();
+            
+            // Scroll horizontally based on the vertical scroll amount
+            scrollContainer.scrollLeft += e.deltaY;
+        };
+        
+        // Add event listener
+        scrollContainer.addEventListener('wheel', handleWheel, { passive: false });
+        
+        // Cleanup
+        return () => {
+            scrollContainer.removeEventListener('wheel', handleWheel);
+        };
+    }, []);
+
+    const centerItem = (e) => {
+        const container = scrollContainerRef.current;
+        const item = e.currentTarget;
+        
+        // Get viewport width to calculate actual dimensions
+        const vw = window.innerWidth / 100;
+        const itemHeight = 30 * vw; // 30vw height
+        
+        // Calculate widths based on aspect ratios
+        const normalWidth = itemHeight * (9/16); // Original aspect ratio 9:16
+        const hoveredWidth = itemHeight * (16/9); // Hovered aspect ratio 16:9
+        
+        // Get the container's width
+        const containerWidth = container.offsetWidth;
+        
+        // Calculate item's current position
+        const itemLeft = item.offsetLeft;
+        
+        // Calculate the center position accounting for the width change
+        const widthDifference = hoveredWidth - normalWidth;
+        const targetScroll = itemLeft - (containerWidth / 2) + (hoveredWidth / 2);
+        
+        container.scrollTo({
+            left: targetScroll,
+            behavior: 'smooth'
+        });
+    };
+
+    // Video hooks
     const [isHovered, setIsHovered] = useState(false);
     const ItsYipper = useRef(null);
     const StripesNationBrand = useRef(null);
     const StripesNationWeb = useRef(null);
-    const SonicAni = useRef(null);
     const EdgeBoards = useRef(null);
 
     const mouseEnter = ( videoRef ) => {
@@ -60,118 +110,65 @@ const ProjectsPage = () => {
                         meta="My Projects."
                         a="M" b="y" spaceC="space" c=" " d="P" e="r" f="o" g="j" h="e" i="c" j="t" k="s" l="."
                     />
-                    <div className="project-gallery-wrap">
+                    <div className="fade-overlay"/>
+                    <div className="project-gallery-wrap" 
+                        ref={ scrollContainerRef }
+                    >
                         <div className="project-gallery">
                             <ArtifactCard
-                            enter={ () => mouseEnter( ItsYipper ) }
-                            leave={ () => mouseLeave( ItsYipper ) }
-                            poster="https://www.dropbox.com/scl/fi/dwu10b5gjpzz8tuc78d3h/itsyipper-thumb-comp.png?rlkey=rvakfjhv84t26pwfthgmhttqy&st=89spahic&raw=1"
-                            video="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1"
-                            reference={ ItsYipper }
-                            subheading="Front-End"
-                            heading="ItsYipper"
-                            text="ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories."
-                            link="/itsyipper"
+                                enter={ (e) => { 
+                                    mouseEnter( ItsYipper ); 
+                                    centerItem(e); 
+                                }}
+                                leave={ () => mouseLeave( ItsYipper ) }
+                                poster="https://www.dropbox.com/scl/fi/dwu10b5gjpzz8tuc78d3h/itsyipper-thumb-comp.png?rlkey=rvakfjhv84t26pwfthgmhttqy&st=89spahic&raw=1"
+                                video="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1"
+                                reference={ ItsYipper }
+                                subheading="Front-End"
+                                heading="ItsYipper"
+                                text="ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories."
+                                link="/itsyipper"
                             >
                                 <SvgWebflow/>
                                 <SvgPhotoshop/>
                                 <SvgIllustrator/>
                             </ArtifactCard>
                             <ArtifactCard
-                            enter={ () => mouseEnter( StripesNationBrand ) }
-                            leave={ () => mouseLeave( StripesNationBrand ) }
-                            poster="https://www.dropbox.com/scl/fi/444jjpr2zh7s91t43xu2q/stripesnation-thumb-comp.png?rlkey=m206g74xrn3z44qac0i73ljd3&st=xhx8upg5&raw=1"
-                            video="https://www.dropbox.com/scl/fi/yd79axbaddk06h76ytb4m/StripesNation-1080p-comp.mp4?rlkey=iry6dsr7ct2umpe48n5gwlb5z&st=qcuh5kru&raw=1"
-                            reference={ StripesNationBrand }
-                            subheading="Branding"
-                            heading="Stripes Nation"
-                            text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
-                            link="/stripes-nation-brand"
+                                enter={ (e) => { 
+                                    mouseEnter( StripesNationBrand ); 
+                                    centerItem(e); 
+                                }}
+                                leave={ () => mouseLeave( StripesNationBrand )}
+                                poster="https://www.dropbox.com/scl/fi/444jjpr2zh7s91t43xu2q/stripesnation-thumb-comp.png?rlkey=m206g74xrn3z44qac0i73ljd3&st=xhx8upg5&raw=1"
+                                video="https://www.dropbox.com/scl/fi/yd79axbaddk06h76ytb4m/StripesNation-1080p-comp.mp4?rlkey=iry6dsr7ct2umpe48n5gwlb5z&st=qcuh5kru&raw=1"
+                                reference={ StripesNationBrand }
+                                subheading="Branding"
+                                heading="Stripes Nation"
+                                text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
+                                link="/stripes-nation-brand"
                             >
                                 <SvgPhotoshop/>
                                 <SvgIllustrator/>
                                 <SvgAfterEffects/>
                                 <SvgFigma/>
                             </ArtifactCard>
-                            <ArtifactCard
-                            enter={ () => mouseEnter( StripesNationWeb ) }
-                            leave={ () => mouseLeave( StripesNationWeb ) }
-                            poster="https://www.dropbox.com/scl/fi/lu2pt8d7o3j31e8at96gf/sn-jersey-md-min.webp?rlkey=bdhqr3jh8omzi1mqvcznqxtm4&st=d7t7fp9n&raw=1"
-                            video="https://www.dropbox.com/scl/fi/eidpjoeahq67umeob3dc2/background-video-16-9.mp4?rlkey=c36c1316oo4azszfbiknvkny3&st=ogajpxl9&raw=1"
-                            reference={ StripesNationWeb }
-                            subheading="Front-End"
-                            heading="Stripes Nation"
-                            text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
-                            link="/sonic-animation"
+                            {/* <ArtifactCard
+                                enter={ (e) => { 
+                                    mouseEnter( StripesNationWeb ); 
+                                    centerItem(e); 
+                                }}
+                                leave={ () => mouseLeave( StripesNationWeb )}
+                                poster="https://www.dropbox.com/scl/fi/lu2pt8d7o3j31e8at96gf/sn-jersey-md-min.webp?rlkey=bdhqr3jh8omzi1mqvcznqxtm4&st=d7t7fp9n&raw=1"
+                                video="https://www.dropbox.com/scl/fi/eidpjoeahq67umeob3dc2/background-video-16-9.mp4?rlkey=c36c1316oo4azszfbiknvkny3&st=ogajpxl9&raw=1"
+                                reference={ StripesNationWeb }
+                                subheading="Front-End"
+                                heading="Stripes Nation"
+                                text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
+                                link="/sonic-animation"
                             >
                                 <SvgReact/>
                                 <SvgSass/>
                                 <SvgFigma/>
-                            </ArtifactCard>
-                            {/* <ArtifactCard
-                            enter={ () => mouseEnter( EdgeBoards ) }
-                            leave={ () => mouseLeave( EdgeBoards ) }
-                            poster="https://www.dropbox.com/scl/fi/06induswo23lu4c1o8ybi/edgeboards-poster-wide.png?rlkey=m2c1p4kjdi2pe0qx4jsvncyuj&st=pxyuiju3&raw=1"
-                            video="https://www.dropbox.com/scl/fi/h69ieqh7sfy7zoo29ishj/edgeboards-skilift-1080p-comp.mp4?rlkey=kmtnff10c80h6k7ni1kyjc9ob&st=t4be6ajj&raw=1"
-                            reference={ EdgeBoards }
-                            subheading="Branding"
-                            heading="Edge Boards"
-                            text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
-                            link="/edge-boards"
-                            >
-                                <SvgWebflow/>
-                                <SvgPhotoshop/>
-                                <SvgIllustrator/>
-                            </ArtifactCard> */}
-                        </div>
-                    </div>
-                    <div className="project-gallery-wrap">
-                        <div className="project-gallery">
-                            {/* <ArtifactCard
-                            enter={ () => mouseEnter( ItsYipper ) }
-                            leave={ () => mouseLeave( ItsYipper ) }
-                            poster="https://www.dropbox.com/scl/fi/dwu10b5gjpzz8tuc78d3h/itsyipper-thumb-comp.png?rlkey=rvakfjhv84t26pwfthgmhttqy&st=89spahic&raw=1"
-                            video="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1"
-                            reference={ ItsYipper }
-                            subheading="Front-End"
-                            heading="ItsYipper"
-                            text="ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories."
-                            link="/itsyipper"
-                            >
-                                <SvgWebflow/>
-                                <SvgPhotoshop/>
-                                <SvgIllustrator/>
-                            </ArtifactCard> */}
-                            {/* <ArtifactCard
-                            enter={ () => mouseEnter( StripesNation ) }
-                            leave={ () => mouseLeave( StripesNation ) }
-                            poster="https://www.dropbox.com/scl/fi/444jjpr2zh7s91t43xu2q/stripesnation-thumb-comp.png?rlkey=m206g74xrn3z44qac0i73ljd3&st=xhx8upg5&raw=1"
-                            video="https://www.dropbox.com/scl/fi/yd79axbaddk06h76ytb4m/StripesNation-1080p-comp.mp4?rlkey=iry6dsr7ct2umpe48n5gwlb5z&st=qcuh5kru&raw=1"
-                            reference={ StripesNation }
-                            subheading="Branding"
-                            heading="Stripes Nation"
-                            text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
-                            link="/stripes-nation"
-                            >
-                                <SvgPhotoshop/>
-                                <SvgIllustrator/>
-                                <SvgAfterEffects/>
-                                <SvgFigma/>
-                            </ArtifactCard> */}
-                            {/* <ArtifactCard
-                            enter={ () => mouseEnter( SonicAni ) }
-                            leave={ () => mouseLeave( SonicAni ) }
-                            poster="https://www.dropbox.com/scl/fi/uh74vqvxay4lx4dwt682q/sonic-thumb-comp.png?rlkey=jufydzsubr3e9li62l1249rgs&st=x4kykj4q&raw=1"
-                            video="https://www.dropbox.com/scl/fi/xx8gfihs9jvk66lezrmlw/Sonic-Preview-720p-comp.mp4?rlkey=s4bep7n5vsit23jm21pht2oil&st=25ay3jsm&raw=1"
-                            reference={ SonicAni }
-                            subheading="Front-End"
-                            heading="Sonic Animation"
-                            text="ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories."
-                            link="/sonic-animation"
-                            >
-                                <SvgHtml/>
-                                <SvgCss/>
-                                <SvgJs/>
                             </ArtifactCard> */}
                             {/* <ArtifactCard
                             enter={ () => mouseEnter( EdgeBoards ) }

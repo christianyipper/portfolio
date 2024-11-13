@@ -19,16 +19,6 @@ import Image from '../components/Image';
 import ScrollDown from '../components/ScrollDown';
 import ScrollSnap from '../components/ScrollSnap';
 
-import SvgPhotoshop from '../components/svg/SvgPhotoshop';
-import SvgWebflow from '../components/svg/SvgWebflow';
-import SvgIllustrator from '../components/svg/SvgIllustrator';
-import SvgAfterEffects from '../components/svg/SvgAfterEffects';
-import SvgFigma from '../components/svg/SvgFigma';
-import SvgHtml from '../components/svg/SvgHtml';
-import SvgCss from '../components/svg/SvgCss';
-import SvgJs from '../components/svg/SvgJs';
-
-
 const StripesNationBrand = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
     const { ref: snap2, inView: inView2 } = useInView( { threshold: 0.5 } );

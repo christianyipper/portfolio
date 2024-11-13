@@ -54,9 +54,9 @@ const HomePage = () => {
                     // reference3={ snap3 }
                     // display3="scroll-show"
 
-                    id4=""
-                    reference4={ snap4 }
-                    display4="scroll-show"
+                    // id4=""
+                    // reference4={ snap4 }
+                    // display4="scroll-show"
                 />
                 <section className="loading-screen">
                     <SvgLogo />
@@ -139,14 +139,13 @@ const HomePage = () => {
                         </article>
                     </div>
                 </section> */}
-                <section className={ `home-section home-footer ${ inView4 ? "blur-in" : "blur-out" }` }>
+                {/* <section className={ `home-section home-footer ${ inView4 ? "blur-in" : "blur-out" }` }>
                     <div className="home-wrap">
                         <div className="recommend-wrap">
                             <article></article>
                         </div>
                     </div>
-                    <Footer/>
-                </section>
+                </section> */}
             </div>
         </main>
     )
