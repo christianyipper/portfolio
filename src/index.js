@@ -10,7 +10,7 @@ import HomePage from './HomePage';
 import AboutPage from './about/AboutPage';
 import ProjectsPage from './projects/ProjectsPage';
 import ItsYipper from './itsyipper/ItsYipper';
-import StripesNation from './stripes-nation/StripesNation';
+import StripesNationBrand from './stripes-nation-brand/StripesNationBrand';
 import SonicAnimation from './sonic-animation/SonicAnimation';
 import EdgeBoards from './edge-boards/EdgeBoards';
 import {
@@ -23,14 +23,14 @@ import {
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path="/" element={<HomePage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="projects" element={<ProjectsPage />} />
+            <Route path="/" element={<HomePage/>} />
+            <Route path="about" element={<AboutPage/>} />
+            <Route path="projects" element={<ProjectsPage/>} />
 
-            <Route path="itsyipper" element={<ItsYipper />} />
-            <Route path="stripes-nation" element={<StripesNation />} />
-            <Route path="sonic-animation" element={<SonicAnimation />} />
-            <Route path="edge-boards" element={<EdgeBoards />} />
+            <Route path="itsyipper" element={<ItsYipper/>} />
+            <Route path="stripes-nation-brand" element={<StripesNationBrand/>} />
+            <Route path="sonic-animation" element={<SonicAnimation/>} />
+            <Route path="edge-boards" element={<EdgeBoards/>} />
         </>
     )
 );

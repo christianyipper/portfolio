@@ -29,7 +29,7 @@ import SvgCss from '../components/svg/SvgCss';
 import SvgJs from '../components/svg/SvgJs';
 
 
-const StripesNation = () => {
+const StripesNationBrand = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
     const { ref: snap2, inView: inView2 } = useInView( { threshold: 0.5 } );
     const { ref: snap3, inView: inView3 } = useInView( { threshold: 0.5 } );
@@ -41,28 +41,28 @@ const StripesNation = () => {
     const [isActive, setIsActive] = useState(false);
     const homeView = useRef(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-            setIsActive(true);
-            } else {
-            setIsActive(false);
-            }
-        },
-        { threshold: 0.5 } 
-        );
+    // useEffect(() => {
+    //     const observer = new IntersectionObserver(
+    //     ([entry]) => {
+    //         if (entry.isIntersecting) {
+    //         setIsActive(true);
+    //         } else {
+    //         setIsActive(false);
+    //         }
+    //     },
+    //     { threshold: 0.5 } 
+    //     );
 
-        if (homeView.current) {
-        observer.observe(homeView.current);
-        }
+    //     if (homeView.current) {
+    //     observer.observe(homeView.current);
+    //     }
 
-        return () => {
-        if (homeView.current) {
-            observer.unobserve(homeView.current);
-            }
-        };
-    }, []);
+    //     return () => {
+    //     if (homeView.current) {
+    //         observer.unobserve(homeView.current);
+    //         }
+    //     };
+    // }, []);
 
     const tocClick = () => {
         setIsActive(!isActive);
@@ -375,4 +375,4 @@ const StripesNation = () => {
     )
 }
 
-export default StripesNation
+export default StripesNationBrand

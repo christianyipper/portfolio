@@ -1,0 +1,26 @@
+@media only screen and ( max-width: 500px ) {
+    .artifact {
+        .artifact-section {
+            @include flex-wrap( wrap, column, center, center );
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: visible;
+            opacity: 100% !important;
+            pointer-events: all;
+
+            &.artifact-hide {
+                display: block;
+                opacity: 100%;
+            }
+
+            .artifact-wrap {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    .scroll-wrap {
+        display: block !important;
+    }
+}

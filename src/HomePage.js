@@ -46,9 +46,9 @@ const HomePage = () => {
                     reference1={ snap1 }
                     display1="scroll-show"
 
-                    id2=""
-                    reference2={ snap2 }
-                    display2="scroll-show"
+                    // id2=""
+                    // reference2={ snap2 }
+                    // display2="scroll-show"
 
                     // id3=""
                     // reference3={ snap3 }
@@ -99,7 +99,7 @@ const HomePage = () => {
                         </article>
                     </div>
                 </section>
-                <section className={ `home-section ${ inView2 ? "blur-in" : "blur-out" }` }>
+                {/* <section className={ `home-section ${ inView2 ? "blur-in" : "blur-out" }` }>
                     <div className="home-wrap">
                         <div className="window-wrap">
                             <img className="window" src="https://drive.google.com/thumbnail?id=1-sfapRmWf0WAtDT7HuCJ7ck7ny7bhyLB&sz=w1000" alt='Glowing neon window border'/>
@@ -138,14 +138,14 @@ const HomePage = () => {
                             </div>
                         </article>
                     </div>
-                </section>
+                </section> */}
                 <section className={ `home-section home-footer ${ inView4 ? "blur-in" : "blur-out" }` }>
                     <div className="home-wrap">
                         <div className="recommend-wrap">
                             <article></article>
                         </div>
                     </div>
-                    <Footer />
+                    <Footer/>
                 </section>
             </div>
         </main>

@@ -32,14 +32,14 @@
         background-clip: text;
         color: transparent;
         filter: blur( 4px );
-        animation: lines 16s linear infinite;
+        // animation: lines 16s linear infinite;
     }
-    @keyframes lines {
-        0% {
-            background-position: 0 0;
-            background-position: 100% 100%;
-        }
-    }
+    // @keyframes lines {
+    //     0% {
+    //         background-position: 0 0;
+    //         background-position: 100% 100%;
+    //     }
+    // }
 }
 
 @media only screen and ( max-width: 500px ) {

@@ -1,5 +1,7 @@
 .projects {
     @extend %page-template;
+    overflow-x: hidden;
+    height: 100vh;
     z-index: 2;
 
     .project-heading-wrap {
@@ -36,6 +38,7 @@
         @extend %desktop-margin;
         @include flex-wrap( nowrap, column, center, start );
         position: relative;
+        height: 200vh;
 
         .project-wrap {
             @include flex-wrap( nowrap, column, start, start );
@@ -52,6 +55,7 @@
                 left: - $xxs;
                 padding-left: $xxs;
                 transition: 0.5s ease-in-out;
+                margin-bottom: $xl;
 
                 .project-gallery {
                     @include flex-wrap( nowrap, row, center, center );
@@ -222,7 +226,7 @@
                                 position: absolute;
                                 width: fit-content;
                                 height: fit-content;
-                                left: $lg;
+                                left: $md;
                                 bottom: 28px;
                                 gap: $sm;
                                 opacity: 25%;

@@ -340,29 +340,6 @@ video {
   .scroll-hide {
     overflow: auto;
   }
-  .projects, nav .nav-wrap .nav-mid .home-preview, nav .nav-wrap .nav-mid .about-preview, nav .nav-wrap .nav-mid .projects-preview, .banner, main {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    position: relative;
-    width: calc(100% - 32px);
-    min-height: calc(100vh - 64px);
-    padding: 64px 16px 0 16px;
-  }
-  .artifact, .about, .home .home-view {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    width: calc(100% - 32px);
-    min-height: calc(100vh - 64px);
-    padding: 64px 16px 0 16px;
-    height: 100vh;
-    top: 0;
-  }
 }
 .btn, .quote-text, .quote-text-mobile, h3, h2, h1 {
   font-family: "Rubik";
@@ -1383,13 +1360,6 @@ a:hover ~ .cursor {
           background-clip: text;
   color: transparent;
   filter: blur(4px);
-  animation: lines 16s linear infinite;
-}
-@keyframes lines {
-  0% {
-    background-position: 0 0;
-    background-position: 100% 100%;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -1535,6 +1505,10 @@ a:hover ~ .cursor {
 
 .sass-dark {
   fill: #cd669a;
+}
+
+.tailwind-dark {
+  fill: #39bbf8;
 }
 
 .webflow-dark {
@@ -3338,6 +3312,8 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   }
 }
 .projects {
+  overflow-x: hidden;
+  height: 100vh;
   z-index: 2;
 }
 .projects .project-heading-wrap {
@@ -3382,6 +3358,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   justify-content: center;
   align-items: start;
   position: relative;
+  height: 200vh;
 }
 .projects .project-container .project-wrap {
   display: flex;
@@ -3406,6 +3383,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   left: -8px;
   padding-left: 8px;
   transition: 0.5s ease-in-out;
+  margin-bottom: 48px;
 }
 .projects .project-container .project-wrap .project-gallery-wrap .project-gallery {
   display: flex;
@@ -3602,7 +3580,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  left: 32px;
+  left: 24px;
   bottom: 28px;
   gap: 16px;
   opacity: 25%;
@@ -4460,4 +4438,31 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 
 .h1-sm {
   font-size: 24px;
+}
+
+@media only screen and (max-width: 500px) {
+  .artifact .artifact-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    opacity: 100% !important;
+    pointer-events: all;
+  }
+  .artifact .artifact-section.artifact-hide {
+    display: block;
+    opacity: 100%;
+  }
+  .artifact .artifact-section .artifact-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .scroll-wrap {
+    display: block !important;
+  }
 }/*# sourceMappingURL=style.css.map */
