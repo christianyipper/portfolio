@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5e335338.css",
-    "main.js": "/static/js/main.3e249735.js",
+    "main.js": "/static/js/main.309b3e8a.js",
     "static/media/inkmask-left.png": "/static/media/inkmask-left.6be2b7ffbda0a6adeb35.png",
     "static/media/inkmask-right.png": "/static/media/inkmask-right.3d85368e7a59160d4692.png",
     "static/media/jphl-logo.png": "/static/media/jphl-logo.523fd9f17883d5f462d4.png",
@@ -12,10 +12,10 @@
     "static/media/csshl-logo.png": "/static/media/csshl-logo.d2fa15d6fb7912bbc42f.png",
     "index.html": "/index.html",
     "main.5e335338.css.map": "/static/css/main.5e335338.css.map",
-    "main.3e249735.js.map": "/static/js/main.3e249735.js.map"
+    "main.309b3e8a.js.map": "/static/js/main.309b3e8a.js.map"
   },
   "entrypoints": [
     "static/css/main.5e335338.css",
-    "static/js/main.3e249735.js"
+    "static/js/main.309b3e8a.js"
   ]
 }
