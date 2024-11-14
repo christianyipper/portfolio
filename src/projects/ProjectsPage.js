@@ -78,7 +78,7 @@ const ProjectsPage = () => {
     const [isHovered, setIsHovered] = useState(false);
     const ItsYipper = useRef(null);
     const StripesNationBrand = useRef(null);
-    const StripesNationWeb = useRef(null);
+    const StripesNationWebsite = useRef(null);
     const EdgeBoards = useRef(null);
 
     const mouseEnter = ( videoRef ) => {
@@ -144,32 +144,32 @@ const ProjectsPage = () => {
                                 reference={ StripesNationBrand }
                                 subheading="Branding"
                                 heading="Stripes Nation"
-                                text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
-                                link="/stripes-nation-brand"
+                                text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. I wanted to create a brand which boast a bold identity that evokes the energy and speed of the sport. I also wanted to highlight the emotions of the game through photo-centric elements within the brand's website and social media."
+                                link="/stripesnation-brand"
                             >
                                 <SvgPhotoshop/>
                                 <SvgIllustrator/>
                                 <SvgAfterEffects/>
                                 <SvgFigma/>
                             </ArtifactCard>
-                            {/* <ArtifactCard
+                            <ArtifactCard
                                 enter={ (e) => { 
-                                    mouseEnter( StripesNationWeb ); 
+                                    mouseEnter( StripesNationWebsite ); 
                                     centerItem(e); 
                                 }}
-                                leave={ () => mouseLeave( StripesNationWeb )}
+                                leave={ () => mouseLeave( StripesNationWebsite )}
                                 poster="https://www.dropbox.com/scl/fi/lu2pt8d7o3j31e8at96gf/sn-jersey-md-min.webp?rlkey=bdhqr3jh8omzi1mqvcznqxtm4&st=d7t7fp9n&raw=1"
                                 video="https://www.dropbox.com/scl/fi/eidpjoeahq67umeob3dc2/background-video-16-9.mp4?rlkey=c36c1316oo4azszfbiknvkny3&st=ogajpxl9&raw=1"
-                                reference={ StripesNationWeb }
+                                reference={ StripesNationWebsite }
                                 subheading="Front-End"
                                 heading="Stripes Nation"
-                                text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
-                                link="/sonic-animation"
+                                text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. I wanted to create a brand which boast a bold identity that evokes the energy and speed of the sport. I also wanted to highlight the emotions of the game through photo-centric elements within the brand's website and social media."
+                                link="/stripesnation-website"
                             >
                                 <SvgReact/>
                                 <SvgSass/>
                                 <SvgFigma/>
-                            </ArtifactCard> */}
+                            </ArtifactCard>
                             {/* <ArtifactCard
                             enter={ () => mouseEnter( EdgeBoards ) }
                             leave={ () => mouseLeave( EdgeBoards ) }
