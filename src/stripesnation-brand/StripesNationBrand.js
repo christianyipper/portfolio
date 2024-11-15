@@ -27,32 +27,33 @@ const StripesNationBrand = () => {
     const { ref: snap5, inView: inView5 } = useInView( { threshold: 0.5 } );
     const { ref: snap6, inView: inView6 } = useInView( { threshold: 0.5 } );
     const { ref: snap7, inView: inView7 } = useInView( { threshold: 0.5 } );
+    const { ref: snap8, inView: inView8 } = useInView( { threshold: 0.5 } );
 
     const [isActive, setIsActive] = useState(false);
     const homeView = useRef(null);
 
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver(
-    //     ([entry]) => {
-    //         if (entry.isIntersecting) {
-    //         setIsActive(true);
-    //         } else {
-    //         setIsActive(false);
-    //         }
-    //     },
-    //     { threshold: 0.5 } 
-    //     );
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+            setIsActive(true);
+            } else {
+            setIsActive(false);
+            }
+        },
+        { threshold: 0.5 } 
+        );
 
-    //     if (homeView.current) {
-    //     observer.observe(homeView.current);
-    //     }
+        if (homeView.current) {
+        observer.observe(homeView.current);
+        }
 
-    //     return () => {
-    //     if (homeView.current) {
-    //         observer.unobserve(homeView.current);
-    //         }
-    //     };
-    // }, []);
+        return () => {
+        if (homeView.current) {
+            observer.unobserve(homeView.current);
+            }
+        };
+    }, []);
 
     const tocClick = () => {
         setIsActive(!isActive);
@@ -86,9 +87,13 @@ const StripesNationBrand = () => {
                 reference6={ snap6 }
                 display6="scroll-show"
                 
-                id7="Footer"
+                id7="LandingPage"
                 reference7={ snap7 }
                 display7="scroll-show"
+
+                id8="UIElements"
+                reference8={ snap8 }
+                display8="scroll-show"
             />
             <section className="artifact-section artifact-home">
                 <div className="artifact-wrap">
@@ -116,7 +121,9 @@ const StripesNationBrand = () => {
                             menu={ isActive ? "toc-show" : "toc-hide" }
                             click={ tocClick }
                             view={ isActive ? "pointer-show" : "pointer-hide" }
-                            animation={ inView7 ? "opacity-0" : "opacity-100"}
+
+                            // toggle burger visibility
+                            // animation={ inView7 ? "opacity-0" : "opacity-100"}
 
                             subHeading1="Illustrator"
                             mainHeading1="Logo Concepts"
@@ -147,10 +154,23 @@ const StripesNationBrand = () => {
                             path5="#BrandBook"
                             num5="5"
                             display5="toc-display"
+
+                            subHeading6="React | Sass | After Effects"
+                            mainHeading6="Landing Page"
+                            path6="#LandingPage"
+                            num6="6"
+                            display6="toc-display"
+
+                            subHeading7="React | Sass"
+                            mainHeading7="UI Elements"
+                            path7="#UIElements"
+                            num7="7"
+                            display7="toc-display"
                         />
                     </div>
                     <ScrollDown
-                        animation={ inView7 ? "opacity-0" : "opacity-100"}
+                        // toggle burger visibility
+                        animation={ inView8 ? "opacity-0" : "opacity-100"}
 
                         heading1="Next - Logo Concepts"
                         link1="#LogoConcepts"
@@ -172,9 +192,13 @@ const StripesNationBrand = () => {
                         link5="#BrandBook"
                         animation5={ inView5 ? "opacity-100" : "opacity-0"}
                         
-                        heading6="Next - More Projects"
-                        link6="#Footer"
+                        heading6="Next - Landing Page"
+                        link6="#LandingPage"
                         animation6={ inView6 ? "opacity-100" : "opacity-0"}
+
+                        heading7="Next - UI Elements"
+                        link7="#UIElements"
+                        animation7={ inView7 ? "opacity-100" : "opacity-0"}
                     />
                 </div>
             </section>
@@ -351,15 +375,66 @@ const StripesNationBrand = () => {
             </section>
             <section className={ `artifact-section ${ inView7 ? "" : "artifact-hide" }` }>
                 <div className="artifact-wrap">
-                    <article className="artifact-left left-sm">
+                    <VideoAutoplay
+                        name="artifact-img-wrap img-left"
+                        videoName="bumper"
+                        animation={ inView7 ? "blur-in" : ""}
+                        link="https://www.dropbox.com/scl/fi/wav9i59vxwpb9m78yqbqn/sn-website-load.mp4?rlkey=xh72ews8ufx4z13t82n601yhq&st=o9xrbv0u&raw=1"
+                    />
+                    <article className="artifact-right right-md">
                         <SubHeading 
-                            subHeading="Figma | Photoshop" 
-                            mainHeading="Brand Book" 
-                            animation={ inView6 ? "scale-in" : ""}
+                            subHeading="React | Sass | After Effects" 
+                            mainHeading="Landing Page" 
+                            animation={ inView7 ? "scale-in" : ""}
+                        />
+                        <Paragraph 
+                            animation={ inView7 ? "leap-in" : ""}
+                            text1="The pinacle of the Stripes Nation website is to tell stories through imagery. The landing page was created with a photo-centric approach."
+                        />
+                        <List 
+                            heading1="Jersey Animation"
+                            text1="With a combination of photoshop editing and After Effects, I was able to animate the jersey to simulate it waving in the wind. I wanted to add a sense of realism and immersiveness to the design." 
+                            animation1={ inView7 ? "leap-in leap1" : ""}
+
+                            heading2="Parallax" 
+                            text2="After separating the layers within the photo, I used transform properties to ease in these separated layers to simulate a parallax effect. When the page renders, the layers fade in and slide into frame." 
+                            animation2={ inView7 ? "leap-in leap2" : ""}
+
+                            display3="none"
                         />
                     </article>
                 </div>
-                <Footer/>
+            </section>
+            <section className={ `artifact-section ${ inView8 ? "" : "artifact-hide" }` }>
+                <div className="artifact-wrap">
+                    <article className="artifact-left left-sm">
+                        <SubHeading 
+                            subHeading="React | Sass" 
+                            mainHeading="UI Elements" 
+                            animation={ inView8 ? "scale-in" : ""}
+                        />
+                        <Paragraph 
+                            animation={ inView8 ? "leap-in" : ""}
+                            text1="With the navigation and footer icons, I wanted to create a design that reflects the Stripes Nation brand while also adding elements that resemble photography."
+                        />
+                        <List 
+                            heading1="Icon Design" 
+                            text1="I deliberately incoporated a bordered version of the logos and icons created in illustrator. The logos and social media icons were created with a solid slanted border to reflect the speed of the sport. The heading borders were created in Sass using transform properties to skew and rotate the lines to reflect the viewfinder of a camera." 
+                            animation1={ inView8 ? "leap-in leap1" : ""}
+
+                            heading2="Interactivity" 
+                            text2="I used scale and opacity properties to create the hover effect by showing and hiding the overlapping elements." 
+                            animation2={ inView8 ? "leap-in leap2" : ""}
+
+                            display3="none"
+                        />
+                    </article>
+                    <VideoAutoplay
+                        name="artifact-img-wrap img-right-lg"
+                        animation={ inView8 ? "blur-in" : ""}
+                        link="https://www.dropbox.com/scl/fi/560jrffj3r8jchlmiex63/sn-website-hover.mp4?rlkey=rxqekysgu2gbt7decezwcm5ki&st=aliqmild&raw=1"
+                    />
+                </div>
             </section>
         </main>
     )
