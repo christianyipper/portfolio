@@ -151,8 +151,10 @@ const ProjectsPage = () => {
                                 <SvgIllustrator/>
                                 <SvgAfterEffects/>
                                 <SvgFigma/>
+                                <SvgReact/>
+                                <SvgSass/>
                             </ArtifactCard>
-                            <ArtifactCard
+                            {/* <ArtifactCard
                                 enter={ (e) => { 
                                     mouseEnter( StripesNationWebsite ); 
                                     centerItem(e); 
@@ -169,7 +171,7 @@ const ProjectsPage = () => {
                                 <SvgReact/>
                                 <SvgSass/>
                                 <SvgFigma/>
-                            </ArtifactCard>
+                            </ArtifactCard> */}
                             {/* <ArtifactCard
                             enter={ () => mouseEnter( EdgeBoards ) }
                             leave={ () => mouseLeave( EdgeBoards ) }
