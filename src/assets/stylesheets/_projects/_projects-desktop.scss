@@ -58,7 +58,9 @@
             }
 
             .project-gallery-wrap {
-                @include flex-wrap( nowrap, row, space-between, center );
+                // @include flex-wrap( nowrap, row, space-between, center );
+                @include flex-wrap( nowrap, row, center, center );
+
                 position: relative;
                 width: 100%;
                 height: 100%;

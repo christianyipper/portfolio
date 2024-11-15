@@ -3383,7 +3383,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: relative;
   width: 100%;
