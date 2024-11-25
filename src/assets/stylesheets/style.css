@@ -3421,7 +3421,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   align-items: center;
   position: relative;
   width: auto;
-  height: 30vw;
+  height: 25vw;
   border-radius: 24px;
   transition: 0.5s ease-in-out;
 }
@@ -3522,7 +3522,7 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
   position: relative;
   aspect-ratio: 9/16;
   width: auto;
-  height: 30vw;
+  height: 25vw;
   border-radius: 24px;
   overflow: hidden;
   transition: 0.5s ease-in-out;

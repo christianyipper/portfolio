@@ -91,9 +91,9 @@ const StripesNationBrand = () => {
                 reference7={ snap7 }
                 display7="scroll-show"
 
-                id8="UIElements"
-                reference8={ snap8 }
-                display8="scroll-show"
+                // id8="UIElements"
+                // reference8={ snap8 }
+                // display8="scroll-show"
             />
             <section className="artifact-section artifact-home">
                 <div className="artifact-wrap">
@@ -155,22 +155,22 @@ const StripesNationBrand = () => {
                             num5="5"
                             display5="toc-display"
 
-                            subHeading6="React | Sass | After Effects"
-                            mainHeading6="Landing Page"
-                            path6="#LandingPage"
-                            num6="6"
-                            display6="toc-display"
+                            // subHeading6="React | Sass | After Effects"
+                            // mainHeading6="Landing Page"
+                            // path6="#LandingPage"
+                            // num6="6"
+                            // display6="toc-display"
 
-                            subHeading7="React | Sass"
-                            mainHeading7="UI Elements"
-                            path7="#UIElements"
-                            num7="7"
-                            display7="toc-display"
+                            // subHeading7="React | Sass"
+                            // mainHeading7="UI Elements"
+                            // path7="#UIElements"
+                            // num7="7"
+                            // display7="toc-display"
                         />
                     </div>
                     <ScrollDown
                         // toggle burger visibility
-                        animation={ inView8 ? "opacity-0" : "opacity-100"}
+                        animation={ inView7 ? "opacity-0" : "opacity-100"}
 
                         heading1="Next - Logo Concepts"
                         link1="#LogoConcepts"
@@ -192,13 +192,13 @@ const StripesNationBrand = () => {
                         link5="#BrandBook"
                         animation5={ inView5 ? "opacity-100" : "opacity-0"}
                         
-                        heading6="Next - Landing Page"
-                        link6="#LandingPage"
-                        animation6={ inView6 ? "opacity-100" : "opacity-0"}
+                        // heading6="Next - Landing Page"
+                        // link6="#LandingPage"
+                        // animation6={ inView6 ? "opacity-100" : "opacity-0"}
 
-                        heading7="Next - UI Elements"
-                        link7="#UIElements"
-                        animation7={ inView7 ? "opacity-100" : "opacity-0"}
+                        // heading7="Next - UI Elements"
+                        // link7="#UIElements"
+                        // animation7={ inView7 ? "opacity-100" : "opacity-0"}
                     />
                 </div>
             </section>
@@ -374,6 +374,9 @@ const StripesNationBrand = () => {
                 </div>
             </section>
             <section className={ `artifact-section ${ inView7 ? "" : "artifact-hide" }` }>
+                <Footer/>
+            </section>
+            {/* <section className={ `artifact-section ${ inView7 ? "" : "artifact-hide" }` }>
                 <div className="artifact-wrap">
                     <VideoAutoplay
                         name="artifact-img-wrap img-left"
@@ -404,8 +407,8 @@ const StripesNationBrand = () => {
                         />
                     </article>
                 </div>
-            </section>
-            <section className={ `artifact-section ${ inView8 ? "" : "artifact-hide" }` }>
+            </section> */}
+            {/* <section className={ `artifact-section ${ inView8 ? "" : "artifact-hide" }` }>
                 <div className="artifact-wrap">
                     <article className="artifact-left left-sm">
                         <SubHeading 
@@ -435,7 +438,7 @@ const StripesNationBrand = () => {
                         link="https://www.dropbox.com/scl/fi/560jrffj3r8jchlmiex63/sn-website-hover.mp4?rlkey=rxqekysgu2gbt7decezwcm5ki&st=aliqmild&raw=1"
                     />
                 </div>
-            </section>
+            </section> */}
         </main>
     )
 }

@@ -142,7 +142,7 @@ const ProjectsPage = () => {
                                 poster="https://www.dropbox.com/scl/fi/444jjpr2zh7s91t43xu2q/stripesnation-thumb-comp.png?rlkey=m206g74xrn3z44qac0i73ljd3&st=xhx8upg5&raw=1"
                                 video="https://www.dropbox.com/scl/fi/yd79axbaddk06h76ytb4m/StripesNation-1080p-comp.mp4?rlkey=iry6dsr7ct2umpe48n5gwlb5z&st=qcuh5kru&raw=1"
                                 reference={ StripesNationBrand }
-                                subheading="Branding | Front-End"
+                                subheading="Branding"
                                 heading="Stripes Nation"
                                 text="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. I wanted to create a brand which boast a bold identity that evokes the energy and speed of the sport. I also wanted to highlight the emotions of the game through photo-centric elements within the brand's website and social media."
                                 link="/stripesnation-brand"
@@ -151,10 +151,8 @@ const ProjectsPage = () => {
                                 <SvgIllustrator/>
                                 <SvgAfterEffects/>
                                 <SvgFigma/>
-                                <SvgReact/>
-                                <SvgSass/>
                             </ArtifactCard>
-                            {/* <ArtifactCard
+                            <ArtifactCard
                                 enter={ (e) => { 
                                     mouseEnter( StripesNationWebsite ); 
                                     centerItem(e); 
@@ -171,7 +169,7 @@ const ProjectsPage = () => {
                                 <SvgReact/>
                                 <SvgSass/>
                                 <SvgFigma/>
-                            </ArtifactCard> */}
+                            </ArtifactCard>
                             {/* <ArtifactCard
                             enter={ () => mouseEnter( EdgeBoards ) }
                             leave={ () => mouseLeave( EdgeBoards ) }

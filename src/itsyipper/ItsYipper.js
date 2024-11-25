@@ -16,6 +16,7 @@ import VideoAutoplay from '../components/VideoAutoplay';
 import Image from '../components/Image';
 import ScrollDown from '../components/ScrollDown';
 import ScrollSnap from '../components/ScrollSnap';
+import Button from '../components/text/Button';
 
 const ItsYipper = () => {
     const { ref: snap1, inView: inView1 } = useInView( { threshold: 0.5 } );
@@ -103,6 +104,11 @@ const ItsYipper = () => {
                         <Paragraph 
                             animation={ inView1 ? "leap-in leap1" : ""}
                             text1="I utilize my design skillset in Photoshop, Illustrator, Figma, and After Effects throughout this project. Join me as I embark on a journey to create Stripes Nation from the ground up."
+                        />
+                        <Button
+                            text="Website Link"
+                            link="https://itsyipper.webflow.io/"
+                            target="_blank"
                         />
                     </article>
                     <div className="artifact-right right-sm">
@@ -295,15 +301,6 @@ const ItsYipper = () => {
                 </div>
             </section>
             <section className={ `artifact-section ${ inView6 ? "" : "artifact-hide" }` }>
-                <div className="artifact-wrap">
-                    <article className="artifact-left left-sm">
-                        <SubHeading 
-                            subHeading="Figma | Photoshop" 
-                            mainHeading="Brand Book" 
-                            animation={ inView5 ? "scale-in" : ""}
-                        />
-                    </article>
-                </div>
                 <Footer/>
             </section>
         </main>
