@@ -280,3 +280,41 @@
         transition: 0.2s ease-in-out;
     }
 }
+
+@mixin heading-shimmer {
+    position: relative;
+    @include flex-wrap( wrap, column, start, start );
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 0 0 2px white, 0 0 4px white;
+
+    &:before {
+        content: attr( text-shimmer );
+        position: absolute;
+        width: 100%;
+        -webkit-text-stroke: 2px white;
+        top: -2px;
+        left: -2px;
+        z-index: 5;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 4px rgb(140, 169, 189 );
+        opacity: 25%;
+    }
+    &:after {
+        content: attr( text-shimmer );
+        position: absolute;
+        width: 100%;
+        top: 6px;
+        left: 6px;
+        z-index: -1;
+        text-shadow: none;
+        background-image: linear-gradient( 45deg, transparent 45%, $accent 45%, $primary 85%, transparent 0 );
+        background-size: 8px 8px;
+        background-clip: text;
+        color: transparent;
+        filter: blur( 4px );
+        // animation: lines 16s linear infinite;
+    }
+}

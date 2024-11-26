@@ -2,7 +2,7 @@ import HeadingShimmer from '../components/text/HeadingShimmer';
 import Paragraph from '../components/text/Paragraph';
 import Button from '../components/text/Button';
 
-const ArtifactCard = ( { enter, leave, poster, reference, video, subheading, heading, text, children, link, imgAlt } ) => {
+const ArtifactCard = ( { enter, leave, poster, reference, video, subheading, heading, dark, text, children, link, image, imageAlt } ) => {
 
     const style = {
         backgroundImage: `url(${ poster })`,
@@ -25,8 +25,8 @@ const ArtifactCard = ( { enter, leave, poster, reference, video, subheading, hea
                 >
                     <source src={ video } type="video/mp4"/>
                 </video>
-                {/* <img src={ poster } alt={ imgAlt } /> */}
-                <HeadingShimmer heading={ heading } animation="sm-heading"/>
+                <img className={`project-img ${ image }`} src={ poster } alt={ imageAlt } />
+                <HeadingShimmer heading={ heading } animation="sm-heading" direction={ dark }/>
                 <article className="project-text">
                     <HeadingShimmer heading={ heading }/>
                     <Paragraph name="project-text-margin" text1={ text }/>

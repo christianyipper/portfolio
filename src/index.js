@@ -9,10 +9,13 @@ import Footer from './components/Footer';
 import HomePage from './HomePage';
 import AboutPage from './about/AboutPage';
 import ProjectsPage from './projects/ProjectsPage';
+
+import Blendit from './Blendit/Blendit';
 import ItsYipper from './itsyipper/ItsYipper';
 import StripesNationBrand from './stripesnation-brand/StripesNationBrand';
 import StripesNationWebsite from './stripesnation-website/StripesNationWebsite';
 import EdgeBoards from './edge-boards/EdgeBoards';
+
 import {
     createBrowserRouter,
     createRoutesFromElements,
@@ -27,6 +30,7 @@ const router = createBrowserRouter(
             <Route path="about" element={<AboutPage/>} />
             <Route path="projects" element={<ProjectsPage/>} />
 
+            <Route path="blendit" element={<Blendit/>} />
             <Route path="itsyipper" element={<ItsYipper/>} />
             <Route path="stripesnation-brand" element={<StripesNationBrand/>} />
             <Route path="stripesnation-website" element={<StripesNationWebsite/>} />

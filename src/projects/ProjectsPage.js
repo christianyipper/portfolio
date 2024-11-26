@@ -79,6 +79,7 @@ const ProjectsPage = () => {
     const ItsYipper = useRef(null);
     const StripesNationBrand = useRef(null);
     const StripesNationWebsite = useRef(null);
+    const Blendit = useRef(null);
     const EdgeBoards = useRef(null);
 
     const mouseEnter = ( videoRef ) => {
@@ -117,21 +118,23 @@ const ProjectsPage = () => {
                         <div className="project-gallery">
                             <ArtifactCard
                                 enter={ (e) => { 
-                                    mouseEnter( ItsYipper ); 
+                                    mouseEnter( Blendit ); 
                                     centerItem(e); 
                                 }}
-                                leave={ () => mouseLeave( ItsYipper ) }
-                                poster="https://www.dropbox.com/scl/fi/dwu10b5gjpzz8tuc78d3h/itsyipper-thumb-comp.png?rlkey=rvakfjhv84t26pwfthgmhttqy&st=89spahic&raw=1"
-                                video="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1"
-                                reference={ ItsYipper }
+                                leave={ () => mouseLeave( Blendit )}
+                                poster="https://www.dropbox.com/scl/fi/mqdxrq6misi7vbjqhfhvr/blendit-bg-comp.png?rlkey=j5q7sne43c2z8kjxab1ihkb33&st=vbwhhcnk&raw=1"
+                                // video="https://www.dropbox.com/scl/fi/eidpjoeahq67umeob3dc2/background-video-16-9.mp4?rlkey=c36c1316oo4azszfbiknvkny3&st=ogajpxl9&raw=1"
+                                image=""
+                                reference={ Blendit }
                                 subheading="Front-End"
-                                heading="ItsYipper"
-                                text="ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories."
-                                link="/itsyipper"
+                                heading="Blendit"
+                                dark="heading-shimmer-dark"
+                                text="At the heart of Blendit's innovation is its groundbreaking interactive ordering system. Unlike traditional food ordering platforms, Blendit turns customization into a playful, immersive experience. Through carefully designed animations and intuitive interfaces, customers are guided through a step-by-step bowl creation process that feels more like a creative game than a standard menu selection."
+                                link="/blendit"
                             >
-                                <SvgWebflow/>
-                                <SvgPhotoshop/>
-                                <SvgIllustrator/>
+                                <SvgReact/>
+                                <SvgTailwind/>
+                                <SvgFigma/>
                             </ArtifactCard>
                             <ArtifactCard
                                 enter={ (e) => { 
@@ -141,6 +144,7 @@ const ProjectsPage = () => {
                                 leave={ () => mouseLeave( StripesNationBrand )}
                                 poster="https://www.dropbox.com/scl/fi/444jjpr2zh7s91t43xu2q/stripesnation-thumb-comp.png?rlkey=m206g74xrn3z44qac0i73ljd3&st=xhx8upg5&raw=1"
                                 video="https://www.dropbox.com/scl/fi/yd79axbaddk06h76ytb4m/StripesNation-1080p-comp.mp4?rlkey=iry6dsr7ct2umpe48n5gwlb5z&st=qcuh5kru&raw=1"
+                                image="hide"
                                 reference={ StripesNationBrand }
                                 subheading="Branding"
                                 heading="Stripes Nation"
@@ -160,6 +164,7 @@ const ProjectsPage = () => {
                                 leave={ () => mouseLeave( StripesNationWebsite )}
                                 poster="https://www.dropbox.com/scl/fi/lu2pt8d7o3j31e8at96gf/sn-jersey-md-min.webp?rlkey=bdhqr3jh8omzi1mqvcznqxtm4&st=d7t7fp9n&raw=1"
                                 video="https://www.dropbox.com/scl/fi/eidpjoeahq67umeob3dc2/background-video-16-9.mp4?rlkey=c36c1316oo4azszfbiknvkny3&st=ogajpxl9&raw=1"
+                                image="hide"
                                 reference={ StripesNationWebsite }
                                 subheading="Front-End"
                                 heading="Stripes Nation"
@@ -169,6 +174,25 @@ const ProjectsPage = () => {
                                 <SvgReact/>
                                 <SvgSass/>
                                 <SvgFigma/>
+                            </ArtifactCard>
+                            <ArtifactCard
+                                enter={ (e) => { 
+                                    mouseEnter( ItsYipper ); 
+                                    centerItem(e); 
+                                }}
+                                leave={ () => mouseLeave( ItsYipper ) }
+                                poster="https://www.dropbox.com/scl/fi/dwu10b5gjpzz8tuc78d3h/itsyipper-thumb-comp.png?rlkey=rvakfjhv84t26pwfthgmhttqy&st=89spahic&raw=1"
+                                video="https://www.dropbox.com/scl/fi/gftktvruwyq90jdxj31ih/ItsYipper-Intro-720p-comp.mp4?rlkey=1bvcxgetbkygn3rcbp93ouw4x&st=xt6vmdm0&raw=1"
+                                image="hide"
+                                reference={ ItsYipper }
+                                subheading="Front-End"
+                                heading="ItsYipper"
+                                text="ItsYipper delivers in-depth reviews of the latest games and sparking conversations about trending topics within the community. Dive deeper into the gaming world with our interactive website. Explore the gaming landscape with original blogs and captivating video stories."
+                                link="/itsyipper"
+                            >
+                                <SvgWebflow/>
+                                <SvgPhotoshop/>
+                                <SvgIllustrator/>
                             </ArtifactCard>
                             {/* <ArtifactCard
                             enter={ () => mouseEnter( EdgeBoards ) }

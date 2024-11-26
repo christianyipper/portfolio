@@ -2,7 +2,7 @@
     @include flex-wrap( wrap, column, start, start );
 
     .main-heading {
-        @extend %shimmer;
+        @include heading-shimmer;
         width: 100%;
         margin-top: 0
     }

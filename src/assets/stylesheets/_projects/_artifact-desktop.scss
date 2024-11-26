@@ -138,6 +138,12 @@
                 grid-column: 5 / 13;
                 padding-left: calc($md / 2);
             }
+            .img-left-mobile {
+                grid-column: 1 / 4;
+            }
+            .img-right-mobile {
+                grid-column: 10 / 13;
+            }
             .video-cms-backend {
                 // width: calc((( 100% / 4 ) * 3 ) - 8px );
                 // height: 100%;

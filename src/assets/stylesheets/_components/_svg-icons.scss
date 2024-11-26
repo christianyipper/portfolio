@@ -142,6 +142,10 @@ $sass-dark: #cd669a;
 }
 
 // TAILWIND
+$tailwind-light: white;
+.tailwind-light {
+    fill: $tailwind-light;
+}
 $tailwind-dark: #39bbf8;
 .tailwind-dark {
     fill: $tailwind-dark;
@@ -154,11 +158,11 @@ $webflow-dark: #146df5;
 }
 
 %svg-grey {
-    .icon-grey, .icon-white, .ae-light, .css-light, .figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach, .ai-light, .js-dark, .ps-light, .react-light {
+    .icon-grey, .icon-white, .ae-light, .css-light, .figma-purple, .figma-blue, .figma-green, .figma-orange, .figma-peach, .ai-light, .js-dark, .ps-light, .react-light, .tailwind-dark {
         transition: 0.5s ease-in-out;
         fill: transparent;
         }
-    .ae-dark, .css-dark, .figma-bg, .html-light, .html-dark, .ai-dark, .js-light, .ps-dark, .react-dark, .sass-dark, .webflow-dark {
+    .ae-dark, .css-dark, .figma-bg, .html-light, .html-dark, .ai-dark, .js-light, .ps-dark, .react-dark, .sass-dark, .tailwind-light, .webflow-dark {
         transition: 0.5s ease-in-out;
         fill: $accent;
     }
@@ -233,6 +237,12 @@ $webflow-dark: #146df5;
     }
     .sass-dark {
         fill: $sass-dark !important;
+    }
+    .tailwind-dark {
+        fill: $tailwind-dark !important;
+    }
+    .tailwind-light {
+        fill: $tailwind-light !important;
     }
     .webflow-dark {
         fill: $webflow-dark !important;
