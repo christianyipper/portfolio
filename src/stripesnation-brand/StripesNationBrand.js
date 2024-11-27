@@ -99,22 +99,37 @@ const StripesNationBrand = () => {
                 <div className="artifact-wrap">
                     <article className={ `artifact-left left-lg heading-col ${ inView1 ? "blur-in" : "blur-out" }` }>
                         <TitleFloat 
-                            animation={ `artifact-heading-float ${ inView1 ? "blur-in" : "blur-out" }` }
+                            animation={ `artifact-title-float ${ inView1 ? "blur-in" : "blur-out" }` }
                             meta="Stripes Nation" 
                             a="S" b="t" c="r" d="i" e="p" f="e" g="s" spaceH="space" h="N" i="a" j="t" k="i" l="o" m="n"
                         />
-                        <HeadingShimmer 
-                            animation={ inView1 ? "blur-in" : "blur-out" }
-                            heading="Branding"
+                        <List 
+                            heading1="The Problem"
+                            text1="Stripes Nation caters to a niche audience of hockey referees. We wanted a brand that represents on-ice officials and the fast-paced nature of the sport."
+                            animation1={ inView2 ? "leap-in leap1" : ""}
+
+                            heading2="Our Solution" 
+                            text2="Stripes Nation aims to incorporate elements from the referee uniform and the sport into the brand's core identity. We worked to showcase all these elements through out the design process, from the logo to the website's design."
+                            animation2={ inView2 ? "leap-in leap2" : ""}
+
+                            display3="none"
                         />
-                        <Paragraph 
+                        {/* <div className="button-wrap">
+                            <Button
+                                text="Figma Wireframes"
+                                link="https://www.figma.com/design/6LsIArquwlc7r4zUHBu6n7/Blend-It.?node-id=90-2&t=9MePM4UXKJn6Lf4Y-1"
+                                target="_blank"
+                            />
+                        </div> */}
+                        <p className="author"><b>Created by:</b> Christian Yip</p>
+                        {/* <Paragraph 
                             animation={ inView1 ? "leap-in" : ""}
                             text1="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
                         />
                         <Paragraph 
                             animation={ inView1 ? "leap-in leap1" : ""}
                             text1="I utilize my design skillset in Photoshop, Illustrator, Figma, and After Effects throughout this project. Join me as I embark on a journey to create Stripes Nation from the ground up."
-                        />
+                        /> */}
                     </article>
                     <div className="artifact-right right-sm">
                         <TableOfContents
@@ -192,9 +207,9 @@ const StripesNationBrand = () => {
                         link5="#BrandBook"
                         animation5={ inView5 ? "opacity-100" : "opacity-0"}
                         
-                        // heading6="Next - Landing Page"
-                        // link6="#LandingPage"
-                        // animation6={ inView6 ? "opacity-100" : "opacity-0"}
+                        heading6="Next - Reach Out"
+                        link6="#LandingPage"
+                        animation6={ inView6 ? "opacity-100" : "opacity-0"}
 
                         // heading7="Next - UI Elements"
                         // link7="#UIElements"

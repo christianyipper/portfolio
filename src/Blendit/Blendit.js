@@ -88,23 +88,34 @@ const Blendit = () => {
                 <div className="artifact-wrap">
                     <article className={ `artifact-left left-lg heading-col ${ inView1 ? "blur-in" : "blur-out" }` }>
                         <TitleFloat 
-                            animation={ `artifact-heading-float ${ inView1 ? "blur-in" : "blur-out" }` }
+                            animation={ `artifact-title-float ${ inView1 ? "blur-in" : "blur-out" }` }
                             meta="Blend It" 
                             a="B" b="l" c="e" d="n" e="d" f="i" g="t" h="."
                         />
-                        <HeadingShimmer 
-                            animation={ inView1 ? "blur-in" : "blur-out" }
-                            heading="Front End"
+                        <List 
+                            heading1="The Problem"
+                            text1="In today's society, many people order food online through the same boring process. Create your order, select your toppings, and pay for it. The Blendit team wanted to create a more engaging and interactive experience for their customers."
+                            animation1={ inView2 ? "leap-in leap1" : ""}
+
+                            heading2="Our Solution" 
+                            text2="Our vibrant colours and playful art style combined with simple and fun animations challenges the user expereince provided by conventional ordering apps. Scroll down to learn more about how we elevated the ordering experience at Blendit." 
+                            animation2={ inView2 ? "leap-in leap2" : ""}
+
+                            display3="none"
                         />
-                        <Paragraph 
-                            animation={ inView1 ? "leap-in" : ""}
-                            text1="Blendit demonstrates how front-end development can transform a simple ordering process into an immersive, enjoyable experience. By carefully crafting each interaction with CSS animations, JavaScript libraries, and responsive design, the team has created more than an app but designed a digital culinary playground."
-                        />
-                        <Button
-                            text="Github Repo"
-                            link="https://github.com/christianyipper/blendit.git"
-                            target="_blank"
-                        />
+                        <div className="button-wrap">
+                            <Button
+                                text="Figma"
+                                link="https://www.figma.com/design/6LsIArquwlc7r4zUHBu6n7/Blend-It.?node-id=90-2&t=9MePM4UXKJn6Lf4Y-1"
+                                target="_blank"
+                            />
+                            <Button
+                                text="Github"
+                                link="https://github.com/christianyipper/blendit.git"
+                                target="_blank"
+                            />
+                        </div>
+                        <p className="author"><b>Created by:</b> Christian Yip, Masha Supikhanova, Paul Aries</p>
                     </article>
                     <div className="artifact-right right-sm">
                         <TableOfContents
@@ -136,7 +147,7 @@ const Blendit = () => {
                         link2="#SmoothieBuilder"
                         animation2={ inView2 ? "opacity-100" : "opacity-0"}
 
-                        heading3="Next - More Projects"
+                        heading3="Next - Reach Out"
                         link3="#SmoothieBuilder"
                         animation3={ inView3 ? "opacity-100" : "opacity-0"}
                     />

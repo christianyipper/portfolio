@@ -190,6 +190,15 @@
             }
         }
     }
+    .button-wrap {
+        display: flex;
+        flex-direction: row;
+        gap: $md;
+        margin-bottom: $sm;
+    }
+    .author {
+        color: $accent;
+    }
 }
 .hide {
     display: none;
@@ -204,4 +213,8 @@
 }
 .h1-sm {
     font-size: $md;
+}
+
+.mask-animation-video {
+    margin-top: 6vw;
 }

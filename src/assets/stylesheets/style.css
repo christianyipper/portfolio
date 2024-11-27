@@ -1359,6 +1359,10 @@ a:hover ~ .cursor {
   }
 }
 
+.artifact-title-float {
+  margin-bottom: 24px;
+}
+
 .heading-shimmer {
   position: relative;
   display: flex;
@@ -4608,6 +4612,15 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 .artifact .artifact-section .leap-in.leap3 {
   animation-delay: 0.9s;
 }
+.artifact .button-wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+.artifact .author {
+  color: #6274ff;
+}
 
 .hide {
   display: none;
@@ -4623,6 +4636,10 @@ footer .footer-wrap .footer-left, footer .footer-wrap .footer-right {
 
 .h1-sm {
   font-size: 24px;
+}
+
+.mask-animation-video {
+  margin-top: 6vw;
 }
 
 @media only screen and (max-width: 500px) {

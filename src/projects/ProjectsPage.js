@@ -123,8 +123,8 @@ const ProjectsPage = () => {
                                 }}
                                 leave={ () => mouseLeave( Blendit )}
                                 poster="https://www.dropbox.com/scl/fi/mqdxrq6misi7vbjqhfhvr/blendit-bg-comp.png?rlkey=j5q7sne43c2z8kjxab1ihkb33&st=vbwhhcnk&raw=1"
-                                // video="https://www.dropbox.com/scl/fi/eidpjoeahq67umeob3dc2/background-video-16-9.mp4?rlkey=c36c1316oo4azszfbiknvkny3&st=ogajpxl9&raw=1"
-                                image=""
+                                video="https://www.dropbox.com/scl/fi/9qjngwkka1wab71pgn4ak/blendit-animation-comp.mp4?rlkey=z5h04pjyxhkj0flvfeib1ggvy&st=jhzc90y7&raw=1"
+                                image="hide"
                                 reference={ Blendit }
                                 subheading="Front-End"
                                 heading="Blendit"
