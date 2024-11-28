@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.47bd89f3.css",
-    "main.js": "/static/js/main.bbc5727f.js",
+    "main.css": "/static/css/main.4f86eb39.css",
+    "main.js": "/static/js/main.c33e1785.js",
     "static/media/inkmask-left.png": "/static/media/inkmask-left.6be2b7ffbda0a6adeb35.png",
     "static/media/inkmask-right.png": "/static/media/inkmask-right.3d85368e7a59160d4692.png",
     "static/media/jphl-logo.png": "/static/media/jphl-logo.523fd9f17883d5f462d4.png",
@@ -11,11 +11,11 @@
     "static/media/bc-hockey-logo.png": "/static/media/bc-hockey-logo.f1fe14465b9e29bb131a.png",
     "static/media/csshl-logo.png": "/static/media/csshl-logo.d2fa15d6fb7912bbc42f.png",
     "index.html": "/index.html",
-    "main.47bd89f3.css.map": "/static/css/main.47bd89f3.css.map",
-    "main.bbc5727f.js.map": "/static/js/main.bbc5727f.js.map"
+    "main.4f86eb39.css.map": "/static/css/main.4f86eb39.css.map",
+    "main.c33e1785.js.map": "/static/js/main.c33e1785.js.map"
   },
   "entrypoints": [
-    "static/css/main.47bd89f3.css",
-    "static/js/main.bbc5727f.js"
+    "static/css/main.4f86eb39.css",
+    "static/js/main.c33e1785.js"
   ]
 }
