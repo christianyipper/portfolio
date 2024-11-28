@@ -225,12 +225,12 @@ const SonicAnimation = () => {
                     <VideoAutoplay
                         name="artifact-img-wrap img-right mask-animation-video"
                         animation={ inView3 ? "blur-in" : ""}
-                        link="https://www.dropbox.com/scl/fi/5tyy4k5oe61hp1vjhod7a/sn-website-contact.mp4?rlkey=y2915uo19rk9vj1y9leyj0ojt&st=026l4psp&raw=1"
+                        link="https://www.dropbox.com/scl/fi/l3wuf4mqxxbejhk2nfxak/sn-website-contact-long.mp4?rlkey=pebha26mqbe6lg083r9z4cszq&st=lg6ul1el&raw=1"
                     />
                     <VideoAutoplay
                         name="artifact-img-wrap img-right"
                         animation={ inView3 ? "blur-in" : ""}
-                        link="https://www.dropbox.com/scl/fi/4bjm2ks1gd69sva7bvzak/ink-mask-animation.mp4?rlkey=0pcttn7s5jgd55hrcqy6411k2&st=98iepbvw&raw=1"
+                        link="https://www.dropbox.com/scl/fi/f0wg107o9bs1dflhd89er/ink-mask-animation-green.mp4?rlkey=m1x7ygz37fk8acwe7x5b583b9&st=yeu4nezx&raw=1"
                     />
                 </div>
             </section>

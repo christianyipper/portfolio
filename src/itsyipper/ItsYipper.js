@@ -93,23 +93,23 @@ const ItsYipper = () => {
                             meta="ItsYipper" 
                             a="I" b="t" c="s" d="Y" e="i" f="p" g="p" h="e" i="r"
                         />
-                        <HeadingShimmer 
-                            animation={ inView1 ? "blur-in" : "blur-out" }
-                            heading="Front End"
-                        />
-                        <Paragraph 
-                            animation={ inView1 ? "leap-in" : ""}
-                            text1="Stripes Nation redefines the way you see hockey by offering a fresh perspective through the eyes of officials. Stripes Nation boast a bold, photo-centric brand identity that perfectly complements its stunning website, featuring a captivating photo gallery."
-                        />
-                        <Paragraph 
-                            animation={ inView1 ? "leap-in leap1" : ""}
-                            text1="I utilize my design skillset in Photoshop, Illustrator, Figma, and After Effects throughout this project. Join me as I embark on a journey to create Stripes Nation from the ground up."
+                        <List 
+                            heading1="The Problem"
+                            text1="Gaming news outlets have been popular for many years. However, these large corporations have been losing their reputation over reviews that don't reflect the gaming community."
+                            animation1={ inView2 ? "leap-in leap1" : ""}
+
+                            heading2="Our Solution" 
+                            text2="We wanted to create ItsYipper to promote a prevelant voice in the gaming community and highlight the good, the bad, and the ugly of video games. ItsYipper brand starts with a vibrant pixel theme that gamers alike can recognize and connect with." 
+                            animation2={ inView2 ? "leap-in leap2" : ""}
+
+                            display3="none"
                         />
                         <Button
                             text="Website Link"
                             link="https://itsyipper.webflow.io/"
                             target="_blank"
                         />
+                        <p className="author"><b>Created by:</b> Christian Yip, Nicole Espiritu, Paul Aries, Cole McKee, Nicholas Greco</p>
                     </article>
                     <div className="artifact-right right-sm">
                         <TableOfContents

@@ -155,7 +155,7 @@ const ProjectsPage = () => {
                                 <SvgIllustrator/>
                                 <SvgAfterEffects/>
                                 <SvgFigma/>
-                            </ArtifactCard>
+                                </ArtifactCard>
                             <ArtifactCard
                                 enter={ (e) => { 
                                     mouseEnter( StripesNationWebsite ); 
@@ -174,6 +174,9 @@ const ProjectsPage = () => {
                                 <SvgReact/>
                                 <SvgSass/>
                                 <SvgFigma/>
+                                <SvgPhotoshop/>
+                                <SvgIllustrator/>
+                                <SvgAfterEffects/>
                             </ArtifactCard>
                             <ArtifactCard
                                 enter={ (e) => { 

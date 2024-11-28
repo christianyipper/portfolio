@@ -395,12 +395,12 @@
 
     @keyframes homeIn {
         0% {
-            transform: scale( 2 ) translate( -30vw, 20vw );
+            transform: scale( 1.1 ) translate( -10vw, 5vw ) rotateZ(20deg);
             filter: blur( 10px );
             opacity: 0%;
         }
         100% {
-            transform: scale( 1 ) translate( 0, 0 );
+            transform: scale( 0.9 ) translate( 0, 0 ) rotateZ(10deg);
             filter: blur( 0px );
             opacity: 100%;
         }
